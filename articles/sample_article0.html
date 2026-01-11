@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trump Pushes For Greenland as Allies Warn of NATO Collapse</title>
+  <link rel="icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+  <style>:root{
+  --bg:#FFFAF2;
+  --card:#F4EEE3;
+  --ink:#111214;
+  --muted:#5C5C60;
+  --hair:rgba(17,18,20,.10);
+  --gold:#C8A25D;
+  --rating:#7A1F27;
+  --radius:18px;
+  --max: 860px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px 70px;}
+
+.appbar{
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255,250,242,.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.appbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.about-link{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  text-decoration: none;
+}
+.about-link:hover{ color: rgba(17,18,20,.8); }
+.logo{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500; /* not bold */
+  letter-spacing: -0.7px;
+  font-size: 22px;
+}
+.logo .dot{ color: var(--gold); }
+.claim-toggle{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.6);
+  color: rgba(17,18,20,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.claim-toggle.is-active{
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+.claim-nudge{
+  position: absolute;
+  right: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.85);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.claim-nudge::after{
+  content:"";
+  position:absolute;
+  right:-6px;
+  top:50%;
+  transform: translateY(-50%);
+  border-width:6px 0 6px 6px;
+  border-style:solid;
+  border-color: transparent transparent transparent rgba(255,255,255,.55);
+}
+.claim-nudge.is-visible{
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.header{ padding-top: 18px; }
+h1.title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+@media (max-width: 700px){
+  .wrap{padding: 0 18px 60px;}
+  h1.title{font-size: 38px;}
+}
+
+.hero{ margin-top: 14px; }
+.hero img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display:block;
+  border-radius: 0;
+}
+@media (max-width: 700px){
+  .hero img{height: 340px;}
+}
+
+.meta-card{
+  background: var(--card);
+  padding: 14px 16px 16px;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-toast{
+  margin: 10px auto 0;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.78);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-align:center;
+  max-width: 520px;
+  display: none;
+}
+body.claim-mode .claim-toast{ display:block; }
+.meta-row{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  column-gap: 12px;
+  align-items:center;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.meta-item{
+  text-align: center;
+}
+.meta-item.left{ text-align: left; }
+.meta-item.right{ text-align: right; }
+.meta-item:empty{ visibility: hidden; }
+.dot-sep.is-hidden{ visibility: hidden; }
+.dot-sep{width:4px;height:4px;border-radius:999px;background: rgba(17,18,20,.25);display:inline-block;}
+
+.meters{ margin-top: 12px; display:grid; gap: 12px; padding: 0 4px; }
+.meter{ display:grid; gap: 6px; }
+.meter-line{ height:1px; background: rgba(17,18,20,.10); position:relative; }
+.meter-line::after{ content:""; position:absolute; left:0; top:0; height:1px; width:var(--fill, 50%); background: var(--rating); }
+.meter-label{ display:flex; gap: 8px; align-items:baseline; font-size: 14px; font-weight: 400; padding-left: 0; }
+.meter-label .k{ color: var(--rating); font-weight: 400; }
+.meter-label .v{ color: var(--ink); font-weight: 400; }
+.rating-details{
+  margin-top: 8px;
+  padding-top: 0;
+  display:flex;
+  flex-direction: column;
+}
+.rating-details summary{
+  list-style: none;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rating);
+  order: 2;
+  margin-top: 8px;
+}
+.rating-details summary::-webkit-details-marker{ display:none; }
+.rating-details .chev{
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.rating-details[open] .chev{ transform: rotate(180deg); }
+.rating-body{
+  margin-top: 10px;
+  display:grid;
+  gap: 16px;
+  font-size: 15px;
+  color: rgba(17,18,20,.82);
+  order: 1;
+}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+.rating-title{
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.rating-divider{
+  border: 0;
+  border-top: 1px solid var(--hair);
+  margin: 2px 0 0;
+}
+.rating-how{
+  margin-top: 4px;
+}
+.rating-how-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+
+.intl-section{
+  margin-top: 28px;
+}
+.intl-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.intl-sub{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
+}
+.intl-strip{
+  --fade-size: clamp(10px, 3.5vw, 22px);
+  --left-fade: 0px;
+  --right-fade: var(--fade-size);
+  display:flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  padding-left: 0;
+  margin-left: -8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+}
+.intl-strip::-webkit-scrollbar{ height: 6px; }
+.intl-strip::-webkit-scrollbar-thumb{
+  background: rgba(17,18,20,.2);
+  border-radius: 999px;
+}
+.intl-card{
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 4px;
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(17,18,20,.06);
+  scroll-snap-align: start;
+}
+@media (min-width: 700px){
+  .intl-card{ min-width: 320px; max-width: 360px; }
+}
+.intl-country{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intl-sources-title{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+}
+.intl-sources{
+  margin: 6px 0 12px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.intl-para{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.intl-quote{
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-style: italic;
+}
+.intl-attrib{
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.content{ padding-top: 18px; }
+
+h2.subtitle{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 26px 0 10px;
+}
+@media (max-width: 700px){ h2.subtitle{font-size: 30px;} }
+
+p.para{ margin: 0 0 16px; font-size: 17px; line-height: 1.85; color: rgba(17,18,20,.9); }
+hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 24px 0; }
+
+.list{ margin: 0 0 18px; padding-left: 20px; font-size: 17px; }
+.list li{ margin: 8px 0; }
+
+blockquote.quote{
+  margin: 18px 0 10px;
+  padding: 18px 0 18px;
+  border-top: 0;
+  border-bottom: 0;
+  background: transparent;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--ink);
+  position: relative;
+}
+blockquote.quote::before{
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote::after{
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -34px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote .quote-line{
+  position: absolute;
+  height: 2px;
+  background: rgba(200,162,93,.55);
+}
+blockquote.quote .quote-line.top{
+  left: 36px;
+  right: 0;
+  top: 6px;
+}
+blockquote.quote .quote-line.bottom{
+  left: 0;
+  right: 15px;
+  bottom: 4px;
+}
+.quote-attrib{
+  margin-top: 8px;
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.pullquote{
+  margin: 18px 0 6px;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-align:left;
+  font-style: italic;
+  position: relative;
+}
+.pullquote::before,
+.pullquote::after{
+  color: var(--gold);
+  font-size: 34px;
+  line-height: 1;
+}
+.pullquote::before{
+  content: "“";
+  margin-right: 6px;
+}
+.pullquote::after{
+  content: "”";
+  margin-left: 6px;
+}
+.pullquote-attrib{
+  text-align:left;
+  color: rgba(17,18,20,.65);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.claim-mark{
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background .2s ease;
+}
+body.claim-mode .claim-mark{
+  background: var(--claim-color, rgba(200,162,93,.25));
+  cursor: pointer;
+}
+
+.stat-card{
+  margin: 18px 0 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+}
+.stat-value{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.stat-label{
+  margin-top: 6px;
+  font-size: 26px;
+  color: var(--gold);
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+.stat-note{
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(17,18,20,.6);
+}
+
+.aside{
+  margin: 14px 0 18px;
+  background: var(--card);
+  border: 1px solid rgba(17,18,20,.08);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.aside-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 8px;
+}
+.aside-body{ font-size: 15px; color: var(--ink); }
+
+.inline-fn sup{
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.inline-fn a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.inline-fn a:hover{ text-decoration: underline; }
+
+.spotline{
+  margin: -6px 0 16px;
+  display:flex;
+  justify-content: flex-end;
+}
+.spotlight{
+  border: 0;
+  background: transparent;
+  color: rgba(17,18,20,.62);
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor:pointer;
+}
+.spotlight:hover{
+  background: rgba(0,0,0,.03);
+  color: rgba(17,18,20,.80);
+}
+.spotlight .count{
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(17,18,20,.45);
+  display:none;
+  z-index: 50;
+}
+.modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 78vh;
+  background: var(--bg);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid rgba(255,255,255,.45);
+  display:none;
+  z-index: 60;
+  box-shadow: 0 -18px 60px rgba(0,0,0,.22);
+}
+.modal-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px 18px;
+  background: var(--bg);
+}
+.modal-handle{
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(17,18,20,.16);
+  margin: 0 auto 12px;
+}
+.modal-head{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hair);
+}
+.modal-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 650;
+}
+.close-btn{
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.78);
+  border-radius: 4px;
+  padding: 7px 10px;
+  cursor:pointer;
+  font-size: 13px;
+}
+.close-btn:hover{ background: rgba(244,238,227,.9); }
+
+.source-list{
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style:none;
+}
+.source-item{
+  margin: 10px 0;
+  padding: 12px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.08);
+  background: var(--card);
+}
+.source-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.source-entry:last-child{ border-bottom: 0; }
+.source-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 4px;
+}
+.source-link-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.source-link-title:hover{ text-decoration: underline; }
+.source-head{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(17,18,20,.10);
+  background: rgba(255,250,242,.85);
+  color: rgba(17,18,20,.70);
+}
+.source-title{
+  font-size: 13px;
+  font-weight: 650;
+  flex: 1 1 auto;
+}
+.source-link{
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.source-link:hover{ text-decoration: underline; }
+.source-claim{ margin-top: 6px; font-size: 12px; color: rgba(17,18,20,.72); }
+.source-quote{
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17,18,20,.14);
+  background: rgba(255,250,242,.7);
+  color: rgba(17,18,20,.85);
+}
+.tiny{ font-size: 11px; color: rgba(17,18,20,.55); margin-top: 6px; }
+.claim-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-entry:last-child{ border-bottom: 0; }
+.claim-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.claim-source{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  flex: 0 0 auto;
+}
+.claim-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-align: right;
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+.claim-title:hover{ text-decoration: underline; }
+.claim-row{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(17,18,20,.75);
+}
+.claim-row a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.claim-row a:hover{ text-decoration: underline; }
+
+details.sources{
+  margin: 18px 0 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+}
+details.sources summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 650;
+}
+details.sources summary::-webkit-details-marker{display:none;}
+details.sources summary .chev{
+  width:14px;height:14px; opacity:.6;
+  transform: rotate(0deg);
+  transition: transform .18s ease;
+}
+details.sources[open] summary .chev{ transform: rotate(180deg); }
+
+.bias-note{
+  margin-top: 26px;
+  padding: 16px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.bias-note-kicker{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 6px;
+}
+.bias-note-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+.bias-note-text{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17,18,20,.78);
+}
+.bias-note-disclosure{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(17,18,20,.6);
+}
+.bias-note a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.bias-note a:hover{ text-decoration: underline; }
+
+.footer{
+  margin-top: 16px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(17,18,20,.55);
+}
+.footer-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.12);
+  color: rgba(17,18,20,.6);
+  text-decoration: none;
+}
+.footer-social:hover{ color: rgba(17,18,20,.85); }
+.footer-social svg{ width: 14px; height: 14px; }
+.footer-links{ display:flex; align-items:center; gap: 8px; }</style>
+</head>
+<body>
+  <header class="appbar">
+    <div class="appbar-inner">
+      <a class="about-link" href="#about-bias">About</a>
+      <div class="logo">THE BIAS<span class="dot">.</span></div>
+      <div class="claim-nudge" id="claim-nudge">Tap Spotlight for claims</div>
+      <button class="claim-toggle" id="claim-toggle" aria-pressed="false" aria-label="Toggle claim mode" title="Claim mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20h6M12 4v6m0 0a4 4 0 00-4 4v1a4 4 0 004 4 4 4 0 004-4v-1a4 4 0 00-4-4z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="header">
+      <h1 class="title">Trump Pushes For Greenland as Allies Warn of NATO Collapse</h1>
+    </section>
+
+    <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/donald-trump-and-the-white-house-weigh-acquiring-greenland-including-a-possible-military-option-after-us-action-in-venezuela-triggering-alarm-from-denmark-nato-and-other-allies-1767977924-9b02f705.png" alt="Hero image" /></div>
+
+    <section class="meta-card">
+      <div class="meta-row"><span class="meta-item left">Updated 2d ago</span><span class="dot-sep"></span><span class="meta-item center">5-min read</span><span class="dot-sep"></span><span class="meta-item right">435 sources</span></div>
+
+      <div class="meters">
+        <div class="meter">
+          <div class="meter-label"><span class="k">Factuality</span><span>—</span><span class="v">Strong evidence</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:75%;"></div>
+        </div>
+        <div class="meter">
+          <div class="meter-label"><span class="k">Divisiveness</span><span>—</span><span class="v">Contentious</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:68%;"></div>
+        </div>
+      </div>
+
+      <details class="rating-details" id="rating-details">
+        <summary>
+          <span class="sr-only">How we rate this</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="rating-body">
+          <div>
+            <div class="rating-title">Factuality</div>
+            <div>Multiple independent sources and documents substantiate key claims.</div>
+          </div>
+          <div>
+            <div class="rating-title">Divisiveness</div>
+            <div>Significant disagreement between outlets in emphasis, framing, or conclusions.</div>
+          </div>
+          <hr class="rating-divider" />
+          <div class="rating-how">
+            <div class="rating-how-title">How we rate this</div>
+            <div>We leverage large language models and clustering methods to assess how closely outlets agree on core facts and how much interpretations diverge. Scores reflect the dispersion of claims and the strength of sourcing across multiple outlets.</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="claim-toast" id="claim-toast">Claim mode on, tap a claim to see its source</div>
+
+    <main class="content">
+      
+      <h2 class="subtitle">Overview</h2><p class="para" data-block="b2">A week of high‑stakes moves began when US forces carried out an operation in Venezuela that, the White House said, resulted in the capture of President Nicolás Maduro and his wife. Within days Mr Trump refocused attention on Greenland, arguing the island matters to US defence and that Washington should play a larger role there. White House spokespeople said the president and his national security team were &quot;actively&quot; discussing options and that, although diplomacy was described as the administration&#x27;s preferred route, &quot;all options are always on the table.&quot;</p><blockquote class="quote" data-block="b3"><span class="quote-line top" aria-hidden="true"></span>&quot;We do need Greenland, absolutely,&quot; Trump said. &quot;We need it for defense.&quot;<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— President Donald J. Trump</div><h2 class="subtitle">What the White House and Trump said</h2><p class="para" data-block="b5">Mr Trump also told reporters the island was &quot;covered with Russian and Chinese ships,&quot; an assertion that allies have disputed. On US television, White House deputy chief of staff Stephen Miller argued there would be no military contest over Greenland and said &quot;Nobody&#x27;s going to fight the United States militarily over the future of Greenland.&quot; Separately, reporting from Capitol Hill said Secretary of State Marco Rubio told lawmakers the administration&#x27;s stated preference was to pursue a purchase, not an invasion.</p><h2 class="subtitle">Responses in Copenhagen and Nuuk</h2><p class="para" data-block="b7">Allied capitals reacted with swift condemnation. Denmark&#x27;s prime minister warned that an attack on a NATO ally would undermine the alliance, saying that &quot;if the United States decides to attack another NATO country, then everything would stop&quot;. Greenland&#x27;s elected leaders and unions insisted the island was not for sale; one Greenlandic politician declared &quot;This is enough. No more pressure. No more hints. No more fantasies about annexation.&quot; Several European governments issued a joint statement that &#x27;Greenland belongs to its people&#x27; and urged collective approaches to Arctic security.</p><h2 class="subtitle">Voices on the ground</h2><p class="para" data-block="b9">Reporting from Nuuk and other towns found a mixture of fear, indignation and cautious pragmatism. Some residents said they were scared to speak and described sleepless nights; one told RTÉ News, &quot;I don&#x27;t sleep very well because I&#x27;m afraid.&quot; Another local told reporters, &quot;They have no respect for us, for my country, for our country.&quot; Greenland politicians were split: Aaja Chemnitz called Washington&#x27;s comments &quot;a clear threat,&quot; while Pele Broberg of the pro‑independence Naleraq party said Greenland should explore direct talks with the United States.</p><h2 class="subtitle">UK and US political reaction</h2><p class="para" data-block="b11">In Westminster and on Capitol Hill the episode prompted calls for restraint. Scottish MPs urged Prime Minister Keir Starmer to rebuke the president, warning that &quot;staying silent&quot; would allow pressure to escalate. In Washington, Senator Ruben Gallego said he would introduce a resolution to block any attempted invasion of Greenland, and other lawmakers issued statements stressing that &#x27;Greenland is not for sale&#x27; and treaty obligations must be honoured.</p><h2 class="subtitle">Military feasibility and legal view</h2><p class="para" data-block="b13">Military analysts and legal experts reached very different conclusions. Some defence commentators told reporters a short, well‑resourced US operation could be executed quickly and might face little armed resistance; one analyst said it would be &quot;completely unopposed.&quot; By contrast, former officials warned such a seizure would violate international law and senior European leaders said it would strip Article 5 of its meaning and effectively destroy NATO&#x27;s cohesion.</p><h2 class="subtitle">Policy options on the table</h2><p class="para" data-block="b15">Officials and reporting identified a menu of non‑military and coercive options: a negotiated purchase, a compact or free‑association arrangement, commercial deals and targeted incentives for Greenlanders. News reports quoted Reuters saying US officials had considered direct payments to residents in the range of $10,000–$100,000. Company executives also confirmed Washington was discussing commercial investment and support for mine projects as part of those economic levers.</p><h2 class="subtitle">Economic stakes and mining interest</h2><p class="para" data-block="b17">Part of Washington&#x27;s interest is economic: geologists and government surveys point to extensive critical minerals and hydrocarbon potential beneath Greenland&#x27;s ice. The US Geological Survey has been cited as estimating &#x27;around 31 billion barrels of oil‑equivalent in hydrocarbons&#x27; in onshore northeast basins. Analysts&#x27; valuations for the island vary wildly — one American think‑tank and senior economist said &#x27;something in the trillions looks about right,&#x27; while other analysts produced far lower estimates.</p><h2 class="subtitle">Conflicting accounts and numerical differences</h2><p class="para" data-block="b19">Even basic numbers and details differ between outlets. Several pieces cited Greenland&#x27;s population at about 57,000; others used roughly 56,000. Reporting also diverged over how the Maduro operation unfolded and how many casualties it caused, and outlets gave sharply different price estimates for Greenland&#x27;s worth — from tens of billions in some calculations to the multi‑trillion figures cited by others. Journalists have flagged that accounts of whether Rubio categorically ruled out an invasion differ between diplomatic briefings and other reporting.</p><h2 class="subtitle">Diplomatic moves and next meetings</h2><p class="para" data-block="b21">Copenhagen and Nuuk have sent envoys to Washington; Denmark&#x27;s ambassador and Greenland&#x27;s chief representative met White House National Security Council officials this week to press their case. Secretary Rubio is due to hold talks with Danish officials next week, and European capitals are discussing coordinated responses — limited political measures, economic pressure, and possible deterrent deployments have all been floated in private talks.</p><h2 class="subtitle">How outlets and commentators framed the story</h2><p class="para" data-block="b23">Coverage mixed alarm, legal analysis and business angles. Public‑facing outlets and columnists posed questions about the legality and the consequences for NATO; opinion writers warned that the rhetoric signalled a dangerous shift in US behaviour. Business and mining coverage emphasised commercial opportunity and feasibility questions, while human‑interest and local reporting in Greenland focused on fear, social divisions and the long history of Danish governance.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b25">Confirmed across multiple outlets: the White House says the issue is under active consideration and Mr Trump has publicly argued Greenland is important for US security. Claimed or alleged (by administration figures): that Russian and Chinese ships now surround Greenland and that the island should be under a stronger US umbrella. Disputed or unclear: whether the administration has formally ruled out military force (some diplomats reported Rubio &#x27;ruled out&#x27; invasion; other reporting emphasised military options were not taken off the table) and the island&#x27;s precise monetary valuation. What comes next: Secretary Rubio&#x27;s meetings with Danish officials and repeated diplomatic engagement in Washington and Brussels are the next steps reported by outlets.</p>
+      
+      <hr class="divider" /><section class="intl-section"><h2 class="intl-title">International Outlook</h2><p class="intl-sub">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</p><div class="intl-strip"><article class="intl-card"><div class="intl-country">Denmark</div><div class="intl-sources-title">Sources</div><div class="intl-sources">DR Denmark (State)</div><div class="intl-body"><p class="para" data-block="b26">DR reports Copenhagen and Nuuk have pressed for an urgent meeting with Marco Rubio next week; Greenland’s foreign minister will attend, giving officials a forum to move the debate from headlines into talks. DR documents symbolic domestic reactions (for example, Tivoli flying the Greenlandic flag) and quotes Danish ministers emphasising direct dialogue as their preferred route to defuse the row.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Le Figaro, France 24, BFM TV, RTBF Belgium, ZDF Heute, Tagesschau (ARD), Der Standard Austria, RTE Ireland, La Repubblica, RAI News, El País, La Vanguardia, El Mundo, NOS Netherlands, Público Portugal, RTP Portugal (State), Euronews, Politico EU, Czech TV (State)</div><div class="intl-body"><p class="para" data-block="b27">Several continental outlets added legal and economic detail UK roundups often omitted: RTBF and Le Figaro ran valuation pieces citing studies that Greenland’s mineral potential could dwarf its GDP; Le Figaro published polls (≈28% favour purchase, ≈8% favour military action). Many papers repeated Reuters reporting that US advisers discussed one‑off payments (reported $10,000–$100,000 per person) and that US officials have met Danish and Greenlandic envoys; several said Rubio is preparing talks with Danish leaders.</p><p class="para" data-block="b28">Coverage emphasised diplomatic pushback and contingency planning: RTE, La Repubblica and others noted a joint statement by France, the UK, Germany, Italy, Poland, Spain and Denmark that &#x27;Greenland belongs to its people&#x27;. Tagesschau and ZDF ran legal analyses stressing that an attack on a NATO member would trigger an unprecedented alliance crisis and recalled the 1951 US–Denmark defence arrangements; Politico EU and some capitals report Paris/Berlin sketching deterrent options (troops/exercises, economic measures), while Czech TV warned a &#x27;fait accompli&#x27; seizure could be executed in hours.</p></div></article><article class="intl-card"><div class="intl-country">Northern Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Yle Finland (State), Helsingin Sanomat, NRK Norway (State), VG Norway, Aftonbladet Sweden</div><div class="intl-body"><blockquote class="quote" data-block="b29"><span class="quote-line top" aria-hidden="true"></span>If the United States attacks another NATO country, everything stops.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Mette Frederiksen, Danish prime minister</div><p class="para" data-block="b30">NRK, VG, Yle and Helsingin Sanomat carried granular local reporting: on‑the‑ground interviews show fear in Greenland and NRK cited polling that about 85% of Greenlanders oppose becoming US citizens. Helsingin Sanomat reported Greenland’s reliance on Danish subsidies at roughly a quarter of its budget, while other coverage gives higher estimates — a concrete disagreement that affects how attractive direct payments would be. Papers also noted Copenhagen’s pledge to increase Arctic defence spending and highlighted pro‑independence figures open to &#x27;free association&#x27; options.</p></div></article><article class="intl-card"><div class="intl-country">Eastern Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">RT Russia (State), TASS (State), TVN24 Poland, Ukrainska Pravda, Ria Novosti (State), Rossiyskaya Gazeta (State), Kommersant, The Bell Russia</div><div class="intl-body"><p class="para" data-block="b31">Russian state media framed the episode as transatlantic disarray and amplified specifics some UK summaries did not: Ria Novosti and Rossiyskaya Gazeta highlighted Reuters reporting that US officials discussed one‑off payments of roughly $10,000–$100,000 per Greenlander, cited Polymarket pricing (~16% chance of Greenland joining the US) and pointed to YouGov polling showing US public opposition. RT outlined four possible European responses (negotiated concessions, increased funding, economic retaliation or military deterrence) and TASS amplified a poll showing ~85% Greenlander opposition. Polish and Ukrainian outlets (TVN24, Ukrainska Pravda) instead stressed legal norms and the joint European statement warning that intra‑NATO coercion would undermine the alliance.</p></div></article><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">NDTV, Hindustan Times, The Hindu, Times of India, Dawn Pakistan, News18 India, India Today, Indian Express, Express Tribune Pakistan, ARY News Pakistan</div><div class="intl-body"><blockquote class="quote" data-block="b32"><span class="quote-line top" aria-hidden="true"></span>All options are always on the table for President Trump.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Karoline Leavitt, White House press secretary</div><p class="para" data-block="b33">South Asian outlets added diplomatic and tracking details: The Hindu reports Denmark’s ambassador and Greenland’s Washington representative met National Security Council officials and US lawmakers; The Hindu and Hindustan Times say Rubio will meet Danish officials next week and that US advisers favour purchase over invasion. The Hindu published MarineTraffic/LSEG vessel‑tracking analysis it says contradicts claims of Chinese or Russian ships near Greenland.</p><p class="para" data-block="b34">Economic and legal context ran throughout coverage: Hindustan Times and India Today noted Greenland’s GDP is about $3.6bn (2023) and reporting diverges on Danish subsidies (figures reported from roughly a quarter to about half of Greenland’s budget). Commentators recalled the 1946 US $100m offer (≈$1.6bn today), flagged that 25 of 34 EU &#x27;critical&#x27; minerals have been identified on the island, highlighted congressional/constitutional hurdles to force (Indian Express) and noted COFA as a possible intermediate arrangement; Pakistani outlets said Greenland’s government requested to join planned Rubio–Danish talks.</p></div></article><article class="intl-card"><div class="intl-country">North America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Globe and Mail, CBC Canada, National Post Canada</div><div class="intl-body"><p class="para" data-block="b35">Canadian outlets combined on‑the‑ground voices with diplomatic detail: CBC captured Greenlanders&#x27; anger and insult at being talked about as an object of purchase while noting some local politicians urged calm and negotiation; the Globe and Mail relayed reporting that US officials discussed payments and kept military options on the table and noted Canada’s planned consulate in Nuuk and public backing for Denmark. National Post opinion pieces emphasised Greenland’s control of the GIUK gap and warned US control would reshape NATO dynamics, arguing expanded access under existing defence arrangements is more plausible than outright annexation but would carry reputational cost.</p></div></article><article class="intl-card"><div class="intl-country">Latin America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">La Nación Argentina, Clarín Argentina, Folha Brazil, G1 Brazil (Globo), CubaDebate (State), 14ymedio Cuba, OnCuba News</div><div class="intl-body"><p class="para" data-block="b36">Argentine, Brazilian and Cuban outlets tied the Greenland episode to broader US policy in the region: La Nación and Clarín stressed Greenland’s strategic position (the GIUK gap) and ran explainers on what the 1951 US–Denmark defence pact allows and forbids; Folha and G1 relayed Reuters’ reporting that US advisers discussed direct payments and that Rubio told lawmakers the administration prefers purchase to invasion. Cuban titles framed the episode as imperialism — CubaDebate and 14ymedio emphasised US rhetoric and claims about military options, while OnCuba ran the Greenland prime minister’s call for calm.</p></div></article><article class="intl-card"><div class="intl-country">Oceania</div><div class="intl-sources-title">Sources</div><div class="intl-sources">ABC Australia, Nine News Australia, SBS Australia, 7News Australia</div><div class="intl-body"><p class="para" data-block="b37">Australian outlets set out the policy menu and warned of legal and alliance consequences: ABC outlined invasion, purchase or a Compact of Free Association (COFA), with experts telling ABC a forcible seizure would breach international law and carry heavy diplomatic costs — analysts largely treat military rhetoric as bargaining posture. Nine and SBS reported Rubio’s planned talks with Denmark and recent US movements into UK bases; 7News ran former‑intelligence commentary describing the push as strategic positioning rather than an imminent large‑scale invasion.</p></div></article><article class="intl-card"><div class="intl-country">East Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">South China Morning Post, Japan Times</div><div class="intl-body"><p class="para" data-block="b38">SCMP and Japan Times questioned the security claims and purchase precedents: SCMP reported vessel‑tracking that it says does not support the White House’s description of Chinese activity near Greenland and noted Beijing’s public criticism of US rhetoric while flagging China’s broader Arctic ambitions. Japan Times ran commentary warning there is no market mechanism to &#x27;price&#x27; a country, described historical purchase precedents as poor analogues and reported officials drafting templates ranging from purchase to COFA, urging European partners to take the rhetoric seriously.</p></div></article><article class="intl-card"><div class="intl-country">Southeast Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Straits Times Singapore, Channel News Asia</div><div class="intl-body"><p class="para" data-block="b39">Singapore outlets emphasised tactical politics: the Straits Times and Channel NewsAsia reported Greenland politicians (notably Naleraq leader Pele Broberg) urging direct talks with Washington that could bypass Copenhagen, explained COFA as a midway option and noted Rubio’s planned meeting with Danish officials while NATO envoys discussed stepped‑up Arctic deterrence — framing the episode as active diplomacy rather than mere presidential spin.</p></div></article><article class="intl-card"><div class="intl-country">Middle East</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Tehran Times, Al Jazeera (Qatar), Times of Israel, Daily Sabah Turkey, Anadolu Agency Turkey (State), Mehr News Iran, SANA Syria (State)</div><div class="intl-body"><p class="para" data-block="b40">Regional outlets split between polemic and procedural accounts: Tehran Times linked the Greenland push to US actions in Venezuela and repeated claims that Caracas might hand over up to 50 million barrels (≈$2.8bn) to Washington, casting the moves as imperialism. Al Jazeera and the Times of Israel ran straighter accounts (Rubio’s planned meetings, &#x27;all options&#x27; rhetoric and Greenland’s strategic assets such as the Pituffik base, the GIUK gap and rare‑earth potential). Turkish outlets and SANA urged Europe to take US rhetoric seriously and revisited Denmark’s colonial record; Mehr News amplified an assertion attributed to J.D. Vance that Greenland is &#x27;critical&#x27; to missile‑defence infrastructure.</p></div></article><article class="intl-card"><div class="intl-country">Sub-Saharan Africa</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Punch Nigeria, News24 South Africa, Daily Maverick SA</div><div class="intl-body"><p class="para" data-block="b41">African outlets largely echoed European calls to respect Greenland’s sovereignty and international law: Punch and News24 relayed the joint European statement and Denmark’s diplomatic protests, while Daily Maverick critiqued the Venezuela/Greenland moves as &#x27;gunship diplomacy&#x27;, warning that such precedents threaten smaller states and revive imperial‑style interventions.</p></div></article></div></section>
+      <section class="bias-note" id="about-bias" aria-label="About The Bias">
+        <div class="bias-note-kicker">The Bias</div>
+        <h3 class="bias-note-title">How this page is made</h3>
+        <p class="bias-note-text">
+          This page is written from dozens of outlets covering the same event, mixing local and international viewpoints to show the full
+          picture and add context you might otherwise miss. It aims to show where outlets agree, where they report different details, and
+          where opinions diverge, with supporting evidence for key claims and a full source list.
+        </p>
+        <p class="bias-note-text">
+          We’re launching The Bias on iOS soon. If you’d like to help beta test the app, reach out on Instagram
+          <a href="https://instagram.com/thebias_app" target="_blank" rel="noopener">@thebias_app</a> or email
+          <a href="mailto:sam@thebias.co.uk">sam@thebias.co.uk</a>.
+        </p>
+      </section>
+      <details class="sources"><summary><span>All sources</span><svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="source-list"><li class="source-entry"><div class="source-kicker">BBC - Front</div><a class="source-link-title" href="https://www.bbc.com/news/articles/c74x4m71pmjo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Why does Trump want Greenland and what do its people think?</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15435027/We-looking-legal-position-Starmer-desperately-tries-sit-fence-Trumps-Venezuela-despite-Labour-fury.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Squirming minister dodges saying Trump shouldn&#x27;t invade GREENLAND as Starmer desperately tries to sit on fence over Venezuela raid</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15434021/Donald-Trump-angers-Danish-amid-fears-target-nations-including-Greenland-assert-American-dominance-Venezuela-raid.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Donald Trump angers the Danish amid fears he could target other nations including Greenland to assert &#x27;American dominance&#x27; after Venezuela raid</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/world/greenland/trump-venezuela-attack-maduro-greenland-threats-denmark-europe-rcna252289" target="_blank" rel="noopener">Next stop, Nuuk? U.S. allies fear Trump may target Greenland after Venezuela</a></li><li class="source-entry"><div class="source-kicker">New York Times - Politics</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/world/europe/trump-greenland-denmark.html" target="_blank" rel="noopener">Denmark’s Leader Says Trump ‘Should Be Taken Seriously’ on Greenland</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/world/europe/trump-greenland-why.html" target="_blank" rel="noopener">Why Trump Wants Greenland</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/04/us/politics/trump-cuba-greenland-colombia.html" target="_blank" rel="noopener">Trump Says ‘We Need Greenland’ and Threatens U.S. Action in Colombia and Mexico</a></li><li class="source-entry"><div class="source-kicker">The Independent - Politics</div><a class="source-link-title" href="https://www.independent.co.uk/news/uk/politics/trump-denmark-greenland-starmer-venezuela-b2894638.html" target="_blank" rel="noopener">Starmer defies Trump over Greenland after US president threatens Nato ally</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/trump-venezuela-next-attack-colombia-greenland-cuba-b2894558.html" target="_blank" rel="noopener">Who could Trump invade next? Fears over president’s plans for Greenland, Cuba and Colombia</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/greenland-trump-venezuela-6918491-Jan2026/" target="_blank" rel="noopener">Greenland PM says &#x27;don&#x27;t panic&#x27; over Trump&#x27;s annexation threats, but calls for talks with US</a></li><li class="source-entry"><div class="source-kicker">Express - World</div><a class="source-link-title" href="https://www.express.co.uk/news/world/2153423/denmark-donald-trump-greenland-threats" target="_blank" rel="noopener">NATO member tells Trump &#x27;stop the threats&#x27; as Venezuela strike sparks fresh takeover fears</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/the-americas/2026/01/05/after-venezuela-donald-trump-points-a-finger-at-greenland" target="_blank" rel="noopener">After Venezuela, Donald Trump points a finger at Greenland</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/after-trumps-removal-of-maduro-european-leaders-reject-his-demands-for-greenland" target="_blank" rel="noopener">After Trump&#x27;s removal of Maduro, European leaders reject his demands for Greenland</a></li><li class="source-entry"><div class="source-kicker">Washington Post - World</div><a class="source-link-title" href="https://www.washingtonpost.com/world/2026/01/06/venezuela-greenland-trump-stephen-miller/" target="_blank" rel="noopener">The crisis over Greenland is here</a></li><li class="source-entry"><div class="source-kicker">i News</div><a class="source-link-title" href="https://inews.co.uk/news/politics/greenland-fearing-trumps-next-move-why-he-wants-arctic-4148708" target="_blank" rel="noopener">Why Trump wants Greenland – as he threatens to take Arctic territory by military force</a></li><li class="source-entry"><div class="source-kicker">i News</div><a class="source-link-title" href="https://inews.co.uk/news/politics/trump-greenland-uks-arctic-taskforcen-action-4151118" target="_blank" rel="noopener">As Trump threatens Greenland, UK’s Arctic taskforce is missing in action</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/ireland/2026/0107/1551828-us-greenland/" target="_blank" rel="noopener">Not &#x27;realistic&#x27; for US to buy Greenland - Taoiseach</a></li><li class="source-entry"><div class="source-kicker">Express - World</div><a class="source-link-title" href="https://www.express.co.uk/news/world/2154573/poll-should-trump-invade-greenland" target="_blank" rel="noopener">Poll: Do you think Trump should invade Greenland?</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25743311.us-military-deploy-aircraft-uk-bases-venezuela-attack/?ref=rss" target="_blank" rel="noopener">US military deploy more aircraft to UK bases amid Greenland annexation threats</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/f_vert_brk_greenland_trump_260106" target="_blank" rel="noopener">Trump says he is seeking to acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/politics/white-house/trump-open-using-military-acquire-greenland-denmark-territory-nato-rcna252669" target="_blank" rel="noopener">U.S. military action an option to acquire Greenland, White House says</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-07/france-s-de-villepin-us-attack-on-greenland-a-red-line-video" target="_blank" rel="noopener">France’s de Villepin: US Attack on Greenland a Red Line</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-07/us-request-for-greenland-disrespectful-denmark-says-video" target="_blank" rel="noopener">US Request for Greenland Is &#x27;Disrespectful,&#x27; Denmark Says</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-07/former-french-premier-says-any-us-attack-on-greenland-a-red-line" target="_blank" rel="noopener">Former French Premier Says US Attack on Greenland a Red Line</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-07/us-won-t-rule-out-use-of-military-to-acquire-greenland-video" target="_blank" rel="noopener">US Won’t Rule Out Use of Military to Acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-06/trump-won-t-rule-out-military-force-to-acquire-greenland" target="_blank" rel="noopener">Trump Won’t Rule Out Military Force to Acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/06/european-leaders-push-back-over-trumps-renewed-greenland-interest.html" target="_blank" rel="noopener">&#x27;Greenland belongs to its people&#x27;: European leaders unite over Trump’s threats to annex territory</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/greendland-us-denmark-trump-nato-allies-stephen-miller/" target="_blank" rel="noopener">U.S. NATO allies say &quot;Greenland belongs to its people&quot;</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/video/white-house-doubles-down-on-trumps-greenland-pursuit-says-military-action-always-an-option/" target="_blank" rel="noopener">White House doubles down on Trump&#x27;s Greenland pursuit, says military action &quot;always an option&quot;</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/trump-greenland-why-does-he-want-denmark-territory-as-part-of-us/" target="_blank" rel="noopener">Why does Trump want Greenland to be part of the U.S.?</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/06/trump-greenland-resolution-gallego-invading.html" target="_blank" rel="noopener">Resolution to block Trump from invading Greenland introduced by Sen. Gallego</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/07/cnbcs-uk-exchange-newsletter-is-britain-back-five-things-to-watch-for-the-uk-in-2026.html" target="_blank" rel="noopener">CNBC&#x27;s UK Exchange newsletter: Is Britain back? Five things to watch for the U.K. in 2026</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/06/prediction-markets-trump-panama-greenland-iran.html" target="_blank" rel="noopener">Prediction markets show rising odds Trump seizes Panama Canal, moves on Greenland</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/07/european-markets-stoxx-600-ftse-dax-cac-greenland-in-focus.html" target="_blank" rel="noopener">European defense stocks rise as Denmark moves to rearm Greenland</a></li><li class="source-entry"><div class="source-kicker">Yorkshire Post</div><a class="source-link-title" href="https://www.yorkshirepost.co.uk/news/politics/sir-keir-starmer-and-european-leaders-greenland-over-trump-threat-5465495" target="_blank" rel="noopener">Sir Keir Starmer and European leaders say they &#x27;will not stop defending&#x27; Greenland over Trump threat</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Front</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/06/people-in-greenland-share-your-views-donald-trump-recent-comments" target="_blank" rel="noopener">People in Greenland: share your views on Trump’s recent comments</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/house/5676019-jeffries-trump-greenland-concerns/" target="_blank" rel="noopener">Jeffries is taking Trump&#x27;s threats against Greenland ‘seriously’</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/newsletters/5675797-greenland-on-alert-after-trumps-move-to-control-venezuela/" target="_blank" rel="noopener">Greenland on alert after Trump’s move to control Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/senate/5675779-tillis-shaheen-warn-greenland-nato/" target="_blank" rel="noopener">GOP, Democratic senators say Trump should &#x27;respect sovereignty&#x27; of Denmark on Greenland</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/house/5674255-don-bacon-stephen-miller-greenland-rhetoric/" target="_blank" rel="noopener">Bacon: Miller Greenland seizure remarks &#x27;really dumb&#x27;</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/donald-trump-greenland-venezuela-live-stream-b2895731.html" target="_blank" rel="noopener">Watch in full: Trump speaks as European leaders push back on Greenland threats</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/us-attack-on-greenland-would-mean-the-end-of-nato-denmark-6919080-Jan2026/" target="_blank" rel="noopener">White House says US military &#x27;always an option&#x27; for acquiring Greenland</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/politics/greenland-takeover-plan-us-trump-nato-denmark-b1265108.html" target="_blank" rel="noopener">Hands off Greenland, Donald Trump warned by Britain, France and Germany vowing to defend its borders</a></li><li class="source-entry"><div class="source-kicker">Financial Times - Latest</div><a class="source-link-title" href="https://www.ft.com/content/28485ea3-68ce-4897-8b74-b728d54b5479" target="_blank" rel="noopener">US says using military is among ‘options’ to acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">Forbes - Business</div><a class="source-link-title" href="https://www.forbes.com/sites/antoniopequenoiv/2026/01/06/rubio-says-trump-still-hopes-to-purchase-greenland/" target="_blank" rel="noopener">Rubio Says Trump Still Hopes To Purchase Greenland</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/white-house-says-range-options-us-military-table-trump-renews-push-acquire-greenland" target="_blank" rel="noopener">White House says &#x27;range of options,&#x27; including US military, on table as Trump renews push to acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/top-canadian-officials-visit-greenland-amid-international-fears-trump-eyes-nato-linked-territory" target="_blank" rel="noopener">Top Canadian officials to visit Greenland amid international fears as Trump eyes NATO-linked territory</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/trump-greenland-takeover-would-end-nato-denmark-asserts" target="_blank" rel="noopener">Trump Greenland takeover would end NATO, Denmark asserts</a></li><li class="source-entry"><div class="source-kicker">Gizmodo</div><a class="source-link-title" href="https://gizmodo.com/odds-of-trump-seizing-greenland-and-panama-canal-rise-on-prediction-markets-2000706329" target="_blank" rel="noopener">Odds of Trump Seizing Greenland and Panama Canal Rise on Prediction Markets</a></li><li class="source-entry"><div class="source-kicker">Hacker News</div><a class="source-link-title" href="https://www.bbc.com/future/article/20250121-the-enormous-challenge-of-mining-greenland" target="_blank" rel="noopener">The mineral riches hiding under Greenland&#x27;s ice</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25746157.david-lammy-hold-talks-jd-vance-greenland-threat-grows/?ref=rss" target="_blank" rel="noopener">David Lammy to visit US for talks with JD Vance as Greenland threat grows</a></li><li class="source-entry"><div class="source-kicker">Sky News - World</div><a class="source-link-title" href="https://news.sky.com/story/greenlanders-dont-appreciate-trumps-advances-but-there-is-little-here-to-stop-us-troops-13491258" target="_blank" rel="noopener">There&#x27;s a sense in Greenland that Trump really will take over</a></li><li class="source-entry"><div class="source-kicker">Sky News - World</div><a class="source-link-title" href="https://news.sky.com/story/trump-is-likely-gambling-he-could-get-away-with-greenland-grab-as-nato-needs-us-more-than-he-needs-it-13491116" target="_blank" rel="noopener">There&#x27;s an uncomfortable truth behind Trump&#x27;s Greenland grab</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Front</div><a class="source-link-title" href="https://www.theguardian.com/us-news/2026/jan/06/trump-greenland-control-us-military" target="_blank" rel="noopener">White House says using US military is ‘always an option’ for acquiring Greenland</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Business</div><a class="source-link-title" href="https://www.theguardian.com/world/video/2026/jan/06/trump-is-greenland-next-the-latest" target="_blank" rel="noopener">Is Greenland next for Donald Trump? | The Latest</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/us/politics/rubio-trump-greenland.html" target="_blank" rel="noopener">Rubio Tells Lawmakers Trump Wants to Buy Greenland</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15440471/Starmer-Macron-Trump-Greenland-Euro-leaders-statement.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Starmer and Macron hit back at Trump after US said it could use military force to seize Greenland: European leaders insist they will &#x27;not stop defending&#x27; Nato borders</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15440055/Trump-threatens-use-US-military-seize-Greenland-White-House-issues-extraordinary-statement-revealing-plans-Danish-territory.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Trump threatens to use US military to seize Greenland as White House issues extraordinary statement revealing plans to take Danish territory</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/politics/greenland-trump-nato-white-house-statement-military-b1265283.html" target="_blank" rel="noopener">Will Trump&#x27;s US invade Greenland? White House says using military &#x27;always an option&#x27; as takeover plan rocks Nato</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/politics/greenland-donald-trump-keir-starmer-nato-white-house-b1265262.html" target="_blank" rel="noopener">Trump discussing ‘range of options’ to acquire Greenland, White House says</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/politics/greenland-keir-starmer-donald-trump-european-danish-b1265178.html" target="_blank" rel="noopener">Starmer and European allies ‘will not stop defending’ Greenland amid US threat</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/video/quotable/2026/1/7/greenland-takeover-could-upend-us-foreign?traffic_source=rss" target="_blank" rel="noopener">Greenland takeover could “upend US foreign policy”</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/news/2026/1/7/us-says-military-always-an-option-in-greenland-as-europe-rejects-threats?traffic_source=rss" target="_blank" rel="noopener">US says military ‘always an option’ in Greenland as Europe rejects threats</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/07/greenland-trump-threat-nato-alliance" target="_blank" rel="noopener">Trump&#x27;s Greenland threats put transatlantic alliance on death watch</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/06/stephen-miller-greenland-europe-nato" target="_blank" rel="noopener">Miller says no one would stop U.S. from seizing Greenland</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cwyg1jg8xkmo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">US discussing options to acquire Greenland, including use of military, says White House</a></li><li class="source-entry"><div class="source-kicker">BBC - Front</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cpwn2wjzwndo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The painful questions for Nato and the EU as Trump threatens Greenland</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/greenland-white-house-discussing-range-of-options-including-u-s-military-takeover-force/" target="_blank" rel="noopener">White House discussing &quot;range of options&quot; for acquiring Greenland, Leavitt says</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/06/greenland-economy-facing-major-challenges-amid-trump-takeover-push.html" target="_blank" rel="noopener">Trump sets his sights on Greenland — but its economy faces ‘major challenges’</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/07/why-trump-wants-greenland-and-what-makes-it-so-important-for-security.html" target="_blank" rel="noopener">Why Trump wants Greenland — and what makes it so important for national security</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/07/cnbc-daily-open-greenland-could-be-next-on-trumps-list.html" target="_blank" rel="noopener">CNBC Daily Open: Greenland could be next on Trump&#x27;s list</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/07/cnbc-daily-open-after-venezuela-rumblings-of-greenland-takeover-from-the-white-house.html" target="_blank" rel="noopener">CNBC Daily Open: After Venezuela, rumblings of Greenland takeover from the White House</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/politics/nicolas-maduro-ireland-venezuela-trump-new-york-b1265248.html" target="_blank" rel="noopener">Irish deputy premier says country not taking ‘soft’ approach on US</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/world/nato-explained-ukraine-musk-trump-b985534.html" target="_blank" rel="noopener">What is Nato? Denmark warns Greenland invasion by US would end organisation</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25745687.donald-trump-discussing-range-options-acquire-greenland/?ref=rss" target="_blank" rel="noopener">Donald Trump discussing ‘range of options’ to acquire Greenland, White House say</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25744460.donald-trump-boost-greenland-independence-bid-experts-say/?ref=rss" target="_blank" rel="noopener">Could Donald Trump&#x27;s threats lead to Greenland independence? Experts weigh in</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25743266.keir-starmer-backs-greenland-donald-trump-eyes-invasion/?ref=rss" target="_blank" rel="noopener">Keir Starmer backs Greenland in joint statement with European leaders</a></li><li class="source-entry"><div class="source-kicker">Irish Independent</div><a class="source-link-title" href="https://www.independent.ie/world-news/europe/france-working-with-allies-on-plan-should-us-make-move-on-greenland-taoiseach-says-common-sense-needs-to-prevail/a737377639.html" target="_blank" rel="noopener">France ‘working with allies on plan should US make move on Greenland’; Taoiseach says ‘common sense needs to prevail’</a></li><li class="source-entry"><div class="source-kicker">Irish Independent</div><a class="source-link-title" href="https://www.independent.ie/irish-news/politics/taoiseach-leaves-door-open-for-backing-of-mercosur-deal-after-eu-concessions/a505896729.html" target="_blank" rel="noopener">Taoiseach leaves door open for backing of Mercosur deal after EU concessions</a></li><li class="source-entry"><div class="source-kicker">New Scientist</div><a class="source-link-title" href="https://www.newscientist.com/article/2510205-northern-greenland-ice-dome-melted-before-and-could-melt-again/?utm_campaign=RSS%7CNSNS&amp;utm_source=NSNS&amp;utm_medium=RSS&amp;utm_content=home" target="_blank" rel="noopener">Northern Greenland ice dome melted before and could melt again</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/world/americas/greenland-europe-trump-threats.html" target="_blank" rel="noopener">Europe Rallies for Greenland as Trump’s Threats Continue</a></li><li class="source-entry"><div class="source-kicker">New York Times - Politics</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/us/politics/stephen-miller-greenland-venezuela.html" target="_blank" rel="noopener">Stephen Miller Asserts U.S. Has Right to Take Greenland</a></li><li class="source-entry"><div class="source-kicker">Mirror - News</div><a class="source-link-title" href="https://www.mirror.co.uk/news/weird-news/uri-geller-says-something-greenland-36509985" target="_blank" rel="noopener">Uri Geller says &#x27;something in Greenland will blow your mind&#x27; and Trump knows</a></li><li class="source-entry"><div class="source-kicker">Express - World</div><a class="source-link-title" href="https://www.express.co.uk/news/world/2154528/poll-should-europe-uk-defend-greenland-trump" target="_blank" rel="noopener">POLL: Should Europe and UK defend Greenland if Trump invades?</a></li><li class="source-entry"><div class="source-kicker">Sky News - World</div><a class="source-link-title" href="https://news.sky.com/story/military-action-in-greenland-always-an-option-says-white-house-13491330" target="_blank" rel="noopener">We&#x27;ll defend Greenland, European leaders vow - as US suggests it could take military action</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/europe/2026/01/06/a-rash-of-baltic-cable-cutting-raises-fears-of-sabotage" target="_blank" rel="noopener">A rash of Baltic cable-cutting raises fears of sabotage</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/the-americas/2026/01/05/the-white-house-weighs-how-to-acquire-greenland" target="_blank" rel="noopener">The White House weighs how to acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Politics</div><a class="source-link-title" href="https://www.theguardian.com/politics/2026/jan/06/kemiworld-might-makes-right-dont-mention-greenland" target="_blank" rel="noopener">In KemiWorld, might makes right. Just don’t mention Greenland | John Crace</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/trump-greenland-white-house-venezuela-oil-live-updates-b2895852.html" target="_blank" rel="noopener">Trump-Greenland latest: White House warns it’s ‘always an option’ to use US military to take territory</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/europe/trump-greenland-nato-us-europe-b2895604.html" target="_blank" rel="noopener">Europe’s showdown with Trump over threat to Greenland</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/taoiseach-in-favour-of-more-open-trade-between-eu-and-china-6919188-Jan2026/" target="_blank" rel="noopener">Tá Éire ar son trádáil níos oscailte idir an tAontas Eorpach is an tSín, deir an Taoiseach</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Top</div><a class="source-link-title" href="https://www.washingtonpost.com/opinions/2026/01/06/trump-greenland-nato-invasion-miller/?utm_source=rss&amp;utm_medium=referral&amp;utm_campaign=wp_homepage" target="_blank" rel="noopener">Greenland isn’t worth destroying NATO over</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Top</div><a class="source-link-title" href="https://www.washingtonpost.com/opinions/2026/01/06/trump-properties-qatar-greenland-denmark/?utm_source=rss&amp;utm_medium=referral&amp;utm_campaign=wp_homepage" target="_blank" rel="noopener">How a ‘Trump Tower Copenhagen’ could deter Greenland conquest</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Top</div><a class="source-link-title" href="https://www.washingtonpost.com/national-security/2026/01/06/white-house-floats-military-option-greenland-rattling-denmark-nato/?utm_source=rss&amp;utm_medium=referral&amp;utm_campaign=wp_homepage" target="_blank" rel="noopener">White House floats military option for Greenland, rattling Denmark and NATO</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-07/explaining-trump-s-focus-on-greenland-video" target="_blank" rel="noopener">Explaining Trump&#x27;s Focus on Greenland</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25742438.donald-trump-very-serious-annexing-greenland/?ref=rss" target="_blank" rel="noopener">Donald Trump &#x27;very serious&#x27; about annexing Greenland despite NATO warnings</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15441397/Starmer-Europe-weak-Trump-Greenland-defence-Nato.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Weakness from Starmer and Europe will only encourage Trump to seize Greenland, ex-defence secretary warns</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/world/live/2026/jan/06/venezuela-live-updates-maduro-trump-us-attack-opposition-machado-return" target="_blank" rel="noopener">Trump renews push to acquire Greenland, says US will get millions of barrels of Venezuelan oil – as it happened</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/europe/greenland-trump-denmark-europe-statement-b2895450.html" target="_blank" rel="noopener">European leaders’ Greenland statement in full after Trump threat: ‘belongs to its people’</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/world/americas/venezuela-us-blockade-economy-oil.html" target="_blank" rel="noopener">Venezuela Braces for Economic Collapse From U.S. Blockade on Oil Exports</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-07/daybreak-europe-1-7-2026-video" target="_blank" rel="noopener">Greenland Force Not Ruled Out, Venezuela To Send US Oil | Daybreak Europe 1/7/2026</a></li><li class="source-entry"><div class="source-kicker">ABC News - Top Stories</div><a class="source-link-title" href="https://abcnews.go.com/US/video/leavitt-president-trump-interested-diplomacy-acquire-greenland-128995087" target="_blank" rel="noopener">WATCH:  Leavitt says President Trump is &#x27;interested in diplomacy&#x27; to acquire Greenland</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/07/trump-greenland-denmark-threats-timeline" target="_blank" rel="noopener">Trump&#x27;s history of Greenland musings: How we got here</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cvgx8w4pgk0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#x27;We are not for sale&#x27;: Greenlanders express fear and indignation as Trump eyes territory</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump actively discussing potentially buying Greenland, White House says</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/articles/c0q4w1xnv35o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">How could Donald Trump &#x27;take&#x27; Greenland?</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/videos/cq6vg2j6pndo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Does the US have the right to take over Greenland?</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-08/trump-s-greenland-talk-brings-opportunity-unease-for-business" target="_blank" rel="noopener">Trump’s Greenland Talk Brings Opportunity, Unease for Business</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-08/greenland-needs-more-investment-amaroq-ceo-says-video" target="_blank" rel="noopener">Greenland Needs More Investment, Amaroq CEO Says</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-08/as-trump-eyes-greenland-greenlanders-in-denmark-debate-independence" target="_blank" rel="noopener">Greenlanders Are Stuck Between Trump and an Uncomfortable Present</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/08/greenland-trump-takeover-bid-denmark-what-happens-next.html" target="_blank" rel="noopener">Trump&#x27;s team races to come up with a Greenland takeover plan — here&#x27;s what&#x27;s at stake</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15443831/Greenland-brink-civil-war-families-anger-Denmark-Donald-Trump.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">&#x27;I fear Greenland is on the brink of civil war&#x27;: Families are torn apart as locals express their anger at both Denmark AND Trump</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15443113/Trump-unveils-plan-BUY-Greenland-Rubio-sets-meeting-Danish-officials.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Trump unveils plan to BUY Greenland as Rubio sets up meeting with Danish officials</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15442539/Russia-China-fear-NATO-Trump-launches-ferocious-attack-allies-threatens-Greenland-invasion.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Russia and China fear NATO because of ME: Trump launches ferocious attack on allies as he threatens Greenland invasion</a></li><li class="source-entry"><div class="source-kicker">Financial Times - Latest</div><a class="source-link-title" href="https://www.ft.com/content/2f060be5-5ba1-4442-b5c8-698d02d429c6" target="_blank" rel="noopener">How Trump could take control of Greenland</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/from-caracas-nuuk-maduro-raid-sparks-fresh-trump-push-greenland" target="_blank" rel="noopener">From Caracas to Nuuk: Maduro raid sparks fresh Trump push on Greenland</a></li><li class="source-entry"><div class="source-kicker">NPR - News</div><a class="source-link-title" href="https://www.npr.org/2026/01/07/nx-s1-5670244/trump-greenland" target="_blank" rel="noopener">White House says &#x27;all options&#x27; are on the table for Greenland, including diplomacy</a></li><li class="source-entry"><div class="source-kicker">NPR - Science</div><a class="source-link-title" href="https://www.npr.org/2026/01/07/nx-s1-5668482/greenland-mercator-map-size-distortion" target="_blank" rel="noopener">How large is Greenland, really? Your map may be deceiving you</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/07/opinion/stephen-miller-greenland.html" target="_blank" rel="noopener">U.S. Threats to Take Over Greenland</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/07/world/europe/trump-greenland-denmark-us-defense-pact.html" target="_blank" rel="noopener">Buy Greenland? Take It? Why? An Old Pact Already Gives Trump a Free Hand.</a></li><li class="source-entry"><div class="source-kicker">Mirror - News</div><a class="source-link-title" href="https://www.mirror.co.uk/news/us-news/im-trumps-military-advisor-know-36517057" target="_blank" rel="noopener">‘I’m Trump’s military advisor - I know the truth behind Greenland invasion threat&#x27;</a></li><li class="source-entry"><div class="source-kicker">Express - World</div><a class="source-link-title" href="https://www.express.co.uk/news/world/2155014/trump-make-greenland-offer-can-t-refuse-warns-lawmaker" target="_blank" rel="noopener">Trump will make Greenland &#x27;offer it can&#x27;t refuse&#x27; warns lawmaker</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Opinion</div><a class="source-link-title" href="https://www.theguardian.com/commentisfree/picture/2026/jan/07/nicola-jennings-donald-trump-threat-greenland-cartoon" target="_blank" rel="noopener">Nicola Jennings on Donald Trump’s threats to take over Greenland – cartoon</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Opinion</div><a class="source-link-title" href="https://www.theguardian.com/commentisfree/2026/jan/07/donald-trump-greenland-scotland-annexe-us-president" target="_blank" rel="noopener">If Donald Trump thinks Greenland should be his, how long before he sets his sights on Scotland? | Zoe Williams</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/trump-reckons-nato-wouldnt-be-there-for-him-if-needed-as-he-considers-invading-greenland-6920362-Jan2026/" target="_blank" rel="noopener">Trump reckons NATO wouldn&#x27;t be &#x27;there for&#x27; him if needed, as he considers invading Greenland</a></li><li class="source-entry"><div class="source-kicker">Washington Post - World</div><a class="source-link-title" href="https://www.washingtonpost.com/world/2026/01/07/trump-us-greenland-explainer-denmark/" target="_blank" rel="noopener">Why Trump wants Greenland and what’s standing in his way</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Top</div><a class="source-link-title" href="https://www.washingtonpost.com/opinions/2026/01/07/trump-greenland-denmark-threat-nato/?utm_source=rss&amp;utm_medium=referral&amp;utm_campaign=wp_homepage" target="_blank" rel="noopener">Trump’s Greenland fixation curdles into a crisis</a></li><li class="source-entry"><div class="source-kicker">BBC - Northern Ireland</div><a class="source-link-title" href="https://www.bbc.com/news/articles/c89q7q9d123o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Irish PM calls for &#x27;common sense&#x27; on Greenland</a></li><li class="source-entry"><div class="source-kicker">The Scotsman</div><a class="source-link-title" href="https://www.scotsman.com/news/politics/scots-mps-urge-keir-starmer-to-stand-up-to-donald-trump-on-greenland-5468074" target="_blank" rel="noopener">Scots MPs urge Keir Starmer to stand up to Donald Trump on Greenland</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/08/-greenland-critical-minerals-mining-amaroq-us-government.html" target="_blank" rel="noopener">U.S. considering investing in critical minerals mining in Greenland, Amaroq&#x27;s CEO tells CNBC</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/08/trump-greenland-cost-denmark.html" target="_blank" rel="noopener">Trump wants Greenland. If it were for sale, it could cost trillions</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/09/nato-trump-greenland-war-invade-defense.html" target="_blank" rel="noopener">Trump is desperate to take Greenland. Can NATO defend itself — and is it willing to?</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/09/cnbc-daily-open-trumps-greenland-ambitions-have-global-repercussions.html" target="_blank" rel="noopener">CNBC Daily Open: Trump&#x27;s Greenland ambitions have global repercussions</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/09/cnbc-daily-open-us-moves-over-greenland-are-heating-up-quickly.html" target="_blank" rel="noopener">CNBC Daily Open: U.S. moves over Greenland are heating up quickly</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/news/2026/1/9/europe-should-prepare-for-greenlands-annexation-and-end-of-nato-experts?traffic_source=rss" target="_blank" rel="noopener">Europe should prepare for Greenland’s annexation and end of NATO: Experts</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/videos/c78veq59823o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#x27;He&#x27;s crazy&#x27;: BBC speaks to Greenlanders about Trump&#x27;s threats</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/5680468-trump-greenland-lump-sum/" target="_blank" rel="noopener">Trump officials weigh direct payments to Greenlanders in takeover push: Report</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/europe/why-greenland-trump-denmark-map-b2897408.html" target="_blank" rel="noopener">Here’s why Greenland is wanted so much, according to a geologist</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/trump-admin-reportedly-considers-paying-each-greenland-resident-100k-us-takeover-talks" target="_blank" rel="noopener">Trump admin reportedly considers paying each Greenland resident up to $100K amid US takeover talks</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Business</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/09/greenland-labor-union-chair-trump-annexation" target="_blank" rel="noopener">‘We are not for sale’: chair of Greenland’s top labor union rebukes Trump’s call for annexation</a></li><li class="source-entry"><div class="source-kicker">Mashable</div><a class="source-link-title" href="https://mashable.com/video/daily-show-trump-greenland" target="_blank" rel="noopener">The Daily Show reacts to Trump threatening to take over Greenland</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/politics/denmark-and-greenland-envoys-meet-with-white-house-officials-over-trumps-call-for-a-takeover" target="_blank" rel="noopener">Denmark and Greenland envoys meet with White House officials over Trump&#x27;s call for a &#x27;takeover&#x27;</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/analysis-and-comment/2026/0108/1552205-greenland-us-analysis/" target="_blank" rel="noopener">Fear, not defiance, greets Trump&#x27;s threats in Greenland</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15442475/Arctic-Angels-Greenland-weapons-Nuuk-Denmark.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">How Trump&#x27;s &#x27;Arctic Angels&#x27; would seize Greenland: Black ops. Futuristic weapons. Death-defying raids. Nuuk could fall in minutes... and destroy NATO forever</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/lifestyle/article-15446403/barron-trump-danish-princess-isabella-denmark-resolve-greenland-row-marry-donald.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Post about marrying off Barron Trump to a Danish princess to resolve Greenland row gets bizarre viral support</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-09/tiny-greenland-lender-jumps-40-as-trump-fuels-investor-bonanza" target="_blank" rel="noopener">Tiny Greenland Lender Jumps 40% as Trump Fuels Investor Bonanza</a></li></ul></details>
+    </main>
+
+    <div class="footer">
+      <span>The Bias 2026</span>
+      <div class="footer-links">
+        <a class="footer-social" href="https://instagram.com/thebias_app" target="_blank" rel="noopener" aria-label="The Bias on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="footer-social" href="https://reddit.com/u/the_bias_app" target="_blank" rel="noopener" aria-label="The Bias on Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6.2c1.9 0 3.7.5 5.1 1.3" />
+              <path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3" />
+              <path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"/>
+              <circle cx="9.2" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <circle cx="14.8" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9" />
+              <circle cx="17.7" cy="6.8" r="1.3"/>
+              <path d="M12.2 4.2l2.2.5"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Sources">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title" id="modal-title">Sources</div>
+        <button class="close-btn" data-close-modal>Close</button>
+      </div>
+      <ul class="source-list" id="modal-list"></ul>
+    </div>
+  </section>
+
+  <script>
+    window.__CLAIMS__ = {"b2": [["US forces carried out a military operation in Venezuela that resulted in the capture of President Nicolás Maduro and his wife.", "22049", "President Donald Trump confirmed Saturday that the U.S. military had successfully executed an operation in Venezuela that led to the arrests of the nation's dictatorial leader, Nicolás Maduro, and his wife.", "A week of high‑stakes moves began when US forces carried out an operation in Venezuela that, the White House said, resulted in the capture of President Nicolás Maduro and his wife.", "Fox News - Politics", "From Caracas to Nuuk: Maduro raid sparks fresh Trump push on Greenland", "https://www.foxnews.com/politics/from-caracas-nuuk-maduro-raid-sparks-fresh-trump-push-greenland"], ["President Trump quickly returned public focus to Greenland and framed it as important to US defence.", "22451", "\"We do need Greenland, absolutely,\" Trump said on Sunday. \"We need it for defense.\"", "Within days Mr Trump refocused attention on Greenland, arguing the island matters to US defence and that Washington should play a larger role there.", "NPR - Science", "How large is Greenland, really? Your map may be deceiving you", "https://www.npr.org/2026/01/07/nx-s1-5668482/greenland-mercator-map-size-distortion"], ["White House spokeswoman Karoline Leavitt said the issue was \"something that's currently being actively discussed by the president and his national security team.\"", "21415", "It's \"something that's currently being actively discussed by the president and his national security team\", White House spokeswoman Karoline Leavitt told reporters on Wednesday.", "White House spokespeople said the president and his national security team were \"actively\" discussing options", "BBC - World", "Trump actively discussing potentially buying Greenland, White House says", "https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&at_campaign=rss"], ["Leavitt told reporters that 'all options are always on the table' but that the president's 'first option always has been diplomacy.'", "22448", "All options are always on the table for President Trump as he examines what's in the best interest of the United States, but I will just say that the president's first option always has been diplomacy,\" White House press secretary Karoline Leavitt told reporters on Wednesday.", "that, although diplomacy was described as the administration's preferred route, \"all options are always on the table.\"", "NPR - News", "White House says 'all options' are on the table for Greenland, including diplomacy", "https://www.npr.org/2026/01/07/nx-s1-5670244/trump-greenland"]], "b3": [["President Trump said \"We do need Greenland, absolutely\" and \"We need it for defense.\"", "22451", "\"We do need Greenland, absolutely,\" Trump said on Sunday. \"We need it for defense.\"", "\"We do need Greenland, absolutely,\" Trump said. \"We need it for defense.\"", "NPR - Science", "How large is Greenland, really? Your map may be deceiving you", "https://www.npr.org/2026/01/07/nx-s1-5668482/greenland-mercator-map-size-distortion"]], "b5": [["Mr Trump said Greenland was \"covered with Russian and Chinese ships.\"", "22049", "\"Right now, Greenland is covered with Russian and Chinese ships all over the place,\" Trump told reporters on Air Force One.", "Mr Trump also told reporters the island was \"covered with Russian and Chinese ships,\" an assertion that allies have disputed.", "Fox News - Politics", "From Caracas to Nuuk: Maduro raid sparks fresh Trump push on Greenland", "https://www.foxnews.com/politics/from-caracas-nuuk-maduro-raid-sparks-fresh-trump-push-greenland"], ["Stephen Miller said 'Nobody's going to fight the United States militarily over the future of Greenland.'", "26025", "\"Nobody's going to fight the United States militarily over the future of Greenland,\" he said.", "On US television, White House deputy chief of staff Stephen Miller argued there would be no military contest over Greenland and said \"Nobody's going to fight the United States militarily over the future of Greenland.\"", "CNBC - Top", "Trump is desperate to take Greenland. Can NATO defend itself — and is it willing to?", "https://www.cnbc.com/2026/01/09/nato-trump-greenland-war-invade-defense.html"], ["Reporting said Secretary of State Marco Rubio told lawmakers the administration did not plan to invade Greenland and mentioned buying the island instead.", "21788", "US Secretary of State Marco Rubio also told lawmakers at a classified briefing on Capitol Hill on Monday that the Trump administration did not plan to invade Greenland, but he mentioned instead buying the island from Denmark, the Wall Street Journal reported, citing sources.", "Separately, reporting from Capitol Hill said Secretary of State Marco Rubio told lawmakers the administration's stated preference was to pursue a purchase, not an invasion.", "Daily Mail - News", "Trump unveils plan to BUY Greenland as Rubio sets up meeting with Danish officials", "https://www.dailymail.co.uk/news/article-15443113/Trump-unveils-plan-BUY-Greenland-Rubio-sets-meeting-Danish-officials.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"]], "b7": [["Denmark's prime minister warned an attack on a NATO ally would stop the alliance's security arrangements.", "26025", "\"If the United States decides to attack another NATO country, then everything would stop, that includes NATO and therefore post-World War II security,\" Mette Frederiksen told Danish television network TV2.", "Denmark's prime minister warned that an attack on a NATO ally would undermine the alliance, saying that \"if the United States decides to attack another NATO country, then everything would stop\".", "CNBC - Top", "Trump is desperate to take Greenland. Can NATO defend itself — and is it willing to?", "https://www.cnbc.com/2026/01/09/nato-trump-greenland-war-invade-defense.html"], ["Greenland's premier warned: 'This is enough. No more pressure. No more hints. No more fantasies about annexation.'", "26493", "Nielsen wrote 'This is enough. No more pressure. No more hints. No more fantasies about annexation.'", "Greenland's elected leaders and unions insisted the island was not for sale; one Greenlandic politician declared \"This is enough. No more pressure. No more hints. No more fantasies about annexation.\"", "Fox News - Politics", "Trump admin reportedly considers paying each Greenland resident up to $100K amid US takeover talks", "https://www.foxnews.com/politics/trump-admin-reportedly-considers-paying-each-greenland-resident-100k-us-takeover-talks"], ["European leaders said in a joint statement: 'Greenland belongs to its people' and that Arctic security must be achieved collectively.", "21415", "\"Greenland belongs to its people. It is for Denmark and Greenland, and them only, to decide on matters concerning Denmark and Greenland,\" the leaders said, adding that \"Security in the Arctic must therefore be achieved collectively, in conjunction with NATO allies including the United States\".", "Several European governments issued a joint statement that 'Greenland belongs to its people' and urged collective approaches to Arctic security.", "BBC - World", "Trump actively discussing potentially buying Greenland, White House says", "https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&at_campaign=rss"]], "b9": [["Some Greenlanders said they were scared and could not sleep, one telling RTÉ 'I don't sleep very well because I'm afraid.'", "28311", "\"I don't like to talk about [Donald Trump] because he spoils my sleep. I don't sleep very well because I'm afraid,\" one woman, a retired university lecturer, told RTÉ News.", "Some residents said they were scared to speak and described sleepless nights; one told RTÉ News, \"I don't sleep very well because I'm afraid.\"", "RTE - Ireland News", "Fear, not defiance, greets Trump's threats in Greenland", "https://www.rte.ie/news/analysis-and-comment/2026/0108/1552205-greenland-us-analysis/"], ["A Greenlander told RTÉ, 'They have no respect for us, for my country, for our country.'", "28311", "\"They have no respect for us, for my country, for our country.\"", "Another local told reporters, \"They have no respect for us, for my country, for our country.\"", "RTE - Ireland News", "Fear, not defiance, greets Trump's threats in Greenland", "https://www.rte.ie/news/analysis-and-comment/2026/0108/1552205-greenland-us-analysis/"], ["Aaja Chemnitz said the comments from Washington were 'a clear threat.'", "21390", "Aaja Chemnitz, one of two MPs in the Danish parliament representing Greenland, said the comments from the Trump administration were \"a clear threat\" and she was \"appalled\" by them.", "Greenland politicians were split: Aaja Chemnitz called Washington's comments \"a clear threat,\"", "BBC - World", "'We are not for sale': Greenlanders express fear and indignation as Trump eyes territory", "https://www.bbc.com/news/articles/cvgx8w4pgk0o?at_medium=RSS&at_campaign=rss"], ["Pele Broberg of Naleraq urged Greenland to open direct talks with the US about possible arrangements.", "28311", "Mr Broberg and his allies are open to what's called a \"free association\" agreement with the United States - similar to what America has with Pacific island nations like the Marshall Islands and Palau.", "while Pele Broberg of the pro‑independence Naleraq party said Greenland should explore direct talks with the United States.", "RTE - Ireland News", "Fear, not defiance, greets Trump's threats in Greenland", "https://www.rte.ie/news/analysis-and-comment/2026/0108/1552205-greenland-us-analysis/"]], "b11": [["Scottish MPs urged the UK prime minister not to 'stay silent' and to push back on US pressure over Greenland.", "27166", "Across the board, the UK Government has chosen to take a softly-softly approach with the Trump administration but people will rightly expect that Keir Starmer won't stand by and stay silent as Trump tries to bully his way into a land grab.", "Scottish MPs urged Prime Minister Keir Starmer to rebuke the president, warning that \"staying silent\" would allow pressure to escalate.", "The Scotsman", "Scots MPs urge Keir Starmer to stand up to Donald Trump on Greenland", "https://www.scotsman.com/news/politics/scots-mps-urge-keir-starmer-to-stand-up-to-donald-trump-on-greenland-5468074"], ["Sen. Ruben Gallego said he was introducing a resolution to block Trump from invading Greenland.", "22448", "\"I'm introducing a resolution to block Trump from invading Greenland. No more forever wars,\" Gallego wrote on social media.", "In Washington, Senator Ruben Gallego said he would introduce a resolution to block any attempted invasion of Greenland,", "NPR - News", "White House says 'all options' are on the table for Greenland, including diplomacy", "https://www.npr.org/2026/01/07/nx-s1-5670244/trump-greenland"], ["Some US lawmakers said 'Greenland is not for sale' and urged the United States to honour its treaty obligations.", "21788", "\"When Denmark and Greenland make it clear that Greenland is not for sale, the United States must honor its treaty obligations and respect the sovereignty and territorial integrity of the Kingdom of Denmark.\"", "and other lawmakers issued statements stressing that 'Greenland is not for sale' and treaty obligations must be honoured.", "Daily Mail - News", "Trump unveils plan to BUY Greenland as Rubio sets up meeting with Danish officials", "https://www.dailymail.co.uk/news/article-15443113/Trump-unveils-plan-BUY-Greenland-Rubio-sets-meeting-Danish-officials.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"]], "b13": [["Some analysts said a US move on Greenland could be technically feasible and might meet little armed resistance.", "26025", "What European military commander is going to open force on a U.S. troop transport coming into Greenland?\" he said. \"That would start an inter-NATO war, potentially. And the U.S. knows that.\" (summarising analysts who said it could be unopposed)", "Some defence commentators told reporters a short, well‑resourced US operation could be executed quickly and might face little armed resistance; one analyst said it would be \"completely unopposed.\"", "CNBC - Top", "Trump is desperate to take Greenland. Can NATO defend itself — and is it willing to?", "https://www.cnbc.com/2026/01/09/nato-trump-greenland-war-invade-defense.html"], ["A former US official said a unilateral attack on a NATO ally would be 'against all international law.'", "21424", "\"That would clearly be against all international law,\" said Mick Mulroy, a former marine, CIA paramilitary officer and deputy assistant secretary of defence.", "By contrast, former officials warned such a seizure would violate international law", "BBC - World", "How could Donald Trump 'take' Greenland?", "https://www.bbc.com/news/articles/c0q4w1xnv35o?at_medium=RSS&at_campaign=rss"], ["Commentators warned that an American attack on a NATO ally would damage Article 5 and could 'spell the end of NATO.'", "25714", "\"If the United States decides to attack another NATO country, then everything would stop – that includes NATO and therefore post-World War II security,\" Mette Frederiksen told Denmark’s public broadcaster on January 4. Experts warned that would spell the end of the alliance.", "and senior European leaders said it would strip Article 5 of its meaning and effectively destroy NATO's cohesion.", "Al Jazeera - All", "Europe should prepare for Greenland’s annexation and end of NATO: Experts", "https://www.aljazeera.com/news/2026/1/9/europe-should-prepare-for-greenlands-annexation-and-end-of-nato-experts?traffic_source=rss"]], "b15": [["Reports said options included buying the island, a compact or other political arrangements to increase US influence.", "21558", "The White House confirmed that Mr Trump and his national security team were \"actively\" discussing a potential offer to buy the Danish territory of Greenland. ... Options being discussed include buying the territory from Denmark, or forming a Compact of Free Association within Greenland.", "Officials and reporting identified a menu of non‑military and coercive options: a negotiated purchase, a compact or free‑association arrangement, commercial deals and targeted incentives for Greenlanders.", "CNBC - Top", "Trump's team races to come up with a Greenland takeover plan — here's what's at stake", "https://www.cnbc.com/2026/01/08/greenland-trump-takeover-bid-denmark-what-happens-next.html"], ["Reporting cited Reuters that US officials had discussed paying Greenlanders between $10,000 and $100,000 per person.", "25714", "Trump is considering bribing Greenlanders with a per capita sum between $10,000 and $100,000 to join the US, Reuters reported on Friday.", "News reports quoted Reuters saying US officials had considered direct payments to residents in the range of $10,000–$100,000.", "Al Jazeera - All", "Europe should prepare for Greenland’s annexation and end of NATO: Experts", "https://www.aljazeera.com/news/2026/1/9/europe-should-prepare-for-greenlands-annexation-and-end-of-nato-experts?traffic_source=rss"], ["Amaroq's chief executive said the US government had been in talks about investment, including 'offtake agreements, infrastructure support and credit lines.'", "26049", "Deals could involve \"offtake agreements, infrastructure support and credit lines,\" Ólafsson added, though he declined to comment on what specific projects the U.S. government was interested in.", "Company executives also confirmed Washington was discussing commercial investment and support for mine projects as part of those economic levers.", "CNBC - Top", "U.S. considering investing in critical minerals mining in Greenland, Amaroq's CEO tells CNBC", "https://www.cnbc.com/2026/01/08/-greenland-critical-minerals-mining-amaroq-us-government.html"]], "b17": [["The US Geological Survey has been cited as estimating about 31 billion barrels of oil‑equivalent in northeast Greenland.", "29442", "The US Geological Survey estimates that onshore northeast Greenland (including ice-covered areas) contains around 31 billion barrels of oil-equivalent in hydrocarbons.", "The US Geological Survey has been cited as estimating 'around 31 billion barrels of oil‑equivalent in hydrocarbons' in onshore northeast basins.", "The Independent - World", "Here’s why Greenland is wanted so much, according to a geologist", "https://www.independent.co.uk/news/world/europe/why-greenland-trump-denmark-map-b2897408.html"], ["A number of analysts have argued Greenland's resource value could be enormous; one commentator said 'Something in the trillions looks about right.'", "26053", "\"Something in the trillions looks about right,\" said Douglas Holtz-Eakin, president of the American Action Forum, in an interview.", "Analysts' valuations for the island vary wildly — one American think‑tank and senior economist said 'something in the trillions looks about right,'", "CNBC - Top", "Trump wants Greenland. If it were for sale, it could cost trillions", "https://www.cnbc.com/2026/01/08/trump-greenland-cost-denmark.html"]], "b19": [["Some outlets described Greenland's population as roughly 57,000.", "22448", "The island's roughly 57,000 inhabitants have been the subject of discussion in Washington and among lawmakers.", "Several pieces cited Greenland's population at about 57,000;", "NPR - News", "White House says 'all options' are on the table for Greenland, including diplomacy", "https://www.npr.org/2026/01/07/nx-s1-5670244/trump-greenland"], ["Other outlets used a figure near 56,000 for Greenland's population.", "21390", "\"It's not fun being 56,000 people and having these threats - if you can call them that - from a giant like the US,\" says Masaana Egede, editor of Greenlandic newspaper Sermitsiaq.", "others used roughly 56,000.", "BBC - World", "'We are not for sale': Greenlanders express fear and indignation as Trump eyes territory", "https://www.bbc.com/news/articles/cvgx8w4pgk0o?at_medium=RSS&at_campaign=rss"], ["Media reports reach different conclusions about whether Secretary Rubio ruled out an invasion: some diplomats reported he had 'ruled out the possibility of an invasion' while other coverage emphasised he declined to take military options entirely off the table.", "21415", "French Foreign Minister Jean-Noël Barrot said ... Rubio had \"ruled out the possibility of an invasion\" of Greenland.", "Journalists have flagged that accounts of whether Rubio categorically ruled out an invasion differ between diplomatic briefings and other reporting.", "BBC - World", "Trump actively discussing potentially buying Greenland, White House says", "https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&at_campaign=rss"], ["Outlets have produced widely different valuations for Greenland, ranging from tens of billions to 'trillions.'", "26053", "\"Something in the trillions looks about right,\" said Douglas Holtz-Eakin, president of the American Action Forum.", "and outlets gave sharply different price estimates for Greenland's worth — from tens of billions in some calculations to the multi‑trillion figures cited by others.", "CNBC - Top", "Trump wants Greenland. If it were for sale, it could cost trillions", "https://www.cnbc.com/2026/01/08/trump-greenland-cost-denmark.html"]], "b21": [["Denmark's ambassador and Greenland's chief representative met White House National Security Council officials in Washington.", "28254", "Denmark's ambassador, Jesper Møller Sørensen, and Jacob Isbosethsen, Greenland's chief representative to Washington, met on Thursday with White House National Security Council officials to discuss a renewed push by Trump to acquire Greenland, perhaps by military force, according to Danish government officials.", "Denmark's ambassador and Greenland's chief representative met White House National Security Council officials this week to press their case.", "PBS NewsHour - Headlines", "Denmark and Greenland envoys meet with White House officials over Trump's call for a 'takeover'", "https://www.pbs.org/newshour/politics/denmark-and-greenland-envoys-meet-with-white-house-officials-over-trumps-call-for-a-takeover"], ["Secretary of State Marco Rubio is scheduled to meet Danish officials next week.", "21415", "US Secretary of State Marco Rubio said on Wednesday that he will hold talks with Denmark next week.", "Secretary Rubio is due to hold talks with Danish officials next week,", "BBC - World", "Trump actively discussing potentially buying Greenland, White House says", "https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&at_campaign=rss"], ["European capitals are exploring coordinated responses, from political statements to economic pressure and deterrence planning.", "28311", "Behind the scenes in Brussels, European officials are discussing how to raise the stakes of any American intervention.", "and European capitals are discussing coordinated responses — limited political measures, economic pressure, and possible deterrent deployments have all been floated in private talks.", "RTE - Ireland News", "Fear, not defiance, greets Trump's threats in Greenland", "https://www.rte.ie/news/analysis-and-comment/2026/0108/1552205-greenland-us-analysis/"]], "b23": [["Opinion writers and commentators raised legal and alliance concerns, asking whether the president was serious and warning of consequences for NATO.", "24998", "Leaders in Greenland and Denmark are in shock. Is the president serious?", "Coverage mixed alarm, legal analysis and business angles.", "The Guardian - Opinion", "If Donald Trump thinks Greenland should be his, how long before he sets his sights on Scotland? | Zoe Williams", "https://www.theguardian.com/commentisfree/2026/jan/07/donald-trump-greenland-scotland-annexe-us-president"], ["Business outlets emphasised the potential commercial opportunity and raised technical questions about extracting resources.", "26049", "Deals could involve \"offtake agreements, infrastructure support and credit lines,\" Ólafsson added.", "Business and mining coverage emphasised commercial opportunity and feasibility questions,", "CNBC - Top", "U.S. considering investing in critical minerals mining in Greenland, Amaroq's CEO tells CNBC", "https://www.cnbc.com/2026/01/08/-greenland-critical-minerals-mining-amaroq-us-government.html"], ["Local reporting and features concentrated on how Greenlanders felt—fear, indignation and divisions within communities.", "21390", "\"The people of Greenland do not want to become American,\" Mia Chemnitz tells the BBC.", "while human‑interest and local reporting in Greenland focused on fear, social divisions and the long history of Danish governance.", "BBC - World", "'We are not for sale': Greenlanders express fear and indignation as Trump eyes territory", "https://www.bbc.com/news/articles/cvgx8w4pgk0o?at_medium=RSS&at_campaign=rss"]], "b25": [["Confirmed: the White House says the matter is under active consideration and Trump has publicly stated Greenland is strategically important.", "21415", "It's \"something that's currently being actively discussed by the president and his national security team\", White House spokeswoman Karoline Leavitt told reporters on Wednesday.", "Confirmed across multiple outlets: the White House says the issue is under active consideration and Mr Trump has publicly argued Greenland is important for US security.", "BBC - World", "Trump actively discussing potentially buying Greenland, White House says", "https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&at_campaign=rss"], ["Claimed or alleged by administration figures: that Greenland is 'covered with Russian and Chinese ships'.", "22451", "\"Right now, Greenland is covered with Russian and Chinese ships all over the place,\" Trump told reporters on Air Force One.", "Claimed or alleged (by administration figures): that Russian and Chinese ships now surround Greenland and that the island should be under a stronger US umbrella.", "NPR - Science", "How large is Greenland, really? Your map may be deceiving you", "https://www.npr.org/2026/01/07/nx-s1-5668482/greenland-mercator-map-size-distortion"], ["Disputed or unclear: accounts differ over whether Secretary Rubio categorically ruled out military invasion.", "21415", "French Foreign Minister Jean-Noël Barrot said ... Rubio had \"ruled out the possibility of an invasion\" of Greenland.", "Disputed or unclear: whether the administration has formally ruled out military force (some diplomats reported Rubio 'ruled out' invasion; other reporting emphasised military options were not taken off the table)", "BBC - World", "Trump actively discussing potentially buying Greenland, White House says", "https://www.bbc.com/news/articles/cly39pgmvrzo?at_medium=RSS&at_campaign=rss"], ["Next steps reported: Rubio will meet Danish officials and envoys have been summoned to engage in Washington.", "28254", "Denmark's ambassador, Jesper Møller Sørensen, and Jacob Isbosethsen, Greenland's chief representative to Washington, met on Thursday with White House National Security Council officials to discuss a renewed push by Trump to acquire Greenland, perhaps by military force, according to Danish government officials.", "What comes next: Secretary Rubio's meetings with Danish officials and repeated diplomatic engagement in Washington and Brussels are the next steps reported by outlets.", "PBS NewsHour - Headlines", "Denmark and Greenland envoys meet with White House officials over Trump's call for a 'takeover'", "https://www.pbs.org/newshour/politics/denmark-and-greenland-envoys-meet-with-white-house-officials-over-trumps-call-for-a-takeover"]]};
+    const intlStrips = document.querySelectorAll(".intl-strip");
+    const fadeSizeFor = (strip) => {
+      const width = strip.clientWidth || 0;
+      return Math.min(22, Math.max(10, width * 0.035));
+    };
+    const updateIntlFade = (strip) => {
+      const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      const fade = fadeSizeFor(strip);
+      const leftFade = Math.min(fade, Math.max(0, strip.scrollLeft));
+      const rightFade = Math.min(fade, Math.max(0, maxScroll - strip.scrollLeft));
+      strip.style.setProperty("--left-fade", `${leftFade}px`);
+      strip.style.setProperty("--right-fade", `${rightFade}px`);
+    };
+    intlStrips.forEach((strip) => {
+      const onUpdate = () => updateIntlFade(strip);
+      strip.addEventListener("scroll", () => requestAnimationFrame(onUpdate), {passive: true});
+      window.addEventListener("resize", onUpdate);
+      onUpdate();
+    });
+
+    const claimToggle = document.getElementById("claim-toggle");
+    const claimBody = document.body;
+    const claimPalette = ["#F7E6A8","#DDEEFF","#F7CCD1","#D9F1E1"];
+    let claimHighlightsApplied = false;
+
+    function highlightSnippet(root, snippet, blockId, claimIndex, color) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let node = null;
+      while ((node = walker.nextNode())) {
+        const text = node.nodeValue || "";
+        const start = text.indexOf(snippet);
+        if (start === -1) continue;
+        const end = start + snippet.length;
+        const before = document.createTextNode(text.slice(0, start));
+        const match = document.createTextNode(text.slice(start, end));
+        const after = document.createTextNode(text.slice(end));
+        const span = document.createElement("span");
+        span.className = "claim-mark";
+        span.style.setProperty("--claim-color", color);
+        span.dataset.block = blockId;
+        span.dataset.claimIndex = String(claimIndex);
+        span.appendChild(match);
+        const parent = node.parentNode;
+        parent.insertBefore(before, node);
+        parent.insertBefore(span, node);
+        parent.insertBefore(after, node);
+        parent.removeChild(node);
+        return true;
+      }
+      return false;
+    }
+
+    function applyClaimHighlights() {
+      if (claimHighlightsApplied) return;
+      document.querySelectorAll("[data-block]").forEach((el) => {
+        const blockId = el.getAttribute("data-block");
+        const claims = window.__CLAIMS__[blockId] || [];
+        claims.forEach((c, idx) => {
+          let snippet = "";
+          if (Array.isArray(c)) {
+            if (typeof c[3] === "string" && c[3]) {
+              snippet = c[3];
+            } else if (typeof c[c.length - 1] === "string") {
+              snippet = c[c.length - 1];
+            }
+          }
+          if (!snippet || typeof snippet !== "string") return;
+          highlightSnippet(el, snippet, blockId, idx, claimPalette[idx % claimPalette.length]);
+        });
+      });
+      claimHighlightsApplied = true;
+    }
+
+    function toggleClaimMode() {
+      const isActive = claimBody.classList.toggle("claim-mode");
+      if (claimToggle) {
+        claimToggle.setAttribute("aria-pressed", isActive ? "true" : "false");
+        claimToggle.classList.toggle("is-active", isActive);
+      }
+      if (isActive) applyClaimHighlights();
+    }
+
+    if (claimToggle) {
+      claimToggle.addEventListener("click", toggleClaimMode);
+    }
+
+    const claimNudge = document.getElementById("claim-nudge");
+    if (claimNudge) {
+      requestAnimationFrame(() => claimNudge.classList.add("is-visible"));
+      setTimeout(() => claimNudge.classList.remove("is-visible"), 2800);
+    }
+
+    document.addEventListener("click", (event) => {
+      const mark = event.target.closest(".claim-mark");
+      if (!mark || !claimBody.classList.contains("claim-mode")) return;
+      const blockId = mark.dataset.block;
+      const claimIndex = parseInt(mark.dataset.claimIndex || "0", 10);
+      if (window.__openClaimModal) {
+        window.__openClaimModal(blockId, claimIndex);
+      }
+    });
+  </script>
+  <script>(function(){
+  const CLAIMS = window.__CLAIMS__ || {};
+  const backdrop = document.getElementById("modal-backdrop");
+  const modal = document.getElementById("modal");
+  const list = document.getElementById("modal-list");
+  const title = document.getElementById("modal-title");
+  const closeButtons = document.querySelectorAll("[data-close-modal]");
+
+  function esc(s){ return (s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function renderClaims(claims){
+    title.textContent = claims.length ? `Sources (${claims.length})` : "Sources";
+    list.innerHTML = "";
+    claims.forEach((c) => {
+      let claim_text="", quote="", outlet="", source_title="", url="";
+      try{
+        claim_text = c[0] || "";
+        quote = c[2] || "";
+        outlet = c[4] || "";
+        source_title = c[5] || "";
+        url = c[6] || "";
+      }catch(e){}
+      const li = document.createElement("li");
+      li.className = "claim-entry";
+      li.innerHTML = `
+        <div class="claim-head">
+          <span class="claim-source">${esc(outlet).toUpperCase() || "SOURCE"}</span>
+          ${source_title ? `<span class="claim-title">${esc(source_title)}</span>` : ``}
+        </div>
+        ${claim_text ? `<div class="claim-row">Claim: ${esc(claim_text)}</div>` : ``}
+        ${quote ? `<div class="claim-row">Quote: “${esc(quote)}”</div>` : ``}
+        ${url ? `<div class="claim-row">Link: <a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></div>` : ``}
+      `;
+      list.appendChild(li);
+    });
+  }
+
+  function open(){
+    backdrop.style.display = "block";
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    backdrop.style.display = "none";
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  window.__openClaimModal = (blockId, claimIndex) => {
+    let claims = CLAIMS[blockId] || [];
+    if (typeof claimIndex === "number") {
+      const selected = claims[claimIndex];
+      claims = selected ? [selected] : [];
+    }
+    renderClaims(claims);
+    open();
+  };
+
+  backdrop.addEventListener("click", close);
+  closeButtons.forEach(b => b.addEventListener("click", close));
+})();</script>
+</body>
+</html>
