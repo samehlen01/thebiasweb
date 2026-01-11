@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Storm Goretti causes power cuts, evacuations and transport disruption across UK and Europe</title>
+  <link rel="icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+  <style>:root{
+  --bg:#FFFAF2;
+  --card:#F4EEE3;
+  --ink:#111214;
+  --muted:#5C5C60;
+  --hair:rgba(17,18,20,.10);
+  --gold:#C8A25D;
+  --rating:#7A1F27;
+  --radius:18px;
+  --max: 860px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-top: 62px;
+}
+
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px 70px;}
+
+.appbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(255,250,242,.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.appbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.about-link{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  text-decoration: none;
+}
+.about-link:hover{ color: rgba(17,18,20,.8); }
+.logo{
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+.logo img{
+  height: 22px;
+  width: auto;
+  display: block;
+}
+.claim-toggle{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.6);
+  color: rgba(17,18,20,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.claim-toggle.is-active{
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+.claim-nudge{
+  position: absolute;
+  right: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.85);
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.claim-nudge::after{
+  content:"";
+  position:absolute;
+  right:-6px;
+  top:50%;
+  transform: translateY(-50%);
+  border-width:6px 0 6px 6px;
+  border-style:solid;
+  border-color: transparent transparent transparent rgba(255,255,255,.55);
+}
+.claim-nudge.is-visible{
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.header{ padding-top: 18px; }
+h1.title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+@media (max-width: 700px){
+  .wrap{padding: 0 18px 60px;}
+  h1.title{font-size: 38px;}
+}
+
+.hero{ margin-top: 14px; }
+.hero img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display:block;
+  border-radius: 0;
+}
+@media (max-width: 700px){
+  .hero img{height: 340px;}
+}
+
+.meta-card{
+  background: var(--card);
+  padding: 14px 16px 16px;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-toast{
+  margin: 10px auto 0;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.78);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-align:center;
+  max-width: 520px;
+  display: none;
+}
+body.claim-mode .claim-toast{ display:block; }
+.meta-row{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  column-gap: 12px;
+  align-items:center;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.meta-item{
+  text-align: center;
+}
+.meta-item.left{ text-align: left; }
+.meta-item.right{ text-align: right; }
+.meta-item:empty{ visibility: hidden; }
+.dot-sep.is-hidden{ visibility: hidden; }
+.dot-sep{width:4px;height:4px;border-radius:999px;background: rgba(17,18,20,.25);display:inline-block;}
+
+.meters{ margin-top: 12px; display:grid; gap: 12px; padding: 0 4px; }
+.meter{ display:grid; gap: 6px; }
+.meter-line{ height:1px; background: rgba(17,18,20,.10); position:relative; }
+.meter-line::after{ content:""; position:absolute; left:0; top:0; height:1px; width:var(--fill, 50%); background: var(--rating); }
+.meter-label{ display:flex; gap: 8px; align-items:baseline; font-size: 14px; font-weight: 400; padding-left: 0; }
+.meter-label .k{ color: var(--rating); font-weight: 400; }
+.meter-label .v{ color: var(--ink); font-weight: 400; }
+.rating-details{
+  margin-top: 8px;
+  padding-top: 0;
+  display:flex;
+  flex-direction: column;
+}
+.rating-details summary{
+  list-style: none;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rating);
+  order: 2;
+  margin-top: 8px;
+}
+.rating-details summary::-webkit-details-marker{ display:none; }
+.rating-details .chev{
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.rating-details[open] .chev{ transform: rotate(180deg); }
+.rating-body{
+  margin-top: 10px;
+  display:grid;
+  gap: 16px;
+  font-size: 15px;
+  color: rgba(17,18,20,.82);
+  order: 1;
+}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+.rating-title{
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.rating-divider{
+  border: 0;
+  border-top: 1px solid var(--hair);
+  margin: 2px 0 0;
+}
+.rating-how{
+  margin-top: 4px;
+}
+.rating-how-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+
+.intl-section{
+  margin-top: 28px;
+}
+.intl-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.intl-sub{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
+}
+.intl-strip{
+  --fade-size: clamp(10px, 3.5vw, 22px);
+  --left-fade: 0px;
+  --right-fade: var(--fade-size);
+  display:flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  padding-left: 0;
+  margin-left: -8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+}
+.intl-strip::-webkit-scrollbar{ height: 6px; }
+.intl-strip::-webkit-scrollbar-thumb{
+  background: rgba(17,18,20,.2);
+  border-radius: 999px;
+}
+.intl-card{
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 4px;
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(17,18,20,.06);
+  scroll-snap-align: start;
+}
+@media (min-width: 700px){
+  .intl-card{ min-width: 320px; max-width: 360px; }
+}
+.intl-country{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intl-sources-title{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+}
+.intl-sources{
+  margin: 6px 0 12px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.intl-para{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.intl-quote{
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-style: italic;
+}
+.intl-attrib{
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.content{ padding-top: 18px; }
+
+h2.subtitle{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 26px 0 10px;
+}
+@media (max-width: 700px){ h2.subtitle{font-size: 30px;} }
+
+p.para{ margin: 0 0 16px; font-size: 17px; line-height: 1.85; color: rgba(17,18,20,.9); }
+hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 24px 0; }
+
+.list{ margin: 0 0 18px; padding-left: 20px; font-size: 17px; }
+.list li{ margin: 8px 0; }
+
+blockquote.quote{
+  margin: 18px 0 10px;
+  padding: 18px 0 18px;
+  border-top: 0;
+  border-bottom: 0;
+  background: transparent;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--ink);
+  position: relative;
+}
+blockquote.quote::before{
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote::after{
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -34px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote .quote-line{
+  position: absolute;
+  height: 2px;
+  background: rgba(200,162,93,.55);
+}
+blockquote.quote .quote-line.top{
+  left: 36px;
+  right: 0;
+  top: 6px;
+}
+blockquote.quote .quote-line.bottom{
+  left: 0;
+  right: 15px;
+  bottom: 4px;
+}
+.quote-attrib{
+  margin-top: 8px;
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.pullquote{
+  margin: 18px 0 6px;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-align:left;
+  font-style: italic;
+  position: relative;
+}
+.pullquote::before,
+.pullquote::after{
+  color: var(--gold);
+  font-size: 34px;
+  line-height: 1;
+}
+.pullquote::before{
+  content: "“";
+  margin-right: 6px;
+}
+.pullquote::after{
+  content: "”";
+  margin-left: 6px;
+}
+.pullquote-attrib{
+  text-align:left;
+  color: rgba(17,18,20,.65);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.claim-mark{
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background .2s ease;
+}
+body.claim-mode .claim-mark{
+  background: var(--claim-color, rgba(200,162,93,.25));
+  cursor: pointer;
+}
+
+.stat-card{
+  margin: 18px 0 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+}
+.stat-value{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.stat-label{
+  margin-top: 6px;
+  font-size: 26px;
+  color: var(--gold);
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+.stat-note{
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(17,18,20,.6);
+}
+
+.aside{
+  margin: 14px 0 18px;
+  background: var(--card);
+  border: 1px solid rgba(17,18,20,.08);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.aside-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 8px;
+}
+.aside-body{ font-size: 15px; color: var(--ink); }
+
+.inline-fn sup{
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.inline-fn a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.inline-fn a:hover{ text-decoration: underline; }
+
+.spotline{
+  margin: -6px 0 16px;
+  display:flex;
+  justify-content: flex-end;
+}
+.spotlight{
+  border: 0;
+  background: transparent;
+  color: rgba(17,18,20,.62);
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor:pointer;
+}
+.spotlight:hover{
+  background: rgba(0,0,0,.03);
+  color: rgba(17,18,20,.80);
+}
+.spotlight .count{
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(17,18,20,.45);
+  display:none;
+  z-index: 50;
+}
+.modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 78vh;
+  background: var(--bg);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid rgba(255,255,255,.45);
+  display:none;
+  z-index: 60;
+  box-shadow: 0 -18px 60px rgba(0,0,0,.22);
+}
+.modal-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px 18px;
+  background: var(--bg);
+}
+.modal-handle{
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(17,18,20,.16);
+  margin: 0 auto 12px;
+}
+.modal-head{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hair);
+}
+.modal-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 650;
+}
+.close-btn{
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.78);
+  border-radius: 4px;
+  padding: 7px 10px;
+  cursor:pointer;
+  font-size: 13px;
+}
+.close-btn:hover{ background: rgba(244,238,227,.9); }
+
+.source-list{
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style:none;
+}
+.source-item{
+  margin: 10px 0;
+  padding: 12px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.08);
+  background: var(--card);
+}
+.source-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.source-entry:last-child{ border-bottom: 0; }
+.source-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 4px;
+}
+.source-link-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.source-link-title:hover{ text-decoration: underline; }
+.source-head{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(17,18,20,.10);
+  background: rgba(255,250,242,.85);
+  color: rgba(17,18,20,.70);
+}
+.source-title{
+  font-size: 13px;
+  font-weight: 650;
+  flex: 1 1 auto;
+}
+.source-link{
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.source-link:hover{ text-decoration: underline; }
+.source-claim{ margin-top: 6px; font-size: 12px; color: rgba(17,18,20,.72); }
+.source-quote{
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17,18,20,.14);
+  background: rgba(255,250,242,.7);
+  color: rgba(17,18,20,.85);
+}
+.tiny{ font-size: 11px; color: rgba(17,18,20,.55); margin-top: 6px; }
+.claim-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-entry:last-child{ border-bottom: 0; }
+.claim-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.claim-source{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  flex: 0 0 auto;
+}
+.claim-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-align: right;
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+.claim-title:hover{ text-decoration: underline; }
+.claim-row{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(17,18,20,.75);
+}
+.claim-row a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.claim-row a:hover{ text-decoration: underline; }
+
+details.sources{
+  margin: 18px 0 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+}
+details.sources summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 650;
+}
+details.sources summary::-webkit-details-marker{display:none;}
+details.sources summary .chev{
+  width:14px;height:14px; opacity:.6;
+  transform: rotate(0deg);
+  transition: transform .18s ease;
+}
+details.sources[open] summary .chev{ transform: rotate(180deg); }
+
+.bias-note{
+  margin-top: 26px;
+  padding: 16px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.bias-note-kicker{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 6px;
+}
+.bias-note-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+.bias-note-text{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17,18,20,.78);
+}
+.bias-note-disclosure{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(17,18,20,.6);
+}
+.bias-note a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.bias-note a:hover{ text-decoration: underline; }
+
+.footer{
+  margin-top: 16px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(17,18,20,.55);
+}
+.footer-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.12);
+  color: rgba(17,18,20,.6);
+  text-decoration: none;
+}
+.footer-social:hover{ color: rgba(17,18,20,.85); }
+.footer-social svg{ width: 14px; height: 14px; }
+.footer-links{ display:flex; align-items:center; gap: 8px; }</style>
+</head>
+<body>
+  <header class="appbar">
+    <div class="appbar-inner">
+      <a class="about-link" href="#about-bias">About</a>
+      <div class="logo"><img src="logo.png" alt="The Bias" /></div>
+      <div class="claim-nudge" id="claim-nudge">Tap Spotlight</div>
+      <button class="claim-toggle" id="claim-toggle" aria-pressed="false" aria-label="Toggle claim mode" title="Claim mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20h6M12 4v6m0 0a4 4 0 00-4 4v1a4 4 0 004 4 4 4 0 004-4v-1a4 4 0 00-4-4z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="header">
+      <h1 class="title">Storm Goretti causes power cuts, evacuations and transport disruption across UK and Europe</h1>
+    </section>
+
+    <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/storm-goretti-batters-uk-and-europe-high-winds-and-heavy-snow-cause-mass-power-outages-coastal-evacuations-road-closures-infrastructure-damage-and-multiple-storm-related-deaths-1768168418-cb121ec6.png" alt="Hero image" /></div>
+
+    <section class="meta-card">
+      <div class="meta-row"><span class="meta-item left">Updated 12h ago</span><span class="dot-sep"></span><span class="meta-item center">5-min read</span><span class="dot-sep"></span><span class="meta-item right">64 sources</span></div>
+
+      <div class="meters">
+        <div class="meter">
+          <div class="meter-label"><span class="k">Factuality</span><span>—</span><span class="v">Very strong evidence</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:88%;"></div>
+        </div>
+        <div class="meter">
+          <div class="meter-label"><span class="k">Divisiveness</span><span>—</span><span class="v">Weak consensus</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:24%;"></div>
+        </div>
+      </div>
+
+      <details class="rating-details" id="rating-details">
+        <summary>
+          <span class="sr-only">How we rate this</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="rating-body">
+          <div>
+            <div class="rating-title">Factuality</div>
+            <div>Robust, converging evidence across primary sources and outlets.</div>
+          </div>
+          <div>
+            <div class="rating-title">Divisiveness</div>
+            <div>Most outlets agree on the basics; some difference in emphasis or conclusions.</div>
+          </div>
+          <hr class="rating-divider" />
+          <div class="rating-how">
+            <div class="rating-how-title">How we rate this</div>
+            <div>We leverage large language models and clustering methods to assess how closely outlets agree on core facts and how much interpretations diverge. Scores reflect the dispersion of claims and the strength of sourcing across multiple outlets.</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="claim-toast" id="claim-toast">Claim mode on, tap a claim to see its source</div>
+
+    <main class="content">
+      
+      <h2 class="subtitle">Storm Goretti: Overview</h2><p class="para" data-block="b2">Storm Goretti swept across northern Europe, cutting power, grounding services and forcing widespread closures and cancellations. The Met Office described the system as a &#x27;multi-hazard&#x27; event and put amber and yellow warnings in place for large parts of the UK. Parts of the south-west faced a rare red wind warning and authorities urged people to stay indoors. French coastal stations recorded exceptional gusts — national reports noted a 213km/h reading in Barfleur. The Isles of Scilly logged gusts close to 99mph.</p><h2 class="subtitle">Power cuts, restoration and conflicting totals</h2><p class="para" data-block="b4">Local and national operators reported large outages, but totals varied between outlets. Cornwall Live said more than 40,000 customers were affected in the South West and warned some households might not be reconnected until Sunday. A later Cornwall Live update put about 30,000 properties still without supply across the South West. Stoke Sentinel reported that more than 2,100 homes lost power in parts of Staffordshire. RTE said roughly 380,000 households had their electricity cut in France. National Grid told Cornwall Live it had restored 147,983 properties across the South West, Midlands and South Wales. By contrast, Daily Mail live coverage put the UK toll at about 65,000 homes without power.</p><h2 class="subtitle">Clifftop evacuations and coastal erosion</h2><p class="para" data-block="b6">On the east coast, Great Yarmouth Borough Council told 14 households on The Marrams and Fakes Road that their clifftop homes were at imminent risk and residents were ordered to evacuate. Reporters and locals documented more than 30ft of recent land loss in parts of Hemsby, with about 13ft lost on a single day and several properties already marked for demolition. Campaigners from Save Hemsby Coastline described the pace of erosion as &#x27;truly frightening&#x27; and accused the council of a lack of leadership. The council said it had been liaising with affected owners, offering support, and warning the public to keep clear of the dune face.</p><h2 class="subtitle">Health services and casualties</h2><p class="para" data-block="b8">Coverage across outlets recorded storm-related deaths and rising pressure on health services. One Daily Mail report said at least eight people had died in weather-related incidents across Europe this week, while RTE cited specific fatalities such as a body recovered in Albania. In North Wales the Betsi Cadwaladr University Health Board said it was treating the situation as an internal critical incident and urged patients to plan ahead. The Welsh Ambulance Service warned cold weather brings more falls, breathing problems and road collisions and that response times may take longer.</p><h2 class="subtitle">Transport and travel disruption</h2><p class="para" data-block="b10">Rail and air services were widely disrupted by the storm. State-owned Deutsche Bahn halted long‑distance services in northern Germany, citing severe winter conditions. Several airlines reported large numbers of cancellations, with KLM among those axing dozens of flights to and from Amsterdam. Eurostar and other operators suspended or cancelled multiple continental services.</p><h2 class="subtitle">Local impacts and household stories</h2><blockquote class="quote" data-block="b12"><span class="quote-line top" aria-hidden="true"></span>“I’ve been left without heating since Saturday (January 3) and I still don’t know when it’s going to be fixed,” she said.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Aliye Galloway, tenant</div><p class="para" data-block="b13">Aliye told the Northampton Chronicle that the air‑source heating installed in 2022 has repeatedly broken down and that many engineers sent were not trained to repair the system. She said temporary electric heaters provided were unsafe for her autistic son and did not heat the house adequately. In a different community, a Powys resident praised neighbours who collected her and a companion by tractor, calling Annie and Ryan &#x27;the most amazing people&#x27;.</p><h2 class="subtitle">Gritting, road safety and council responses</h2><p class="para" data-block="b15">Commuters and social‑media users complained of ungritted pavements, platforms and minor roads that they said were behaving like &#x27;ice rinks&#x27;, and at least one person required emergency treatment after a fall. The Local Government Association urged people to check on older and vulnerable neighbours and said councils cannot grit every road because doing so would cost hundreds of millions. Police forces reported multiple collisions and warned against unnecessary travel. The RAC advised drivers to allow more time, carry the right equipment and not use hot water to clear a frozen windscreen.</p><h2 class="subtitle">Water, National Grid and compensation</h2><p class="para" data-block="b17">South West Water opened bottled‑water distribution points after a treatment works was knocked offline and warned repairs would be complex. National Grid said it had restored large numbers of properties and had brought in extra engineers to speed repairs in the worst-hit regions. Cornwall Live explained that National Grid&#x27;s Guaranteed Standards of Performance set out compensation for long outages, with household payments possible if a cut lasts beyond the threshold. Operators said they were prioritising vulnerable customers while work continued.</p><h2 class="subtitle">Reactions and official comment</h2><p class="para" data-block="b19">Local leaders called for more government help on coastal protection and compensation, while council directors said they were supporting residents through an acute emergency. The Norfolk councillor responsible for environment work described the pace of erosion as alarming and warned of the emotional toll on communities. A council director called on the government to review compensation policy for people affected by coastal erosion. German meteorologists placed the episode in the context of generally milder winters and said extremes like this are still possible even as the climate warms. Separately, the Met Office published a list of 73 UK areas it considered at risk of power cuts before Saturday.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b21">Officials have confirmed that the storm brought high winds, heavy snow and significant service disruption, and forecasters and operators are continuing to update warnings and repair timetables. Residents and campaigners have alleged failings in local responses — from gritting to coastal protection — while councils and emergency services say they are prioritising safety and liaising with affected people. It remains unclear exactly how many households will face prolonged outages because national and local tallies differ; next, National Grid and local distributors will continue restoration work while the Met Office keeps issuing updates.</p>
+      
+      <hr class="divider" /><section class="intl-section"><h2 class="intl-title">International Outlook</h2><p class="intl-sub">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</p><div class="intl-strip"><article class="intl-card"><div class="intl-country">France</div><div class="intl-sources-title">Sources</div><div class="intl-sources">BFM TV</div><div class="intl-body"><p class="para" data-block="b22">BFM TV&#x27;s live coverage focused on France-specific responses and granular local impacts that UK audiences may not have seen: an interministerial crisis cell chaired by Interior Minister Laurent Nuñez, Transport Minister Philippe Tabarot&#x27;s ban on heavy goods and the suspension of school transport across 38 departments, and detailed accident reporting including a major A63 motorway pile‑up involving a tanker. BFM provided Enedis outage counts by area (about 6,100 households in Pays‑de‑la‑Loire and 5,000 in Charente‑Maritime; earlier live tallies cited ~13,000 nationwide) and reported at least five deaths in France linked to snow and ice.</p><p class="para" data-block="b23">BFM also described operational measures — airport closures and large flight reductions in the west and north, restrictions on lorries, and an estimated €400–600m economic hit for a day of snow in Île‑de‑France — but its outage and casualty figures differ from other international tallies (for example Tagesschau cited a broader Enedis figure of ~380,000 outages and an earlier ministry line of six lightly injured). The reporting underlines how quickly regional counts and attributions were evolving.</p></div></article><article class="intl-card"><div class="intl-country">Germany</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Tagesschau (ARD)</div><div class="intl-body"><p class="para" data-block="b24">Tagesschau framed the event as Storm &#x27;Goretti&#x27; and highlighted cross‑Channel system impacts often missing from brief UK bulletins: EDF&#x27;s precautionary shutdown of the Flamanville nuclear plant, National Grid&#x27;s figure of roughly 55,000 UK households without power and Enedis&#x27; ~380,000 French outages, plus operational disruption (69 cancelled movements at Heathrow affecting about 9,000 passengers) and dramatic coastal conditions (10–13m waves in Brittany). Its early casualty snapshot — a ministry line of six people lightly injured in France — sits at odds with later French live reporting of multiple deaths, illustrating the fluidity of early tallies.</p></div></article><article class="intl-card"><div class="intl-country">Spain</div><div class="intl-sources-title">Sources</div><div class="intl-sources">La Vanguardia</div><div class="intl-body"><p class="para" data-block="b25">La Vanguardia emphasised the humanitarian response and social consequences in Catalonia: Creu Roja activated eight emergency shelters and Badalona opened a temporary pavilion; Barcelona&#x27;s emergency night centre (CANE) has 100 places and the paper reported about 40 people on a waiting list. The article said roughly 85 people were assisted across Catalonia on the first night and charities such as Arrels ran day centres (about 75 people seen) to provide food, warmth and information.</p><p class="para" data-block="b26">That Spanish focus—numbers of people helped, beds available and charities&#x27; warnings—adds context UK audiences may not have seen: La Vanguardia cited an Arrels count of about 2,000 people sleeping rough in Barcelona (a 43% rise versus two years) and medical/relief concerns such as increased respiratory and dermatological problems among the homeless during the cold snap.</p></div></article><article class="intl-card"><div class="intl-country">Sweden</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Aftonbladet Sweden</div><div class="intl-body"><p class="para" data-block="b27">Aftonbladet reported local economic and infrastructure fallout: a co‑op shop in Åmot said it discarded perishables with a purchase value of about SEK 73,000 after a three‑day power cut, and Ellevio noted roughly 900 households still without electricity in parts of Gävleborg at lunchtime. The piece contrasts immediate business losses with longer‑term resilience work — utilities and ministers noting many lines have since been weather‑hardened or buried after the 2005 Gudrun storm — and quotes shop staff on the constant stress of temperature monitoring.</p></div></article><article class="intl-card"><div class="intl-country">Denmark</div><div class="intl-sources-title">Sources</div><div class="intl-sources">DR Denmark (State)</div><div class="intl-body"><p class="para" data-block="b28">DR Denmark&#x27;s headlines framed the episode as a Europe‑wide emergency: its coverage led with &#x27;six dead&#x27; in the snow chaos and described municipal snow‑clearing crews under sustained pressure (headlines referenced crews scraping and salting for around 70 continuous hours). The Danish reporting emphasises operational strain on public services and long shifts for road crews rather than national political measures.</p></div></article><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">The Hindu, Dawn Pakistan</div><div class="intl-body"><p class="para" data-block="b29">The Hindu and Dawn largely relayed agency copy but added operational details useful to international readers: The Hindu highlighted Deutsche Bahn mobilising more than 14,000 staff to clear snow and quoted a DWD meteorologist warning temperatures could fall to around −20°C; Dawn emphasised wide travel disruption and large cancellations at Paris airports (the transport ministry numbers quoted in agency dispatches).</p><p class="para" data-block="b30">Their casualty and disruption snapshots differ: The Hindu referenced &#x27;at least eight&#x27; deaths linked to the wider European episode, while Dawn and several wires cited six; likewise, reported flight cancellations at Schiphol varied between roughly 400 and 600 across feeds. These are examples of fast‑updating agency figures rather than sustained editorial dispute.</p></div></article><article class="intl-card"><div class="intl-country">Sub-Saharan Africa</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Channels TV Nigeria</div><div class="intl-body"><p class="para" data-block="b31">Channels TV in Nigeria ran an AFP‑style summary that stressed travel disruption and casualty figures: it reported six fatalities, substantial reductions at Paris airports (about 40% at CDG and 25% at Orly), large numbers of flights grounded at Schiphol and operational strains such as KLM warning it had nearly run out of de‑icing fluid. The coverage concentrates on transport knock‑on effects and humanitarian incidents in the Balkans and western Europe, mirroring non‑European wires&#x27; emphasis on travel and casualty totals.</p></div></article></div></section>
+      <section class="bias-note" id="about-bias" aria-label="About The Bias">
+        <div class="bias-note-kicker">The Bias</div>
+        <h3 class="bias-note-title">How this page is made</h3>
+        <p class="bias-note-text">
+          This page is written from dozens of outlets covering the same event, mixing local and international viewpoints to show the full
+          picture and add context you might otherwise miss. It aims to show where outlets agree, where they report different details, and
+          where opinions diverge, with supporting evidence for key claims and a full source list.
+        </p>
+        <p class="bias-note-text">
+          We’re launching The Bias on iOS soon. If you’d like to help beta test the app, reach out on Instagram
+          <a href="https://instagram.com/thebias_app" target="_blank" rel="noopener">@thebias_app</a> or email
+          <a href="mailto:sam@thebias.co.uk">sam@thebias.co.uk</a>.
+        </p>
+      </section>
+      <details class="sources"><summary><span>All sources</span><svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="source-list"><li class="source-entry"><div class="source-kicker">County Times</div><a class="source-link-title" href="https://www.countytimes.co.uk/news/25753088.cars-left-abandoned-powys-roads-storm-goretti/?ref=rss" target="_blank" rel="noopener">Cars left abandoned on snowy Powys roads after getting stuck in Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">County Times</div><a class="source-link-title" href="https://www.countytimes.co.uk/news/25751726.recap-storm-goretti-sees-powys-schools-roads-closed/?ref=rss" target="_blank" rel="noopener">RECAP: Updates as Powys schools shut and roads closed after Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/villagers-tributes-after-man-dies-10748560" target="_blank" rel="noopener">Villagers&#x27; tributes after man dies in caravan during Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/bottled-water-stations-open-after-10748227" target="_blank" rel="noopener">Bottled water stations open after Storm Goretti knocks out treatment works</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/storm-goretti-power-cut-customers-10747954" target="_blank" rel="noopener">Storm Goretti power cut customers could claim thousands in compensation</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/man-found-dead-after-tree-10747959" target="_blank" rel="noopener">Man found dead after tree falls onto caravan in Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Daily Star - Sport</div><a class="source-link-title" href="https://www.dailystar.co.uk/sport/football/storm-goretti-wreaks-havoc-fa-36529760" target="_blank" rel="noopener">Storm Goretti wreaks havoc as FA Cup and League One and Two fixtures postponed at weekend</a></li><li class="source-entry"><div class="source-kicker">Hereford Times</div><a class="source-link-title" href="https://www.herefordtimes.com/news/25756075.national-trust-berrington-hall-brockhampton-reopening/?ref=rss" target="_blank" rel="noopener">Update issued on National Trust homes after Storm Goretti closure</a></li><li class="source-entry"><div class="source-kicker">Impartial Reporter</div><a class="source-link-title" href="https://www.impartialreporter.com/news/25751294.storm-damaged-ball-net-replaced-dungannon-golf-club/?ref=rss" target="_blank" rel="noopener">Storm-damaged ball net to be replaced at Dungannon Golf Club</a></li><li class="source-entry"><div class="source-kicker">BBC - England</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cz6y1493dqzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Gruelling ultramarathon kicks off after storm</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15441077/Britain-high-alert-snow-ice-Storm-Goretti.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Anger at ungritted roads across the UK as councils&#x27; lack of preparation for Storm Goretti cold snap leaves commuters slipping on pavements and platforms - leaving at least one in hospital</a></li><li class="source-entry"><div class="source-kicker">Northampton Chronicle</div><a class="source-link-title" href="https://www.northamptonchron.co.uk/news/politics/council/northampton-mother-at-breaking-point-after-council-home-left-without-any-heating-during-sub-zero-temperatures-ahead-of-storm-goretti-5465480" target="_blank" rel="noopener">Northampton mother at &#x27;breaking point&#x27; after council home left without any heating during sub-zero temperatures ahead of Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Derby Telegraph</div><a class="source-link-title" href="https://www.derbytelegraph.co.uk/news/local-news/major-derbyshire-road-close-amid-10742834" target="_blank" rel="noopener">Major Derbyshire road to close amid Storm Goretti public safety concerns</a></li><li class="source-entry"><div class="source-kicker">Stoke Sentinel</div><a class="source-link-title" href="https://www.stokesentinel.co.uk/news/stoke-on-trent-news/stoke-trent-risk-power-cuts-10743891" target="_blank" rel="noopener">Stoke-on-Trent at risk of power cuts as Storm Goretti to bring snow and wind</a></li><li class="source-entry"><div class="source-kicker">Birmingham Live</div><a class="source-link-title" href="https://www.birminghammail.co.uk/news/midlands-news/midlands-towns-risk-power-cuts-33189311" target="_blank" rel="noopener">All the Midlands towns at risk of power cuts in snow with exact hours announced</a></li><li class="source-entry"><div class="source-kicker">Birmingham Live</div><a class="source-link-title" href="https://www.birminghammail.co.uk/news/uk-news/national-grid-urges-west-midlands-33189279" target="_blank" rel="noopener">National Grid urges West Midlands customers to prepare amid Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Express - News</div><a class="source-link-title" href="https://www.express.co.uk/news/uk/2155112/met-office-power-cuts-saturday-list" target="_blank" rel="noopener">Met Office names 73 UK areas facing power cuts before Saturday - full list</a></li><li class="source-entry"><div class="source-kicker">Birmingham Live</div><a class="source-link-title" href="https://www.birminghammail.co.uk/news/money/british-gas-shares-emergency-heating-33188946" target="_blank" rel="noopener">British Gas shares emergency heating advice amid Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Bournemouth Echo</div><a class="source-link-title" href="https://www.bournemouthecho.co.uk/news/national/uk-today/24023749.check-power-cuts-area-will-end/?ref=rss" target="_blank" rel="noopener">How to check for power cuts in your area and when they will end</a></li><li class="source-entry"><div class="source-kicker">Hereford Times</div><a class="source-link-title" href="https://www.herefordtimes.com/news/25751685.full-list-storm-goretti-snow-road-closures-herefordshire/?ref=rss" target="_blank" rel="noopener">LIVE: road closures after Storm Goretti snow</a></li><li class="source-entry"><div class="source-kicker">Wakefield Express</div><a class="source-link-title" href="https://www.wakefieldexpress.co.uk/news/people/storm-goretti-northern-powergrid-warns-wakefield-to-prepare-for-power-cuts-5468131" target="_blank" rel="noopener">Storm Goretti: Northern Powergrid warns Wakefield to prepare for power cuts</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/hundreds-face-48-hours-without-10745950" target="_blank" rel="noopener">Hundreds face 48 hours without electricity after Storm Goretti power cuts</a></li><li class="source-entry"><div class="source-kicker">Birmingham Live</div><a class="source-link-title" href="https://www.birminghammail.co.uk/news/uk-news/gallery/storm-goretti-impact-west-midlands-33198468" target="_blank" rel="noopener">Storm Goretti impact in West Midlands and beyond as UK hit by &#x27;multi-hazard event&#x27;</a></li><li class="source-entry"><div class="source-kicker">The Northern Echo</div><a class="source-link-title" href="https://www.thenorthernecho.co.uk/news/25752015.beamish-museum-delays-opening-time-storm-goretti-hits/?ref=rss" target="_blank" rel="noopener">Beamish Museum delays opening amid icy conditions from Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Daily Echo Southampton</div><a class="source-link-title" href="https://www.dailyecho.co.uk/news/25751770.power-cut-affecting-almost-200-homes-new-forest/?ref=rss" target="_blank" rel="noopener">Power cut affecting almost 200 homes in New Forest</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15442565/storm-goretti-snow-uk-weather-live-updates.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Storm Goretti leaves 65,000 homes without power as 100mph winds and &#x27;worst snow for a decade&#x27; hits Britain with people told &#x27;do not travel&#x27; today: Live updates</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15448567/Frozen-Europe-grinds-halt-Chaos-Germany-20C-blizzards-halt-trains-planes-traffic-135mph-Storm-Goretti-triggers-mass-blackouts-hit-France.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Frozen Europe grinds to a halt: Chaos in Germany as -20C blizzards halt trains, planes and traffic while 135mph Storm Goretti triggers mass blackouts hit in France</a></li><li class="source-entry"><div class="source-kicker">Huddersfield Examiner</div><a class="source-link-title" href="https://www.examinerlive.co.uk/news/uk-world-news/power-cut-warning-place-73-33196786" target="_blank" rel="noopener">Power cut warning in place for 73 UK areas as Storm Goretti hits - full list</a></li><li class="source-entry"><div class="source-kicker">Liverpool Echo</div><a class="source-link-title" href="https://www.liverpoolecho.co.uk/news/uk-world-news/power-cut-warnings-73-uk-33196788" target="_blank" rel="noopener">Power cut warnings for 73 UK area as 50,000 without power - full list issued</a></li><li class="source-entry"><div class="source-kicker">Coventry Telegraph</div><a class="source-link-title" href="https://www.coventrytelegraph.net/news/coventry-news/storm-goretti-travel-chaos-roads-33196641" target="_blank" rel="noopener">Storm Goretti travel chaos as roads closed across Coventry and Warwickshire</a></li><li class="source-entry"><div class="source-kicker">Nottingham Post</div><a class="source-link-title" href="https://www.nottinghampost.com/news/uk-world-news/power-cut-warning-73-uk-10745335" target="_blank" rel="noopener">Power cut warning for 73 UK areas before Saturday as Storm Goretti hits - full list</a></li><li class="source-entry"><div class="source-kicker">Liverpool Echo</div><a class="source-link-title" href="https://www.liverpoolecho.co.uk/news/uk-world-news/storm-goretti-leaves-thousands-without-33196404" target="_blank" rel="noopener">Storm Goretti leaves thousands without power as UK battered by snow and 99mph winds</a></li><li class="source-entry"><div class="source-kicker">Devon Live</div><a class="source-link-title" href="https://www.devonlive.com/news/devon-news/live-storm-goretti-chaos-devon-10745272" target="_blank" rel="noopener">Live: Storm Goretti chaos in Devon as roads blocked by fallen trees</a></li><li class="source-entry"><div class="source-kicker">Bristol Live</div><a class="source-link-title" href="https://www.bristolpost.co.uk/news/uk-world-news/60000-without-power-schools-closed-10745244" target="_blank" rel="noopener">60,000 without power, schools closed, as 99mph winds hit in Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/live-power-cuts-cornwall-hit-10745022" target="_blank" rel="noopener">Live: Cornwall power cuts still affecting 40,000 properties in Storm Goretti&#x27;s wake</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/live-storm-goretti-updates-danger-10744079" target="_blank" rel="noopener">Live Cornwall storm aftermath as trees block roads, schools closed and 40,000 still without power</a></li><li class="source-entry"><div class="source-kicker">North Wales Chronicle</div><a class="source-link-title" href="https://www.northwaleschronicle.co.uk/news/25750322.storm-goretti-prompts-warning-betsi-cadwaladr/?ref=rss" target="_blank" rel="noopener">North Wales health board declare critical incident ahead of Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - UK</div><a class="source-link-title" href="https://www.standard.co.uk/news/uk/storm-goretti-latest-updates-wind-snow-met-office-b1265611.html" target="_blank" rel="noopener">Storm Goretti LIVE: Thousands of homes left without power as life-threatening &#x27;weather bomb&#x27; hits UK</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Clifftop homes on Britain&#x27;s most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of &#x27;imminent collapse&#x27; into sea</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15446565/Homeowners-Britains-eroded-coastline-pack-belongings-warning-seaside-properties-not-survive-Storm-Goretti.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Homeowners on Britain&#x27;s most eroded coastline pack up their belongings after warning their seaside properties might not survive Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/" target="_blank" rel="noopener">Power cuts, travel disrupted as Storm Goretti hits Europe</a></li><li class="source-entry"><div class="source-kicker">Stoke Sentinel</div><a class="source-link-title" href="https://www.stokesentinel.co.uk/news/stoke-on-trent-news/live-updates-2100-homes-lose-10746157" target="_blank" rel="noopener">Live updates as 2,100 homes lose power in storm-hit Staffordshire</a></li><li class="source-entry"><div class="source-kicker">Hereford Times</div><a class="source-link-title" href="https://www.herefordtimes.com/news/25755633.flood-alerts-rivers-lugg-leadon-storm-goretti/?ref=rss" target="_blank" rel="noopener">Flood alerts in force in wake of Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/south-west-water-battling-restore-10749001" target="_blank" rel="noopener">South West Water battling to restore supplies after Storm Goretti chaos</a></li><li class="source-entry"><div class="source-kicker">Birmingham Live</div><a class="source-link-title" href="https://www.birminghammail.co.uk/news/midlands-news/midlands-postcodes-affected-outage-550-33208382" target="_blank" rel="noopener">All the Midlands postcodes affected by outage as 550 without power after UK snow</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/local-news/storm-gorettis-first-south-west-10748866" target="_blank" rel="noopener">Storm Goretti&#x27;s first South West death in village of &#x27;dangerous trees&#x27;</a></li><li class="source-entry"><div class="source-kicker">Cornwall Live</div><a class="source-link-title" href="https://www.cornwalllive.com/news/cornwall-news/huge-scene-storm-goretti-devastation-10748816" target="_blank" rel="noopener">Huge scene of Storm Goretti devastation in Cornwall caught on camera</a></li><li class="source-entry"><div class="source-kicker">Devon Live</div><a class="source-link-title" href="https://www.devonlive.com/news/uk-world-news/tributes-cornwall-man-who-died-10748585" target="_blank" rel="noopener">Tributes to Cornwall man who died during Storm Goretti after tree fell on caravan</a></li><li class="source-entry"><div class="source-kicker">Devon Live</div><a class="source-link-title" href="https://www.devonlive.com/news/uk-world-news/body-found-caravan-crushed-tree-10747962" target="_blank" rel="noopener">Body found in caravan crushed by tree in Storm Goretti</a></li><li class="source-entry"><div class="source-kicker">Kent Live</div><a class="source-link-title" href="https://www.kentlive.news/news/kent-news/kent-coastline-battered-storm-goretti-10747360" target="_blank" rel="noopener">Kent coastline &#x27;battered&#x27; in Storm Goretti and &#x27;significant&#x27; damage caused</a></li><li class="source-entry"><div class="source-kicker">County Times</div><a class="source-link-title" href="https://www.countytimes.co.uk/news/25753235.woman-dress-man-shorts-rescued-storm-goretti/?ref=rss" target="_blank" rel="noopener">Praise for tractor couple who launched Storm Goretti &#x27;rescue mission&#x27;</a></li></ul></details>
+    </main>
+
+    <div class="footer">
+      <span>The Bias 2026</span>
+      <div class="footer-links">
+        <a class="footer-social" href="https://instagram.com/thebias_app" target="_blank" rel="noopener" aria-label="The Bias on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="footer-social" href="https://reddit.com/u/the_bias_app" target="_blank" rel="noopener" aria-label="The Bias on Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6.2c1.9 0 3.7.5 5.1 1.3" />
+              <path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3" />
+              <path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"/>
+              <circle cx="9.2" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <circle cx="14.8" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9" />
+              <circle cx="17.7" cy="6.8" r="1.3"/>
+              <path d="M12.2 4.2l2.2.5"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Sources">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title" id="modal-title">Sources</div>
+        <button class="close-btn" data-close-modal>Close</button>
+      </div>
+      <ul class="source-list" id="modal-list"></ul>
+    </div>
+  </section>
+
+  <script>
+    window.__CLAIMS__ = {"b2": [["Storm Goretti swept across northern Europe, cutting power, grounding services and forcing widespread closures and cancellations.", "29992", "Storm Goretti battered ⁠northern Europe, knocking out power to thousands of homes, shutting schools and suspending rail services in France, Britain and Germany as heavy snow and gale-force winds compounded a week of freezing weather.", "Storm Goretti swept across northern Europe, cutting power, grounding services and forcing widespread closures and cancellations.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["The Met Office described the system as a 'multi-hazard' event and put amber and yellow warnings in place for large parts of the UK.", "24121", "The national forecaster has warned that the storm will be a “multi-hazard” event, bringing snow, rain and powerful winds up to 60mph fairly widely, while exposed coasts could see gusts of up to 90mph.", "The Met Office described the system as a 'multi-hazard' event and put amber and yellow warnings in place for large parts of the UK.", "Express - News", "Met Office names 73 UK areas facing power cuts before Saturday - full list", "https://www.express.co.uk/news/uk/2155112/met-office-power-cuts-saturday-list"], ["Parts of the south-west faced a rare red wind warning and authorities urged people to stay indoors.", "28361", "The Met Office issued a rare red weather warning for wind in Cornwall as the storm made its way across the South West and Midlands yesterday (Thursday, January 8).", "Parts of the south-west faced a rare red wind warning and authorities urged people to stay indoors.", "Cornwall Live", "Hundreds face 48 hours without electricity after Storm Goretti power cuts", "https://www.cornwalllive.com/news/cornwall-news/hundreds-face-48-hours-without-10745950"], ["French coastal stations recorded exceptional gusts — national reports noted a 213km/h reading in Barfleur.", "29992", "Winds of more than 150km/h were recorded overnight in France's northwestern Manche region, with a record 213km/h in Barfleur, forcing the SNCF rail operator to suspend services between Paris and Normandy.", "French coastal stations recorded exceptional gusts — national reports noted a 213km/h reading in Barfleur.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["The Isles of Scilly logged gusts close to 99mph.", "26400", "Winds of 99mph were recorded at St Mary's Airport on the Isles of Scilly on Thursday, which is a new record for the site, the Met Office said.", "The Isles of Scilly logged gusts close to 99mph.", "Evening Standard - UK", "Storm Goretti LIVE: Thousands of homes left without power as life-threatening 'weather bomb' hits UK", "https://www.standard.co.uk/news/uk/storm-goretti-latest-updates-wind-snow-met-office-b1265611.html"]], "b4": [["Cornwall Live said more than 40,000 customers were affected in the South West and warned some households might not be reconnected until Sunday.", "28361", "The National Grid has said that more than 40,000 affected customers will have their supplies reconnected between 8pm on Saturday, January 10 and 8am on Sunday, January 11.", "Cornwall Live said more than 40,000 customers were affected in the South West and warned some households might not be reconnected until Sunday.", "Cornwall Live", "Hundreds face 48 hours without electricity after Storm Goretti power cuts", "https://www.cornwalllive.com/news/cornwall-news/hundreds-face-48-hours-without-10745950"], ["A later Cornwall Live update put about 30,000 properties still without supply across the South West.", "33486", "Around 30,000 properties still have not been reconnected across the South West as 300 power cuts are ongoing this morning (Saturday, January 10).", "A later Cornwall Live update put about 30,000 properties still without supply across the South West.", "Cornwall Live", "Storm Goretti power cut customers could claim thousands in compensation", "https://www.cornwalllive.com/news/cornwall-news/storm-goretti-power-cut-customers-10747954"], ["Stoke Sentinel reported that more than 2,100 homes lost power in parts of Staffordshire.", "30075", "More than 2,100 homes lost power as Storm Goretti swept through the area.", "Stoke Sentinel reported that more than 2,100 homes lost power in parts of Staffordshire.", "Stoke Sentinel", "Live updates as 2,100 homes lose power in storm-hit Staffordshire", "https://www.stokesentinel.co.uk/news/stoke-on-trent-news/live-updates-2100-homes-lose-10746157"], ["RTE said roughly 380,000 households had their electricity cut in France.", "29992", "The powerful storm left around 380,000 households without electricity in France, mainly in Normandy and Brittany, as it rolled into continental Europe.", "RTE said roughly 380,000 households had their electricity cut in France.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["National Grid told Cornwall Live it had restored 147,983 properties across the South West, Midlands and South Wales.", "28361", "So far, 147,983 properties have been restored across the South West, Midlands, and South Wales.", "National Grid told Cornwall Live it had restored 147,983 properties across the South West, Midlands and South Wales.", "Cornwall Live", "Hundreds face 48 hours without electricity after Storm Goretti power cuts", "https://www.cornwalllive.com/news/cornwall-news/hundreds-face-48-hours-without-10745950"], ["By contrast, Daily Mail live coverage put the UK toll at about 65,000 homes without power.", "26101", "Storm Goretti has left 65,000 homes without power after unleashing 100mph winds and heavy snowfall across Britain.", "By contrast, Daily Mail live coverage put the UK toll at about 65,000 homes without power.", "Daily Mail - Home", "Storm Goretti leaves 65,000 homes without power as 100mph winds and 'worst snow for a decade' hits Britain with people told 'do not travel' today: Live updates", "https://www.dailymail.co.uk/news/article-15442565/storm-goretti-snow-uk-weather-live-updates.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"]], "b6": [["On the east coast, Great Yarmouth Borough Council told 14 households on The Marrams and Fakes Road that their clifftop homes were at imminent risk and residents were ordered to evacuate.", "26333", "Great Yarmouth Borough Council has written to 14 residents on The Marrams and Fakes Road to say they must leave as their homes are at imminent risk of collapse and have been scheduled for demolition.", "On the east coast, Great Yarmouth Borough Council told 14 households on The Marrams and Fakes Road that their clifftop homes were at imminent risk and residents were ordered to evacuate.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Reporters and locals documented more than 30ft of recent land loss in parts of Hemsby, with about 13ft lost on a single day and several properties already marked for demolition.", "26333", "More than 30ft of coastline has been lost in some parts of Hemsby, Norfolk, in the past week, including 13ft on Friday alone.", "Reporters and locals documented more than 30ft of recent land loss in parts of Hemsby, with about 13ft lost on a single day and several properties already marked for demolition.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Campaigners from Save Hemsby Coastline described the pace of erosion as 'truly frightening' and accused the council of a lack of leadership.", "26333", "Kevin Jordan, of pressure group Save Hemsby Coastline (SHC), said it was 'truly frightening' how much land had disappeared in Hemsby in such a short time... SHC colleague Simon Measures accused the council of a 'lack of leadership' by failing to take more action to slow coastal erosion in the area.", "Campaigners from Save Hemsby Coastline described the pace of erosion as 'truly frightening' and accused the council of a lack of leadership.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["The council said it had been liaising with affected owners, offering support, and warning the public to keep clear of the dune face.", "26333", "A council spokesman said: 'We have been liaising closely with people affected by erosion in Hemsby for some time but the recent spate of storms and forecast of further damage from Storm Goretti means some properties are now in an even more precarious position.'", "The council said it had been liaising with affected owners, offering support, and warning the public to keep clear of the dune face.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"]], "b8": [["One Daily Mail report said at least eight people had died in weather-related incidents across Europe this week.", "26129", "At least eight people have died in weather-related accidents this week across Europe, the latest being a man whose body was recovered from floodwater in the Albanian city of Durres on Thursday following days of heavy snowfall and torrential rain across the Balkans.", "One Daily Mail report said at least eight people had died in weather-related incidents across Europe this week.", "Daily Mail - Home", "Frozen Europe grinds to a halt: Chaos in Germany as -20C blizzards halt trains, planes and traffic while 135mph Storm Goretti triggers mass blackouts hit in France", "https://www.dailymail.co.uk/news/article-15448567/Frozen-Europe-grinds-halt-Chaos-Germany-20C-blizzards-halt-trains-planes-traffic-135mph-Storm-Goretti-triggers-mass-blackouts-hit-France.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"], ["RTE cited specific fatalities such as a body recovered in Albania.", "29992", "One person was found ⁠dead in Albania yesterday, which has been hit by extensive flooding, while gale-force winds ripped roofs off buildings in northeastern Turkey.", "RTE cited specific fatalities such as a body recovered in Albania.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["In North Wales the Betsi Cadwaladr University Health Board said it was treating the situation as an internal critical incident and urged patients to plan ahead.", "28230", "As a result of this, the Health Board is putting plans in place to ensure services are fully supported during this time to minimise any potential disruption. 'We are proactively treating this as an internal critical incident to ensure we can provide the necessary support to our services, staff and patients and keep any disruption to a minimum.'", "In North Wales the Betsi Cadwaladr University Health Board said it was treating the situation as an internal critical incident and urged patients to plan ahead.", "North Wales Chronicle", "North Wales health board declare critical incident ahead of Storm Goretti", "https://www.northwaleschronicle.co.uk/news/25750322.storm-goretti-prompts-warning-betsi-cadwaladr/?ref=rss"], ["The Welsh Ambulance Service warned cold weather brings more falls, breathing problems and road collisions and that response times may take longer.", "28230", "Cold weather naturally leads to an increase in falls, breathing difficulties, and road traffic collisions, so it’s important that you take steps to reduce the risk of becoming ill or injured, and help us, help you.", "The Welsh Ambulance Service warned cold weather brings more falls, breathing problems and road collisions and that response times may take longer.", "North Wales Chronicle", "North Wales health board declare critical incident ahead of Storm Goretti", "https://www.northwaleschronicle.co.uk/news/25750322.storm-goretti-prompts-warning-betsi-cadwaladr/?ref=rss"]], "b10": [["State-owned Deutsche Bahn halted long‑distance services in northern Germany.", "29992", "The disruption spread into northern Germany, where state-owned Deutsche Bahn halted long-distance train services until further notice.", "State-owned Deutsche Bahn halted long‑distance services in northern Germany.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["KLM canceled dozens of flights to and from Amsterdam's Schiphol Airport.", "29992", "KLM said it had cancelled 80 flights to and from Amsterdam's Schiphol Airport scheduled for today.", "KLM canceled dozens of flights to and from Amsterdam's Schiphol Airport.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["Eurostar and other operators suspended or cancelled multiple continental services.", "16868", "Several Eurostar trains to France and the Netherlands were axed due to the conditions.", "Eurostar and other operators suspended or cancelled multiple continental services.", "Daily Mail - Home", "Anger at ungritted roads across the UK as councils' lack of preparation for Storm Goretti cold snap leaves commuters slipping on pavements and platforms - leaving at least one in hospital", "https://www.dailymail.co.uk/news/article-15441077/Britain-high-alert-snow-ice-Storm-Goretti.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"]], "b12": [["“I’ve been left without heating since Saturday (January 3) and I still don’t know when it’s going to be fixed,” she said.", "17846", "“I’ve been left without heating since Saturday (January 3) and I still don’t know when it’s going to be fixed,” she said.", "“I’ve been left without heating since Saturday (January 3) and I still don’t know when it’s going to be fixed,” she said.", "Northampton Chronicle", "Northampton mother at 'breaking point' after council home left without any heating during sub-zero temperatures ahead of Storm Goretti", "https://www.northamptonchron.co.uk/news/politics/council/northampton-mother-at-breaking-point-after-council-home-left-without-any-heating-during-sub-zero-temperatures-ahead-of-storm-goretti-5465480"]], "b13": [["Aliye told the Northampton Chronicle that the air‑source heating installed in 2022 has repeatedly broken down and that many engineers sent were not trained to repair the system.", "17846", "“I’ve probably had engineers out more than 50 times since March last year,” she said. “Most of them are gas engineers. They’re not trained to touch air source systems, so they come out and then just leave.”", "Aliye told the Northampton Chronicle that the air‑source heating installed in 2022 has repeatedly broken down and that many engineers sent were not trained to repair the system.", "Northampton Chronicle", "Northampton mother at 'breaking point' after council home left without any heating during sub-zero temperatures ahead of Storm Goretti", "https://www.northamptonchron.co.uk/news/politics/council/northampton-mother-at-breaking-point-after-council-home-left-without-any-heating-during-sub-zero-temperatures-ahead-of-storm-goretti-5465480"], ["She said temporary electric heaters provided were unsafe for her autistic son and did not heat the house adequately.", "17846", "She said temporary electric heaters were provided but are unsafe for her autistic son and do not adequately heat the property.", "She said temporary electric heaters provided were unsafe for her autistic son and did not heat the house adequately.", "Northampton Chronicle", "Northampton mother at 'breaking point' after council home left without any heating during sub-zero temperatures ahead of Storm Goretti", "https://www.northamptonchron.co.uk/news/politics/council/northampton-mother-at-breaking-point-after-council-home-left-without-any-heating-during-sub-zero-temperatures-ahead-of-storm-goretti-5465480"], ["A Powys resident praised neighbours who collected her and a companion by tractor, calling Annie and Ryan 'the most amazing people'.", "34154", "She described Annie and Ryan as “the most amazing people”.", "A Powys resident praised neighbours who collected her and a companion by tractor, calling Annie and Ryan 'the most amazing people'.", "County Times", "Praise for tractor couple who launched Storm Goretti 'rescue mission'", "https://www.countytimes.co.uk/news/25753235.woman-dress-man-shorts-rescued-storm-goretti/?ref=rss"]], "b15": [["Commuters and social‑media users complained of ungritted pavements, platforms and minor roads that they said were behaving like 'ice rinks', and at least one person required emergency treatment after a fall.", "16868", "Commuters expressed frustration on social media over a lack of gritted pavements, roads and train stations as they travelled to work in the treacherous conditions... In Plymouth, a woman needed emergency treatment from Devon Air Ambulance after suffering a serious leg injury when she slipped on an icy pavement.", "Commuters and social‑media users complained of ungritted pavements, platforms and minor roads that they said were behaving like 'ice rinks', and at least one person required emergency treatment after a fall.", "Daily Mail - Home", "Anger at ungritted roads across the UK as councils' lack of preparation for Storm Goretti cold snap leaves commuters slipping on pavements and platforms - leaving at least one in hospital", "https://www.dailymail.co.uk/news/article-15441077/Britain-high-alert-snow-ice-Storm-Goretti.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"], ["The Local Government Association urged people to check on older and vulnerable neighbours and said councils cannot grit every road because doing so would cost hundreds of millions.", "16868", "The Local Government Association (LGA) says councils cannot grit all roads because this would cost hundreds of millions of extra pounds – while many roads are also too narrow or steep for gritting lorries to navigate.", "The Local Government Association urged people to check on older and vulnerable neighbours and said councils cannot grit every road because doing so would cost hundreds of millions.", "Daily Mail - Home", "Anger at ungritted roads across the UK as councils' lack of preparation for Storm Goretti cold snap leaves commuters slipping on pavements and platforms - leaving at least one in hospital", "https://www.dailymail.co.uk/news/article-15441077/Britain-high-alert-snow-ice-Storm-Goretti.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"], ["Police forces reported multiple collisions and warned against unnecessary travel.", "16868", "West Midlands Police said it had received 'a number of reports of collisions as a result of the icy morning', while Leicestershire Police said the roads were 'very dangerous'.", "Police forces reported multiple collisions and warned against unnecessary travel.", "Daily Mail - Home", "Anger at ungritted roads across the UK as councils' lack of preparation for Storm Goretti cold snap leaves commuters slipping on pavements and platforms - leaving at least one in hospital", "https://www.dailymail.co.uk/news/article-15441077/Britain-high-alert-snow-ice-Storm-Goretti.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"], ["The RAC advised drivers to allow more time, carry the right equipment and not use hot water to clear a frozen windscreen.", "16868", "RAC breakdown spokesperson Alice Simpson said: 'In these conditions, the key is allowing more time at every stage of the journey... 'Never be tempted to use hot water to clear a frozen windscreen which, rather than being a hack could actually lead to an expensive crack.'", "The RAC advised drivers to allow more time, carry the right equipment and not use hot water to clear a frozen windscreen.", "Daily Mail - Home", "Anger at ungritted roads across the UK as councils' lack of preparation for Storm Goretti cold snap leaves commuters slipping on pavements and platforms - leaving at least one in hospital", "https://www.dailymail.co.uk/news/article-15441077/Britain-high-alert-snow-ice-Storm-Goretti.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"]], "b17": [["South West Water opened bottled‑water distribution points after a treatment works was knocked offline and warned repairs would be complex.", "33421", "Bottled water stations are open after a water treatment works failure... Fixing the issue \"is not as simple as switching it back on\",", "South West Water opened bottled‑water distribution points after a treatment works was knocked offline and warned repairs would be complex.", "Cornwall Live", "Bottled water stations open after Storm Goretti knocks out treatment works", "https://www.cornwalllive.com/news/cornwall-news/bottled-water-stations-open-after-10748227"], ["National Grid said it had restored large numbers of properties and had brought in extra engineers to speed repairs in the worst-hit regions.", "30075", "To speed up remaining repairs, we've brought in additional engineers from other areas to focus on the South West and West Midlands, where the strongest impacts were felt.", "National Grid said it had restored large numbers of properties and had brought in extra engineers to speed repairs in the worst-hit regions.", "Stoke Sentinel", "Live updates as 2,100 homes lose power in storm-hit Staffordshire", "https://www.stokesentinel.co.uk/news/stoke-on-trent-news/live-updates-2100-homes-lose-10746157"], ["Cornwall Live explained that National Grid's Guaranteed Standards of Performance set out compensation for long outages, with household payments possible if a cut lasts beyond the threshold.", "33486", "A household affected by a power cut can be paid as much as £2,000.", "Cornwall Live explained that National Grid's Guaranteed Standards of Performance set out compensation for long outages, with household payments possible if a cut lasts beyond the threshold.", "Cornwall Live", "Storm Goretti power cut customers could claim thousands in compensation", "https://www.cornwalllive.com/news/cornwall-news/storm-goretti-power-cut-customers-10747954"], ["Operators said they were prioritising vulnerable customers while work continued.", "30075", "Our teams will continue to work tirelessly throughout the day to restore power across the network, and our customer contact teams are available around the clock to support anyone who needs us.", "Operators said they were prioritising vulnerable customers while work continued.", "Stoke Sentinel", "Live updates as 2,100 homes lose power in storm-hit Staffordshire", "https://www.stokesentinel.co.uk/news/stoke-on-trent-news/live-updates-2100-homes-lose-10746157"]], "b19": [["Local leaders called for more government help on coastal protection and compensation, while council directors said they were supporting residents through an acute emergency.", "26333", "James Bensly, of pressure group Save Hemsby Coastline (SHC), said it was 'truly frightening'... The county council and Great Yarmouth Borough Council were fighting for 'sustainable solutions' for Hemsby and other coastal communities, he added.", "Local leaders called for more government help on coastal protection and compensation, while council directors said they were supporting residents through an acute emergency.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["The Norfolk councillor described the pace of erosion as alarming and warned of the emotional toll on communities.", "26333", "James Bensly... said: 'We've had serious erosion over the last weekend. I live and work there. I see the erosion up close and I hear daily from residents who are watching our coastline disappear and wondering what will happen next... The pace of it is quite alarming and deeply upsetting...'", "The Norfolk councillor described the pace of erosion as alarming and warned of the emotional toll on communities.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["A council director called on the government to review compensation policy for people affected by coastal erosion.", "26333", "Ms Hayes added: 'From our perspective, we would very much like to see the government review its policy on compensating people affected by coastal erosion...'", "A council director called on the government to review compensation policy for people affected by coastal erosion.", "Daily Mail - News", "Clifftop homes on Britain's most eroded coastline are evacuated before Storm Goretti hits over fears seaside properties are at risk of 'imminent collapse' into sea", "https://www.dailymail.co.uk/news/article-15445517/Clifftop-homes-Britains-eroded-coastline-evacuated-Storm-Goretti-hits-fears-seaside-properties-risk-imminent-collapse-sea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["German meteorologists said such extremes are still possible in a warming climate.", "26129", "DWD meteorologist Andreas Walter told AFP the storm was exceptional in the context of the last few years of milder winters, which were a 'consequence of climate change'.", "German meteorologists said such extremes are still possible in a warming climate.", "Daily Mail - Home", "Frozen Europe grinds to a halt: Chaos in Germany as -20C blizzards halt trains, planes and traffic while 135mph Storm Goretti triggers mass blackouts hit in France", "https://www.dailymail.co.uk/news/article-15448567/Frozen-Europe-grinds-halt-Chaos-Germany-20C-blizzards-halt-trains-planes-traffic-135mph-Storm-Goretti-triggers-mass-blackouts-hit-France.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"], ["The Met Office published a list of 73 UK areas at risk of power cuts before Saturday.", "24121", "The Met Office has named 73 areas across the UK at risk of power cuts before Saturday as Storm Goretti sweeps the country.", "The Met Office published a list of 73 UK areas at risk of power cuts before Saturday.", "Express - News", "Met Office names 73 UK areas facing power cuts before Saturday - full list", "https://www.express.co.uk/news/uk/2155112/met-office-power-cuts-saturday-list"]], "b21": [["Officials have confirmed that the storm brought high winds, heavy snow and significant service disruption, and forecasters and operators are continuing to update warnings and repair timetables.", "29992", "Storm Goretti battered ⁠northern Europe, knocking out power to thousands of homes, shutting schools and suspending rail services in France, Britain and Germany as heavy snow and gale-force winds compounded a week of freezing weather.", "Officials have confirmed that the storm brought high winds, heavy snow and significant service disruption, and forecasters and operators are continuing to update warnings and repair timetables.", "RTE - Ireland News", "Power cuts, travel disrupted as Storm Goretti hits Europe", "https://www.rte.ie/news/world/2026/0109/1552294-storm-goretti-eu/"], ["Residents and campaigners have alleged failings in local responses — from gritting to coastal protection — while councils and emergency services say they are prioritising safety and liaising with affected people.", "17846", "“If I didn’t pay my rent, they’d be all over me straight away,” she said. “But when the shoe’s on the other foot and I need help, they’re nowhere to be seen.”", "Residents and campaigners have alleged failings in local responses — from gritting to coastal protection — while councils and emergency services say they are prioritising safety and liaising with affected people.", "Northampton Chronicle", "Northampton mother at 'breaking point' after council home left without any heating during sub-zero temperatures ahead of Storm Goretti", "https://www.northamptonchron.co.uk/news/politics/council/northampton-mother-at-breaking-point-after-council-home-left-without-any-heating-during-sub-zero-temperatures-ahead-of-storm-goretti-5465480"], ["Next, National Grid and local distributors will continue restoration work while the Met Office keeps issuing updates.", "30075", "To speed up remaining repairs, we've brought in additional engineers from other areas to focus on the South West and West Midlands, where the strongest impacts were felt.", "Next, National Grid and local distributors will continue restoration work while the Met Office keeps issuing updates.", "Stoke Sentinel", "Live updates as 2,100 homes lose power in storm-hit Staffordshire", "https://www.stokesentinel.co.uk/news/stoke-on-trent-news/live-updates-2100-homes-lose-10746157"]]};
+    const intlStrips = document.querySelectorAll(".intl-strip");
+    const fadeSizeFor = (strip) => {
+      const width = strip.clientWidth || 0;
+      return Math.min(22, Math.max(10, width * 0.035));
+    };
+    const updateIntlFade = (strip) => {
+      const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      const fade = fadeSizeFor(strip);
+      const leftFade = Math.min(fade, Math.max(0, strip.scrollLeft));
+      const rightFade = Math.min(fade, Math.max(0, maxScroll - strip.scrollLeft));
+      strip.style.setProperty("--left-fade", `${leftFade}px`);
+      strip.style.setProperty("--right-fade", `${rightFade}px`);
+    };
+    intlStrips.forEach((strip) => {
+      const onUpdate = () => updateIntlFade(strip);
+      strip.addEventListener("scroll", () => requestAnimationFrame(onUpdate), {passive: true});
+      window.addEventListener("resize", onUpdate);
+      onUpdate();
+    });
+
+    const claimToggle = document.getElementById("claim-toggle");
+    const claimBody = document.body;
+    const claimPalette = ["#F7E6A8","#DDEEFF","#F7CCD1","#D9F1E1"];
+    let claimHighlightsApplied = false;
+
+    function highlightSnippet(root, snippet, blockId, claimIndex, color) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let node = null;
+      while ((node = walker.nextNode())) {
+        const text = node.nodeValue || "";
+        const start = text.indexOf(snippet);
+        if (start === -1) continue;
+        const end = start + snippet.length;
+        const before = document.createTextNode(text.slice(0, start));
+        const match = document.createTextNode(text.slice(start, end));
+        const after = document.createTextNode(text.slice(end));
+        const span = document.createElement("span");
+        span.className = "claim-mark";
+        span.style.setProperty("--claim-color", color);
+        span.dataset.block = blockId;
+        span.dataset.claimIndex = String(claimIndex);
+        span.appendChild(match);
+        const parent = node.parentNode;
+        parent.insertBefore(before, node);
+        parent.insertBefore(span, node);
+        parent.insertBefore(after, node);
+        parent.removeChild(node);
+        return true;
+      }
+      return false;
+    }
+
+    function applyClaimHighlights() {
+      if (claimHighlightsApplied) return;
+      document.querySelectorAll("[data-block]").forEach((el) => {
+        const blockId = el.getAttribute("data-block");
+        const claims = window.__CLAIMS__[blockId] || [];
+        claims.forEach((c, idx) => {
+          let snippet = "";
+          if (Array.isArray(c)) {
+            if (typeof c[3] === "string" && c[3]) {
+              snippet = c[3];
+            } else if (typeof c[c.length - 1] === "string") {
+              snippet = c[c.length - 1];
+            }
+          }
+          if (!snippet || typeof snippet !== "string") return;
+          highlightSnippet(el, snippet, blockId, idx, claimPalette[idx % claimPalette.length]);
+        });
+      });
+      claimHighlightsApplied = true;
+    }
+
+    function toggleClaimMode() {
+      const isActive = claimBody.classList.toggle("claim-mode");
+      if (claimToggle) {
+        claimToggle.setAttribute("aria-pressed", isActive ? "true" : "false");
+        claimToggle.classList.toggle("is-active", isActive);
+      }
+      if (isActive) applyClaimHighlights();
+    }
+
+    if (claimToggle) {
+      claimToggle.addEventListener("click", toggleClaimMode);
+    }
+
+    const claimNudge = document.getElementById("claim-nudge");
+    if (claimNudge) {
+      requestAnimationFrame(() => claimNudge.classList.add("is-visible"));
+      setTimeout(() => claimNudge.classList.remove("is-visible"), 2800);
+    }
+
+    document.addEventListener("click", (event) => {
+      const mark = event.target.closest(".claim-mark");
+      if (!mark || !claimBody.classList.contains("claim-mode")) return;
+      const blockId = mark.dataset.block;
+      const claimIndex = parseInt(mark.dataset.claimIndex || "0", 10);
+      if (window.__openClaimModal) {
+        window.__openClaimModal(blockId, claimIndex);
+      }
+    });
+  </script>
+  <script>(function(){
+  const CLAIMS = window.__CLAIMS__ || {};
+  const backdrop = document.getElementById("modal-backdrop");
+  const modal = document.getElementById("modal");
+  const list = document.getElementById("modal-list");
+  const title = document.getElementById("modal-title");
+  const closeButtons = document.querySelectorAll("[data-close-modal]");
+
+  function esc(s){ return (s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function renderClaims(claims){
+    title.textContent = claims.length ? `Sources (${claims.length})` : "Sources";
+    list.innerHTML = "";
+    claims.forEach((c) => {
+      let claim_text="", quote="", outlet="", source_title="", url="";
+      try{
+        claim_text = c[0] || "";
+        quote = c[2] || "";
+        outlet = c[4] || "";
+        source_title = c[5] || "";
+        url = c[6] || "";
+      }catch(e){}
+      const li = document.createElement("li");
+      li.className = "claim-entry";
+      li.innerHTML = `
+        <div class="claim-head">
+          <span class="claim-source">${esc(outlet).toUpperCase() || "SOURCE"}</span>
+          ${source_title ? `<span class="claim-title">${esc(source_title)}</span>` : ``}
+        </div>
+        ${claim_text ? `<div class="claim-row">Claim: ${esc(claim_text)}</div>` : ``}
+        ${quote ? `<div class="claim-row">Quote: “${esc(quote)}”</div>` : ``}
+        ${url ? `<div class="claim-row">Link: <a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></div>` : ``}
+      `;
+      list.appendChild(li);
+    });
+  }
+
+  function open(){
+    backdrop.style.display = "block";
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    backdrop.style.display = "none";
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  window.__openClaimModal = (blockId, claimIndex) => {
+    let claims = CLAIMS[blockId] || [];
+    if (typeof claimIndex === "number") {
+      const selected = claims[claimIndex];
+      claims = selected ? [selected] : [];
+    }
+    renderClaims(claims);
+    open();
+  };
+
+  backdrop.addEventListener("click", close);
+  closeButtons.forEach(b => b.addEventListener("click", close));
+})();</script>
+</body>
+</html>
