@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>US Capture of Maduro Triggers Congressional Fight and Global Reactions</title>
+  <link rel="icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+  <style>:root{
+  --bg:#FFFAF2;
+  --card:#F4EEE3;
+  --ink:#111214;
+  --muted:#5C5C60;
+  --hair:rgba(17,18,20,.10);
+  --gold:#C8A25D;
+  --rating:#7A1F27;
+  --radius:18px;
+  --max: 860px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-top: 62px;
+}
+
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px 70px;}
+
+.appbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(255,250,242,.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.appbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.about-link{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  text-decoration: none;
+}
+.about-link:hover{ color: rgba(17,18,20,.8); }
+.logo{
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+.logo img{
+  height: 22px;
+  width: auto;
+  display: block;
+}
+.claim-toggle{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.6);
+  color: rgba(17,18,20,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.claim-toggle.is-active{
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+.header{ padding-top: 18px; }
+h1.title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+@media (max-width: 700px){
+  .wrap{padding: 0 18px 60px;}
+  h1.title{font-size: 38px;}
+}
+
+.hero{ margin-top: 14px; }
+.hero img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display:block;
+  border-radius: 0;
+}
+@media (max-width: 700px){
+  .hero img{height: 340px;}
+}
+
+.meta-card{
+  background: var(--card);
+  padding: 14px 16px 16px;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-toast{
+  margin: 10px auto 0;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.78);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-align:center;
+  max-width: 520px;
+  display: none;
+}
+body.claim-mode .claim-toast{ display:block; }
+.meta-row{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  column-gap: 12px;
+  align-items:center;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.meta-item{
+  text-align: center;
+}
+.meta-item.left{ text-align: left; }
+.meta-item.right{ text-align: right; }
+.meta-item:empty{ visibility: hidden; }
+.dot-sep.is-hidden{ visibility: hidden; }
+.dot-sep{width:4px;height:4px;border-radius:999px;background: rgba(17,18,20,.25);display:inline-block;}
+
+.meters{ margin-top: 12px; display:grid; gap: 12px; padding: 0 4px; }
+.meter{ display:grid; gap: 6px; }
+.meter-line{ height:1px; background: rgba(17,18,20,.10); position:relative; }
+.meter-line::after{ content:""; position:absolute; left:0; top:0; height:1px; width:var(--fill, 50%); background: var(--rating); }
+.meter-label{ display:flex; gap: 8px; align-items:baseline; font-size: 14px; font-weight: 400; padding-left: 0; }
+.meter-label .k{ color: var(--rating); font-weight: 400; }
+.meter-label .v{ color: var(--ink); font-weight: 400; }
+.rating-details{
+  margin-top: 8px;
+  padding-top: 0;
+  display:flex;
+  flex-direction: column;
+}
+.rating-details summary{
+  list-style: none;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rating);
+  order: 2;
+  margin-top: 8px;
+}
+.rating-details summary::-webkit-details-marker{ display:none; }
+.rating-details .chev{
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.rating-details[open] .chev{ transform: rotate(180deg); }
+.rating-body{
+  margin-top: 10px;
+  display:grid;
+  gap: 16px;
+  font-size: 15px;
+  color: rgba(17,18,20,.82);
+  order: 1;
+}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+.rating-title{
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.rating-divider{
+  border: 0;
+  border-top: 1px solid var(--hair);
+  margin: 2px 0 0;
+}
+.rating-how{
+  margin-top: 4px;
+}
+.rating-how-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+
+.intl-section{
+  margin-top: 28px;
+}
+.intl-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.intl-sub{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
+}
+.intl-strip{
+  --fade-size: clamp(10px, 3.5vw, 22px);
+  --left-fade: 0px;
+  --right-fade: var(--fade-size);
+  display:flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  padding-left: 0;
+  margin-left: -8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+}
+.intl-strip::-webkit-scrollbar{ height: 6px; }
+.intl-strip::-webkit-scrollbar-thumb{
+  background: rgba(17,18,20,.2);
+  border-radius: 999px;
+}
+.intl-card{
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 4px;
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(17,18,20,.06);
+  scroll-snap-align: start;
+}
+@media (min-width: 700px){
+  .intl-card{ min-width: 320px; max-width: 360px; }
+}
+.intl-country{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intl-sources-title{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+}
+.intl-sources{
+  margin: 6px 0 12px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.intl-para{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.intl-quote{
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-style: italic;
+}
+.intl-attrib{
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.content{ padding-top: 18px; }
+
+h2.subtitle{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 26px 0 10px;
+}
+@media (max-width: 700px){ h2.subtitle{font-size: 30px;} }
+
+p.para{ margin: 0 0 16px; font-size: 17px; line-height: 1.85; color: rgba(17,18,20,.9); }
+hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 24px 0; }
+
+.list{ margin: 0 0 18px; padding-left: 20px; font-size: 17px; }
+.list li{ margin: 8px 0; }
+
+blockquote.quote{
+  margin: 18px 0 10px;
+  padding: 18px 0 18px;
+  border-top: 0;
+  border-bottom: 0;
+  background: transparent;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--ink);
+  position: relative;
+}
+blockquote.quote::before{
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote::after{
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -34px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote .quote-line{
+  position: absolute;
+  height: 2px;
+  background: rgba(200,162,93,.55);
+}
+blockquote.quote .quote-line.top{
+  left: 36px;
+  right: 0;
+  top: 6px;
+}
+blockquote.quote .quote-line.bottom{
+  left: 0;
+  right: 15px;
+  bottom: 4px;
+}
+.quote-attrib{
+  margin-top: 8px;
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.pullquote{
+  margin: 18px 0 6px;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-align:left;
+  font-style: italic;
+  position: relative;
+}
+.pullquote::before,
+.pullquote::after{
+  color: var(--gold);
+  font-size: 34px;
+  line-height: 1;
+}
+.pullquote::before{
+  content: "“";
+  margin-right: 6px;
+}
+.pullquote::after{
+  content: "”";
+  margin-left: 6px;
+}
+.pullquote-attrib{
+  text-align:left;
+  color: rgba(17,18,20,.65);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.claim-mark{
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background .2s ease;
+}
+body.claim-mode .claim-mark{
+  background: var(--claim-color, rgba(200,162,93,.25));
+  cursor: pointer;
+}
+
+.stat-card{
+  margin: 18px 0 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+}
+.stat-value{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.stat-label{
+  margin-top: 6px;
+  font-size: 26px;
+  color: var(--gold);
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+.stat-note{
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(17,18,20,.6);
+}
+
+.aside{
+  margin: 14px 0 18px;
+  background: var(--card);
+  border: 1px solid rgba(17,18,20,.08);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.aside-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 8px;
+}
+.aside-body{ font-size: 15px; color: var(--ink); }
+
+.inline-fn sup{
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.inline-fn a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.inline-fn a:hover{ text-decoration: underline; }
+
+.spotline{
+  margin: -6px 0 16px;
+  display:flex;
+  justify-content: flex-end;
+}
+.spotlight{
+  border: 0;
+  background: transparent;
+  color: rgba(17,18,20,.62);
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor:pointer;
+}
+.spotlight:hover{
+  background: rgba(0,0,0,.03);
+  color: rgba(17,18,20,.80);
+}
+.spotlight .count{
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(17,18,20,.45);
+  display:none;
+  z-index: 50;
+}
+.modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 78vh;
+  background: var(--bg);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid rgba(255,255,255,.45);
+  display:none;
+  z-index: 60;
+  box-shadow: 0 -18px 60px rgba(0,0,0,.22);
+}
+.modal-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px 18px;
+  background: var(--bg);
+}
+.modal-handle{
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(17,18,20,.16);
+  margin: 0 auto 12px;
+}
+.modal-head{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hair);
+}
+.modal-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 650;
+}
+.close-btn{
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.78);
+  border-radius: 4px;
+  padding: 7px 10px;
+  cursor:pointer;
+  font-size: 13px;
+}
+.close-btn:hover{ background: rgba(244,238,227,.9); }
+
+.source-list{
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style:none;
+}
+.source-item{
+  margin: 10px 0;
+  padding: 12px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.08);
+  background: var(--card);
+}
+.source-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.source-entry:last-child{ border-bottom: 0; }
+.source-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 4px;
+}
+.source-link-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.source-link-title:hover{ text-decoration: underline; }
+.source-head{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(17,18,20,.10);
+  background: rgba(255,250,242,.85);
+  color: rgba(17,18,20,.70);
+}
+.source-title{
+  font-size: 13px;
+  font-weight: 650;
+  flex: 1 1 auto;
+}
+.source-link{
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.source-link:hover{ text-decoration: underline; }
+.source-claim{ margin-top: 6px; font-size: 12px; color: rgba(17,18,20,.72); }
+.source-quote{
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17,18,20,.14);
+  background: rgba(255,250,242,.7);
+  color: rgba(17,18,20,.85);
+}
+.tiny{ font-size: 11px; color: rgba(17,18,20,.55); margin-top: 6px; }
+.claim-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-entry:last-child{ border-bottom: 0; }
+.claim-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.claim-source{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  flex: 0 0 auto;
+}
+.claim-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-align: right;
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+.claim-title:hover{ text-decoration: underline; }
+.claim-row{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(17,18,20,.75);
+}
+.claim-row a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.claim-row a:hover{ text-decoration: underline; }
+
+details.sources{
+  margin: 18px 0 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+}
+details.sources summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 650;
+}
+details.sources summary::-webkit-details-marker{display:none;}
+details.sources summary .chev{
+  width:14px;height:14px; opacity:.6;
+  transform: rotate(0deg);
+  transition: transform .18s ease;
+}
+details.sources[open] summary .chev{ transform: rotate(180deg); }
+
+.bias-note{
+  margin-top: 26px;
+  padding: 16px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.bias-note-kicker{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 6px;
+}
+.bias-note-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+.bias-note-text{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17,18,20,.78);
+}
+.bias-note-disclosure{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(17,18,20,.6);
+}
+.bias-note a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.bias-note a:hover{ text-decoration: underline; }
+
+.footer{
+  margin-top: 16px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(17,18,20,.55);
+}
+.footer-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.12);
+  color: rgba(17,18,20,.6);
+  text-decoration: none;
+}
+.footer-social:hover{ color: rgba(17,18,20,.85); }
+.footer-social svg{ width: 14px; height: 14px; }
+.footer-links{ display:flex; align-items:center; gap: 8px; }</style>
+</head>
+<body>
+  <header class="appbar">
+    <div class="appbar-inner">
+      <a class="about-link" href="#about-bias">About</a>
+      <div class="logo"><img src="logo.png" alt="The Bias" /></div>
+      <button class="claim-toggle" id="claim-toggle" aria-pressed="false" aria-label="Toggle claim mode" title="Claim mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20h6M12 4v6m0 0a4 4 0 00-4 4v1a4 4 0 004 4 4 4 0 004-4v-1a4 4 0 00-4-4z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="header">
+      <h1 class="title">US Capture of Maduro Triggers Congressional Fight and Global Reactions</h1>
+    </section>
+
+    <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/political-fallout-in-the-united-states-and-internationally-after-the-venezuela-operation-white-house-briefings-to-congress-partisan-debate-calls-for-impeachment-25th-amendment-and-widespread-diplomatic-reaction-1768168415-a4d497a4.png" alt="Hero image" /></div>
+
+    <section class="meta-card">
+      <div class="meta-row"><span class="meta-item left">Updated 13h ago</span><span class="dot-sep"></span><span class="meta-item center">5-min read</span><span class="dot-sep"></span><span class="meta-item right">293 sources</span></div>
+
+      <div class="meters">
+        <div class="meter">
+          <div class="meter-label"><span class="k">Factuality</span><span>—</span><span class="v">Strong evidence</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:72%;"></div>
+        </div>
+        <div class="meter">
+          <div class="meter-label"><span class="k">Divisiveness</span><span>—</span><span class="v">Contentious</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:80%;"></div>
+        </div>
+      </div>
+
+      <details class="rating-details" id="rating-details">
+        <summary>
+          <span class="sr-only">How we rate this</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="rating-body">
+          <div>
+            <div class="rating-title">Factuality</div>
+            <div>Multiple independent sources and documents substantiate key claims.</div>
+          </div>
+          <div>
+            <div class="rating-title">Divisiveness</div>
+            <div>Significant disagreement between outlets in emphasis, framing, or conclusions.</div>
+          </div>
+          <hr class="rating-divider" />
+          <div class="rating-how">
+            <div class="rating-how-title">How we rate this</div>
+            <div>We leverage large language models and clustering methods to assess how closely outlets agree on core facts and how much interpretations diverge. Scores reflect the dispersion of claims and the strength of sourcing across multiple outlets.</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="claim-toast" id="claim-toast">Claim mode on, tap a claim to see its source</div>
+
+    <main class="content">
+      
+      <h2 class="subtitle">Overview</h2><p class="para" data-block="b2">U.S. forces carried out a pre-dawn operation in Caracas on Jan. 3 that led to the capture of President Nicolás Maduro and his wife, Cilia Flores. Both were taken to New York to face federal drug and weapons charges. They have pleaded not guilty in Manhattan.</p><h2 class="subtitle">How the raid unfolded</h2><p class="para" data-block="b4">Officials said law-enforcement teams and military personnel entered Maduro’s compound shortly after 1:01 a.m., and U.S. officials said he was out of Venezuelan airspace by about 3:29 a.m. ET. Gen. Dan Caine described a complex, multi-axis plan with aircraft launching from multiple points; military officials said at least one U.S. aircraft was struck but remained flyable.</p><h2 class="subtitle">Charges and legal framing</h2><p class="para" data-block="b6">Prosecutors in New York unsealed an indictment accusing Maduro’s government of using state power to protect and promote illegal activity, including drug trafficking. Maduro appeared in Manhattan, pleaded not guilty and described himself as a &#x27;prisoner of war.&#x27; The White House has framed the removal as a law-enforcement action, while some lawmakers and legal observers say the strikes resemble an act of war that should require congressional authorization. President Trump added that the United States would &#x27;run the country&#x27; until a safe, proper and judicious transition could be arranged.</p><h2 class="subtitle">Congress and the war‑powers fight</h2><p class="para" data-block="b8">Senators advanced a war‑powers resolution in a 52‑47 procedural vote intended to restrict further unilateral strikes in Venezuela. The effort, led by Sen. Tim Kaine with Sen. Rand Paul as a Republican co‑sponsor, was advanced after five Republicans crossed to support it. Lawmakers who attended classified briefings said they left dissatisfied and demanded more public detail. Some Democrats also publicly raised impeachment and 25th‑Amendment talk.</p><h2 class="subtitle">Political reactions — supporters</h2><p class="para" data-block="b10">Administration allies and many Republicans hailed the raid as a carefully planned, strategic strike against narcotics networks. Defense Secretary Pete Hegseth called the mission the &#x27;exact opposite&#x27; of the Iraq invasion. Senator Tom Cotton and other Republicans emphasised Maduro&#x27;s alleged role in drug trafficking. Secretary of State Marco Rubio said the U.S. had arrangements to sell 30 to 50 million barrels of Venezuelan oil. Speaker Mike Johnson and conservative commentators celebrated the outcome. At least one Democratic senator, John Fetterman, described the operation as &#x27;surgical and very efficient.&#x27;</p><h2 class="subtitle">Political reactions — critics</h2><p class="para" data-block="b12">Progressive critics and some conservatives accused the administration of ulterior motives or recklessness. Representative Alexandria Ocasio‑Cortez wrote that &#x27;it&#x27;s not about drugs; it&#x27;s about oil and regime change.&#x27; Senator Chris Murphy called plans to seize Venezuelan oil &#x27;insane.&#x27; Representative Marjorie Taylor Greene warned the move could presage more regime‑change campaigns. Senator Elissa Slotkin said the president&#x27;s turn to foreign entanglements looked like a distraction from domestic problems. Anti‑war campaigners and local UK parties staged protests and called the intervention illegal or a war crime. Conservative MP Kemi Badenoch said the action was morally right even while acknowledging legal questions.</p><h2 class="subtitle">Regional and global response</h2><p class="para" data-block="b14">International reaction split sharply. The U.N. secretary‑general said he was deeply concerned that the raid could increase instability. At CELAC, an effort by several leftist governments to condemn Maduro&#x27;s detention failed after a bloc of countries blocked consensus. China said it was &#x27;deeply shocked&#x27; and strongly condemned the U.S. use of force. Mexico&#x27;s president rejected intervention in another country&#x27;s internal affairs. Colombia&#x27;s president and the U.S. president described a constructive phone exchange. The UK indicated billions in Venezuelan gold would remain frozen. Cuba acknowledged 32 of its citizens were killed and declared two days of national mourning. Moscow framed the episode as a sign of shifting great‑power behaviour.</p><h2 class="subtitle">Maritime enforcement and sanctions</h2><p class="para" data-block="b16">Intelligence trackers reported that the tanker Bella 1 repainted its hull, changed its name to Marinera and reflagged as Russian in a bid to evade interception; U.S. officials later said they had seized the vessel for sanctions violations and that Navy SEALs boarded it.</p><h2 class="subtitle">Discrepancies and contested facts</h2><p class="para" data-block="b18">Counts of the dead and other operational details vary between outlets and officials. One Irish report put the toll at more than 115 people killed; an official told The New York Times the strikes killed &#x27;around 40&#x27; civilians and military personnel; Cuban state media acknowledged 32 Cuban personnel killed; Venezuelan military postings listed 24 dead, which some outlets combined with Cuba&#x27;s figure to report at least 56 casualties. U.S. officials emphasised that no U.S. fatalities have been reported, though some U.S. troops were injured. Reporting also conflicted about whether the &#x27;Gang of Eight&#x27; was notified before the operation; some accounts say they were informed only after it began.</p><h2 class="subtitle">Disinformation and media</h2><p class="para" data-block="b20">The capture set off a torrent of misleading material online: repurposed footage and AI‑generated images circulated rapidly, and some chatbots initially gave contradictory answers about whether the operation had occurred. U.S. government broadcasters said they significantly expanded coverage and reported millions of audience impressions in the region.</p><h2 class="subtitle">Markets and the economy</h2><p class="para" data-block="b22">Markets reacted quickly: shares in major U.S. oil companies rose, gold and silver ticked higher as safe havens, and some investors began to re‑price Venezuelan debt on the prospect of political change.</p><h2 class="subtitle">Analysis and wider implications</h2><p class="para" data-block="b24">Commentators warned the precedent could have broad consequences: some labelled the move a return of &#x27;gunboat diplomacy&#x27;, others argued it weakens U.S. appeals to international norms and that rivals might exploit the episode, and analysts cautioned that attempts to control Venezuelan oil could provoke violent resistance.</p><div class="stat-card" data-block="b25"><div class="stat-value">52‑47</div><div class="stat-label">Senate procedural vote to limit military action</div><div class="stat-note">Procedural advance; final passage and House consideration remain pending.</div></div><p class="para" data-block="b26">The procedural vote was a step forward for senators pressing for more congressional oversight, but leaders have said final passage and House consideration remain uncertain and a presidential veto is expected.</p><blockquote class="quote" data-block="b27"><span class="quote-line top" aria-hidden="true"></span>&#x27;It was a brilliant operation, actually.&#x27;<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Donald Trump</div><p class="para" data-block="b28">Mr. Trump also told The New York Times he had watched the operation in real time at Mar‑a‑Lago and declined to say whether he had consulted Congress beforehand, saying only &#x27;We&#x27;ll discuss that.&#x27;</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b30">Officials have confirmed Nicolás Maduro was captured and brought to U.S. custody to face federal narcotics charges; the White House characterises the action as law‑enforcement while critics — including U.N. officials and many lawmakers — say it likely breached international law. Casualty totals and some operational details remain disputed across outlets. Next, Congress is set to continue votes and briefings, and a small U.S. diplomatic team has begun exploratory work about reestablishing missions even as sanctions enforcement proceeds.</p>
+      
+      <hr class="divider" /><section class="intl-section"><h2 class="intl-title">International Outlook</h2><p class="intl-sub">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</p><div class="intl-strip"><article class="intl-card"><div class="intl-country">Venezuela</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Correo del Orinoco Venezuela (State), Runrunes Venezuela, El Nacional Venezuela</div><div class="intl-body"><p class="para" data-block="b31">Venezuelan state and independent outlets are highlighting sovereignty, press restrictions and immediate information gaps. Correo del Orinoco republishes Beijing’s public pledge of continued support and frames external comments as interference; El Nacional flags the domestic political reverberations, including President Trump’s public attack on five Republican senators who backed a war‑powers restraint resolution. Runrunes, quoting Reporters Without Borders, warns of an information vacuum: it reports roughly 200 foreign journalists stranded in Cúcuta, multiple temporary detentions during Delcy Rodríguez’s inauguration, and the circulation of AI‑generated deepfakes — operational and press‑access details often absent from brief international summaries.</p></div></article><article class="intl-card"><div class="intl-country">Russia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Rossiyskaya Gazeta (State), Kommersant, Izvestia (State)</div><div class="intl-body"><p class="para" data-block="b32">Russian state and business media frame the US action as an illegal act of aggression and foreground diplomatic and energy angles. Rossiyskaya Gazeta emphasised UN criticism and the blunt language of Russia’s UN envoy; Izvestia relays White House briefings saying Washington claims strong leverage over Venezuela’s temporary authorities; Kommersant ran a substantive piece outlining Marco Rubio’s reported three‑step US plan (stabilisation, reconstruction, transition) and also amplified reporting that the White House lacked a clear post‑capture blueprint. Russian outlets therefore stress alleged US motives (control over Caracas’s oil and influence) and point to an absence of a transparent long‑term plan.</p></div></article><article class="intl-card"><div class="intl-country">Hong Kong</div><div class="intl-sources-title">Sources</div><div class="intl-sources">South China Morning Post</div><div class="intl-body"><p class="para" data-block="b33">South China Morning Post’s coverage combines analysis and diplomacy: Beijing has repeatedly condemned the US raid but, SCMP argues, will avoid direct military confrontation while exploiting the episode diplomatically. Analysts quoted by the paper say the operation undermines any &#x27;G2&#x27; co‑governance framing and gives China room to court disaffected Global‑South partners with economic and political outreach rather than an immediate tit‑for‑tat response.</p></div></article><article class="intl-card"><div class="intl-country">Brazil</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Folha Brazil</div><div class="intl-body"><p class="para" data-block="b34">Folha reports President Lula has moved quickly to coordinate regionally: he phoned Colombia’s Gustavo Petro, Mexico’s Claudia Sheinbaum and Canada’s Mark Carney to press defence of international law and peaceful resolution. The paper also says Brazil is dispatching 40 tonnes of medical and dialysis supplies (from a larger 300‑tonne haul) to Venezuela — a concrete humanitarian step and diplomatic push that frames Brazil’s response as regional containment rather than endorsement of the US operation.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">La Vanguardia, El Mundo, France 24, Tagesschau (ARD), Irish Times, NRK Norway (State)</div><div class="intl-body"><p class="para" data-block="b35">Across Western European outlets the emphasis is on legality and alliance strain. Tagesschau’s poll (ARD‑DeutschlandTrend) found a large majority of Germans view the US action as unjustified; Irish papers quote ministers stressing that international law and the UN Charter must be upheld; La Vanguardia reports Spain’s foreign minister spoke directly with US Secretary Marco Rubio and noted Spain’s public stance and consular developments.</p><p class="para" data-block="b36">Spanish daily El Mundo is publishing reporting London readers may not have seen prominently: US senators have opened a formal probe into major oil companies (letters to Chevron, Exxon, BP, Shell and others requesting documents and communications), linking the military action to energy‑industry lobbying and post‑operation investment plans. France 24’s media analysis also flags questions about how mainstream coverage shaped consent for the raid — a framing some European editors say UK roundups have underplayed.</p></div></article><article class="intl-card"><div class="intl-country">Southeast Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Straits Times Singapore, VnExpress</div><div class="intl-body"><p class="para" data-block="b37">Singapore’s Straits Times focuses on US domestic politics and operational follow‑up: several pieces report White House aides are privately frustrated that President Trump’s foreign focus risks midterm messaging, and they note US preparations to re‑open its Caracas embassy quickly. Vietnam’s VnExpress emphasises Hanoi’s calls for restraint and multilateralism, underlining a diplomatic nuance — Southeast Asian governments stressing the UN Charter and stability rather than binary support or condemnation.</p></div></article><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">The Hindu, News18 India, Express Tribune Pakistan</div><div class="intl-body"><p class="para" data-block="b38">Indian and Pakistani outlets stress two strands: congressional oversight and geopolitical fallout. The Hindu outlines the imminent Senate vote to curb the president’s authority and the constitutional war‑powers debate; News18 highlights hardline Russian rhetoric after US seizures of tankers and records China’s sharp diplomatic pushback when asked about Venezuela’s defences; Pakistan’s Express Tribune republishes US late‑night satire and commentary, signalling how domestic US media and comedians are shaping public scepticism at home.</p></div></article><article class="intl-card"><div class="intl-country">North America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Globe and Mail, National Post Canada</div><div class="intl-body"><p class="para" data-block="b39">Canadian coverage pairs the US constitutional angle with hemispheric strategy. The Globe and Mail details the Senate war‑powers motion, its narrow arithmetic and the long road to becoming law; the National Post frames the Maduro raid as the practical application of a new US hemispheric doctrine (a &#x27;Trump Corollary&#x27; to the Monroe Doctrine) and urges Ottawa to assess economic and Arctic security implications — a perspective linking Venezuela to direct Canadian policy calculations.</p></div></article><article class="intl-card"><div class="intl-country">Latin America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">La Nación Argentina</div><div class="intl-body"><p class="para" data-block="b40">Argentina’s La Nación foregrounds regional human impacts that are less visible in high‑level coverage: it reports Cubans’ mix of hope and fear, noting Venezuela supplied roughly 35,000 barrels per day to Cuba in late 2025 and quoting citizens anxious about fuel for hospitals, transport and everyday services — local social and humanitarian consequences of the Caracas operation.</p></div></article><article class="intl-card"><div class="intl-country">Middle East</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Mehr News Iran, Daily Sabah Turkey</div><div class="intl-body"><p class="para" data-block="b41">Iranian state press and Turkish outlets pick out different knock‑on effects. Mehr News cites analysts who expect China’s independent refiners to shift toward more Iranian heavy crude as Venezuelan flows to China fall, a market‑adjustment detail not always noted in Western political briefings. Turkey’s Daily Sabah highlights a geopolitical precedent: Ukraine’s president publicly urged Washington to use similar means against Ramzan Kadyrov — an illustration of how other leaders view the Maduro operation as a potential template.</p></div></article><article class="intl-card"><div class="intl-country">Sub-Saharan Africa</div><div class="intl-sources-title">Sources</div><div class="intl-sources">News24 South Africa</div><div class="intl-body"><p class="para" data-block="b42">South African analysis frames the operation through BRICS and resource politics: News24 argues the US narcotics narrative is a red herring, cites official US data pointing to Mexico as the principal source of many illicit drugs, and says months of strikes on vessels preceded the raid. The column reads the intervention as primarily about oil access and urges coordinated political and economic pushback from BRICS — a strategic lens not prominent in many Anglo‑Western summaries.</p></div></article><article class="intl-card"><div class="intl-country">Eastern Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Czech TV (State)</div><div class="intl-body"><p class="para" data-block="b43">Czech TV relays Reuters and ABC‑sourced details that add transactional elements to the story: it reports the White House pressed Caracas’s interim government to curb ties with China, Russia, Iran and Cuba before easing oil export restrictions, and that US energy officials signalled sanctions relief tied to US control over proceeds. It also carried reporting that Washington warned Diosdado Cabello he could be targeted if he did not cooperate — concrete diplomatic and coercive details that deepen the picture of US‑Venezuelan negotiations after the raid.</p></div></article></div></section>
+      <section class="bias-note" id="about-bias" aria-label="About The Bias">
+        <div class="bias-note-kicker">The Bias</div>
+        <h3 class="bias-note-title">How this page is made</h3>
+        <p class="bias-note-text">
+          This page is written from dozens of outlets covering the same event, mixing local and international viewpoints to show the full
+          picture and add context you might otherwise miss. It aims to show where outlets agree, where they report different details, and
+          where opinions diverge, with supporting evidence for key claims and a full source list.
+        </p>
+        <p class="bias-note-text">
+          We’re launching The Bias on iOS soon. If you’d like to help beta test the app, reach out on Instagram
+          <a href="https://instagram.com/thebias_app" target="_blank" rel="noopener">@thebias_app</a> or email
+          <a href="mailto:sam@thebias.co.uk">sam@thebias.co.uk</a>.
+        </p>
+      </section>
+      <details class="sources"><summary><span>All sources</span><svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="source-list"><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/video/quotable/2026/1/7/manner-in-which-the-us-abducted-maduro-was-a-shock-to-china?traffic_source=rss" target="_blank" rel="noopener">Manner in which the US abducted Maduro “was a shock” to China</a></li><li class="source-entry"><div class="source-kicker">ABC News - Top Stories</div><a class="source-link-title" href="https://abcnews.go.com/International/wireStory/protest-hit-iran-warily-watches-us-after-raid-128970865" target="_blank" rel="noopener">Protest-hit Iran warily watches the US after its raid on Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/06/what-us-action-in-venezuela-means-for-taiwan" target="_blank" rel="noopener">What does the US raid in Venezuela mean for China’s designs on Taiwan?</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/05/venezuela-trump-attack-china-interests-analysis" target="_blank" rel="noopener">Trump’s attack leaves China worried about its interests in Venezuela | Amy Hawkins</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/07/us-trump-venezuela-china-russia-iran-cuba-agents" target="_blank" rel="noopener">Trump presses Venezuela to dismiss agents from China, Russia, Iran and Cuba</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/united-states/2026/01/05/venezuelan-immigrants-in-america-are-trapped-in-policy-purgatory" target="_blank" rel="noopener">Venezuelan immigrants in America are trapped in policy purgatory</a></li><li class="source-entry"><div class="source-kicker">The New Yorker - News</div><a class="source-link-title" href="https://www.newyorker.com/news/the-lede/j-d-vances-notable-absence-on-venezuela" target="_blank" rel="noopener">J. D. Vance’s Notable Absence on Venezuela</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/world/americas/us-venezuela-cuba-russia-china-iran.html" target="_blank" rel="noopener">U.S. Pressures Venezuela to Expel Advisers From Cuba, China, Russia and Iran</a></li><li class="source-entry"><div class="source-kicker">BBC - Front</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cly92dkxqvko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump&#x27;s Venezuela raid has created chaos - and that is a risk for China</a></li><li class="source-entry"><div class="source-kicker">New York Times - Business</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/business/venezuela-china-maduro.html" target="_blank" rel="noopener">In China, a Debate About Political Power Ignites After Maduro’s Capture</a></li><li class="source-entry"><div class="source-kicker">New York Times - Home</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/07/opinion/interesting-times-elliott-abrams.html" target="_blank" rel="noopener">The Case for Real Regime Change in Venezuela</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/world/americas/russia-us-venezuela-ukraine.html" target="_blank" rel="noopener">Russia Once Offered U.S. Control of Venezuela for Free Rein in Ukraine</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/06/venezuela-briefing-congress-lawmakers" target="_blank" rel="noopener">Inside Congress&#x27; deep split after marathon Venezuela briefing</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25742176.keir-starmer-still-not-talked-donald-trump-venezuela-attack/?ref=rss" target="_blank" rel="noopener">Keir Starmer still not talked to Donald Trump after Venezuela action</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/iran-maduro-ties-suffer-major-blow-following-us-operation-capture-venezuelan-dictator" target="_blank" rel="noopener">Iran and Maduro ties suffer major blow following US operation and capture of Venezuelan dictator</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/03/world/americas/trump-venezuela-maduro-capture-interview.html" target="_blank" rel="noopener">Trump Celebrates Capture of Nicolas Maduro in New York Times Phone Interview</a></li><li class="source-entry"><div class="source-kicker">BBC - World</div><a class="source-link-title" href="https://www.bbc.com/news/articles/c0q4dg1kn8vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump&#x27;s toppling of Maduro is fraught with risk - what happens next is unclear</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/03/democrats-criticize-trump-maduro-venezuela" target="_blank" rel="noopener">Trump faces quick criticism from Democrats over Maduro capture</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/video/opinion/100000010622258/the-contradictions-of-the-venezuela-attack.html" target="_blank" rel="noopener">The Contradictions of the Venezuela Attack</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/f_vert_trump_opening_remarks_260103" target="_blank" rel="noopener">Trump addresses U.S. strikes on Venezuela, capture of Maduro</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-05/canadian-heavy-crude-prices-weaken-after-overthrow-of-maduro" target="_blank" rel="noopener">Canada Heavy Crude Slumps as Maduro Overthrow Shakes Markets</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-05/us-stocks-rise-as-venezuela-spillover-seen-muted-tech-energy-gain" target="_blank" rel="noopener">US Stocks Rise as Venezuela ‘Spillover’ Seen Muted; Tech, Energy Gain</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/venezuela-maduro-trump-oil-stock-prices-chevron-cvx/" target="_blank" rel="noopener">Oil stock prices rise after U.S. capture of Venezuelan President Maduro</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/video/rep-mario-daz-balart-praises-capture-of-nicols-maduro/" target="_blank" rel="noopener">Rep. Mario Díaz-Balart praises capture of Nicolás Maduro</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/congress-returns-government-shutdown-deadline-health-care-vote-venezuela/" target="_blank" rel="noopener">Congress returns amid Venezuela operation; facing deadline to avert shutdown</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/video/former-trump-national-security-adviser-hr-mcmaster-on-venezuela-raid-that-captured-maduro/" target="_blank" rel="noopener">Former Trump national security adviser H.R. McMaster on Venezuela raid that captured Maduro</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/05/defense-stocks-soar-us-strike-on-venezuela-heralds-hard-power-era.html" target="_blank" rel="noopener">Global defense stocks soar as U.S. strike on Venezuela heralds new &#x27;hard power&#x27; era</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/06/asia-pacific-markets-today-tuesday-nikkei-225-kospi-hsi-hang-send-index-venezuela-maduro.html" target="_blank" rel="noopener">Asia-Pacific markets open mixed after record global stock rally amid Venezuela tensions</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/05/european-markets-stoxx-600-ftse-dax-cac-react-to-venezezuela-news.html" target="_blank" rel="noopener">European stocks close higher as traders track Venezuela developments</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/05/oil-chevron-exxon-shares-in-focus-after-us-intervention-in-venezuela.html" target="_blank" rel="noopener">Chevron, Exxon and SLB stocks jump after Trump&#x27;s military intervention in Venezuela</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/05/venezuela-investment-maduro-trump.html" target="_blank" rel="noopener">Venezuela chaos could lead to billions in investment opportunities, one consultant says</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/05/what-market-signals-are-investors-watching-after-us-venezuela-strike.html" target="_blank" rel="noopener">What investors are watching after Venezuela: Five signals that matter for markets</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/05/michael-burrys-bet-on-a-us-takeover-of-venezuelan-oil-that-he-has-held-for-years.html" target="_blank" rel="noopener">Michael Burry&#x27;s big play off the U.S.-Venezuela situation, which the investor has held for years</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15435585/Morning-Joe-Scarborough-Maduro-president-trump-Venezuela.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Morning Joe admits he&#x27;s glad Maduro is gone after Trump captured Venezuelan leader... then issues grim warning to president</a></li><li class="source-entry"><div class="source-kicker">Financial Times - Latest</div><a class="source-link-title" href="https://www.ft.com/content/9403c523-b618-493e-85f9-441d433f47b3" target="_blank" rel="noopener">Hedge funds profit as Venezuela’s bonds surge</a></li><li class="source-entry"><div class="source-kicker">Forbes - Business</div><a class="source-link-title" href="https://www.forbes.com/sites/maryroeloffs/2026/01/05/only-33-of-americans-support-venezuela-attack-that-captured-maduro-poll-finds/" target="_blank" rel="noopener">Only 33% Of Americans Support Venezuela Attack That Captured Maduro, Poll Finds</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/briefing-how-capitol-hill-reacted-news-nicolas-maduros-capture" target="_blank" rel="noopener">The Briefing: How Capitol Hill reacted to news of Nicolás Maduro&#x27;s capture</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/florida-gop-lawmaker-blasts-democrats-venezuela-response-trump-derangement-syndrome" target="_blank" rel="noopener">Florida GOP lawmaker blasts Democrats&#x27; Venezuela response as &#x27;Trump Derangement Syndrome&#x27;</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/lawmakers-rip-biden-after-trump-maduro-taunt-resurfaces-call-baseless-politically-charged" target="_blank" rel="noopener">Lawmakers rip Biden after Trump-Maduro taunt resurfaces – call it baseless and politically charged</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/mamdani-linked-democratic-socialists-demand-trump-free-maduro-from-lockup-send-him-back-power" target="_blank" rel="noopener">Mamdani-linked Democratic Socialists demand Trump free Maduro from lockup — and send him back to power</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/maduros-capture-beginning-end-cubas-regime-house-intelligence-chair-says" target="_blank" rel="noopener">Maduro&#x27;s capture is &#x27;beginning of the end&#x27; for Cuba&#x27;s regime, House Intelligence chair says</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/cubas-shadow-venezuela-havanas-intelligence-military-ties-exposed-after-maduro-raid" target="_blank" rel="noopener">Cuba&#x27;s shadow in Venezuela: Havana’s intelligence and military ties exposed after Maduro raid</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/trump-says-cuba-ready-fall-after-capture-venezuelas-maduro" target="_blank" rel="noopener">Trump says Cuba is ‘ready to fall’ after capture of Venezuela’s Maduro</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25739865.national-podcast-foreign-affairs-editor-david-pratt/?ref=rss" target="_blank" rel="noopener">The National podcast with foreign affairs editor David Pratt after US attack</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/newsletters/business-economy/5673796-stocks-rise-as-maduro-falls/" target="_blank" rel="noopener">Stocks rise as Maduro falls</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/administration/5672366-trump-administration-venezuela-operation/" target="_blank" rel="noopener">Trump administration to brief members of Congress on Venezuela actions Monday</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/trump-venezuela-maduro-fake-video-b2894915.html" target="_blank" rel="noopener">Trump shared video of Venezuelans ‘celebrating’ Maduro’s capture. The footage is 17 months old</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/elon-musk-trump-dinner-melania-b2894589.html" target="_blank" rel="noopener">Elon Musk had a ‘lovely dinner’ with Trump and Melania hours after Maduro’s capture</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/maga-venezuela-reaction-trump-maduro-b2894515.html" target="_blank" rel="noopener">MAGA influencers shredded for change of heart over U.S. military intervention in Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/marjorie-taylor-greene-trump-venezuela-strikes-maga-maduro-b2894389.html" target="_blank" rel="noopener">MTG warns Trump after Venezuela strikes: ‘This is what many in MAGA thought they voted to end’</a></li><li class="source-entry"><div class="source-kicker">Washington Post - National</div><a class="source-link-title" href="https://www.washingtonpost.com/politics/interactive/2026/venezuela-maduro-poll-trump-military/" target="_blank" rel="noopener">We texted 1,000 Americans about U.S. actions in Venezuela. Here’s what they said.</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/us/politics/congress-venezuela-maduro.html" target="_blank" rel="noopener">Trump Officials Brief Top Lawmakers on Maduro Raid</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15435647/MAGA-crack-Venezuela-base-warns-Iraq-fiasco.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Trump basks in the glory of his Venezuela raid - but now his allies are reviving a question they hoped had died</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15436767/Trump-aide-Steve-Witkoff-Son-Maduro-capture.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Top Trump aide&#x27;s son says he&#x27;s glad president captured Maduro because his brother died of drug overdose</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15435437/sara-foster-donald-trump-capture-nicolas-maduro.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Music heiress who voted for Kamala hails Trump&#x27;s capture of Maduro and says woke critics &#x27;are just addicted to being mad&#x27;</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15433629/Marco-Rubio-CBS-reporter-Maduro.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Marco Rubio &#x27;runs laps&#x27; around CBS reporter who asked why US commandos didn&#x27;t nab Maduro associates in daring night time raid</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15433243/US-priorities-Venezuela-Nicolas-Maduro-Marco-Rubio.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">US names its three biggest priorities for Venezuela after dramatic raid and Maduro capture... as unanswered questions remain</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/trump-maduro-america-war-drug-cartels-venezuela-b2894280.html" target="_blank" rel="noopener">America is at war with drug cartels not Venezuela, US insists after capturing Maduro</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-04/maduro-ouster-leaves-cuba-s-wobbling-regime-without-a-benefactor" target="_blank" rel="noopener">Maduro Ouster Leaves Cuba’s Wobbling Regime Without a Benefactor</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15433825/Nicolas-Maduro-Dancing-Donald-Trump-Venezuelan.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">How Maduro&#x27;s public dancing led to his downfall as furious Trump grew tired of his &#x27;nonchalance&#x27; despite warnings</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/jd-vance-skips-trumps-venezuela-spotlight-aide-says-he-deeply-involved-behind-scenes" target="_blank" rel="noopener">JD Vance skips Trump’s Venezuela spotlight, but aide says he was ‘deeply involved’ behind the scenes</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/video/world/americas/100000010622273/why-trump-removed-venezuelas-maduro.html" target="_blank" rel="noopener">Why Trump Removed Venezuela’s Maduro</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/administration/5671516-trump-donroe-doctrine-venezuela/" target="_blank" rel="noopener">Trump coins &#x27;Don-roe Doctrine&#x27; as he explains Venezuela operation</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/administration/5671319-trump-venezuela-operation-maduro-takeaways/" target="_blank" rel="noopener">Five key takeaways on Trump’s stunning toppling of Maduro</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/politics/white-house/new-trump-foreign-policy-doctrine-emphasizes-threats-regime-change-rcna252093" target="_blank" rel="noopener">A new Trump foreign policy doctrine emphasizes threats of regime change</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/05/nx-s1-5666321/democratic-congressman-jim-himes-discusses-trumps-military-operation-in-venezuela" target="_blank" rel="noopener">Democratic Congressman Jim Himes discusses Trump&#x27;s military operation in Venezuela</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/05/nx-s1-5666331/trump-politics-venezuela-republicans-democrats" target="_blank" rel="noopener">7 takeaways from Trump&#x27;s incursion into Venezuela</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/video/the-take-2/2026/1/5/aje-onl-aj_tt_ven_madurocapture_vid_v3-050126?traffic_source=rss" target="_blank" rel="noopener">After the shock of Maduro’s capture, what’s next for Venezuela?</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/news/2026/1/5/trump-poses-with-make-iran-great-again-hat-after-maduro-abduction?traffic_source=rss" target="_blank" rel="noopener">Trump poses with ‘Make Iran Great Again’ hat after Maduro abduction</a></li><li class="source-entry"><div class="source-kicker">BBC - Front</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cd0ye72r4vpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Which countries could be in Trump&#x27;s sights after Venezuela?</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-05/trump-snatches-maduro-leaves-regime-in-charge-for-now-video" target="_blank" rel="noopener">Trump Snatches Maduro But Leaves Regime in Charge for Now</a></li><li class="source-entry"><div class="source-kicker">Washington Post - World</div><a class="source-link-title" href="https://www.washingtonpost.com/world/2026/01/07/russia-venezuela-great-power-politics/" target="_blank" rel="noopener">In Maduro’s capture, Russia sees a great-power rival act with impunity</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Business</div><a class="source-link-title" href="https://www.washingtonpost.com/business/2026/01/07/pentagon-press-hegseth-venezuela/" target="_blank" rel="noopener">Hegseth’s remade press corps covers Venezuela raid with praise, not probing</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Politics</div><a class="source-link-title" href="https://www.washingtonpost.com/national-security/2026/01/07/gabbard-trump-venezuela-intervention-intelligence/" target="_blank" rel="noopener">Gabbard MIA on Venezuela operation, amid tensions with Trump policy</a></li><li class="source-entry"><div class="source-kicker">Washington Post - World</div><a class="source-link-title" href="https://www.washingtonpost.com/world/2026/01/06/us-venezuela-trump-maduro-machado/" target="_blank" rel="noopener">Venezuela’s Machado gushes over Trump while calling for new elections</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/nation/trump-administration-thanks-the-media-for-keeping-quiet-before-the-strike-that-captured-maduro" target="_blank" rel="noopener">Trump administration thanks the media for keeping quiet before the strike that captured Maduro</a></li><li class="source-entry"><div class="source-kicker">Mashable</div><a class="source-link-title" href="https://mashable.com/video/stephen-colbert-trump-venezuela" target="_blank" rel="noopener">Stephen Colbert reacts to Trumps attack on Venezuela</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/f_vert_brk_trump_maduro_260106" target="_blank" rel="noopener">Trump mentions Maduro dancing while praising raid</a></li><li class="source-entry"><div class="source-kicker">NPR - Business</div><a class="source-link-title" href="https://www.npr.org/2026/01/07/nx-s1-5668254/how-billionaire-and-trump-donor-paul-singer-could-benefit-from-maduros-removal" target="_blank" rel="noopener">How billionaire and Trump donor Paul Singer could benefit from Maduro&#x27;s removal</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/06/nx-s1-5665796/trump-to-meet-with-house-republicans-to-discuss-venezuela-other-topics" target="_blank" rel="noopener">Trump to meet with House Republicans to discuss Venezuela, other topics</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/features/2026-01-05/trump-s-ouster-of-venezuela-s-maduro-puts-spotlight-on-cuba-greenland" target="_blank" rel="noopener">Trump’s Ouster of Maduro Shows America’s New World Order Is Here</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/opinion/international-world/trump-maduro-oust-raid.html" target="_blank" rel="noopener">Donald Trump Was Right to Oust Maduro</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15431801/key-players-Trump-Maduro-situation-room-inner-circle.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Revealed: The key players at Trump&#x27;s side in tense Maduro &#x27;situation room&#x27;... and what it says about his changing inner circle</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/04/us/politics/trump-republicans-venezuela.html" target="_blank" rel="noopener">Trump’s Move for Regime Change in Venezuela Threatens a New MAGA Rift</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/04/marco-rubio-venezuela-maduro-oil" target="_blank" rel="noopener">Rubio faces ghosts of American interventions after spearheading Maduro takedown</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-04/gold-silver-markets-latest-haven-demand-after-us-captures-venezuelan-leader" target="_blank" rel="noopener">Gold Rises on Haven Demand After US Captures Venezuelan Leader</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-04/venezuela-bond-investors-eye-further-gains-post-maduro-capture" target="_blank" rel="noopener">Venezuela Bond Investors Bet on More Gains After Maduro Capture</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/04/trump-venezuela-maduro-pardon-honduras.html" target="_blank" rel="noopener">Trump admin pressed on pardon for ex-Honduras president after Venezuela’s Maduro snatched</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15433447/venezuelans-maralago-trump-celebrate-maduro-capture.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Grateful Venezuelans hug Donald Trump as president and Elon Musk celebrate Maduro&#x27;s removal at luxurious Mar-a-Lago dinner</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15433249/joe-biden-marco-rubio-venezuela-maduro-trump.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Joe Biden is slammed by Marco Rubio over $25million &#x27;failure&#x27; to capture Maduro: &#x27;That&#x27;s the difference between Trump and everyone else&#x27;</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/rubio-vows-eliminate-hezbollah-iran-operations-from-venezuela-after-maduro-capture" target="_blank" rel="noopener">Rubio vows to eliminate Hezbollah, Iran operations from Venezuela after Maduro capture</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/f_vert_mtp_mtg_venezuela_260104" target="_blank" rel="noopener">MTG says Maduro&#x27;s capture isn&#x27;t &#x27;America First&#x27;</a></li><li class="source-entry"><div class="source-kicker">NPR - World</div><a class="source-link-title" href="https://www.npr.org/2026/01/04/g-s1-104485/rubio-says-theres-not-a-war-against-venezuela-despite-u-s-capture-of-maduro" target="_blank" rel="noopener">Rubio says there&#x27;s &#x27;not a war against Venezuela&#x27; despite U.S. capture of Maduro</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/04/nx-s1-5662662/politics-chat-how-trumps-maga-supporters-see-the-operation-in-venezuela" target="_blank" rel="noopener">Politics chat: How Trump&#x27;s MAGA supporters see the operation in Venezuela</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/politics/fact-checking-trumps-claims-after-u-s-strike-on-venezuela-and-capture-of-maduro" target="_blank" rel="noopener">Fact-checking Trump&#x27;s claims after U.S. strike on Venezuela and capture of Maduro</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/policy/international/5672239-adam-smith-maduro-drug-trafficking/" target="_blank" rel="noopener">Smith on Maduro capture: &#x27;I don&#x27;t think it fundamentally changed drug trafficking in America at all&#x27;</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/administration/5672165-rubio-defends-venezuela-arrest/" target="_blank" rel="noopener">Rubio: Venezuela strikes &#x27;a law enforcement operation,&#x27; not &#x27;invasion&#x27;</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/policy/defense/5671811-rubio-venezuela-not-middle-east/" target="_blank" rel="noopener">Rubio on Venezuela action: &#x27;This is not the Middle East&#x27;</a></li><li class="source-entry"><div class="source-kicker">Metro</div><a class="source-link-title" href="https://metro.co.uk/2026/01/04/chatgpt-already-rewriting-history-saying-trump-didnt-invade-venezuela-26058647/" target="_blank" rel="noopener">ChatGPT is rewriting history and saying Trump didn’t invade Venezuela</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/venezuelan-dissident-outlines-risks-opportunities-venezuela-enters-post-maduro-era" target="_blank" rel="noopener">Venezuelan dissident outlines risks and opportunities as Venezuela enters post-Maduro era</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/world/2026/0103/1551313-venezuela-live-blog/" target="_blank" rel="noopener">Venezuela demands US provide &#x27;proof of life&#x27; of Maduro</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/04/world/americas/us-troops-venezuela.html" target="_blank" rel="noopener">U.S. Has No Troops in Venezuela, Defense Department Says</a></li><li class="source-entry"><div class="source-kicker">ABC News - Top Stories</div><a class="source-link-title" href="https://abcnews.go.com/International/video/secretary-hegseth-us-capture-venezuelan-president-maduro-128872681" target="_blank" rel="noopener">WATCH:  Secretary Hegseth on US capture of Venezuelan President Maduro</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/senate/5671149-surprise-operation-maduro-arrest/" target="_blank" rel="noopener">Trump administration informed Gang of Eight of Venezuela operation after it started</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Opinion</div><a class="source-link-title" href="https://www.theguardian.com/commentisfree/2026/jan/03/today-trumps-target-was-caracas-what-tomorrow" target="_blank" rel="noopener">Today, Trump’s target was Caracas. What tomorrow? | Stephen Wertheim</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/maria-corina-machado-venezuelan-opposition-urge-military-back-power-transfer-after-maduro-capture" target="_blank" rel="noopener">María Corina Machado, Venezuelan opposition urge military to back power transfer after Maduro capture</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/video/pete-hegseth-us-captured-maduro-freedom-security-prosperity/" target="_blank" rel="noopener">Pete Hegseth says U.S. captured Maduro for &quot;freedom, security, prosperity&quot;</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/former-u-s-ambassador-to-venezuela-analyzes-goal-of-maduro-regime-change" target="_blank" rel="noopener">Former U.S. ambassador to Venezuela analyzes goal of Maduro regime change</a></li><li class="source-entry"><div class="source-kicker">NBC News - Top Stories</div><a class="source-link-title" href="https://www.nbcnews.com/f_vert_brk_hegseth_maduro_260103" target="_blank" rel="noopener">Hegseth says Maduro &#x27;effed around and found out&#x27;</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/maduro-met-chinese-envoy-hours-before-us-capture-from-caracas-beijing-slams-operation" target="_blank" rel="noopener">Maduro met Chinese envoy hours before US capture from Caracas as Beijing slams operation</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/video/inside-story/2026/1/3/what-are-the-implications-of-the-us-capture-of-nicolas-maduro?traffic_source=rss" target="_blank" rel="noopener">What are the implications of US ‘capture’ of Nicolas Maduro?</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/mtg-trump-maga-venezuela-strikes-b2894036.html" target="_blank" rel="noopener">MTG warns Trump after Venezuela strikes: ‘This is what many in MAGA thought they voted to end’</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/03/trump-venezuela-maduro-democrats-congress" target="_blank" rel="noopener">Furious Democrats float Trump impeachment, 25th Amendment over &quot;insane&quot; Venezuela attack</a></li><li class="source-entry"><div class="source-kicker">BBC - UK</div><a class="source-link-title" href="https://www.bbc.com/news/articles/cvgpewy0rgjo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The Papers: &#x27;America on the warpath&#x27; and &#x27;Trump to run Venezuela&#x27;</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15431549/AOC-MTG-Trump-Maduro-attack.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Marjorie Taylor Greene joins AOC and Democrats in slamming Trump&#x27;s Venezuela operation: &#x27;Boy were we wrong&#x27;</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/06/nx-s1-5667047/rep-adam-smith-shares-what-lawmakers-have-learned-about-u-s-actions-in-venezuela" target="_blank" rel="noopener">Venezuela strategy remains &#x27;vague&#x27; after Trump admin briefing, says Rep. Adam Smith</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/live-updates/venezuela-maduro-jail-trump-future/" target="_blank" rel="noopener">Venezuela&#x27;s future in balance after Trump officials brief lawmakers; Maduro in jail</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/en/news/thp/2026-01-07/protest-hit-iran-warily-watches-the-us-after-its-raid-on-venezuela" target="_blank" rel="noopener">Protest-Hit Iran Warily Watches the US After Venezuela Raid</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15441333/Putins-secret-deal-swap-Ukraine-Venezuela-Fears-US-Russia-free-rein-crush-Kyiv-wake-Maduro-capture-six-years-Kremlin-offered-cut-ties-Caracas.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Putin&#x27;s secret deal to swap Ukraine for Venezuela? Fears US will give Russia free rein to crush Kyiv in wake of Maduro capture - six years after Kremlin &#x27;offered to cut ties with Caracas&#x27;</a></li><li class="source-entry"><div class="source-kicker">Doncaster Free Press</div><a class="source-link-title" href="https://www.doncasterfreepress.co.uk/news/politics/its-a-war-crime-doncaster-your-party-condems-donald-trump-over-venezuela-5465661" target="_blank" rel="noopener">&quot;It&#x27;s a war crime:&quot; Doncaster Your Party condems Donald Trump over Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/trump-venezuela-greenland-war-powers-senate-b2895715.html" target="_blank" rel="noopener">Senate Democrats attempt to curb Trump’s warmaking abilities after Venezuela raid</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/trump-midterm-predictions-venezuela-attack-b2895498.html" target="_blank" rel="noopener">Trump yuks it up with House Republicans and predicts ‘epic midterm victory’ while also bragging about his Venezuela attack</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/asia/china/china-venezuela-strikes-taiwan-b2895516.html" target="_blank" rel="noopener">Could China be using the US strike on Venezuela as a playbook for Taiwan?</a></li><li class="source-entry"><div class="source-kicker">The Independent - UK</div><a class="source-link-title" href="https://www.independent.co.uk/news/uk/politics/venezuela-trump-maduro-kemi-badenoch-conservatives-b2895296.html" target="_blank" rel="noopener">Trump was ‘morally right’ to attack Venezuela and seize Maduro, says Kemi Badenoch</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/differing-opinion-between-the-white-house-and-the-vatican-on-venezuela-and-other-issues-6919386-Jan2026/" target="_blank" rel="noopener">Bearna ag méadú idir an Pápa agus Donald Trump tar éis a thárla i Veiniséala</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/differing-opinion-between-the-white-house-and-the-vatican-on-venezuela-and-other-issues-2-6919571-Jan2026/" target="_blank" rel="noopener">Pope Leo&#x27;s stance on Venezuela is in sharp contrast to the view from the White House</a></li><li class="source-entry"><div class="source-kicker">Forbes - Business</div><a class="source-link-title" href="https://www.forbes.com/sites/siladityaray/2026/01/07/russia-sends-naval-escorts-to-aid-oil-tanker-pursued-by-us-reports-say/" target="_blank" rel="noopener">Russia Sends Naval Escorts To Aid Oil Tanker Pursued By U.S., Reports Say</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/venezuela-oil-tanker-marinera-evades-us-interception-adopting-russian-identity-fleeing-atlantic" target="_blank" rel="noopener">Venezuelan ‘dark fleet’ tanker evades US Coast Guard as Russia sends submarine to escort vessel: reports</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/latin-america-fractures-over-trumps-maduro-capture-regional-allies-shift-right" target="_blank" rel="noopener">Latin America fractures over Trump’s Maduro capture as regional allies shift right</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/the-americas/2026/01/06/latin-america-fears-what-comes-next-after-the-venezuela-raid" target="_blank" rel="noopener">Latin America fears what comes next after the Venezuela raid</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/us-news/2026/jan/07/maga-stars-trump-venezuela" target="_blank" rel="noopener">Maga media stars back Trump on Venezuela … mostly: ‘It doesn’t make any sense’</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Business</div><a class="source-link-title" href="https://www.theguardian.com/commentisfree/2026/jan/06/the-guardian-view-on-trumps-capture-in-caracas-oil-matters-but-its-not-the-whole-story" target="_blank" rel="noopener">The Guardian view on Trump’s raid in Caracas: oil matters, but it’s not the whole story | Editorial</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/us/politics/justice-dept-memo-venezuela.html" target="_blank" rel="noopener">Justice Dept. Memo Approved Military Incursion Into Venezuela as Lawful</a></li><li class="source-entry"><div class="source-kicker">Evening Standard - Politics</div><a class="source-link-title" href="https://www.standard.co.uk/news/politics/venezuela-north-atlantic-nicolas-maduro-keir-starmer-yvette-cooper-b1265243.html" target="_blank" rel="noopener">RAF spy plane flies over path of oil tanker pursued by America through Atlantic</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/news/2026/1/7/trumps-attacks-on-venezuela-put-the-us-neighbour-mexico-on-edge?traffic_source=rss" target="_blank" rel="noopener">Trump’s attacks on Venezuela put Mexico on edge</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/05/trump-colombia-gustavo-petro-venezuela-maduro" target="_blank" rel="noopener">&quot;Come get me&quot;: Colombian president&#x27;s war of words with Trump escalates</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-07/maduro-s-perfect-union-with-china-hides-deep-economic-rupture" target="_blank" rel="noopener">Maduro’s ‘Perfect Union’ With China Hides Deep Economic Rupture</a></li><li class="source-entry"><div class="source-kicker">Wired</div><a class="source-link-title" href="https://www.wired.com/story/3-keys-understanding-trumps-retro-coup-in-venezuela/" target="_blank" rel="noopener">The 3 Keys to Understanding Trump’s Retro Coup in Venezuela</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15436615/Trumps-favored-leader-exposed-rabid-Chavista-melts-western-toiletries.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Trump&#x27;s favored leader exposed as a &#x27;rabid Chavista&#x27; who melts down over western toiletries</a></li><li class="source-entry"><div class="source-kicker">Financial Times - Latest</div><a class="source-link-title" href="https://www.ft.com/content/d859d893-1e2a-4ae6-a3d4-c9c505954f16" target="_blank" rel="noopener">Cuba: what is left for Trump to topple?</a></li><li class="source-entry"><div class="source-kicker">Forbes - Business</div><a class="source-link-title" href="https://www.forbes.com/sites/antoniopequenoiv/2026/01/06/will-trump-raid-colombia-next-countrys-president-says-come-get-me/" target="_blank" rel="noopener">Will Trump Raid Colombia Next? Country’s President Says ‘Come Get Me’</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/mexican-president-rejects-us-sending-troops-her-country-i-dont-believe-invasion" target="_blank" rel="noopener">Mexican president rejects US sending troops to her country: &#x27;I don&#x27;t believe in an invasion&#x27;</a></li><li class="source-entry"><div class="source-kicker">Mashable</div><a class="source-link-title" href="https://mashable.com/video/jon-stewart-trump-venezuela" target="_blank" rel="noopener">Jon Stewart shares his blunt thoughts on Trump and Venezuela</a></li><li class="source-entry"><div class="source-kicker">Mashable</div><a class="source-link-title" href="https://mashable.com/video/seth-meyers-venezuela-president-trump-attack" target="_blank" rel="noopener">Seth Meyers shares theory on why Trump attacked Venezuela</a></li><li class="source-entry"><div class="source-kicker">NPR - World</div><a class="source-link-title" href="https://www.npr.org/2026/01/06/g-s1-104740/up-first-newsletter-nicolas-maduro-court-venezuela-congress-vaccine-schedule" target="_blank" rel="noopener">Lawmakers split over Maduro&#x27;s seizure. And, CDC cuts childhood vaccine schedule</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/world/americas/cuba-economy-venezuela-oil.html" target="_blank" rel="noopener">After Trump’s Military Victory in Venezuela, Cuba’s Economy Is in ‘Freefall’</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/us/politics/rubio-venezuela-future.html" target="_blank" rel="noopener">After Maduro’s Ouster, Marco Rubio Faces the Challenge of Running Venezuela</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/opinion/ezra-klein-podcast-jonathan-blitzer.html" target="_blank" rel="noopener">What Trump Wants in Venezuela</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/world/americas/machado-trump-fox-news.html" target="_blank" rel="noopener">Venezuela’s Machado Praises Trump in Fox News Interview</a></li><li class="source-entry"><div class="source-kicker">New York Times - Politics</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/us/politics/trump-venezuela-machado.html" target="_blank" rel="noopener">Why Trump Refused to Back Venezuela’s Machado: Fears of Chaos, and Fraying Ties</a></li><li class="source-entry"><div class="source-kicker">Poynter Institute</div><a class="source-link-title" href="https://www.poynter.org/fact-checking/2026/why-was-maduro-captured/" target="_blank" rel="noopener">What Trump and Rubio said about Venezuela — and what the facts show</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/united-states/2026/01/06/donald-trump-still-has-no-clear-plan-for-venezuela" target="_blank" rel="noopener">Donald Trump still has no clear plan for Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Opinion</div><a class="source-link-title" href="https://www.theguardian.com/commentisfree/2026/jan/06/donald-trump-venezuela-coup-us-president-caracas" target="_blank" rel="noopener">Why the surprise over Trump’s Venezuela coup? US presidents promise isolation – and deliver war | Simon Jenkins</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/house/5675768-jasmine-crockett-trump-maduro-us/" target="_blank" rel="noopener">Crockett compares Trump to Maduro</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/house/5674433-jeffries-trump-administration-venezuela-plans/" target="_blank" rel="noopener">Jeffries: Trump administration &#x27;has no real plan&#x27; for Venezuela</a></li><li class="source-entry"><div class="source-kicker">BBC - Politics</div><a class="source-link-title" href="https://www.bbc.com/news/articles/ckgnxdpv2p9o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">US action in Venezuela morally right, Badenoch says</a></li><li class="source-entry"><div class="source-kicker">NPR - World</div><a class="source-link-title" href="https://www.npr.org/2026/01/06/nx-s1-5667052/u-s-faces-broad-condemnation-for-actions-in-venezuela-during-u-n-emergency-meeting" target="_blank" rel="noopener">U.S. faces broad condemnation for actions in Venezuela during U.N. emergency meeting</a></li><li class="source-entry"><div class="source-kicker">Colchester Gazette</div><a class="source-link-title" href="https://www.gazette-news.co.uk/news/25743498.nigel-farage-said-trumps-action-venezuela/?ref=rss" target="_blank" rel="noopener">Nigel Farage criticised for comments on Trump and Venezuela</a></li><li class="source-entry"><div class="source-kicker">Bolton News</div><a class="source-link-title" href="https://www.theboltonnews.co.uk/news/25740298.former-bolton-councillor-just-hour-venezuela/?ref=rss" target="_blank" rel="noopener">Well-known Bolton face at &#x27;gateway to Venezuela&#x27; as world stunned by US strikes</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/07/wednesday-briefing-what-europes-silence-over-venezuela-says-about-its-fear-of-trump" target="_blank" rel="noopener">Wednesday briefing: What Europe’s silence over Venezuela says about its fear of Trump</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Politics</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/06/yvette-cooper-criticise-trump-venezuela-ukraine" target="_blank" rel="noopener">Why won’t Yvette Cooper criticise Trump over Venezuela? Look no further than Ukraine</a></li><li class="source-entry"><div class="source-kicker">The Guardian - UK</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/06/wes-streeting-venezuela-disintegration-rules-based-world-order" target="_blank" rel="noopener">Wes Streeting warns of ‘disintegration’ of rules-based world order after Venezuela attack</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Opinion</div><a class="source-link-title" href="https://www.theguardian.com/commentisfree/2026/jan/06/donald-trump-new-world-order-venezuela-cuba-mexico-colombia-greenland" target="_blank" rel="noopener">Trump’s new world order is being born – and Venezuela is just the start | Owen Jones</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/06/maduro-venezuela-america-first-trump-maga" target="_blank" rel="noopener">&quot;Neocon smear&quot;: MAGA rejects pure isolationism after Maduro capture</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15439611/Trump-reunites-Ice-Maiden-vanished-Maduro-raid-JD-Vance.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Trump reunites with the Ice Maiden after her mysterious absence during Maduro raid - along with JD Vance</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/06/g-s1-104696/trump-house-gop-venezuela" target="_blank" rel="noopener">Trump to meet with House Republicans amid questions about Venezuela</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/opinion/trump-presidential-power-nonprofits-ngos.html" target="_blank" rel="noopener">The Trump Revolution Is Going Much Further Than We Realize</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/opinion/venezuela-american-history-trump.html" target="_blank" rel="noopener">Trump Is Falling for a Trap We Could All See Coming</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/podcasts/2026/01/06/xis-not-there-what-chinas-venezuela-response-reveals" target="_blank" rel="noopener">Xi’s not there: what China’s Venezuela response reveals</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/05/world/europe/trump-venezuela-china-russia.html" target="_blank" rel="noopener">Trump’s Foray Into Venezuela Could Embolden Russia’s and China’s Own Aggression</a></li><li class="source-entry"><div class="source-kicker">New York Times - Opinion</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/06/opinion/maduro-venezuela-oil.html" target="_blank" rel="noopener">There Were Good Reasons to Depose Maduro</a></li><li class="source-entry"><div class="source-kicker">NPR - World</div><a class="source-link-title" href="https://www.npr.org/2026/01/04/nx-s1-5666340/venezuela-nicolas-maduro-venezuelans-asylum-seekers-refugee" target="_blank" rel="noopener">Miami mayor calls for Trump to &#x27;immediately&#x27; reinstate TPS for Venezuelans</a></li><li class="source-entry"><div class="source-kicker">The Sun - Top Stories</div><a class="source-link-title" href="https://www.thesun.co.uk/news/37809806/rod-liddle-left-wing-maniacs-mourning-maduro-venezuela/" target="_blank" rel="noopener">Left-wing maniacs mourning Maduro is lunacy – how can they not see the grotesque misery he inflicted upon his people?</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15431547/joe-biden-donald-trump-nicolas-maduro-x-post.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Joe Biden mocked for VERY unfortunate X post about captured Venezuelan President Nicolas Maduro</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15432025/background-Trumps-Mar-Lago-war-room-x-Maduro-strike-Venezuela.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Eagle eyed viewers spot odd detail in background of Trump&#x27;s Mar-a-Lago war room during Maduro strike in Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/trump-maduro-capture-congress-venezuela-b2893943.html" target="_blank" rel="noopener">Trump refuses to say if he consulted with Congress before Venezuela strikes - but calls capture of Maduro ‘brilliant’: report</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/politics/action-in-venezuela-could-test-trumps-ability-to-hold-gop-together-in-election-year" target="_blank" rel="noopener">WATCH LIVE: Senate returns to Capitol Hill after U.S. military captures Venezuela&#x27;s Maduro</a></li><li class="source-entry"><div class="source-kicker">Daily Record</div><a class="source-link-title" href="https://www.dailyrecord.co.uk/news/uk-world-news/donald-trump-threatens-five-more-36502026" target="_blank" rel="noopener">Donald Trump threatens five more countries after Venezuela takeover</a></li><li class="source-entry"><div class="source-kicker">Mirror - News</div><a class="source-link-title" href="https://www.mirror.co.uk/news/world-news/spy-jet-circles-mexico-coast-36502343" target="_blank" rel="noopener">US spy jet circles Mexico coast as Trump threatens Venezuela-style attack</a></li><li class="source-entry"><div class="source-kicker">Daily Star - News</div><a class="source-link-title" href="https://www.dailystar.co.uk/news/latest-news/jet-spotted-near-mexico-coast-36501661" target="_blank" rel="noopener">US jet spotted near Mexico coast after Donald Trump makes Venezuela-style military threat</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-04/rubio-says-oil-quarantine-gives-us-sway-in-post-maduro-venezuela" target="_blank" rel="noopener">Rubio Seizes Chance to Remake Latin America in Venezuela Gambit</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/pete-hegseth-cbs-evening-news-us-military-venezuela-iraq/" target="_blank" rel="noopener">Pete Hegseth says U.S. intervention in Venezuela is &quot;exact opposite&quot; of Iraq</a></li><li class="source-entry"><div class="source-kicker">The Economist - Latest</div><a class="source-link-title" href="https://www.economist.com/the-americas/2025/12/22/christmas-in-caracas-with-donald-trump-on-the-doorstep" target="_blank" rel="noopener">Christmas in Caracas with Donald Trump on the doorstep</a></li><li class="source-entry"><div class="source-kicker">Wired</div><a class="source-link-title" href="https://www.wired.com/story/us-invaded-venezuela-and-captured-nicolas-maduro-chatgpt-disagrees/" target="_blank" rel="noopener">The US Invaded Venezuela and Captured Nicolás Maduro. ChatGPT Disagrees</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/video/hegseth-next-week-venezuela-will-look-like/" target="_blank" rel="noopener">Hegseth on what the next week in Venezuela will look like</a></li><li class="source-entry"><div class="source-kicker">ABC News - Top Stories</div><a class="source-link-title" href="https://abcnews.go.com/International/video/secretary-rubio-us-capture-venezuelan-president-maduro-128873454" target="_blank" rel="noopener">WATCH:  Secretary Rubio on US capture of Venezuelan President Maduro</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/news/2026/1/4/fact-checking-trump-following-us-capture-of-venezuelas-maduro?traffic_source=rss" target="_blank" rel="noopener">Fact-checking Trump following US ‘capture’ of Venezuela’s Maduro</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-04/trump-s-venezuela-raid-leaves-maduro-s-regime-in-charge-for-now" target="_blank" rel="noopener">Trump Snatches Maduro But Leaves His Regime in Charge for Now</a></li><li class="source-entry"><div class="source-kicker">Wired</div><a class="source-link-title" href="https://www.wired.com/story/disinformation-floods-social-media-after-nicolas-maduros-capture/" target="_blank" rel="noopener">Disinformation Floods Social Media After Nicolás Maduro’s Capture</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/venezuela-maria-corina-machado-releases-letter-read-text-maduro-capture/" target="_blank" rel="noopener">Venezuelan opposition leader releases letter after Maduro&#x27;s capture</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/homenews/administration/5671057-florida-republicans-trump-maduro-operation/" target="_blank" rel="noopener">Florida Republicans laud Trump over Maduro capture</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/trump-maduro-venezuelan-capture-photo-b2893978.html" target="_blank" rel="noopener">Trump posts photo of handcuffed Maduro after Venezuelan president’s capture</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-04/trump-s-attack-on-venezuela-rallies-republican-hawks-to-his-side" target="_blank" rel="noopener">Trump’s Attack on Venezuela Rallies GOP Hawks to His Side</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/trump-needs-to-be-reigned-in-after-venezuela-action-and-greenland-threats-jeffries-says" target="_blank" rel="noopener">Trump &#x27;needs to be reigned in&#x27; after Venezuela action and Greenland threats, Jeffries says</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/gop-rep-bacon-says-trump-placing-too-much-emphasis-on-oil-after-maduros-removal" target="_blank" rel="noopener">GOP Rep. Bacon says Trump placing &#x27;too much emphasis on oil&#x27; after Maduro&#x27;s removal</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/president-connolly-venezuela-us-maduro-6920418-Jan2026/" target="_blank" rel="noopener">President Connolly says lives lost in Venezuela during US intervention ‘appalling’ and ‘overlooked’</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Politics</div><a class="source-link-title" href="https://www.washingtonpost.com/politics/2026/01/08/trump-democrats-divided-venezuela/" target="_blank" rel="noopener">Cracks in Democrats’ Venezuela response reveal foreign policy muddle</a></li><li class="source-entry"><div class="source-kicker">Washington Post - World</div><a class="source-link-title" href="https://www.washingtonpost.com/world/2026/01/07/venezuela-us-maduro-capture/" target="_blank" rel="noopener">Venezuelan politics are a ‘blood sport.’ The U.S. is entering the ring.</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/blogs/in-the-know/5678001-trump-maduro-poll-division/" target="_blank" rel="noopener">Americans split on Trump&#x27;s action to remove Maduro: Poll</a></li><li class="source-entry"><div class="source-kicker">The New Yorker - News</div><a class="source-link-title" href="https://www.newyorker.com/news/q-and-a/the-former-trump-skeptics-getting-behind-his-war-in-venezuela" target="_blank" rel="noopener">The Former Trump Skeptics Getting Behind His War in Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/campaign/5677578-trump-venezuela-democrats-react/" target="_blank" rel="noopener">Democrats think Venezuela will be a disaster for Trump</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/08/nx-s1-5669427/sen-tim-kaine-talks-about-vote-to-limit-trumps-military-interventions-in-venezuela" target="_blank" rel="noopener">Sen. Tim Kaine talks about vote to limit Trump&#x27;s military interventions in Venezuela</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/08/nx-s1-5669666/lawmakers-briefed-on-trump-administrations-3-pronged-plan-for-venezuela" target="_blank" rel="noopener">Lawmakers briefed on Trump administration&#x27;s 3-pronged plan for Venezuela</a></li><li class="source-entry"><div class="source-kicker">Irish Times - World</div><a class="source-link-title" href="https://www.irishtimes.com/ireland/2026/01/07/mcentee-extremely-concerned-by-recent-action-in-venezuela/" target="_blank" rel="noopener">McEntee ‘extremely concerned’ by recent action in Venezuela</a></li><li class="source-entry"><div class="source-kicker">Irish Times - World</div><a class="source-link-title" href="https://www.irishtimes.com/ireland/education/2026/01/07/president-connolly-voices-concerns-over-venezuela-and-upholding-of-international-law/" target="_blank" rel="noopener">President Connolly voices concerns over Venezuela and upholding of international law</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Front</div><a class="source-link-title" href="https://www.theguardian.com/us-news/2026/jan/08/trump-venezuela-senate-vote" target="_blank" rel="noopener">US Senate to vote on bid to stop Trump from taking further military action in Venezuela</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/senate-war-powers-vote-trump-venezuela-maduro/" target="_blank" rel="noopener">Senators force third vote to limit Trump&#x27;s strikes on Venezuela</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/trump-speaks-with-colombian-president-petro-amid-rising-tensions/" target="_blank" rel="noopener">Trump speaks with Colombian president Petro amid rising tensions</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/u-s-actions-venezuela-opinion-poll/" target="_blank" rel="noopener">CBS News poll finds actions in Venezuela divide Americans</a></li><li class="source-entry"><div class="source-kicker">Wired</div><a class="source-link-title" href="https://www.wired.com/story/election-deniers-think-venezuela-attack-about-2020-election/" target="_blank" rel="noopener">Election Deniers Think the Venezuela Attack Is All About 2020</a></li><li class="source-entry"><div class="source-kicker">Wired</div><a class="source-link-title" href="https://www.wired.com/story/venezuela-pentagon-press-corps/" target="_blank" rel="noopener">Venezuela Is the First Big Test for the Pentagon’s Influencer Press Corps—and It&#x27;s Failing</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/07/world/europe/trump-venezuela-greenland-ukraine-europe.html" target="_blank" rel="noopener">Europe Tries to Come to Terms With Trump’s Intervention in Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Scotsman</div><a class="source-link-title" href="https://www.scotsman.com/news/politics/donald-trumps-venezuela-actions-show-why-uk-must-move-away-from-oil-and-gas-says-labour-minister-5467750" target="_blank" rel="noopener">Donald Trump&#x27;s Venezuela actions &#x27;show why UK must move away from oil and gas&#x27;, says Labour minister</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/08/venezuela-senate-voting-on-halting-military-action-after-maduro-capture.html" target="_blank" rel="noopener">Senate votes to block Trump from future military strikes on Venezuela</a></li><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine" target="_blank" rel="noopener">Senate votes to curb military action in Venezuela in rare Trump rebuke</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/uk-keeps-billions-venezuelan-gold-reserves-frozen-bank-england-maduro-arrest" target="_blank" rel="noopener">UK keeps billions in Venezuelan gold reserves frozen at Bank of England after Maduro arrest</a></li><li class="source-entry"><div class="source-kicker">LA Times - Politics</div><a class="source-link-title" href="https://www.latimes.com/politics/story/2026-01-08/gop-senators-break-with-trump-to-rein-in-use-of-military-without-congress-approval" target="_blank" rel="noopener">GOP senators break with Trump to rein in use of military without Congress&#x27; approval</a></li><li class="source-entry"><div class="source-kicker">NPR - Politics</div><a class="source-link-title" href="https://www.npr.org/2026/01/08/nx-s1-5670473/senate-republicans-deal-trump-a-rare-rebuke-with-venezuela-war-powers-vote" target="_blank" rel="noopener">Senate Republicans deal Trump a rare rebuke with Venezuela war powers vote</a></li><li class="source-entry"><div class="source-kicker">Derry Journal</div><a class="source-link-title" href="https://www.derryjournal.com/news/people/in-pictures-derry-anti-war-coalition-rally-against-us-military-intervention-in-venezuela-5468949" target="_blank" rel="noopener">IN PICTURES: Derry Anti War Coalition rally against US military intervention in Venezuela</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/senate-moves-to-restrict-trump-from-taking-further-military-action-against-venezuela" target="_blank" rel="noopener">Senate moves to restrict Trump from taking further military action against Venezuela</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/trump-focused-on-foreign-affairs-to-distract-from-domestic-challenges-sen-slotkin-says" target="_blank" rel="noopener">Trump focused on foreign affairs to distract from domestic challenges, Sen. Slotkin says</a></li><li class="source-entry"><div class="source-kicker">Poynter Institute</div><a class="source-link-title" href="https://www.poynter.org/fact-checking/2026/does-venezeula-send-fentanyl-to-united-states/" target="_blank" rel="noopener">The White House said Maduro was ‘flooding’ the US with fentanyl. Experts and official reports disagree.</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/2026/0109/1552226-trump-venezuela/" target="_blank" rel="noopener">US oversight of Venezuela could last years, says Trump</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/us/2026/0108/1552181-us-senate-war-powers/" target="_blank" rel="noopener">US Senate rebukes Trump on Venezuela in war powers vote</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15446249/Republicans-rebel-against-Trumps-military-strikes-stinging-rebuke-triumphant-Maduro-capture.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">Trump calls for DEFEAT of defiant five Republicans who crossed him on Venezuela ... including a potential successor</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Top</div><a class="source-link-title" href="https://www.washingtonpost.com/technology/2026/01/10/maduro-capture-china-russia-social-media-campaign/?utm_source=rss&amp;utm_medium=referral&amp;utm_campaign=wp_homepage" target="_blank" rel="noopener">How China and Russia are using Maduro’s capture to sway U.S. discourse</a></li><li class="source-entry"><div class="source-kicker">Washington Post - Top</div><a class="source-link-title" href="https://www.washingtonpost.com/opinions/2026/01/11/trump-maduro-venezuela-democracy/?utm_source=rss&amp;utm_medium=referral&amp;utm_campaign=wp_homepage" target="_blank" rel="noopener">Trump wisely takes a go-slow approach to Venezuelan democracy</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/world/u-s-and-venezuela-take-initial-steps-toward-restoring-relations-after-maduros-capture" target="_blank" rel="noopener">U.S. and Venezuela take initial steps toward restoring relations after Maduro&#x27;s capture</a></li><li class="source-entry"><div class="source-kicker">Edinburgh Live</div><a class="source-link-title" href="https://www.edinburghlive.co.uk/news/edinburgh-news/dozens-edinburgh-protestors-gather-outside-33206488" target="_blank" rel="noopener">Dozens of Edinburgh protestors gather outside US consulate to &#x27;condemn Trump&#x27;</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/video/world/100000010629368/latin-america-reacts-to-trumps-interventionism.html" target="_blank" rel="noopener">Latin America Reacts to Trump’s Interventionism</a></li><li class="source-entry"><div class="source-kicker">BBC - Front</div><a class="source-link-title" href="https://www.bbc.co.uk/sounds/play/p0mt27hj?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">After Venezuela, what next for Trump?</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-10/us-may-lift-some-venezuela-sanctions-soon-bessent-tells-reuters" target="_blank" rel="noopener">US May Lift Some Venezuela Sanctions Soon, Bessent Tells Reuters</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-10/wall-street-week-farming-without-subsidies-robotaxis-video" target="_blank" rel="noopener">Wall Street Week | US-Venezuela Policy, Farming Without Subsidies, Robotaxis, Everest Exclusivity</a></li><li class="source-entry"><div class="source-kicker">CNBC - Top</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/10/trump-venezuela-congress-republicans.html" target="_blank" rel="noopener">Trump faces headwinds on Venezuela, health care as some Republicans break rank</a></li><li class="source-entry"><div class="source-kicker">Fox News - Politics</div><a class="source-link-title" href="https://www.foxnews.com/politics/inside-trump-administrations-effort-quickly-reach-audiences-behind-media-walls-venezuela-iran" target="_blank" rel="noopener">Inside the Trump administration’s effort to quickly reach audiences behind media walls in Venezuela, Iran</a></li><li class="source-entry"><div class="source-kicker">The Guardian - UK</div><a class="source-link-title" href="https://www.theguardian.com/politics/2026/jan/04/uk-unclear-us-attack-venezuela" target="_blank" rel="noopener">UK ‘not entirely clear’ what it means for US to ‘run’ Venezuela</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/administration/5671431-live-updates-trump-venezuela-maduro/" target="_blank" rel="noopener">Live updates: US running ‘direction’ of Venezuela after Maduro ouster; Lawmakers speak out</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/republicans-trump-running-venezuela-maduro-b2895628.html" target="_blank" rel="noopener">Few Republicans know what Trump means by ‘running’ Venezuela</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - News</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15439029/Americas-verdict-Trumps-main-motivation-Venezuela-strike-believe-U-S-run-country.html?ns_mchannel=rss&amp;ns_campaign=1490&amp;ito=1490" target="_blank" rel="noopener">REVEALED: America&#x27;s verdict on Trump&#x27;s main motivation behind his Venezuela strike… and whether they believe the U.S. should run the country</a></li><li class="source-entry"><div class="source-kicker">The Hill - Congress</div><a class="source-link-title" href="https://thehill.com/policy/defense/5677854-trump-congress-venezuela-plan/" target="_blank" rel="noopener">Trump&#x27;s oil-centric vision for Venezuela divides Congress</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/trump-venezuela-latest-oil-tanker-maduro-b2896665.html" target="_blank" rel="noopener">Trump latest: President accused of ‘insane plan’ to ‘steal Venezuelan oil at gunpoint’</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/us-politics/trump-steal-venezuela-oil-gunpoint-democrats-b2896365.html" target="_blank" rel="noopener">Senate Democrats ridicule Trump’s ‘insane’ plan to ‘steal’ Venezuela’s oil ‘at gunpoint’</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/live-updates/venezuela-maduro-trump-oil-senate-war-powers/" target="_blank" rel="noopener">Trump lays out Venezuela oil strategy as Democrats push for war powers vote</a></li><li class="source-entry"><div class="source-kicker">New York Times - US</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/07/us/politics/congress-trump-venezuela-oil-constitution.html" target="_blank" rel="noopener">Trump’s Claim to Venezuelan Oil Money Draws Scrutiny in Congress</a></li><li class="source-entry"><div class="source-kicker">New York Times - Science</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/07/climate/democrats-oil-companies-venezuela.html" target="_blank" rel="noopener">Democrats Seek Answers About Oil Companies’ Knowledge of Trump’s Venezuela Operation</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-02/colombia-mulls-price-controls-as-wage-hike-rattles-markets" target="_blank" rel="noopener">Colombia Mulls Price Controls as Wage Hike Rattles Markets</a></li><li class="source-entry"><div class="source-kicker">Mirror - News</div><a class="source-link-title" href="https://www.mirror.co.uk/news/politics/donald-trumps-real-motive-attacking-36491053" target="_blank" rel="noopener">Donald Trump&#x27;s real motive in attacking Venezuela - and how he thinks he&#x27;ll get away with it</a></li><li class="source-entry"><div class="source-kicker">LA Times - Business</div><a class="source-link-title" href="https://www.latimes.com/business/story/2025-12-23/what-does-trump-have-against-venezuela-his-own-explanations-keep-changing" target="_blank" rel="noopener">Hiltzik: What does Trump have against Venezuela? His explanations keep changing</a></li><li class="source-entry"><div class="source-kicker">New York Times - World</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/04/world/venezuela-strikes-trump-oil-maduro.html" target="_blank" rel="noopener">Venezuela, Democracy and Oil</a></li><li class="source-entry"><div class="source-kicker">The Hill - Top</div><a class="source-link-title" href="https://thehill.com/homenews/house/5673710-jeffries-criticizes-trump-venezuela/" target="_blank" rel="noopener">Jeffries blasts Trump’s Venezuela attack as ‘unprecedented’ fight to reward oil companies</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/americas/trump-venezuela-us-colombia-cucuta-b2894849.html" target="_blank" rel="noopener">Trump wants to rule Venezuela by force – but he’s getting the US into a mess</a></li></ul></details>
+    </main>
+
+    <div class="footer">
+      <span>The Bias 2026</span>
+      <div class="footer-links">
+        <a class="footer-social" href="https://instagram.com/thebias_app" target="_blank" rel="noopener" aria-label="The Bias on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="footer-social" href="https://reddit.com/u/the_bias_app" target="_blank" rel="noopener" aria-label="The Bias on Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6.2c1.9 0 3.7.5 5.1 1.3" />
+              <path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3" />
+              <path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"/>
+              <circle cx="9.2" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <circle cx="14.8" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9" />
+              <circle cx="17.7" cy="6.8" r="1.3"/>
+              <path d="M12.2 4.2l2.2.5"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Sources">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title" id="modal-title">Sources</div>
+        <button class="close-btn" data-close-modal>Close</button>
+      </div>
+      <ul class="source-list" id="modal-list"></ul>
+    </div>
+  </section>
+
+  <script>
+    window.__CLAIMS__ = {"b2": [["U.S. forces captured Nicolás Maduro and his wife in a pre-dawn operation in Caracas on Jan. 3.", "10693", "The large scale operation took place in the early hours of Saturday and involved more than 150 U.S. aircraft. Maduro and his wife, Cilia Flores, were swiftly charged in the Southern District of New York and are en route...", "U.S. forces carried out a pre-dawn operation in Caracas on Jan. 3 that led to the capture of President Nicolás Maduro and his wife, Cilia Flores.", "The Hill - Top", "Five key takeaways on Trump’s stunning toppling of Maduro", "https://thehill.com/homenews/administration/5671319-trump-venezuela-operation-maduro-takeaways/"], ["Maduro and his wife were taken to New York to face federal drug and weapons charges.", "16212", "…led to the capture of Venezuelan President Nicolas Maduro and First Lady Cilia Flores, who have since been taken to New York to answer drug and weapons charges.", "Both were taken to New York to face federal drug and weapons charges.", "The Independent - World", "Elon Musk had a ‘lovely dinner’ with Trump and Melania hours after Maduro’s capture", "https://www.independent.co.uk/news/world/americas/us-politics/elon-musk-trump-dinner-melania-b2894589.html"], ["They pleaded not guilty in Manhattan.", "16759", "Maduro and his wife pleaded not guilty and appeared defiant in their initial court appearance, with the deposed leader claiming he is \\\"still president of my country.\\\"", "They have pleaded not guilty in Manhattan.", "CBS News - Top Stories", "Venezuela's future in balance after Trump officials brief lawmakers; Maduro in jail", "https://www.cbsnews.com/live-updates/venezuela-maduro-jail-trump-future/"]], "b4": [["Personnel entered the compound after 1:01 a.m. and Maduro was flown out of Venezuelan airspace by about 3:29 a.m. ET, officials said.", "10734", "Law enforcement accompanied by military personnel arrived at the Maduro compound after 1:01 a.m. Maduro and his wife were \\\"over the water\\\" out of Venezuela at 3:29 a.m. ET and held on the USS Iwo Jima.", "Officials said law-enforcement teams and military personnel entered Maduro’s compound shortly after 1:01 a.m., and U.S. officials said he was out of Venezuelan airspace by about 3:29 a.m. ET.", "The Independent - World", "Trump posts photo of handcuffed Maduro after Venezuelan president’s capture", "https://www.independent.co.uk/news/world/americas/us-politics/trump-maduro-venezuelan-capture-photo-b2893978.html"], ["Gen. Dan Caine described a complex, multi-axis operation and officials said at least one U.S. aircraft was hit but remained flyable.", "10734", "There were \\\"multiple\\\" engagements after the extraction, and one U.S. aircraft was hit \\\"but remained flyable,\\\" according to Caine.", "Gen. Dan Caine described a complex, multi-axis plan with aircraft launching from multiple points; military officials said at least one U.S. aircraft was struck but remained flyable.", "The Independent - World", "Trump posts photo of handcuffed Maduro after Venezuelan president’s capture", "https://www.independent.co.uk/news/world/americas/us-politics/trump-maduro-venezuelan-capture-photo-b2893978.html"]], "b6": [["A New York indictment accuses Maduro's government of protecting and promoting illicit activity including drug trafficking.", "11173", "The New York indictment against Maduro accuses him of leading a 'a corrupt, illegitimate government that, for decades, has leveraged government power to protect and promote illegal activity, including drug trafficking.'", "Prosecutors in New York unsealed an indictment accusing Maduro’s government of using state power to protect and promote illegal activity, including drug trafficking.", "Daily Mail - News", "Grateful Venezuelans hug Donald Trump as president and Elon Musk celebrate Maduro's removal at luxurious Mar-a-Lago dinner", "https://www.dailymail.co.uk/news/article-15433447/venezuelans-maralago-trump-celebrate-maduro-capture.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Maduro pleaded not guilty in Manhattan and described himself as a 'prisoner of war.'", "17257", "Maduro appeared in a New York court on Monday, where he pleaded not guilty and said he was \\\"a \\\"prisoner of war.\\\"", "Maduro appeared in Manhattan, pleaded not guilty and described himself as a 'prisoner of war.'", "Fox News - World", "Venezuelan ‘dark fleet’ tanker evades US Coast Guard as Russia sends submarine to escort vessel: reports", "https://www.foxnews.com/world/venezuela-oil-tanker-marinera-evades-us-interception-adopting-russian-identity-fleeing-atlantic"], ["The White House has characterised the removal as a law-enforcement action.", "21528", "Members of the Trump administration, including the president, have muddied the legal arguments by claiming that the operation to capture Maduro was a \\\"law enforcement\\\" operation that didn't require sign-off from Congress.", "The White House has framed the removal as a law-enforcement action, while some lawmakers and legal observers say the strikes resemble an act of war that should require congressional authorization.", "CBS News - Top Stories", "Senators force third vote to limit Trump's strikes on Venezuela", "https://www.cbsnews.com/news/senate-war-powers-vote-trump-venezuela-maduro/"], ["Critics and some lawmakers say the strikes resemble an act of war that should be authorised by Congress.", "21528", "Members of the Trump administration, including the president, have muddied the legal arguments by claiming that the operation to capture Maduro was a \\\"law enforcement\\\" operation that didn't require sign-off from Congress.", "The White House has framed the removal as a law-enforcement action, while some lawmakers and legal observers say the strikes resemble an act of war that should require congressional authorization.", "CBS News - Top Stories", "Senators force third vote to limit Trump's strikes on Venezuela", "https://www.cbsnews.com/news/senate-war-powers-vote-trump-venezuela-maduro/"], ["President Trump said the United States would 'run the country' until a safe, proper and judicious transition could be arranged.", "7392", "In a January 3 news conference at Mar-a-Lago, Trump said the US would “run the country until such time as we can do a safe, proper and judicious transition”.", "President Trump added that the United States would 'run the country' until a safe, proper and judicious transition could be arranged.", "Al Jazeera - All", "Fact-checking Trump following US ‘capture’ of Venezuela’s Maduro", "https://www.aljazeera.com/news/2026/1/4/fact-checking-trump-following-us-capture-of-venezuelas-maduro?traffic_source=rss"]], "b8": [["The Senate advanced a procedural motion by a 52‑47 margin to limit further unilateral military action in Venezuela.", "25756", "The Senate voted 52-47 in favor of the measure, led by Sens. Tim Kaine (D-Va.) and Rand Paul (R-Ky.), and backed by Senate Minority Leader Chuck Schumer (D-N.Y.).", "Senators advanced a war‑powers resolution in a 52‑47 procedural vote intended to restrict further unilateral strikes in Venezuela.", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"], ["The measure was led by Sen. Tim Kaine with Sen. Rand Paul as a Republican co‑sponsor and five Republicans joined Democrats to advance it.", "25756", "Five Republicans — Paul, Susan Collins of Maine, Lisa Murkowski of Alaska, Todd Young of Indiana and Josh Hawley of Missouri — joined Democrats in backing the measure.", "The effort, led by Sen. Tim Kaine with Sen. Rand Paul as a Republican co‑sponsor, was advanced after five Republicans crossed to support it.", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"], ["Lawmakers who attended classified briefings said they left dissatisfied and demanded more public detail.", "21528", "Democrats left those briefings dissatisfied with the answers they received about what comes next.", "Lawmakers who attended classified briefings said they left dissatisfied and demanded more public detail.", "CBS News - Top Stories", "Senators force third vote to limit Trump's strikes on Venezuela", "https://www.cbsnews.com/news/senate-war-powers-vote-trump-venezuela-maduro/"], ["Some Democrats publicly urged impeachment or raised the possibility of invoking the 25th Amendment.", "7450", "\"\\\"Trump must be impeached,\\\" said Rep. Delia Ramirez (D-Ill.) in a statement, also calling for the passage of legislation to rein in executive war powers and reassert congressional control over the process.\"", "Some Democrats also publicly raised impeachment and 25th‑Amendment talk.", "Axios - All", "Furious Democrats float Trump impeachment, 25th Amendment over \"insane\" Venezuela attack", "https://www.axios.com/2026/01/03/trump-venezuela-maduro-democrats-congress"]], "b10": [["Pete Hegseth described the mission as the 'exact opposite' of the Iraq invasion.", "7636", "Defense Secretary Pete Hegseth told \\\"CBS Evening News\\\" that the United States' intervention into Venezuela and the capture of its leader, Nicolás Maduro, is the \\\"exact opposite\\\" of the U.S. invasion of Iraq.", "Defense Secretary Pete Hegseth called the mission the 'exact opposite' of the Iraq invasion.", "CBS News - Top Stories", "Pete Hegseth says U.S. intervention in Venezuela is \"exact opposite\" of Iraq", "https://www.cbsnews.com/news/pete-hegseth-cbs-evening-news-us-military-venezuela-iraq/"], ["Senator Tom Cotton described Maduro as running a vast drug‑trafficking operation.", "7862", "'Nicolas Maduro wasn’t just an illegitimate dictator; he also ran a vast drug-trafficking operation,' Cotton wrote.", "Senator Tom Cotton and other Republicans emphasised Maduro's alleged role in drug trafficking.", "Daily Mail - News", "Marjorie Taylor Greene joins AOC and Democrats in slamming Trump's Venezuela operation: 'Boy were we wrong'", "https://www.dailymail.co.uk/news/article-15431549/AOC-MTG-Trump-Maduro-attack.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Marco Rubio said the U.S. had arrangements to sell 30 to 50 million barrels of Venezuelan oil.", "25363", "Rubio said the Latin American country's government agreed to let the U.S. sell 30 to 50 million barrels of oil, which Mr. Trump says Venezuela can use to buy U.S.-made goods.", "Secretary of State Marco Rubio said the U.S. had arrangements to sell 30 to 50 million barrels of Venezuelan oil.", "CBS News - Top Stories", "Trump lays out Venezuela oil strategy as Democrats push for war powers vote", "https://www.cbsnews.com/live-updates/venezuela-maduro-trump-oil-senate-war-powers/"], ["Speaker Mike Johnson called the operation 'decisive and justified' and conservative media figures applauded.", "7457", "Top Republican lawmakers praised and defended the move, with Speaker Mike Johnson (R-La.) calling the operation \\\"decisive and justified.\\\"", "Speaker Mike Johnson and conservative commentators celebrated the outcome.", "Axios - All", "Trump faces quick criticism from Democrats over Maduro capture", "https://www.axios.com/2026/01/03/democrats-criticize-trump-maduro-venezuela"], ["Conservative opinion hosts on Fox praised the capture, with Laura Ingraham calling it 'quintessentially MAGA.'", "20368", "The coverage among opinion hosts on Fox News has also been overwhelmingly positive. Fox News host Laura Ingraham called the capture of Maduro “quintessentially Maga”.", "Speaker Mike Johnson and conservative commentators celebrated the outcome.", "The Guardian - World", "Maga media stars back Trump on Venezuela … mostly: ‘It doesn’t make any sense’", "https://www.theguardian.com/us-news/2026/jan/07/maga-stars-trump-venezuela"], ["Senator John Fetterman praised the operation as 'surgical and very efficient.'", "13395", "\\\"This wasn't a war. This wasn't boots on grounds and in that kind of a way. This was surgical and very efficient. And I want to celebrate our military,\\\" said Sen. John Fetterman.", "At least one Democratic senator, John Fetterman, described the operation as 'surgical and very efficient.'", "Fox News - Politics", "The Briefing: How Capitol Hill reacted to news of Nicolás Maduro's capture", "https://www.foxnews.com/politics/briefing-how-capitol-hill-reacted-news-nicolas-maduros-capture"]], "b12": [["Alexandria Ocasio‑Cortez wrote that the operation was about oil and regime change, not drugs.", "7862", "'It's not about drugs,' Ocasio-Cortez wrote on social media after the raid was confirmed by government officials. 'It's about oil and regime change.'", "Representative Alexandria Ocasio‑Cortez wrote that 'it's not about drugs; it's about oil and regime change.'", "Daily Mail - News", "Marjorie Taylor Greene joins AOC and Democrats in slamming Trump's Venezuela operation: 'Boy were we wrong'", "https://www.dailymail.co.uk/news/article-15431549/AOC-MTG-Trump-Maduro-attack.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Senator Chris Murphy called the plan 'insane' and warned against seizing Venezuelan oil at gunpoint.", "25109", "“This is an insane plan. They’re talking about stealing Venezuelan oil at gunpoint for an undefined period of time to micromanage an entire country,” claimed Sen. Chris Murphy.", "Senator Chris Murphy called plans to seize Venezuelan oil 'insane.'", "The Independent - World", "Senate Democrats ridicule Trump’s ‘insane’ plan to ‘steal’ Venezuela’s oil ‘at gunpoint’", "https://www.independent.co.uk/news/world/americas/us-politics/trump-steal-venezuela-oil-gunpoint-democrats-b2896365.html"], ["Marjorie Taylor Greene warned the operation could presage more regime‑change campaigns.", "7862", "'By removing Maduro this is a clear move for control over Venezuelan oil supplies that will ensure stability for the next obvious regime change war in Iran,' Taylor Greene wrote on X.", "Representative Marjorie Taylor Greene warned the move could presage more regime‑change campaigns.", "Daily Mail - News", "Marjorie Taylor Greene joins AOC and Democrats in slamming Trump's Venezuela operation: 'Boy were we wrong'", "https://www.dailymail.co.uk/news/article-15431549/AOC-MTG-Trump-Maduro-attack.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Senator Elissa Slotkin said the turn to foreign entanglements looked like a distraction from domestic problems.", "28246", "Well, first of all, I think we just have to acknowledge how -- what a 180 the president has done on these foreign entanglements. He literally ran on no foreign wars and complained bitterly about Iraq and Afghanistan. And here he is saying that we own Venezuela and it's going to be years that we're going to be responsible for it.", "Senator Elissa Slotkin said the president's turn to foreign entanglements looked like a distraction from domestic problems.", "PBS NewsHour - Headlines", "Trump focused on foreign affairs to distract from domestic challenges, Sen. Slotkin says", "https://www.pbs.org/newshour/show/trump-focused-on-foreign-affairs-to-distract-from-domestic-challenges-sen-slotkin-says"], ["Anti‑war campaigners and local UK groups staged protests and called the intervention illegal, and some local parties labeled it a war crime.", "26935", "The longstanding activist group condemned the US action with a spokespersonclaiming the actions taken are a serious violation of international law.", "Anti‑war campaigners and local UK parties staged protests and called the intervention illegal or a war crime.", "Derry Journal", "IN PICTURES: Derry Anti War Coalition rally against US military intervention in Venezuela", "https://www.derryjournal.com/news/people/in-pictures-derry-anti-war-coalition-rally-against-us-military-intervention-in-venezuela-5468949"], ["Doncaster Your Party called Maduro's forced removal a war crime.", "17780", "\\\"The apparent forced removal and kidnapping of its president Maduro is a war crime,\\\" the Doncaster Your Party said in a statement.", "Anti‑war campaigners and local UK parties staged protests and called the intervention illegal or a war crime.", "Doncaster Free Press", "\"It's a war crime:\" Doncaster Your Party condems Donald Trump over Venezuela", "https://www.doncasterfreepress.co.uk/news/politics/its-a-war-crime-doncaster-your-party-condems-donald-trump-over-venezuela-5465661"], ["Conservative MP Kemi Badenoch said the action was 'morally' right while acknowledging legal uncertainty.", "16645", "\\\"Where the legal certainty is not yet clear, morally, I do think it was the right thing to do,\\\" Kemi Badenoch told the BBC.", "Conservative MP Kemi Badenoch said the action was morally right even while acknowledging legal questions.", "BBC - Politics", "US action in Venezuela morally right, Badenoch says", "https://www.bbc.com/news/articles/ckgnxdpv2p9o?at_medium=RSS&at_campaign=rss"]], "b14": [["The U.N. secretary‑general said he was 'deeply concerned' the raid could increase instability.", "17722", "The opening statement by U.N. Secretary-General Antonio Guterres pretty much set the tone. He said he was deeply concerned.", "The U.N. secretary‑general said he was deeply concerned that the raid could increase instability.", "NPR - World", "U.S. faces broad condemnation for actions in Venezuela during U.N. emergency meeting", "https://www.npr.org/2026/01/06/nx-s1-5667052/u-s-faces-broad-condemnation-for-actions-in-venezuela-during-u-n-emergency-meeting"], ["At CELAC, several leftist governments attempted to push through a joint statement condemning Maduro's detention but consensus was blocked by a bloc of countries.", "17284", "At CELAC, several leftist governments attempted to push through a joint statement condemning Maduro’s detention. The effort failed after a bloc of countries consisting of Argentina, Bolivia, Paraguay, Peru, Ecuador, El Salvador, Panama, the Dominican Republic, and Trinidad and Tobago blocked consensus, preventing the regional body from issuing a unified defense of the Venezuelan leader, Merco Press agency reported.", "At CELAC, an effort by several leftist governments to condemn Maduro's detention failed after a bloc of countries blocked consensus.", "Fox News - World", "Latin America fractures over Trump’s Maduro capture as regional allies shift right", "https://www.foxnews.com/world/latin-america-fractures-over-trumps-maduro-capture-regional-allies-shift-right"], ["China said it was deeply shocked and strongly condemned the U.S. use of force against Venezuela.", "7966", "\\\"China is deeply shocked and strongly condemns the U.S.'s blatant use of force against a sovereign state and its action against its president,\\\" Beijing's foreign ministry said in a statement.", "China said it was 'deeply shocked' and strongly condemned the U.S. use of force.", "Fox News - World", "Maduro met Chinese envoy hours before US capture from Caracas as Beijing slams operation", "https://www.foxnews.com/world/maduro-met-chinese-envoy-hours-before-us-capture-from-caracas-beijing-slams-operation"], ["Mexico's president said her government 'categorically rejects intervention in the internal affairs of other countries.'", "13417", "\\\"We categorically reject intervention in the internal affairs of other countries,\\\" Sheinbaum said at a press conference in Mexico City, according to an official transcript of the speech released by her office.", "Mexico's president rejected intervention in another country's internal affairs.", "Fox News - World", "Mexican president rejects US sending troops to her country: 'I don't believe in an invasion'", "https://www.foxnews.com/world/mexican-president-rejects-us-sending-troops-her-country-i-dont-believe-invasion"], ["Colombian President Gustavo Petro and President Trump described their exchange as constructive.", "21539", "Mr. Trump said on Truth Social he \\\"appreciated [Petro's] call and tone,\\\" adding that the two leaders are planning to meet at the White House at some point.", "Colombia's president and the U.S. president described a constructive phone exchange.", "CBS News - Top Stories", "Trump speaks with Colombian president Petro amid rising tensions", "https://www.cbsnews.com/news/trump-speaks-with-colombian-president-petro-amid-rising-tensions/"], ["The U.K. signalled that billions in Venezuelan gold would remain frozen at the Bank of England amid recognition disputes.", "26488", "\\\"So the gold stays where it is,\\\" Rhona O’Connell, head of market analysis for EMEA and Asia at StoneX, told Fox News Digital.", "The UK indicated billions in Venezuelan gold would remain frozen.", "Fox News - World", "UK keeps billions in Venezuelan gold reserves frozen at Bank of England after Maduro arrest", "https://www.foxnews.com/world/uk-keeps-billions-venezuelan-gold-reserves-frozen-bank-england-maduro-arrest"], ["Cuba acknowledged 32 of its military and intelligence personnel were killed and declared two days of national mourning.", "13424", "Cuba acknowledged that 32 of its citizens — described by the government as members of the island’s armed forces and intelligence services — were killed during the American operation that seized Venezuelan leader Nicolás Maduro in Caracas, declaring two days of national mourning in their honor.", "Cuba acknowledged 32 of its citizens were killed and declared two days of national mourning.", "Fox News - World", "Cuba's shadow in Venezuela: Havana’s intelligence and military ties exposed after Maduro raid", "https://www.foxnews.com/world/cubas-shadow-venezuela-havanas-intelligence-military-ties-exposed-after-maduro-raid"], ["Moscow framed the episode as part of shifting great‑power behaviour with global implications.", "20820", "The U.S. intervention in Venezuela distracts attention from Ukraine and signals a new era of great-power politics in which Russia can seek its own sphere of dominance.", "Moscow framed the episode as a sign of shifting great‑power behaviour.", "Washington Post - World", "In Maduro’s capture, Russia sees a great-power rival act with impunity", "https://www.washingtonpost.com/world/2026/01/07/russia-venezuela-great-power-politics/"]], "b16": [["Windward reported that the tanker Bella 1 painted a Russian flag on its hull, changed its name, and reflagged to Russia mid‑voyage to avoid capture.", "17257", "\\\"Runaway Venezuela-trading tanker Bella 1 painted a Russian flag on its hull, changed its name, and reflagged to Russia mid-voyage last week to avoid capture by the U.S. Coast Guard in the Atlantic Ocean,\\\" Windward said.", "Intelligence trackers reported that the tanker Bella 1 repainted its hull, changed its name to Marinera and reflagged as Russian in a bid to evade interception;", "Fox News - World", "Venezuelan ‘dark fleet’ tanker evades US Coast Guard as Russia sends submarine to escort vessel: reports", "https://www.foxnews.com/world/venezuela-oil-tanker-marinera-evades-us-interception-adopting-russian-identity-fleeing-atlantic"], ["U.S. European Command confirmed the seizure of the Marinera (formerly Bella‑1) and defense officials said Navy SEALs took over the vessel.", "25363", "The U.S. European Command confirmed the seizure of the Marinera, formerly known as Bella-1, after American forces began following the tanker in the Atlantic last month. It said the vessel was seized for violations of U.S. sanctions. Two Defense Department officials told CBS News that Navy SEALs took over the oil tanker.", "U.S. officials later said they had seized the vessel for sanctions violations and that Navy SEALs boarded it.", "CBS News - Top Stories", "Trump lays out Venezuela oil strategy as Democrats push for war powers vote", "https://www.cbsnews.com/live-updates/venezuela-maduro-trump-oil-senate-war-powers/"]], "b18": [["An Irish outlet reported the strikes killed more than 115 people.", "25227", "Then-Venezuelan president Nicolas Maduro and his wife Cilia Flores were taken from their home in Caracas at the weekend in a night-time raid by the US at the weekend which involved strikes on the country, in which more than 115 people were killed.", "One Irish report put the toll at more than 115 people killed;", "TheJournal.ie", "President Connolly says lives lost in Venezuela during US intervention ‘appalling’ and ‘overlooked’", "https://www.thejournal.ie/president-connolly-venezuela-us-maduro-6920418-Jan2026/"], ["An official told The New York Times that 'Around 40 civilians and military personnel died' in the strikes.", "11173", "Around 40 civilians and military personnel died in the strike, an official told the New York Times.", "an official told The New York Times the strikes killed 'around 40' civilians and military personnel;", "Daily Mail - News", "Grateful Venezuelans hug Donald Trump as president and Elon Musk celebrate Maduro's removal at luxurious Mar-a-Lago dinner", "https://www.dailymail.co.uk/news/article-15433447/venezuelans-maralago-trump-celebrate-maduro-capture.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Cuban state media said 32 Cuban military and police officers were killed.", "13427", "Cuba’s government acknowledged Sunday that 32 Cuban military and police officers were killed during the American operation in Venezuela, marking the first official death toll released by Havana.", "Cuban state media acknowledged 32 Cuban personnel killed;", "Fox News - World", "Trump says Cuba is ‘ready to fall’ after capture of Venezuela’s Maduro", "https://www.foxnews.com/world/trump-says-cuba-ready-fall-after-capture-venezuelas-maduro"], ["Venezuelan military postings said 24 personnel died, which some outlets combined with Cuban figures to report at least 56 deaths.", "16759", "The Venezuelan military posted a tribute video on social media for soldiers who were killed in the U.S. operation in Venezuela, and said there were 24 deaths. The new development brings the total number of personnel killed in the U.S. operation to at least 56.", "Venezuelan military postings listed 24 dead, which some outlets combined with Cuba's figure to report at least 56 casualties.", "CBS News - Top Stories", "Venezuela's future in balance after Trump officials brief lawmakers; Maduro in jail", "https://www.cbsnews.com/live-updates/venezuela-maduro-jail-trump-future/"], ["Officials said no U.S. fatalities have been reported, though some U.S. troops were injured.", "11173", "No US casualties have been reported, but there was an undisclosed number of injuries among US troops, all of whom are reportedly in stable condition.", "U.S. officials emphasised that no U.S. fatalities have been reported, though some U.S. troops were injured.", "Daily Mail - News", "Grateful Venezuelans hug Donald Trump as president and Elon Musk celebrate Maduro's removal at luxurious Mar-a-Lago dinner", "https://www.dailymail.co.uk/news/article-15433447/venezuelans-maralago-trump-celebrate-maduro-capture.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["Some reporting said the 'Gang of Eight' was told about the operation only after it started.", "10702", "The Trump administration informed the “Gang of Eight,” the top Republican and Democratic leaders of the Senate and House and the chairmen and ranking members of the Senate and House Intelligence Committees, of the operation against Venezuelan President Nicolás Maduro only after it started, according to a source familiar with the matter.", "Reporting also conflicted about whether the 'Gang of Eight' was notified before the operation; some accounts say they were informed only after it began.", "The Hill - Congress", "Trump administration informed Gang of Eight of Venezuela operation after it started", "https://thehill.com/homenews/senate/5671149-surprise-operation-maduro-arrest/"]], "b20": [["Wired reported that AI-generated images and repurposed older footage flooded social platforms after the capture.", "7672", "Within minutes of Donald Trump announcing in the early hours of Saturday morning that US troops had captured Venezuelan president Nicolás Maduro and his wife, Cilia Flores, disinformation about the operation flooded social media.", "The capture set off a torrent of misleading material online: repurposed footage and AI‑generated images circulated rapidly, and some chatbots initially gave contradictory answers about whether the operation had occurred.", "Wired", "Disinformation Floods Social Media After Nicolás Maduro’s Capture", "https://www.wired.com/story/disinformation-floods-social-media-after-nicolas-maduros-capture/"], ["Some chatbots initially denied the capture before updating or correcting their responses.", "7673", "ChatGPT did not course-correct. Instead, it emphatically refuted that Maduro had been captured at all. “That didn’t happen,” it wrote.", "The capture set off a torrent of misleading material online: repurposed footage and AI‑generated images circulated rapidly, and some chatbots initially gave contradictory answers about whether the operation had occurred.", "Wired", "The US Invaded Venezuela and Captured Nicolás Maduro. ChatGPT Disagrees", "https://www.wired.com/story/us-invaded-venezuela-and-captured-nicolas-maduro-chatgpt-disagrees/"], ["The U.S. Agency for Global Media said Voice of America and other services expanded coverage and saw millions of impressions.", "30933", "Voice of America carried Trump’s major addresses on Venezuela live while covering the latest developments, congressional reaction, and responses within Venezuela, reaching more than 6.6 million global audience impressions.", "U.S. government broadcasters said they significantly expanded coverage and reported millions of audience impressions in the region.", "Fox News - Politics", "Inside the Trump administration’s effort to quickly reach audiences behind media walls in Venezuela, Iran", "https://www.foxnews.com/politics/inside-trump-administrations-effort-quickly-reach-audiences-behind-media-walls-venezuela-iran"]], "b22": [["Shares of U.S. oil companies rose after the operation.", "12965", "Shares of U.S. oil companies soared in premarket trade on Monday, as investors scrutinize the fallout from the Trump administration’s surprise military operation in Venezuela.", "Markets reacted quickly: shares in major U.S. oil companies rose, gold and silver ticked higher as safe havens, and some investors began to re‑price Venezuelan debt on the prospect of political change.", "CNBC - World", "Chevron, Exxon and SLB stocks jump after Trump's military intervention in Venezuela", "https://www.cnbc.com/2026/01/05/oil-chevron-exxon-shares-in-focus-after-us-intervention-in-venezuela.html"], ["Gold and silver rose as investors sought safe havens amid the unrest.", "11026", "Gold and silver rose, with investors seeking the safety of precious metals amid heightened geopolitical risk following the US capture of Venezuelan leader Nicolás Maduro.", "Markets reacted quickly: shares in major U.S. oil companies rose, gold and silver ticked higher as safe havens, and some investors began to re‑price Venezuelan debt on the prospect of political change.", "Bloomberg - Top", "Gold Rises on Haven Demand After US Captures Venezuelan Leader", "https://www.bloomberg.com/news/articles/2026-01-04/gold-silver-markets-latest-haven-demand-after-us-captures-venezuelan-leader"], ["Some bond investors signalled potential gains for Venezuelan debt if a change in regime stabilises policy.", "11044", "Venezuelan bonds are poised to gain after the US captured Nicolás Maduro, setting the stage for a potential regime change that investors in $60 billion worth of securities have long been betting on.", "Markets reacted quickly: shares in major U.S. oil companies rose, gold and silver ticked higher as safe havens, and some investors began to re‑price Venezuelan debt on the prospect of political change.", "Bloomberg - Top", "Venezuela Bond Investors Bet on More Gains After Maduro Capture", "https://www.bloomberg.com/news/articles/2026-01-04/venezuela-bond-investors-eye-further-gains-post-maduro-capture"]], "b24": [["Columnists called the raid a return of 'gunboat diplomacy' with global implications.", "11605", "One thing is clear after the U.S. raid: Gunboat diplomacy is back, with cascading implications not just for the Americas but for the world.", "Commentators warned the precedent could have broad consequences: some labelled the move a return of 'gunboat diplomacy', others argued it weakens U.S. appeals to international norms and that rivals might exploit the episode, and analysts cautioned that attempts to control Venezuelan oil could provoke violent resistance.", "New York Times - World", "Venezuela, Democracy and Oil", "https://www.nytimes.com/2026/01/04/world/venezuela-strikes-trump-oil-maduro.html"], ["Some analysts warned the operation could be used rhetorically by other powers and undermine arguments about international norms.", "20667", "\\\"Everything that is being said about the importance of defending Taiwan is being undermined by the lawlessness of Trump in the attack on Caracas,\\\" Steve Tsang told the Washington Post, as quoted in reporting about the geopolitical implications.", "Commentators warned the precedent could have broad consequences: some labelled the move a return of 'gunboat diplomacy', others argued it weakens U.S. appeals to international norms and that rivals might exploit the episode, and analysts cautioned that attempts to control Venezuelan oil could provoke violent resistance.", "The Independent - World", "Could China be using the US strike on Venezuela as a playbook for Taiwan?", "https://www.independent.co.uk/asia/china/china-venezuela-strikes-taiwan-b2895516.html"], ["Some experts cautioned that U.S. control over Venezuelan oil and territory could provoke violent resistance inside Venezuela.", "25050", "“Venezuela is primed for violent resistance to the US controlling the oil,” said Robert Pape, a professor at the University of Chicago’s political science department and director of the Chicago Project on Security Threats. He described the scene as the “perfect terrain for insurgency”, adding: “Chaos is coming.”", "Commentators warned the precedent could have broad consequences: some labelled the move a return of 'gunboat diplomacy', others argued it weakens U.S. appeals to international norms and that rivals might exploit the episode, and analysts cautioned that attempts to control Venezuelan oil could provoke violent resistance.", "The Independent - World", "Trump latest: President accused of ‘insane plan’ to ‘steal Venezuelan oil at gunpoint’", "https://www.independent.co.uk/news/world/americas/trump-venezuela-latest-oil-tanker-maduro-b2896665.html"], ["Researchers said China and Russia have mounted influence operations around the event to amplify confusion and false narratives.", "34213", "Chinese and Russian influence operations have sought to capitalize on the U.S. operation in Venezuela by spreading conspiracy theories, confusion and inflammatory claims, researchers say.", "Researchers said China and Russia have mounted influence operations around the event to amplify confusion and false narratives.", "Washington Post - Top", "How China and Russia are using Maduro’s capture to sway U.S. discourse", "https://www.washingtonpost.com/technology/2026/01/10/maduro-capture-china-russia-social-media-campaign/?utm_source=rss&utm_medium=referral&utm_campaign=wp_homepage"]], "b25": [["The Senate advanced the procedural motion by a 52‑47 vote.", "25756", "The Senate voted 52-47 in favor of the measure, led by Sens. Tim Kaine (D-Va.) and Rand Paul (R-Ky.), and backed by Senate Minority Leader Chuck Schumer (D-N.Y.).", "52‑47", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"], ["The 52‑47 figure refers to a procedural vote on a war‑powers measure to limit the president's unilateral military action on Venezuela.", "25756", "The Senate voted 52-47 in favor of the measure, led by Sens. Tim Kaine (D-Va.) and Rand Paul (R-Ky.), and backed by Senate Minority Leader Chuck Schumer (D-N.Y.).", "Senate procedural vote to limit military action", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"], ["The procedural vote advances debate but final passage and House approval are not yet secured.", "25756", "The Senate on Thursday voted in favor of blocking President Trump from taking further military action in Venezuela without congressional approval after the U.S. captured the country's leader, Nicolás Maduro.", "Procedural advance; final passage and House consideration remain pending.", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"]], "b26": [["The procedural advance does not guarantee final passage and House action, and the White House has signalled a veto threat.", "25756", "The Senate on Thursday voted in favor of blocking President Trump from taking further military action in Venezuela without congressional approval after the U.S. captured the country's leader, Nicolás Maduro.", "The procedural vote was a step forward for senators pressing for more congressional oversight, but leaders have said final passage and House consideration remain uncertain and a presidential veto is expected.", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"]], "b27": [["President Trump described the operation as \"a brilliant operation\" in immediate remarks after the raid.", "10744", "'It was a brilliant operation, actually.'", "'It was a brilliant operation, actually.'", "The Independent - World", "Trump refuses to say if he consulted with Congress before Venezuela strikes - but calls capture of Maduro ‘brilliant’: report", "https://www.independent.co.uk/news/world/americas/us-politics/trump-maduro-capture-congress-venezuela-b2893943.html"]], "b28": [["Trump said he observed the operation in real time and was noncommittal about consultation with Congress.", "10744", "When asked by the Times whether he sought congressional approval before carrying out the \\\"large scale\\\" attack on Venezuela, he said, \\\"We'll discuss that, we're going to have a news conference,\\\" before hanging up the phone.", "Mr. Trump also told The New York Times he had watched the operation in real time at Mar‑a‑Lago and declined to say whether he had consulted Congress beforehand, saying only 'We'll discuss that.'", "The Independent - World", "Trump refuses to say if he consulted with Congress before Venezuela strikes - but calls capture of Maduro ‘brilliant’: report", "https://www.independent.co.uk/news/world/americas/us-politics/trump-maduro-capture-congress-venezuela-b2893943.html"]], "b30": [["Officials confirmed Maduro was captured and brought to New York to face U.S. narcotics charges.", "11173", "Maduro was captured by U.S. forces and brought to New York on Saturday to face drug trafficking charges.", "Officials have confirmed Nicolás Maduro was captured and brought to U.S. custody to face federal narcotics charges;", "Daily Mail - News", "Grateful Venezuelans hug Donald Trump as president and Elon Musk celebrate Maduro's removal at luxurious Mar-a-Lago dinner", "https://www.dailymail.co.uk/news/article-15433447/venezuelans-maralago-trump-celebrate-maduro-capture.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"], ["The White House calls the action law enforcement while critics and international officials say it may have violated international law.", "21528", "Members of the Trump administration, including the president, have muddied the legal arguments by claiming that the operation to capture Maduro was a \\\"law enforcement\\\" operation that didn't require sign-off from Congress.", "the White House characterises the action as law‑enforcement while critics — including U.N. officials and many lawmakers — say it likely breached international law.", "CBS News - Top Stories", "Senators force third vote to limit Trump's strikes on Venezuela", "https://www.cbsnews.com/news/senate-war-powers-vote-trump-venezuela-maduro/"], ["The U.N. secretary‑general said he was 'deeply concerned' about respect for international law.", "17722", "The opening statement by U.N. Secretary-General Antonio Guterres pretty much set the tone. He said he was deeply concerned.", "critics — including U.N. officials and many lawmakers — say it likely breached international law.", "NPR - World", "U.S. faces broad condemnation for actions in Venezuela during U.N. emergency meeting", "https://www.npr.org/2026/01/06/nx-s1-5667052/u-s-faces-broad-condemnation-for-actions-in-venezuela-during-u-n-emergency-meeting"], ["Casualty figures remain disputed across outlets and official statements.", "25227", "Then-Venezuelan president Nicolas Maduro and his wife Cilia Flores were taken from their home in Caracas at the weekend in a night-time raid by the US at the weekend which involved strikes on the country, in which more than 115 people were killed.", "Casualty totals and some operational details remain disputed across outlets.", "TheJournal.ie", "President Connolly says lives lost in Venezuela during US intervention ‘appalling’ and ‘overlooked’", "https://www.thejournal.ie/president-connolly-venezuela-us-maduro-6920418-Jan2026/"], ["Congress is expected to press the White House with further briefings, votes and hearings.", "25756", "The Senate voted 52-47 in favor of the measure, led by Sens. Tim Kaine (D-Va.) and Rand Paul (R-Ky.), and backed by Senate Minority Leader Chuck Schumer (D-N.Y.).", "Next, Congress is set to continue votes and briefings, and a small U.S. diplomatic team has begun exploratory work about reestablishing missions even as sanctions enforcement proceeds.", "Axios - All", "Senate votes to curb military action in Venezuela in rare Trump rebuke", "https://www.axios.com/2026/01/08/venezuela-war-powers-senate-aumf-time-kaine"], ["A small U.S. diplomatic team travelled to Venezuela to assess reopening an embassy.", "32792", "The small team of U.S. diplomats and a security detail traveled to Venezuela to make a preliminary assessment about the potential reopening of the U.S. Embassy in Caracas, the State Department said in a statement.", "a small U.S. diplomatic team has begun exploratory work about reestablishing missions even as sanctions enforcement proceeds.", "PBS NewsHour - Headlines", "U.S. and Venezuela take initial steps toward restoring relations after Maduro's capture", "https://www.pbs.org/newshour/world/u-s-and-venezuela-take-initial-steps-toward-restoring-relations-after-maduros-capture"]]};
+    const intlStrips = document.querySelectorAll(".intl-strip");
+    const fadeSizeFor = (strip) => {
+      const width = strip.clientWidth || 0;
+      return Math.min(22, Math.max(10, width * 0.035));
+    };
+    const updateIntlFade = (strip) => {
+      const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      const fade = fadeSizeFor(strip);
+      const leftFade = Math.min(fade, Math.max(0, strip.scrollLeft));
+      const rightFade = Math.min(fade, Math.max(0, maxScroll - strip.scrollLeft));
+      strip.style.setProperty("--left-fade", `${leftFade}px`);
+      strip.style.setProperty("--right-fade", `${rightFade}px`);
+    };
+    intlStrips.forEach((strip) => {
+      const onUpdate = () => updateIntlFade(strip);
+      strip.addEventListener("scroll", () => requestAnimationFrame(onUpdate), {passive: true});
+      window.addEventListener("resize", onUpdate);
+      onUpdate();
+    });
+
+    const claimToggle = document.getElementById("claim-toggle");
+    const claimBody = document.body;
+    const claimPalette = ["#F7E6A8","#DDEEFF","#F7CCD1","#D9F1E1"];
+    let claimHighlightsApplied = false;
+
+    function highlightSnippet(root, snippet, blockId, claimIndex, color) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let node = null;
+      while ((node = walker.nextNode())) {
+        const text = node.nodeValue || "";
+        const start = text.indexOf(snippet);
+        if (start === -1) continue;
+        const end = start + snippet.length;
+        const before = document.createTextNode(text.slice(0, start));
+        const match = document.createTextNode(text.slice(start, end));
+        const after = document.createTextNode(text.slice(end));
+        const span = document.createElement("span");
+        span.className = "claim-mark";
+        span.style.setProperty("--claim-color", color);
+        span.dataset.block = blockId;
+        span.dataset.claimIndex = String(claimIndex);
+        span.appendChild(match);
+        const parent = node.parentNode;
+        parent.insertBefore(before, node);
+        parent.insertBefore(span, node);
+        parent.insertBefore(after, node);
+        parent.removeChild(node);
+        return true;
+      }
+      return false;
+    }
+
+    function applyClaimHighlights() {
+      if (claimHighlightsApplied) return;
+      document.querySelectorAll("[data-block]").forEach((el) => {
+        const blockId = el.getAttribute("data-block");
+        const claims = window.__CLAIMS__[blockId] || [];
+        claims.forEach((c, idx) => {
+          let snippet = "";
+          if (Array.isArray(c)) {
+            if (typeof c[3] === "string" && c[3]) {
+              snippet = c[3];
+            } else if (typeof c[c.length - 1] === "string") {
+              snippet = c[c.length - 1];
+            }
+          }
+          if (!snippet || typeof snippet !== "string") return;
+          highlightSnippet(el, snippet, blockId, idx, claimPalette[idx % claimPalette.length]);
+        });
+      });
+      claimHighlightsApplied = true;
+    }
+
+    function toggleClaimMode() {
+      const isActive = claimBody.classList.toggle("claim-mode");
+      if (claimToggle) {
+        claimToggle.setAttribute("aria-pressed", isActive ? "true" : "false");
+        claimToggle.classList.toggle("is-active", isActive);
+      }
+      if (isActive) applyClaimHighlights();
+    }
+
+    if (claimToggle) {
+      claimToggle.addEventListener("click", toggleClaimMode);
+    }
+
+    document.addEventListener("click", (event) => {
+      const mark = event.target.closest(".claim-mark");
+      if (!mark || !claimBody.classList.contains("claim-mode")) return;
+      const blockId = mark.dataset.block;
+      const claimIndex = parseInt(mark.dataset.claimIndex || "0", 10);
+      if (window.__openClaimModal) {
+        window.__openClaimModal(blockId, claimIndex);
+      }
+    });
+  </script>
+  <script>(function(){
+  const CLAIMS = window.__CLAIMS__ || {};
+  const backdrop = document.getElementById("modal-backdrop");
+  const modal = document.getElementById("modal");
+  const list = document.getElementById("modal-list");
+  const title = document.getElementById("modal-title");
+  const closeButtons = document.querySelectorAll("[data-close-modal]");
+
+  function esc(s){ return (s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function renderClaims(claims){
+    title.textContent = claims.length ? `Sources (${claims.length})` : "Sources";
+    list.innerHTML = "";
+    claims.forEach((c) => {
+      let claim_text="", quote="", outlet="", source_title="", url="";
+      try{
+        claim_text = c[0] || "";
+        quote = c[2] || "";
+        outlet = c[4] || "";
+        source_title = c[5] || "";
+        url = c[6] || "";
+      }catch(e){}
+      const li = document.createElement("li");
+      li.className = "claim-entry";
+      li.innerHTML = `
+        <div class="claim-head">
+          <span class="claim-source">${esc(outlet).toUpperCase() || "SOURCE"}</span>
+          ${source_title ? `<span class="claim-title">${esc(source_title)}</span>` : ``}
+        </div>
+        ${claim_text ? `<div class="claim-row">Claim: ${esc(claim_text)}</div>` : ``}
+        ${quote ? `<div class="claim-row">Quote: “${esc(quote)}”</div>` : ``}
+        ${url ? `<div class="claim-row">Link: <a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></div>` : ``}
+      `;
+      list.appendChild(li);
+    });
+  }
+
+  function open(){
+    backdrop.style.display = "block";
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    backdrop.style.display = "none";
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  window.__openClaimModal = (blockId, claimIndex) => {
+    let claims = CLAIMS[blockId] || [];
+    if (typeof claimIndex === "number") {
+      const selected = claims[claimIndex];
+      claims = selected ? [selected] : [];
+    }
+    renderClaims(claims);
+    open();
+  };
+
+  backdrop.addEventListener("click", close);
+  closeButtons.forEach(b => b.addEventListener("click", close));
+})();</script>
+</body>
+</html>
