@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iran imposes internet shutdown as nationwide protests deepen amid conflicting casualty reports</title>
+  <meta property="og:title" content="Iran imposes internet shutdown as nationwide protests deepen amid conflicting casualty reports" />
+  <meta property="og:description" content="Nationwide internet and phone blackout in Iran amid mass economic protests and disputed casualty counts." />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:title" content="Iran imposes internet shutdown as nationwide protests deepen amid conflicting casualty reports" />
+  <meta name="twitter:description" content="Nationwide internet and phone blackout in Iran amid mass economic protests and disputed casualty counts." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/iran-imposes-widespread-internet-and-phone-blackouts-as-authorities-cut-communications-to-curb-spreading-protests-1768232405-5ade636a.png" />
+  <meta name="twitter:image" content="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/iran-imposes-widespread-internet-and-phone-blackouts-as-authorities-cut-communications-to-curb-spreading-protests-1768232405-5ade636a.png" />
+  <link rel="icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+  <style>:root{
+  --bg:#FFFAF2;
+  --card:#F4EEE3;
+  --ink:#111214;
+  --muted:#5C5C60;
+  --hair:rgba(17,18,20,.10);
+  --gold:#C8A25D;
+  --rating:#7A1F27;
+  --radius:18px;
+  --max: 860px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-top: 62px;
+}
+
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px 70px;}
+
+.appbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(255,250,242,.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.appbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.about-link{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  text-decoration: none;
+}
+.about-link:hover{ color: rgba(17,18,20,.8); }
+.logo{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  font-size: 22px;
+  text-decoration: none;
+}
+.logo .dot{ color: var(--gold); }
+.claim-toggle{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.6);
+  color: rgba(17,18,20,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.claim-toggle.is-active{
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+.header{ padding-top: 18px; }
+h1.title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+@media (max-width: 700px){
+  .wrap{padding: 0 18px 60px;}
+  h1.title{font-size: 38px;}
+}
+
+.hero{ margin-top: 14px; }
+.hero img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display:block;
+  border-radius: 0;
+}
+@media (max-width: 700px){
+  .hero img{height: 340px;}
+}
+
+.meta-card{
+  background: var(--card);
+  padding: 14px 16px 16px;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-toast{
+  margin: 10px auto 0;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.78);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-align:center;
+  max-width: 520px;
+  display: none;
+}
+body.claim-mode .claim-toast{ display:block; }
+.meta-row{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  column-gap: 12px;
+  align-items:center;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.meta-item{
+  text-align: center;
+}
+.meta-item.left{ text-align: left; }
+.meta-item.right{ text-align: right; }
+.meta-item:empty{ visibility: hidden; }
+.dot-sep.is-hidden{ visibility: hidden; }
+.dot-sep{width:4px;height:4px;border-radius:999px;background: rgba(17,18,20,.25);display:inline-block;}
+
+.meters{ margin-top: 12px; display:grid; gap: 12px; padding: 0 4px; }
+.meter{ display:grid; gap: 6px; }
+.meter-line{ height:1px; background: rgba(17,18,20,.10); position:relative; }
+.meter-line::after{ content:""; position:absolute; left:0; top:0; height:1px; width:var(--fill, 50%); background: var(--rating); }
+.meter-label{ display:flex; gap: 8px; align-items:baseline; font-size: 14px; font-weight: 400; padding-left: 0; }
+.meter-label .k{ color: var(--rating); font-weight: 400; }
+.meter-label .v{ color: var(--ink); font-weight: 400; }
+.rating-details{
+  margin-top: 8px;
+  padding-top: 0;
+  display:flex;
+  flex-direction: column;
+}
+.rating-details summary{
+  list-style: none;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rating);
+  order: 2;
+  margin-top: 8px;
+}
+.rating-details summary::-webkit-details-marker{ display:none; }
+.rating-details .chev{
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.rating-details[open] .chev{ transform: rotate(180deg); }
+.rating-body{
+  margin-top: 10px;
+  display:grid;
+  gap: 16px;
+  font-size: 15px;
+  color: rgba(17,18,20,.82);
+  order: 1;
+}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+.rating-title{
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.rating-divider{
+  border: 0;
+  border-top: 1px solid var(--hair);
+  margin: 2px 0 0;
+}
+.rating-how{
+  margin-top: 4px;
+}
+.rating-how-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+
+.intl-section{
+  margin-top: 28px;
+}
+.intl-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.intl-sub{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
+}
+.intl-strip{
+  --fade-size: clamp(10px, 3.5vw, 22px);
+  --left-fade: 0px;
+  --right-fade: var(--fade-size);
+  display:flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  padding-left: 0;
+  margin-left: -8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+}
+.intl-strip::-webkit-scrollbar{ height: 6px; }
+.intl-strip::-webkit-scrollbar-thumb{
+  background: rgba(17,18,20,.2);
+  border-radius: 999px;
+}
+.intl-card{
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 4px;
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(17,18,20,.06);
+  scroll-snap-align: start;
+}
+@media (min-width: 700px){
+  .intl-card{ min-width: 320px; max-width: 360px; }
+}
+.intl-country{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intl-sources-title{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+}
+.intl-sources{
+  margin: 6px 0 12px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.intl-para{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.intl-quote{
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-style: italic;
+}
+.intl-attrib{
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.content{ padding-top: 18px; }
+
+h2.subtitle{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 26px 0 10px;
+}
+@media (max-width: 700px){ h2.subtitle{font-size: 30px;} }
+
+p.para{ margin: 0 0 16px; font-size: 17px; line-height: 1.85; color: rgba(17,18,20,.9); }
+hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 24px 0; }
+
+.list{ margin: 0 0 18px; padding-left: 20px; font-size: 17px; }
+.list li{ margin: 8px 0; }
+
+blockquote.quote{
+  margin: 18px 0 10px;
+  padding: 18px 0 18px;
+  border-top: 0;
+  border-bottom: 0;
+  background: transparent;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--ink);
+  position: relative;
+}
+blockquote.quote::before{
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote::after{
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -34px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote .quote-line{
+  position: absolute;
+  height: 2px;
+  background: rgba(200,162,93,.55);
+}
+blockquote.quote .quote-line.top{
+  left: 36px;
+  right: 0;
+  top: 6px;
+}
+blockquote.quote .quote-line.bottom{
+  left: 0;
+  right: 15px;
+  bottom: 4px;
+}
+.quote-attrib{
+  margin-top: 8px;
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.pullquote{
+  margin: 18px 0 6px;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-align:left;
+  font-style: italic;
+  position: relative;
+}
+.pullquote::before,
+.pullquote::after{
+  color: var(--gold);
+  font-size: 34px;
+  line-height: 1;
+}
+.pullquote::before{
+  content: "“";
+  margin-right: 6px;
+}
+.pullquote::after{
+  content: "”";
+  margin-left: 6px;
+}
+.pullquote-attrib{
+  text-align:left;
+  color: rgba(17,18,20,.65);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.claim-mark{
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background .2s ease;
+}
+body.claim-mode .claim-mark{
+  background: var(--claim-color, rgba(200,162,93,.25));
+  cursor: pointer;
+}
+
+.stat-card{
+  margin: 18px 0 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+}
+.stat-value{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.stat-label{
+  margin-top: 6px;
+  font-size: 26px;
+  color: var(--gold);
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+.stat-note{
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(17,18,20,.6);
+}
+
+.aside{
+  margin: 14px 0 18px;
+  background: var(--card);
+  border: 1px solid rgba(17,18,20,.08);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.aside-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 8px;
+}
+.aside-body{ font-size: 15px; color: var(--ink); }
+
+.inline-fn sup{
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.inline-fn a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.inline-fn a:hover{ text-decoration: underline; }
+
+.spotline{
+  margin: -6px 0 16px;
+  display:flex;
+  justify-content: flex-end;
+}
+.spotlight{
+  border: 0;
+  background: transparent;
+  color: rgba(17,18,20,.62);
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor:pointer;
+}
+.spotlight:hover{
+  background: rgba(0,0,0,.03);
+  color: rgba(17,18,20,.80);
+}
+.spotlight .count{
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(17,18,20,.45);
+  display:none;
+  z-index: 50;
+}
+.modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 78vh;
+  background: var(--bg);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid rgba(255,255,255,.45);
+  display:none;
+  z-index: 60;
+  box-shadow: 0 -18px 60px rgba(0,0,0,.22);
+}
+.modal-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px 18px;
+  background: var(--bg);
+}
+.modal-handle{
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(17,18,20,.16);
+  margin: 0 auto 12px;
+}
+.modal-head{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hair);
+}
+.modal-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 650;
+}
+.close-btn{
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.78);
+  border-radius: 4px;
+  padding: 7px 10px;
+  cursor:pointer;
+  font-size: 13px;
+}
+.close-btn:hover{ background: rgba(244,238,227,.9); }
+
+.source-list{
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style:none;
+}
+.source-item{
+  margin: 10px 0;
+  padding: 12px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.08);
+  background: var(--card);
+}
+.source-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.source-entry:last-child{ border-bottom: 0; }
+.source-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 4px;
+}
+.source-link-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.source-link-title:hover{ text-decoration: underline; }
+.source-head{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(17,18,20,.10);
+  background: rgba(255,250,242,.85);
+  color: rgba(17,18,20,.70);
+}
+.source-title{
+  font-size: 13px;
+  font-weight: 650;
+  flex: 1 1 auto;
+}
+.source-link{
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.source-link:hover{ text-decoration: underline; }
+.source-claim{ margin-top: 6px; font-size: 12px; color: rgba(17,18,20,.72); }
+.source-quote{
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17,18,20,.14);
+  background: rgba(255,250,242,.7);
+  color: rgba(17,18,20,.85);
+}
+.tiny{ font-size: 11px; color: rgba(17,18,20,.55); margin-top: 6px; }
+.claim-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-entry:last-child{ border-bottom: 0; }
+.claim-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.claim-source{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  flex: 0 0 auto;
+}
+.claim-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-align: right;
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+.claim-title:hover{ text-decoration: underline; }
+.claim-row{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(17,18,20,.75);
+}
+.claim-row a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.claim-row a:hover{ text-decoration: underline; }
+
+details.sources{
+  margin: 18px 0 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+}
+details.sources summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 650;
+}
+details.sources summary::-webkit-details-marker{display:none;}
+details.sources summary .chev{
+  width:14px;height:14px; opacity:.6;
+  transform: rotate(0deg);
+  transition: transform .18s ease;
+}
+details.sources[open] summary .chev{ transform: rotate(180deg); }
+
+.bias-note{
+  margin-top: 26px;
+  padding: 16px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.bias-note-kicker{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 6px;
+}
+.bias-note-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+.bias-note-text{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17,18,20,.78);
+}
+.bias-note-disclosure{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(17,18,20,.6);
+}
+.bias-note a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.bias-note a:hover{ text-decoration: underline; }
+
+.footer{
+  margin-top: 16px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(17,18,20,.55);
+}
+.footer-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.12);
+  color: rgba(17,18,20,.6);
+  text-decoration: none;
+}
+.footer-social:hover{ color: rgba(17,18,20,.85); }
+.footer-social svg{ width: 14px; height: 14px; }
+.footer-links{ display:flex; align-items:center; gap: 8px; }</style>
+</head>
+<body id="top">
+  <header class="appbar">
+    <div class="appbar-inner">
+      <a class="about-link" href="#about-bias">About</a>
+      <a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a>
+      <button class="claim-toggle" id="claim-toggle" aria-pressed="false" aria-label="Toggle claim mode" title="Claim mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20h6M12 4v6m0 0a4 4 0 00-4 4v1a4 4 0 004 4 4 4 0 004-4v-1a4 4 0 00-4-4z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="header">
+      <h1 class="title">Iran imposes internet shutdown as nationwide protests deepen amid conflicting casualty reports</h1>
+    </section>
+
+    <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/iran-imposes-widespread-internet-and-phone-blackouts-as-authorities-cut-communications-to-curb-spreading-protests-1768232405-5ade636a.png" alt="Hero image" /></div>
+
+    <section class="meta-card">
+      <div class="meta-row"><span class="meta-item left">Updated 9h ago</span><span class="dot-sep"></span><span class="meta-item center">5-min read</span><span class="dot-sep"></span><span class="meta-item right">21 sources</span></div>
+
+      <div class="meters">
+        <div class="meter">
+          <div class="meter-label"><span class="k">Factuality</span><span>—</span><span class="v">Very strong evidence</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:82%;"></div>
+        </div>
+        <div class="meter">
+          <div class="meter-label"><span class="k">Divisiveness</span><span>—</span><span class="v">Contentious</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:65%;"></div>
+        </div>
+      </div>
+
+      <details class="rating-details" id="rating-details">
+        <summary>
+          <span class="sr-only">How we rate this</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="rating-body">
+          <div>
+            <div class="rating-title">Factuality</div>
+            <div>Robust, converging evidence across primary sources and outlets.</div>
+          </div>
+          <div>
+            <div class="rating-title">Divisiveness</div>
+            <div>Significant disagreement between outlets in emphasis, framing, or conclusions.</div>
+          </div>
+          <hr class="rating-divider" />
+          <div class="rating-how">
+            <div class="rating-how-title">How we rate this</div>
+            <div>We leverage large language models and clustering methods to assess how closely outlets agree on core facts and how much interpretations diverge. Scores reflect the dispersion of claims and the strength of sourcing across multiple outlets.</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="claim-toast" id="claim-toast">Claim mode on, tap a claim to see its source</div>
+
+    <main class="content">
+      
+      <h2 class="subtitle">Overview</h2><p class="para" data-block="b2">Iranian authorities largely shut down internet access as protests spread nationwide, and there were widespread reports that telephone service was also cut. Web monitors including NetBlocks, Kentik and Cloudflare recorded abrupt falls in traffic and described the country as almost completely offline. The unrest began as protests over a plunging rial and rising prices, and quickly broadened into anti-government demonstrations. Rights groups&#x27; tallies differ sharply: one rights group reported many hundreds killed and more than 10,000 arrests, while other monitors recorded figures in the dozens of deaths and a few thousand detentions.</p><h2 class="subtitle">How the blackout was measured</h2><p class="para" data-block="b4">Traffic-monitoring firms and independent researchers registered what they described as a near-total disconnection. Kentik&#x27;s Doug Madory and an Iranian cybersecurity researcher told reporters the shutdown appeared to begin on Thursday evening local time. NetBlocks&#x27; live metrics showed national connectivity collapsing and, in one update, national connectivity was recorded at about 1% of ordinary levels. Cloudflare analysts said only a small amount of residual traffic remained.</p><h2 class="subtitle">Scale and spread of protests</h2><p class="para" data-block="b6">Multiple outlets reported demonstrations across all 31 provinces and in hundreds of towns. The US-based Human Rights Activists News Agency (HRANA) told some outlets that protests had formed in 585 locations across 186 cities by the movement&#x27;s 15th day. Social-media footage, which could not be fully verified, showed people tearing the national flag and in some videos chanting &#x27;Long live the king.&#x27; The unrest began with shopkeepers and traders in Tehran&#x27;s bazaar and then widened.</p><h2 class="subtitle">Discrepancies in casualty and arrest tallies</h2><p class="para" data-block="b8">Counts of deaths and arrests vary widely between sources and rights groups. For example, The Independent quoted rights groups putting deaths in the hundreds and arrests above 10,000. CBS and other outlets cited HRANA figures of roughly 42 deaths and about 2,260 detentions. Sky News reported HRANA as saying 34 protesters and four security personnel had been killed with about 2,200 arrests. The Guardian noted Iran Human Rights (IHR) reporting 45 protesters killed while an AFP tally put total deaths at about 21. Fox News pieces cited different tallies — NCRI&#x27;s 44 and IHRNGO&#x27;s 51 — and another Fox report gave HRANA&#x27;s tally of 65. TheJournal.ie published CHRI warnings that &quot;hundreds of protesters have been killed&quot;, and the Daily Mail described &#x27;hundreds&#x27; feared dead and cited overwhelmed hospitals.</p><h2 class="subtitle">Government statements and security response</h2><p class="para" data-block="b10">Iran&#x27;s leadership and state media have presented a coordinated narrative: state outlets accused US and Israeli &#x27;terrorist agents&#x27; of inciting violence and said public and private property had been set alight. State television listed &quot;people&#x27;s private cars, motorcycles, public places such as the metro, fire trucks and buses set on fire&quot; and spoke of casualties. Supreme Leader Ayatollah Ali Khamenei urged forceful action, saying the republic would not &#x27;back down&#x27; and accusing &#x27;vandals&#x27; of &#x27;ruining their own streets to make the president of another country happy&#x27;. Interior and police officials described &#x27;vandalism&#x27; and said &#x27;significant&#x27; arrests were made, while the Revolutionary Guard accused &#x27;terrorists&#x27; of attacking security bases and reported casualties among security personnel.</p><h2 class="subtitle">International reactions and risks</h2><p class="para" data-block="b12">Abroad, leaders and commentators reacted quickly. President Donald Trump warned Iran he would &quot;hit them very hard&quot; if authorities killed protesters and said the United States stood ready to help. US media outlets reported that officials had briefed the president on military options, though those outlets said no final decision had been made. European governments — France, Britain and Germany — issued a joint statement urging restraint, while Iranian politicians warned that American bases and Israeli territory would be legitimate targets if Iran were attacked.</p><h2 class="subtitle">Voices condemning the blackout</h2><p class="para" data-block="b14">Artists in the diaspora and rights campaigners have spoken out. Filmmakers Jafar Panahi and Mohammad Rasoulof called the shutdown a blatant tool of repression and urged the international community to facilitate communication. Actors and visual artists such as Golshifteh Farahani and Soheila Sokhanvari voiced solidarity and said Iranians must not be left isolated. Amnesty International and other rights groups accused security forces of unlawful force as hospitals reported being overwhelmed and blood supplies running low.</p><h2 class="subtitle">Technical assessment of the shutdown</h2><p class="para" data-block="b16">Digital-rights analysts said the shutdown was unusually surgical. Experts described the action as more precise than past blackouts and argued Tehran had developed tools to whitelist some services while cutting off others. One researcher described the domestic effect bluntly: &#x27;There is no reception on the phones. There is no antenna. It&#x27;s like you are living in the middle of nowhere, with no BTS towers.&#x27; Another analyst warned, &#x27;This might be for the long haul.&#x27; NetBlocks and other monitors said connectivity had plunged to a tiny fraction of normal levels.</p><blockquote class="quote" data-block="b17"><span class="quote-line top" aria-hidden="true"></span>&quot;In recent days, following the presence of millions of Iranians in the streets protesting against the Islamic Republic, the government has once again resorted to its most blatant tools of repression.&quot;<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Jafar Panahi and Mohammad Rasoulof</div><p class="para" data-block="b18">Khamenei framed the unrest as foreign-directed and repeatedly urged security forces to act; state broadcasts echoed warnings that rioters were saboteurs. Opponents and rights groups say the communications shutdown is being used to conceal or hamper reporting of security-force violence, and they are calling for measures to restore access and for independent monitoring.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b20">Multiple independent monitors and news outlets agree the country&#x27;s networks were deliberately and extensively disrupted while demonstrations spread across many cities. Rights organisations allege security forces have used lethal force against demonstrators, while Iranian officials and state media accuse foreign &#x27;terrorist agents&#x27; and say they will act forcefully. Exact death and detention totals remain disputed and unverifiable while communications are cut, and international leaders have urged restraint as the United States warns of possible punitive steps.</p>
+      
+      
+      <section class="bias-note" id="about-bias" aria-label="About The Bias">
+        <div class="bias-note-kicker">The Bias</div>
+        <h3 class="bias-note-title">How this page is made</h3>
+        <p class="bias-note-text">
+          This page is written from dozens of outlets covering the same event, mixing local and international viewpoints to show the full
+          picture and add context you might otherwise miss. It aims to show where outlets agree, where they report different details, and
+          where opinions diverge, with supporting evidence for key claims and a full source list.
+        </p>
+        <p class="bias-note-text">
+          We’re launching The Bias on iOS soon. If you’d like to help beta test the app, reach out on Instagram
+          <a href="https://instagram.com/thebias_app" target="_blank" rel="noopener">@thebias_app</a> or email
+          <a href="mailto:sam@thebias.co.uk">sam@thebias.co.uk</a>.
+        </p>
+      </section>
+      <details class="sources"><summary><span>All sources</span><svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="source-list"><li class="source-entry"><div class="source-kicker">The Guardian - Business</div><a class="source-link-title" href="https://www.theguardian.com/global-development/2026/jan/10/film-makers-iran-protest-internet-blackout-repression" target="_blank" rel="noopener">Iranian cultural figures condemn internet blackout as ‘blatant tool of repression’</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/10/irans-internet-shutdown-is-strikingly-sophisticated-and-may-last-some-time" target="_blank" rel="noopener">Iran’s internet shutdown is chillingly precise and may last some time</a></li><li class="source-entry"><div class="source-kicker">NPR - World</div><a class="source-link-title" href="https://www.npr.org/2026/01/11/nx-s1-5673939/iran-protests-enter-third-week-under-internet-blackout" target="_blank" rel="noopener">Iran protests enter third week under internet blackout</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html" target="_blank" rel="noopener">What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Politics</div><a class="source-link-title" href="https://www.bloomberg.com/news/articles/2026-01-09/iran-protests-intensify-amid-nationwide-internet-blackout" target="_blank" rel="noopener">Iran Shuts Down Internet in Crackdown on Escalating Protests</a></li><li class="source-entry"><div class="source-kicker">CBS News - Top Stories</div><a class="source-link-title" href="https://www.cbsnews.com/news/iran-cutting-internet-amid-deadly-protests/" target="_blank" rel="noopener">Iran cuts internet access as deadly protests spread</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/video/quotable/2026/1/9/iran-internet-cuts-a-classic-ploy-by-leadership?traffic_source=rss" target="_blank" rel="noopener">Iran internet cuts a “classic ploy” by leadership</a></li><li class="source-entry"><div class="source-kicker">Al Jazeera - All</div><a class="source-link-title" href="https://www.aljazeera.com/video/newsfeed/2026/1/9/street-protests-grow-in-iran-as-the-country-faces-an-internet-blackout?traffic_source=rss" target="_blank" rel="noopener">Street protests grow in Iran as the country faces an internet blackout</a></li><li class="source-entry"><div class="source-kicker">The Guardian - World</div><a class="source-link-title" href="https://www.theguardian.com/world/2026/jan/08/iran-plunged-into-internet-blackout-as-protests-over-economy-spread-nationwide" target="_blank" rel="noopener">Iran plunged into internet blackout as protests over economy spread nationwide</a></li><li class="source-entry"><div class="source-kicker">The Independent - World</div><a class="source-link-title" href="https://www.independent.co.uk/news/world/middle-east/iran-protests-internet-blackout-israel-trump-b2897399.html" target="_blank" rel="noopener">What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/iran-regime-cuts-nationwide-internet-access-protests-claim-44-lives-across-major-cities" target="_blank" rel="noopener">Iran regime cuts nationwide internet access as protests claim 44 lives across major cities</a></li><li class="source-entry"><div class="source-kicker">Sky News - Home</div><a class="source-link-title" href="https://news.sky.com/story/terrorist-agents-from-israel-and-us-have-sparked-violence-in-iran-state-media-claims-13492262" target="_blank" rel="noopener">Iran&#x27;s supreme leader says protesters &#x27;ruining&#x27; country to please Trump - as internet blackout imposed</a></li><li class="source-entry"><div class="source-kicker">TechCrunch</div><a class="source-link-title" href="https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/" target="_blank" rel="noopener">Internet collapses in Iran amid protests over economic crisis</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Business</div><a class="source-link-title" href="https://www.theguardian.com/world/video/2026/jan/09/iran-hit-by-internet-blackout-as-protests-over-economic-conditions-continue" target="_blank" rel="noopener">Iran hit by internet blackout as protests over economic conditions continue – video</a></li><li class="source-entry"><div class="source-kicker">The National Scotland</div><a class="source-link-title" href="https://www.thenational.scot/news/25752953.nationwide-internet-blackout-iran-protests-spread/?ref=rss" target="_blank" rel="noopener">Nationwide internet blackout in Iran as protests spread and 42 killed</a></li><li class="source-entry"><div class="source-kicker">PBS NewsHour - Headlines</div><a class="source-link-title" href="https://www.pbs.org/newshour/show/news-wrap-internet-and-phone-service-shut-off-in-iran-amid-widening-protests" target="_blank" rel="noopener">News Wrap: Internet and phone service shut off in Iran amid widening protests</a></li><li class="source-entry"><div class="source-kicker">RTE - Ireland News</div><a class="source-link-title" href="https://www.rte.ie/news/world/2026/0109/1552225-iran-unrest/" target="_blank" rel="noopener">Iran cut off from world, Supreme Leader warns protesters</a></li><li class="source-entry"><div class="source-kicker">TheJournal.ie</div><a class="source-link-title" href="https://www.thejournal.ie/iran-protests-internet-blackout-6923338-Jan2026/" target="_blank" rel="noopener">Iranian anti-government protests continue amid internet blackout</a></li><li class="source-entry"><div class="source-kicker">Daily Mail - Home</div><a class="source-link-title" href="https://www.dailymail.co.uk/news/article-15453479/Irans-deadly-blackout-crackdown-regimes-religious-dictatorship-exposed-brave-protesters-fighting-freedom-lives.html?ns_mchannel=rss&amp;ito=1490&amp;ns_campaign=1490" target="_blank" rel="noopener">Behind Iran&#x27;s deadly blackout: Ruthless crackdown by regime&#x27;s religious dictatorship exposed by brave protesters fighting for their freedom and lives</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/iran-protests-grow-deadlier-regime-internet-blackout-fails-stop-uprising" target="_blank" rel="noopener">Iran protests grow deadlier as regime internet blackout fails to stop uprising</a></li><li class="source-entry"><div class="source-kicker">Fox News - World</div><a class="source-link-title" href="https://www.foxnews.com/world/iran-flips-kill-switch-hide-alleged-crimes-death-toll-rises-amid-protests" target="_blank" rel="noopener">Iran flips ‘kill switch’ to hide alleged crimes as death toll rises amid protests</a></li></ul></details>
+    </main>
+
+    <div class="footer">
+      <span>The Bias 2026</span>
+      <div class="footer-links">
+        <a class="footer-social" href="https://instagram.com/thebias_app" target="_blank" rel="noopener" aria-label="The Bias on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="footer-social" href="https://reddit.com/u/the_bias_app" target="_blank" rel="noopener" aria-label="The Bias on Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6.2c1.9 0 3.7.5 5.1 1.3" />
+              <path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3" />
+              <path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"/>
+              <circle cx="9.2" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <circle cx="14.8" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9" />
+              <circle cx="17.7" cy="6.8" r="1.3"/>
+              <path d="M12.2 4.2l2.2.5"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Sources">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title" id="modal-title">Sources</div>
+        <button class="close-btn" data-close-modal>Close</button>
+      </div>
+      <ul class="source-list" id="modal-list"></ul>
+    </div>
+  </section>
+
+  <script>
+    window.__CLAIMS__ = {"b2": [["Iranian authorities largely shut down internet access as protests spread nationwide", "29170", "Internet connectivity collapsed across Iran on Thursday amid nationwide protests, according to web monitoring firms.", "Iranian authorities largely shut down internet access as protests spread nationwide", "TechCrunch", "Internet collapses in Iran amid protests over economic crisis", "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/"], ["there were widespread reports that telephone service was also cut", "26005", "Attempts to dial landlines and mobile phones from Dubai to Iran could not be connected, the Associated Press reported.", "there were widespread reports that telephone service was also cut", "CBS News - Top Stories", "Iran cuts internet access as deadly protests spread", "https://www.cbsnews.com/news/iran-cutting-internet-amid-deadly-protests/"], ["Web monitors recorded abrupt falls in traffic", "29170", "Internet traffic monitor NetBlocks, internet infrastructure company Cloudflare, and internet connectivity tracking site IODA, all registered sudden drops in connectivity across Iran at the same time.", "Web monitors including NetBlocks, Kentik and Cloudflare recorded abrupt falls in traffic", "TechCrunch", "Internet collapses in Iran amid protests over economic crisis", "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/"], ["described the country as almost completely offline", "29170", "“We continue to see a small amount of traffic, but the country is effectively completely offline,” David Belson, the head of data insight at Cloudflare, told TechCrunch.", "described the country as almost completely offline", "TechCrunch", "Internet collapses in Iran amid protests over economic crisis", "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/"], ["The unrest began as protests over a plunging rial and rising prices", "29325", "The trigger for the protests, the sudden slide of the country’s currency and general economic malaise, has been difficult for the government to address.", "The unrest began as protests over a plunging rial and rising prices", "The Guardian - World", "Iran plunged into internet blackout as protests over economy spread nationwide", "https://www.theguardian.com/world/2026/jan/08/iran-plunged-into-internet-blackout-as-protests-over-economy-spread-nationwide"], ["The protests quickly broadened into anti-government demonstrations", "29436", "While initially focused on economic issues, the demonstrations soon saw protesters chanting anti-government statements as well.", "and quickly broadened into anti-government demonstrations", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-protests-internet-blackout-israel-trump-b2897399.html"], ["one rights group reported many hundreds killed and more than 10,000 arrests", "37166", "At least 500 people have been killed in clashes with police and more than 10,000 arrested, according to rights groups, who say the toll could be greater since Ayatollah Ali Khameini’s regime has cut off the outside world with a near-total internet blackout.", "one rights group reported many hundreds killed and more than 10,000 arrests", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html"], ["other monitors recorded figures in the dozens of deaths and a few thousand detentions", "26005", "So far, the unrest has left at least 42 people dead, including at least four members of the security services, and seen more than 2,260 others detained, according to the U.S.-based Human Rights Activists News Agency.", "other monitors recorded figures in the dozens of deaths and a few thousand detentions", "CBS News - Top Stories", "Iran cuts internet access as deadly protests spread", "https://www.cbsnews.com/news/iran-cutting-internet-amid-deadly-protests/"]], "b4": [["Traffic-monitoring firms and independent researchers registered a near-total disconnection", "33891", "As the blackout kicked in, 90% of internet traffic to Iran evaporated.", "Traffic-monitoring firms and independent researchers registered what they described as a near-total disconnection.", "The Guardian - World", "Iran’s internet shutdown is chillingly precise and may last some time", "https://www.theguardian.com/world/2026/jan/10/irans-internet-shutdown-is-strikingly-sophisticated-and-may-last-some-time"], ["Kentik's Doug Madory and others said the blackout began on Thursday evening local time", "29170", "Doug Madory, the director of internet analysis at Kentik, a company that monitors internet traffic worldwide, concurred, telling TechCrunch that Iran’s internet has been in “near-total blackout” since around 11:30 a.m. on the U.S. east coast on Thursday, or 8 p.m. local time in Tehran.", "Kentik's Doug Madory and an Iranian cybersecurity researcher told reporters the shutdown appeared to begin on Thursday evening local time.", "TechCrunch", "Internet collapses in Iran amid protests over economic crisis", "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/"], ["NetBlocks' live metrics showed national connectivity collapsing to around 1% of ordinary levels", "29436", "An update on Friday read: “Iran has now been offline for 12 hours with national connectivity flatlining at ~1% of ordinary levels, after authorities imposed a nationwide internet blackout in an attempt to suppress sweeping protests while covering up reports of regime brutality.”", "NetBlocks' live metrics showed national connectivity collapsing and, in one update, national connectivity was recorded at about 1% of ordinary levels.", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-protests-internet-blackout-israel-trump-b2897399.html"], ["Cloudflare noted only a small amount of residual traffic", "29170", "“We continue to see a small amount of traffic, but the country is effectively completely offline,” David Belson, the head of data insight at Cloudflare, told TechCrunch.", "Cloudflare analysts said only a small amount of residual traffic remained.", "TechCrunch", "Internet collapses in Iran amid protests over economic crisis", "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/"]], "b6": [["Demonstrations erupted across all 31 provinces", "37166", "Iran has seen hundreds of protests erupt across all 31 provinces in the last two weeks.", "Multiple outlets reported demonstrations across all 31 provinces and in hundreds of towns.", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html"], ["HRANA said protests had formed in 585 locations across 186 cities", "37166", "The US-based Human Rights Activists News Agency (HRANA) said demonstrations had formed in 585 locations, across 186 cities, by Sunday the 15th day of action against the government.", "The US-based Human Rights Activists News Agency (HRANA) told some outlets that protests had formed in 585 locations across 186 cities by the movement's 15th day.", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html"], ["Videos showed protesters tearing the national flag and chanting 'Long live the king'", "28243", "Meantime footage released today shows protesters tearing the Iranian flag in half, with some chanting, \"Long live the king,\" a show of support for Pahlavi, whose late father fled Iran during the country's 1979 revolution.", "Social-media footage, which could not be fully verified, showed people tearing the national flag and in some videos chanting 'Long live the king.'", "PBS NewsHour - Headlines", "News Wrap: Internet and phone service shut off in Iran amid widening protests", "https://www.pbs.org/newshour/show/news-wrap-internet-and-phone-service-shut-off-in-iran-amid-widening-protests"], ["The unrest began with shopkeepers and traders in Tehran's bazaar", "29325", "The protests began in late December with shopkeepers and traders in Tehran.", "The unrest began with shopkeepers and traders in Tehran's bazaar and then widened.", "The Guardian - World", "Iran plunged into internet blackout as protests over economy spread nationwide", "https://www.theguardian.com/world/2026/jan/08/iran-plunged-into-internet-blackout-as-protests-over-economy-spread-nationwide"]], "b8": [["Some rights groups reported hundreds of deaths and more than 10,000 arrests", "37166", "At least 500 people have been killed in clashes with police and more than 10,000 arrested, according to rights groups, who say the toll could be greater since Ayatollah Ali Khameini’s regime has cut off the outside world with a near-total internet blackout.", "For example, The Independent quoted rights groups putting deaths in the hundreds and arrests above 10,000.", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html"], ["CBS and other outlets cited HRANA with roughly 42 deaths and about 2,260 detentions", "26005", "So far, the unrest has left at least 42 people dead, including at least four members of the security services, and seen more than 2,260 others detained, according to the U.S.-based Human Rights Activists News Agency.", "CBS and other outlets cited HRANA figures of roughly 42 deaths and about 2,260 detentions.", "CBS News - Top Stories", "Iran cuts internet access as deadly protests spread", "https://www.cbsnews.com/news/iran-cutting-internet-amid-deadly-protests/"], ["Sky News reported HRANA as saying 34 protesters and four security personnel had been killed with about 2,200 arrests", "29138", "Figures from the US-based Human Rights Activist News Agency (HRANA) suggest 34 protesters and four security personnel have been killed, with 2,200 arrests.", "Sky News reported HRANA as saying 34 protesters and four security personnel had been killed with about 2,200 arrests.", "Sky News - Home", "Iran's supreme leader says protesters 'ruining' country to please Trump - as internet blackout imposed", "https://news.sky.com/story/terrorist-agents-from-israel-and-us-have-sparked-violence-in-iran-state-media-claims-13492262"], ["The Guardian noted IHR reporting at least 45 protesters killed while AFP tallied about 21 total deaths", "29325", "The Norway-based NGO Iran Human Rights (IHR) said on Thursday that Iranian security forces had killed at least 45 protesters, including eight children. Media inside Iran and official statements have reported at least 21 people killed, including security forces, according to an Agence France-Presse tally.", "The Guardian noted Iran Human Rights (IHR) reporting 45 protesters killed while an AFP tally put total deaths at about 21.", "The Guardian - World", "Iran plunged into internet blackout as protests over economy spread nationwide", "https://www.theguardian.com/world/2026/jan/08/iran-plunged-into-internet-blackout-as-protests-over-economy-spread-nationwide"], ["Fox News pieces cited NCRI and IHRNGO figures and HRANA's larger tally, illustrating the spread of claims", "26481", "The group announced the names of 13 additional victims that day, describing them as \"martyrs\" of the nationwide uprising. Seven of those newly identified were from Lordegan, including a woman and two teenagers. According to the NCRI, the victims were killed by the Revolutionary Guard and other security forces using live ammunition.", "Fox News pieces cited different tallies — NCRI's 44 and IHRNGO's 51 — and another Fox report gave HRANA's tally of 65.", "Fox News - World", "Iran regime cuts nationwide internet access as protests claim 44 lives across major cities", "https://www.foxnews.com/world/iran-regime-cuts-nationwide-internet-access-protests-claim-44-lives-across-major-cities"], ["Fox News cited IHRNGO as saying at least 51 protesters, including nine children, had been killed", "30949", "Iran Human Rights (IHRNGO) reported that at least 51 protesters, including nine children, have been killed, with hundreds more injured.", "Fox News pieces cited IHRNGO's figure of 51.", "Fox News - World", "Iran protests grow deadlier as regime internet blackout fails to stop uprising", "https://www.foxnews.com/world/iran-protests-grow-deadlier-regime-internet-blackout-fails-stop-uprising"], ["Fox News cited HRANA as saying at least 65 people had been killed and 2,300 arrested", "30916", "At least 65 people have been killed in the protests, according to Human Rights Activists in Iran, which said late Friday that the death toll had more than doubled since earlier in the week.The group also reported that more than 2,300 people have been arrested and that demonstrations have spread to at least 180 cities nationwide.", "Fox News pieces cited HRANA's figure of 65 and about 2,300 arrests.", "Fox News - World", "Iran flips ‘kill switch’ to hide alleged crimes as death toll rises amid protests", "https://www.foxnews.com/world/iran-flips-kill-switch-hide-alleged-crimes-death-toll-rises-amid-protests"], ["TheJournal.ie quoted CHRI saying 'a massacre is unfolding' and 'credible reports indicating that hundreds of protesters have been killed'", "34069", "The US-based Center for Human Rights in Iran (CHRI) said it had received “eyewitness accounts and credible reports indicating that hundreds of protesters have been killed across Iran during the current internet shutdown”. “A massacre is unfolding in Iran. The world must act now to prevent further loss of life,” it said.", "TheJournal.ie published CHRI warnings that \"hundreds of protesters have been killed\", and said 'A massacre is unfolding in Iran.'", "TheJournal.ie", "Iranian anti-government protests continue amid internet blackout", "https://www.thejournal.ie/iran-protests-internet-blackout-6923338-Jan2026/"], ["Daily Mail described 'hundreds' feared dead and cited overwhelmed hospitals", "30583", "Hundreds of demonstrators are feared to have been killed by security forces in Iran this weekend as the regime's religious dictatorship brutally fights for its survival.", "The Daily Mail described 'hundreds' feared dead and cited hospital staff saying facilities were overwhelmed.", "Daily Mail - Home", "Behind Iran's deadly blackout: Ruthless crackdown by regime's religious dictatorship exposed by brave protesters fighting for their freedom and lives", "https://www.dailymail.co.uk/news/article-15453479/Irans-deadly-blackout-crackdown-regimes-religious-dictatorship-exposed-brave-protesters-fighting-freedom-lives.html?ns_mchannel=rss&ito=1490&ns_campaign=1490"]], "b10": [["State media alleged 'terrorist agents' from the US and Israel were behind violence", "29801", "Iranian state media broke its silence on Friday over the protests, alleging “terrorist agents” of the US and Israel set fires and sparked violence.", "state outlets accused US and Israeli 'terrorist agents' of inciting violence", "The National Scotland", "Nationwide internet blackout in Iran as protests spread and 42 killed", "https://www.thenational.scot/news/25752953.nationwide-internet-blackout-iran-protests-spread/?ref=rss"], ["State television said public and private property had been set on fire and reported casualties", "28307", "It said the unrest has seen \"people's private cars, motorcycles, public places such as the metro, fire trucks and buses set on fire\", adding there have been casualties.", "State television listed \"people's private cars, motorcycles, public places such as the metro, fire trucks and buses set on fire\" and spoke of casualties.", "RTE - Ireland News", "Iran cut off from world, Supreme Leader warns protesters", "https://www.rte.ie/news/world/2026/0109/1552225-iran-unrest/"], ["Khamenei said the republic would not 'back down' and accused 'vandals' of 'ruining their own streets to make the president of another country happy'", "29138", "He said \"vandals and rioters\" were \"ruining their own streets to make the president of another country happy\".", "Supreme Leader Ayatollah Ali Khamenei urged forceful action, saying the republic would not 'back down' and accusing 'vandals' of 'ruining their own streets to make the president of another country happy'.", "Sky News - Home", "Iran's supreme leader says protesters 'ruining' country to please Trump - as internet blackout imposed", "https://news.sky.com/story/terrorist-agents-from-israel-and-us-have-sparked-violence-in-iran-state-media-claims-13492262"], ["Interior and police officials described 'vandalism' and said 'significant' arrests were made", "34069", "In comments to state TV last night, Interior Minister Eskandar Momeni insisted that acts of \"vandalism\" were decreasing and warned that \"those who lead the protest towards destruction, chaos and terrorist acts do not let the people’s voices be heard\". National police chief Ahmad-Reza Radan said authorities made \"significant\" arrests of protest figures on Saturday night, without giving details on the number or identities of those arrested, according to state TV.", "Interior and police officials described 'vandalism' and said 'significant' arrests were made", "TheJournal.ie", "Iranian anti-government protests continue amid internet blackout", "https://www.thejournal.ie/iran-protests-internet-blackout-6923338-Jan2026/"], ["The Revolutionary Guard accused 'terrorists' of attacking bases and said security personnel had been killed", "37166", "On Saturday, in a statement broadcast by state TV, the Islamic Revolutionary Guard Corps - an elite force which has suppressed previous bouts of unrest - accused \"terrorists\" of targeting military and law enforcement bases. It said several citizens and security personnel had been killed and public and private property set on fire.", "Revolutionary Guard accused 'terrorists' of attacking security bases and reported casualties among security personnel.", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html"]], "b12": [["President Trump warned he would hit Iran 'very hard' if authorities kill protesters and said the United States stood ready to help", "26005", "\"I have let them know that if they start killing people, which they tend to do during their riots — they have lots of riots — if they do it, we are going to hit them very hard,\" Mr. Trump said.", "President Donald Trump warned Iran he would \"hit them very hard\" if authorities killed protesters and said the United States stood ready to help.", "CBS News - Top Stories", "Iran cuts internet access as deadly protests spread", "https://www.cbsnews.com/news/iran-cutting-internet-amid-deadly-protests/"], ["US outlets reported the president had been given military options but had not taken a decision", "37166", "The New York Times and Wall Street Journal, citing anonymous US officials, said on Saturday night that Mr Trump had been given military options for a strike on Iran, but had not made a final decision.", "US media outlets reported that officials had briefed the president on military options, though those outlets said no final decision had been made.", "The Independent - World", "What is happening in Iran? Internet blackout and Israel blamed after widespread anti-regime protests", "https://www.independent.co.uk/news/world/middle-east/iran-israel-internet-blackout-protests-trump-khamenei-b2898579.html"], ["France, the UK and Germany issued a joint statement urging restraint", "30949", "the leaders of France, the United Kingdom and Germany issued their first joint declaration on the situation in Iran. \"We are deeply concerned about reports of violence by Iranian security forces and strongly condemn the killing of protesters,\" the statement said.", "European governments — France, Britain and Germany — issued a joint statement urging restraint", "Fox News - World", "Iran protests grow deadlier as regime internet blackout fails to stop uprising", "https://www.foxnews.com/world/iran-protests-grow-deadlier-regime-internet-blackout-fails-stop-uprising"], ["Iranian politicians warned that US bases and Israeli territory would be legitimate targets if Iran were attacked", "29325", "\"In the event of an attack on Iran, both the occupied territory and all American military centres, bases and ships in the region will be our legitimate targets,\" Mr Qalibaf said.", "while Iranian politicians warned that American bases and Israeli territory would be legitimate targets if Iran were attacked.", "The Guardian - World", "Iran plunged into internet blackout as protests over economy spread nationwide", "https://www.theguardian.com/world/2026/jan/08/iran-plunged-into-internet-blackout-as-protests-over-economy-spread-nationwide"]], "b14": [["Filmmakers Panahi and Rasoulof called the blackout a blatant tool of repression and urged international action", "33876", "\"In recent days, following the presence of millions of Iranians in the streets protesting against the Islamic Republic, the government has once again resorted to its most blatant tools of repression,\" they wrote.", "Filmmakers Jafar Panahi and Mohammad Rasoulof called the shutdown a blatant tool of repression and urged the international community to facilitate communication.", "The Guardian - Business", "Iranian cultural figures condemn internet blackout as ‘blatant tool of repression’", "https://www.theguardian.com/global-development/2026/jan/10/film-makers-iran-protest-internet-blackout-repression"], ["Golshifteh Farahani and Soheila Sokhanvari voiced solidarity and urged the world not to let protesters be silenced", "33876", "“Iran is on fire once again. My heart beats with the people of Iran,” wrote Farahani.", "Actors and visual artists such as Golshifteh Farahani and Soheila Sokhanvari voiced solidarity and said Iranians must not be left isolated.", "The Guardian - Business", "Iranian cultural figures condemn internet blackout as ‘blatant tool of repression’", "https://www.theguardian.com/global-development/2026/jan/10/film-makers-iran-protest-internet-blackout-repression"], ["Amnesty International and other rights groups accused authorities of using unlawful force", "29325", "Rights groups accused authorities of resorting to tactics including raiding hospitals to detain wounded protesters. “Iran’s security forces have injured and killed both protesters and bystanders,” said Amnesty International, accusing authorities of using \"unlawful force\".", "Amnesty International and other rights groups accused security forces of unlawful force", "The Guardian - World", "Iran plunged into internet blackout as protests over economy spread nationwide", "https://www.theguardian.com/world/2026/jan/08/iran-plunged-into-internet-blackout-as-protests-over-economy-spread-nationwide"], ["Hospitals were reported overwhelmed and blood supplies low, according to rights groups", "34069", "The US-based Center for Human Rights in Iran (CHRI) said hospitals were “overwhelmed”, blood supplies were running low and that many protesters had been shot in the eyes in a deliberate tactic.", "hospitals reported being overwhelmed and blood supplies running low", "TheJournal.ie", "Iranian anti-government protests continue amid internet blackout", "https://www.thejournal.ie/iran-protests-internet-blackout-6923338-Jan2026/"]], "b16": [["Experts said the shutdown is more precise and potentially sustainable than previous blockages", "33891", "This is far from the first time a country has blocked the internet for political reasons. ... But the level of shutdown in Iran is unprecedented and in some ways far harsher than its 2019 digital blackout, which internet observers described at the time as the most “severe disconnection” they had seen anywhere.", "Digital-rights analysts said the shutdown was unusually surgical.", "The Guardian - World", "Iran’s internet shutdown is chillingly precise and may last some time", "https://www.theguardian.com/world/2026/jan/10/irans-internet-shutdown-is-strikingly-sophisticated-and-may-last-some-time"], ["A researcher said there was 'no reception on the phones' and described a near-total domestic blackout", "33891", "\"There is no reception on the phones. There is no antenna. It’s like you are living in the middle of nowhere, with no BTS towers,\" said Rashidi.", "One researcher described the domestic effect bluntly: 'There is no reception on the phones. There is no antenna. It's like you are living in the middle of nowhere, with no BTS towers.'", "The Guardian - World", "Iran’s internet shutdown is chillingly precise and may last some time", "https://www.theguardian.com/world/2026/jan/10/irans-internet-shutdown-is-strikingly-sophisticated-and-may-last-some-time"], ["Doug Madory warned the blackout could be long-lasting: 'This might be for the long haul'", "33891", "\"This might be for the long haul,\" he said.", "Another analyst warned, 'This might be for the long haul.'", "The Guardian - World", "Iran’s internet shutdown is chillingly precise and may last some time", "https://www.theguardian.com/world/2026/jan/10/irans-internet-shutdown-is-strikingly-sophisticated-and-may-last-some-time"], ["NetBlocks and other monitors reported near-total disconnection with connectivity at a tiny fraction of normal", "30916", "\"We are tracking near-total disconnection of internet service across Iran right now, and connectivity is below 2% of ordinary levels,\" Toker said.", "NetBlocks and other monitors said connectivity had plunged to a tiny fraction of normal levels.", "Fox News - World", "Iran flips ‘kill switch’ to hide alleged crimes as death toll rises amid protests", "https://www.foxnews.com/world/iran-flips-kill-switch-hide-alleged-crimes-death-toll-rises-amid-protests"]], "b17": [["Filmmakers Jafar Panahi and Mohammad Rasoulof said the government had 'once again resorted to its most blatant tools of repression'", "33876", "\"In recent days, following the presence of millions of Iranians in the streets protesting against the Islamic Republic, the government has once again resorted to its most blatant tools of repression,\" they wrote.", "\"In recent days, following the presence of millions of Iranians in the streets protesting against the Islamic Republic, the government has once again resorted to its most blatant tools of repression.\"", "The Guardian - Business", "Iranian cultural figures condemn internet blackout as ‘blatant tool of repression’", "https://www.theguardian.com/global-development/2026/jan/10/film-makers-iran-protest-internet-blackout-repression"]], "b18": [["Khamenei framed protesters as acting for foreign powers and warned of a crackdown", "29138", "He said \"vandals and rioters\" were \"ruining their own streets to make the president of another country happy\".", "Khamenei framed the unrest as foreign-directed and repeatedly urged security forces to act", "Sky News - Home", "Iran's supreme leader says protesters 'ruining' country to please Trump - as internet blackout imposed", "https://news.sky.com/story/terrorist-agents-from-israel-and-us-have-sparked-violence-in-iran-state-media-claims-13492262"], ["Opponents and rights groups say the blackout is being used to conceal violence and have urged outside action", "33876", "“Experience has shown that resorting to such measures is intended to conceal the violence inflicted during the suppression of protests.”", "Opponents and rights groups say the communications shutdown is being used to conceal or hamper reporting of security-force violence", "The Guardian - Business", "Iranian cultural figures condemn internet blackout as ‘blatant tool of repression’", "https://www.theguardian.com/global-development/2026/jan/10/film-makers-iran-protest-internet-blackout-repression"]], "b20": [["Independent monitors reported the country had been largely cut off from the outside world", "29170", "Internet connectivity collapsed across Iran on Thursday amid nationwide protests, according to web monitoring firms.", "Multiple independent monitors and news outlets agree the country's networks were deliberately and extensively disrupted while demonstrations spread across many cities.", "TechCrunch", "Internet collapses in Iran amid protests over economic crisis", "https://techcrunch.com/2026/01/08/internet-collapses-in-iran-amid-protests-over-economic-crisis/"], ["Rights organisations allege lethal force has been used against protesters", "30916", "People in Iran daring to express their anger at decades of repression and demand fundamental change are once again being met with a deadly pattern of security forces unlawfully firing at, chasing, arresting and beating protesters,\" Amnesty International also said in a statement Thursday.", "Rights organisations allege security forces have used lethal force against demonstrators", "Fox News - World", "Iran flips ‘kill switch’ to hide alleged crimes as death toll rises amid protests", "https://www.foxnews.com/world/iran-flips-kill-switch-hide-alleged-crimes-death-toll-rises-amid-protests"], ["Iranian officials and state media accuse foreign 'terrorist agents' and warn of forceful response", "29801", "Iranian state media broke its silence on Friday over the protests, alleging “terrorist agents” of the US and Israel set fires and sparked violence.", "while Iranian officials and state media accuse foreign 'terrorist agents' and say they will act forcefully.", "The National Scotland", "Nationwide internet blackout in Iran as protests spread and 42 killed", "https://www.thenational.scot/news/25752953.nationwide-internet-blackout-iran-protests-spread/?ref=rss"], ["Casualty and arrest totals remain disputed while communications are cut and international leaders are urging restraint", "30949", "the leaders of France, the United Kingdom and Germany issued their first joint declaration on the situation in Iran. \"We are deeply concerned about reports of violence by Iranian security forces and strongly condemn the killing of protesters,\" the statement said.", "Exact death and detention totals remain disputed and unverifiable while communications are cut, and international leaders have urged restraint as the United States warns of possible punitive steps.", "Fox News - World", "Iran protests grow deadlier as regime internet blackout fails to stop uprising", "https://www.foxnews.com/world/iran-protests-grow-deadlier-regime-internet-blackout-fails-stop-uprising"]]};
+    const intlStrips = document.querySelectorAll(".intl-strip");
+    const fadeSizeFor = (strip) => {
+      const width = strip.clientWidth || 0;
+      return Math.min(22, Math.max(10, width * 0.035));
+    };
+    const updateIntlFade = (strip) => {
+      const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      const fade = fadeSizeFor(strip);
+      const leftFade = Math.min(fade, Math.max(0, strip.scrollLeft));
+      const rightFade = Math.min(fade, Math.max(0, maxScroll - strip.scrollLeft));
+      strip.style.setProperty("--left-fade", `${leftFade}px`);
+      strip.style.setProperty("--right-fade", `${rightFade}px`);
+    };
+    intlStrips.forEach((strip) => {
+      const onUpdate = () => updateIntlFade(strip);
+      strip.addEventListener("scroll", () => requestAnimationFrame(onUpdate), {passive: true});
+      window.addEventListener("resize", onUpdate);
+      onUpdate();
+    });
+
+    const claimToggle = document.getElementById("claim-toggle");
+    const claimBody = document.body;
+    const claimPalette = ["#F7E6A8","#DDEEFF","#F7CCD1","#D9F1E1"];
+    let claimHighlightsApplied = false;
+
+    function highlightSnippet(root, snippet, blockId, claimIndex, color) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let node = null;
+      while ((node = walker.nextNode())) {
+        const text = node.nodeValue || "";
+        const start = text.indexOf(snippet);
+        if (start === -1) continue;
+        const end = start + snippet.length;
+        const before = document.createTextNode(text.slice(0, start));
+        const match = document.createTextNode(text.slice(start, end));
+        const after = document.createTextNode(text.slice(end));
+        const span = document.createElement("span");
+        span.className = "claim-mark";
+        span.style.setProperty("--claim-color", color);
+        span.dataset.block = blockId;
+        span.dataset.claimIndex = String(claimIndex);
+        span.appendChild(match);
+        const parent = node.parentNode;
+        parent.insertBefore(before, node);
+        parent.insertBefore(span, node);
+        parent.insertBefore(after, node);
+        parent.removeChild(node);
+        return true;
+      }
+      return false;
+    }
+
+    function applyClaimHighlights() {
+      if (claimHighlightsApplied) return;
+      document.querySelectorAll("[data-block]").forEach((el) => {
+        const blockId = el.getAttribute("data-block");
+        const claims = window.__CLAIMS__[blockId] || [];
+        claims.forEach((c, idx) => {
+          let snippet = "";
+          if (Array.isArray(c)) {
+            if (typeof c[3] === "string" && c[3]) {
+              snippet = c[3];
+            } else if (typeof c[c.length - 1] === "string") {
+              snippet = c[c.length - 1];
+            }
+          }
+          if (!snippet || typeof snippet !== "string") return;
+          highlightSnippet(el, snippet, blockId, idx, claimPalette[idx % claimPalette.length]);
+        });
+      });
+      claimHighlightsApplied = true;
+    }
+
+    function toggleClaimMode() {
+      const isActive = claimBody.classList.toggle("claim-mode");
+      if (claimToggle) {
+        claimToggle.setAttribute("aria-pressed", isActive ? "true" : "false");
+        claimToggle.classList.toggle("is-active", isActive);
+      }
+      if (isActive) applyClaimHighlights();
+    }
+
+    if (claimToggle) {
+      claimToggle.addEventListener("click", toggleClaimMode);
+    }
+
+    document.addEventListener("click", (event) => {
+      const mark = event.target.closest(".claim-mark");
+      if (!mark || !claimBody.classList.contains("claim-mode")) return;
+      const blockId = mark.dataset.block;
+      const claimIndex = parseInt(mark.dataset.claimIndex || "0", 10);
+      if (window.__openClaimModal) {
+        window.__openClaimModal(blockId, claimIndex);
+      }
+    });
+  </script>
+  <script>(function(){
+  const CLAIMS = window.__CLAIMS__ || {};
+  const backdrop = document.getElementById("modal-backdrop");
+  const modal = document.getElementById("modal");
+  const list = document.getElementById("modal-list");
+  const title = document.getElementById("modal-title");
+  const closeButtons = document.querySelectorAll("[data-close-modal]");
+
+  function esc(s){ return (s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function renderClaims(claims){
+    title.textContent = claims.length ? `Sources (${claims.length})` : "Sources";
+    list.innerHTML = "";
+    claims.forEach((c) => {
+      let claim_text="", quote="", outlet="", source_title="", url="";
+      try{
+        claim_text = c[0] || "";
+        quote = c[2] || "";
+        outlet = c[4] || "";
+        source_title = c[5] || "";
+        url = c[6] || "";
+      }catch(e){}
+      const li = document.createElement("li");
+      li.className = "claim-entry";
+      li.innerHTML = `
+        <div class="claim-head">
+          <span class="claim-source">${esc(outlet).toUpperCase() || "SOURCE"}</span>
+          ${source_title ? `<span class="claim-title">${esc(source_title)}</span>` : ``}
+        </div>
+        ${claim_text ? `<div class="claim-row">Claim: ${esc(claim_text)}</div>` : ``}
+        ${quote ? `<div class="claim-row">Quote: “${esc(quote)}”</div>` : ``}
+        ${url ? `<div class="claim-row">Link: <a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></div>` : ``}
+      `;
+      list.appendChild(li);
+    });
+  }
+
+  function open(){
+    backdrop.style.display = "block";
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    backdrop.style.display = "none";
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  window.__openClaimModal = (blockId, claimIndex) => {
+    let claims = CLAIMS[blockId] || [];
+    if (typeof claimIndex === "number") {
+      const selected = claims[claimIndex];
+      claims = selected ? [selected] : [];
+    }
+    renderClaims(claims);
+    open();
+  };
+
+  backdrop.addEventListener("click", close);
+  closeButtons.forEach(b => b.addEventListener("click", close));
+})();</script>
+</body>
+</html>
