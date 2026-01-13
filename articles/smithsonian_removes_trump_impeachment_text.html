@@ -106,6 +106,52 @@ a{color:inherit}
   color: #fff;
   border-color: var(--gold);
 }
+.follow-bar{
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.follow-pill{
+  flex: 0 1 auto;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(244,238,227,.95);
+  border: 1px solid rgba(17,18,20,.12);
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(17,18,20,.10);
+}
+.follow-link{
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+.follow-link:hover{ text-decoration: underline; }
+.follow-sep{ color: rgba(17,18,20,.35); }
+.follow-dismiss{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,255,255,.85);
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
 
 .header{ padding-top: 18px; }
 h1.title{
@@ -119,6 +165,8 @@ h1.title{
 @media (max-width: 700px){
   .wrap{padding: 0 18px 60px;}
   h1.title{font-size: 38px;}
+  body{ padding-bottom: 84px; }
+  .follow-bar{ display: flex; }
 }
 
 .hero{ margin-top: 14px; }
@@ -786,7 +834,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/smithsonian-swaps-trump-portrait-and-removes-impeachment-references-from-label-1768232512-2a3fa250.png" alt="Hero image" /></div>
 
     <section class="meta-card">
-      <div class="meta-row"><span class="meta-item left">Updated 8h ago</span><span class="dot-sep"></span><span class="meta-item center">3-min read</span><span class="dot-sep"></span><span class="meta-item right">11 sources</span></div>
+      <div class="meta-row"><span class="meta-item left">Updated 1d ago</span><span class="dot-sep"></span><span class="meta-item center">3-min read</span><span class="dot-sep"></span><span class="meta-item right">11 sources</span></div>
 
       <div class="meters">
         <div class="meter">
@@ -874,6 +922,15 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
         </a>
       </div>
     </div>
+  </div>
+
+  <div class="follow-bar" id="follow-bar" role="region" aria-label="Follow The Bias">
+    <div class="follow-pill">
+      <a class="follow-link" href="https://instagram.com/thebias_app" target="_blank" rel="noopener">Follow on Instagram</a>
+      <span class="follow-sep">•</span>
+      <a class="follow-link" href="mailto:sam@thebias.co.uk">Join beta</a>
+    </div>
+    <button class="follow-dismiss" id="follow-dismiss" aria-label="Dismiss follow bar">×</button>
   </div>
 
   <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
@@ -974,6 +1031,12 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 
     if (claimToggle) {
       claimToggle.addEventListener("click", toggleClaimMode);
+    }
+
+    const followBar = document.getElementById("follow-bar");
+    const followDismiss = document.getElementById("follow-dismiss");
+    if (followBar && followDismiss) {
+      followDismiss.addEventListener("click", () => followBar.remove());
     }
 
     document.addEventListener("click", (event) => {
