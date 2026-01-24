@@ -24,7 +24,7 @@
       --gold:#C8A25D;
       --deep:#7A1F27;
       --rose:rgba(122,31,39,.18);
-      --radius:18px;
+      --radius:12px;
       --max: 1040px;
     }
 
@@ -175,13 +175,12 @@
 
     /* Mock phone (placeholder) */
     .phoneShell{
-      border-radius: 34px;
+      border-radius:22px;
       background: rgba(244,238,227,.42);
       border: 1px solid rgba(17,17,17,.10);
       padding: 18px;
       position: relative;
-      min-height: 420px;
-      box-shadow: 0 18px 50px rgba(17,17,17,.08);
+box-shadow: 0 18px 50px rgba(17,17,17,.08);
       overflow:hidden;
     }
     .paperTexture{
@@ -197,7 +196,7 @@
     .phoneCard{
       background: rgba(255,250,242,.96);
       border: 1px solid rgba(17,17,17,.10);
-      border-radius: 22px;
+      border-radius:16px;
       padding: 18px;
       position: relative;
     }
@@ -247,23 +246,18 @@
       line-height: 1.55;
     }
     .claimHint{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(17,17,17,.10);
-      background: rgba(244,238,227,.55);
-      color: rgba(17,17,17,.62);
-      padding: 8px 12px;
-      font-size: 12px;
-      margin-top: 6px;
-    }
-    .claimSwatch{
-      width: 14px; height: 10px;
-      border-radius: 3px;
-      background: rgba(200,162,93,.45);
-      border: 1px solid rgba(17,17,17,.08);
-    }
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,17,17,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,17,17,.62);
+  padding: 8px 12px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+    .claimSwatch{ display:none !important; }
 
     /* Section */
     .section-title{
@@ -287,7 +281,7 @@
     .card{
       background: var(--card);
       border: 1px solid rgba(17,17,17,.10);
-      border-radius: var(--radius);
+      border-radius: 12px;
       padding: 18px 18px 16px;
       box-shadow: 0 1px 0 rgba(17,17,17,.04);
     }
@@ -326,7 +320,7 @@
     .howWrap{
       background: rgba(244,238,227,.34);
       border: 1px solid var(--hair2);
-      border-radius: 22px;
+      border-radius:16px;
       padding: 16px;
     }
     .howCarousel{
@@ -349,7 +343,7 @@
       scroll-snap-align: start;
       background: rgba(255,250,242,.92);
       border: 1px solid rgba(17,17,17,.10);
-      border-radius: 22px;
+      border-radius:16px;
       padding: 18px;
       box-shadow: 0 18px 60px rgba(17,17,17,.07);
       overflow:hidden;
@@ -371,13 +365,11 @@
       padding-top: 2px;
     }
     .howTopBrand{
-      text-align:center;
-      font-family: "Source Serif 4", ui-serif;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      font-size: 20px;
-      color: rgba(17,17,17,.82);
-    }
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
     .howTopBrand .howVariant{
       position:absolute;
       right: 0;
@@ -394,8 +386,8 @@
     }
 
     .howVisual{
-      height: 230px;
-      border-radius: 18px;
+      height: 180px;
+      border-radius:12px;
       background: rgba(244,238,227,.25);
       border: 1px solid rgba(17,17,17,.06);
       display:grid;
@@ -451,7 +443,7 @@
       width: min(560px, 100%);
       background: var(--bg);
       border: 1px solid rgba(17,17,17,.14);
-      border-radius: 22px;
+      border-radius:14px;
       padding: 18px;
       box-shadow: 0 18px 50px rgba(17,17,17,.18);
     }
@@ -495,36 +487,156 @@
     }
   
     .howVariant{display:none!important;}
-  </style>
+  
+.logo--mini{ font-size: 18px; }
+
+.howWrap{ border-radius:16px; }
+.howSlide{ border-radius:16px; }
+.howVisual{ border-radius:12px; }
+.phoneShell{ border-radius:22px; }
+.phoneCard{ border-radius:16px; }
+.card{ border-radius: 12px; }
+
+.howSlide{
+  min-height: 440px;
+  gap: 10px;
+  padding: 16px;
+}
+.howTitle{ font-size: 44px; }
+@media (max-width:520px){
+  .howTitle{ font-size: 38px; }
+  .howSlide{ min-height: 480px; }
+}
+.spacer{ display:none !important; }
+
+/* Slide 3 paragraph mock */
+.paraMock{
+  width: min(760px, 94%);
+  background: rgba(255,250,242,.96);
+  border: 1px solid rgba(17,17,17,.10);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.paraMock p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(17,17,17,.66);
+}
+.hl-gold{
+  background: rgba(200,162,93,.40);
+  border: 1px solid rgba(200,162,93,.22);
+  padding: 0 .22em;
+  border-radius: 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl-rose{
+  background: rgba(122,31,39,.18);
+  border: 1px solid rgba(122,31,39,.14);
+  padding: 0 .22em;
+  border-radius: 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Slide 4 blurred headlines + centred logo */
+.blurStage{ position: relative; width:100%; height:100%; }
+.blurCards{
+  position:absolute; inset:0;
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 12px;
+  padding: 14px;
+  align-content: center;
+  filter: blur(8px);
+  opacity: .90;
+}
+.blurCard{
+  background: rgba(255,250,242,.92);
+  border: 1px solid rgba(17,17,17,.10);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.blurCard .h{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 650;
+  letter-spacing: -0.35px;
+  font-size: 16px;
+  color: rgba(17,17,17,.50);
+  margin: 0 0 6px;
+}
+.blurCard .s{
+  font-family: Inter, system-ui;
+  font-size: 12px;
+  color: rgba(17,17,17,.38);
+  margin: 0;
+}
+.centerLogo{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+}
+.centerLogo .logo{
+  background: rgba(255,250,242,.94);
+  border: 1px solid rgba(17,17,17,.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.footerBrand{ font-family: Inter, system-ui; font-weight: 500; letter-spacing: 0; }
+
+
+    /* Mobile polish */
+    @media (max-width: 520px){
+      /* Header: keep it clean */
+      body{ padding-top: 56px; }
+      .appbar-inner{ padding: 12px 16px; }
+      .logo{ font-size: 20px; }
+      .nav{ flex-wrap: nowrap; gap: 8px; }
+      .nav .btn:not(.btn-primary){ display: none; }
+      .btn-primary{ padding: 9px 12px; font-size: 12px; }
+      .btn-primary svg{ display:none; }
+
+      /* How-it-works: make diagrams feel intentional */
+      .howVisual{ height: 240px; }
+    }
+
+</style>
 </head>
 <body>
-<header class="appbar" role="banner">
-<div class="appbar-inner">
-<div class="brandlock">
-<a aria-label="The Bias home" class="logo" href="#top">THE BIAS<span class="dot">.</span></a>
-<div class="anchor">One story, many angles.</div>
-</div>
-<nav aria-label="Primary" class="nav">
-<a class="nav-link" href="#features">Features</a>
-<a class="nav-link" href="#how">How it works</a>
-<a aria-haspopup="dialog" class="btn" href="#waitlist" id="openWaitlistBtn">
+
+  
+  <header class="appbar" role="banner">
+    <div class="appbar-inner">
+      <div class="brandlock">
+        <a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a>
+        <div class="anchor">One story, many angles.</div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#how">How it works</a>
+
+        <a class="btn" href="#waitlist" id="openWaitlistBtn" aria-haspopup="dialog">
           Join waitlist
-          <svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
-<path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
-<path d="M9 7h8v8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</a>
-<a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn2">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn2" aria-haspopup="dialog">
           Get early access
-          <svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
-<path d="M12 3v10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
-<path d="M8 10l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<path d="M5 21h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
-</svg>
-</a>
-</nav>
-</div>
-</header>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+
 <main class="wrap" id="top">
 <section aria-label="Hero" class="hero">
 <div>
@@ -635,7 +747,7 @@
 <div aria-label="How it works slides (selected set)" class="howCarousel" role="region" tabindex="0">
 <article class="howSlide">
 <div class="howTopRow">
-<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+<div class="howTopBrand"><a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a></div>
 </div>
 <div aria-hidden="true" class="howVisual">
 <svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
@@ -643,6 +755,8 @@
 <filter id="softAud"><fegaussianblur stddeviation="0.9"></fegaussianblur></filter>
 </defs>
 <rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
+<!-- top gold dot -->
+<circle cx="450" cy="44" r="6" fill="rgba(200,162,93,.92)"></circle>
 <!-- auditorium dots (no stage card) -->
 <g opacity="0.92">
 <g fill="rgba(17,17,17,.18)">
@@ -681,9 +795,10 @@
           </p>
 <div aria-hidden="true" class="spacer"></div>
 </article>
+
 <article class="howSlide">
 <div class="howTopRow">
-<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+<div class="howTopBrand"><a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a></div>
 </div>
 <div aria-hidden="true" class="howVisual">
 <svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
@@ -731,100 +846,64 @@
           </p>
 <div aria-hidden="true" class="spacer"></div>
 </article>
+
 <article class="howSlide">
 <div class="howTopRow">
-<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+<div class="howTopBrand"><a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a></div>
 </div>
-<div aria-hidden="true" class="howVisual">
-<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
-<rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
-<!-- page -->
-<rect fill="rgba(255,250,242,.98)" height="204" rx="20" stroke="rgba(17,17,17,.12)" width="680" x="110" y="28"></rect>
-<text fill="rgba(17,17,17,.82)" font-family="Source Serif 4, Georgia, serif" font-size="18" font-weight="800" x="150" y="62">
-    What happened
-  </text>
-<!-- paragraph highlights (target phrases) -->
-<rect fill="rgba(200,162,93,.28)" height="20" rx="10" width="258" x="150" y="86"></rect>
-<rect fill="rgba(200,162,93,.22)" height="20" rx="10" width="430" x="150" y="114"></rect>
-<rect fill="rgba(122,31,39,.14)" height="20" rx="10" width="350" x="150" y="142"></rect>
-<rect fill="rgba(122,31,39,.12)" height="20" rx="10" width="300" x="150" y="170"></rect>
-<!-- paragraph (readable, normal prose) -->
-<text fill="rgba(17,17,17,.74)" font-family="Inter, system-ui" font-size="14.5" x="150" y="101">
-<tspan dy="0" x="150">A 24‑hour transit strike began early Monday, leaving most routes offline.</tspan>
-<tspan dy="28" x="150">Officials said a reduced timetable would run; the union blamed pay and staffing.</tspan>
-<tspan dy="28" x="150">Some coverage led with commuter disruption, while others centred negotiations.</tspan>
-<tspan dy="28" x="150">The shared facts stayed similar — the emphasis and tone were what changed.</tspan>
-</text>
-<!-- tiny key -->
-<g opacity="0.85">
-<rect fill="rgba(244,238,227,.55)" height="56" rx="18" stroke="rgba(17,17,17,.08)" width="178" x="612" y="44"></rect>
-<circle cx="634" cy="70" fill="rgba(200,162,93,.68)" r="6.2"></circle>
-<text fill="rgba(17,17,17,.56)" font-family="Inter, system-ui" font-size="12.8" x="646" y="74">Verified detail</text>
-<circle cx="634" cy="92" fill="rgba(122,31,39,.22)" r="6.2"></circle>
-<text fill="rgba(17,17,17,.56)" font-family="Inter, system-ui" font-size="12.8" x="646" y="96">Framing choice</text>
-</g>
-</svg>
+
+<div class="howVisual" aria-hidden="true">
+  <div class="paraMock">
+    <p>
+      Transit workers began a <span class="hl-gold">24‑hour strike</span> at <span class="hl-gold">6:00 a.m.</span>,
+      halting most services across the network. Officials said <span class="hl-gold">limited routes</span> will run under an
+      <span class="hl-gold">emergency timetable</span>, while the union pointed to <span class="hl-rose">pay</span> and
+      <span class="hl-rose">staffing levels</span>. Some outlets lead with <span class="hl-rose">commuter disruption</span>
+      and cancellations; others focus on the <span class="hl-rose">negotiation breakdown</span> and what it suggests about
+      wider labour tensions.
+</p>
+  </div>
 </div>
+
 <h3 class="howTitle">Separate Fact<br/>From Framing</h3>
 <p class="howBody">
             We analyse coverage, separating reported facts from framing and perspectives.
           </p>
 <div aria-hidden="true" class="spacer"></div>
 </article>
+
 <article class="howSlide">
 <div class="howTopRow">
-<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+<div class="howTopBrand"><a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a></div>
 </div>
-<div aria-hidden="true" class="howVisual">
-<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<filter id="blur6"><fegaussianblur stddeviation="6"></fegaussianblur></filter>
-<lineargradient id="fade3" x1="0" x2="0" y1="0" y2="1">
-<stop offset="0%" stop-color="rgba(255,250,242,.10)"></stop>
-<stop offset="100%" stop-color="rgba(255,250,242,.62)"></stop>
-</lineargradient>
-</defs>
-<rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
-<!-- blurred headline cards -->
-<g filter="url(#blur6)" opacity="0.92">
-<rect fill="rgba(255,250,242,.92)" height="82" rx="20" stroke="rgba(17,17,17,.10)" width="380" x="95" y="30"></rect>
-<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="125" y="66">
-      Strike begins after talks fail
-    </text>
-<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="125" y="92">
-      Services reduced • delays expected
-    </text>
-<rect fill="rgba(255,250,242,.92)" height="82" rx="20" stroke="rgba(17,17,17,.10)" width="330" x="505" y="40"></rect>
-<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="535" y="76">
-      Union: pay offer not enough
-    </text>
-<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="535" y="102">
-      Officials call for return to talks
-    </text>
-<rect fill="rgba(255,250,242,.92)" height="88" rx="20" stroke="rgba(17,17,17,.10)" width="360" x="120" y="138"></rect>
-<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="150" y="178">
-      Economic costs mount
-    </text>
-<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="150" y="204">
-      Businesses warn of lost revenue
-    </text>
-<rect fill="rgba(255,250,242,.92)" height="86" rx="20" stroke="rgba(17,17,17,.10)" width="320" x="510" y="146"></rect>
-<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="540" y="184">
-      What happens next?
-    </text>
-<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="540" y="210">
-      Key unknowns remain
-    </text>
-</g>
-<rect fill="url(#fade3)" height="260" opacity="0.78" width="900" x="0" y="0"></rect>
-<!-- crisp centre logo chip -->
-<g opacity="1">
-<rect fill="rgba(255,250,242,.985)" height="76" rx="26" stroke="rgba(17,17,17,.14)" width="240" x="330" y="92"></rect>
-<text dominant-baseline="middle" fill="rgba(17,17,17,.92)" font-family="Source Serif 4, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.7px" text-anchor="middle" x="450" y="130">THE BIAS</text>
-<text dominant-baseline="middle" fill="rgba(200,162,93,.98)" font-family="Source Serif 4, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.7px" text-anchor="start" x="524" y="130">.</text>
-</g>
-</svg>
+
+<div class="howVisual" aria-hidden="true">
+  <div class="blurStage">
+    <div class="blurCards" aria-hidden="true">
+      <div class="blurCard">
+        <div class="h">Strike begins after talks fail</div>
+        <p class="s">Services reduced • delays expected</p>
+      </div>
+      <div class="blurCard">
+        <div class="h">Union: pay offer not enough</div>
+        <p class="s">Officials call for return to talks</p>
+      </div>
+      <div class="blurCard">
+        <div class="h">Economic costs mount</div>
+        <p class="s">Businesses warn of lost revenue</p>
+      </div>
+      <div class="blurCard">
+        <div class="h">What happens next?</div>
+        <p class="s">Key unknowns remain</p>
+      </div>
+    </div>
+
+    <div class="centerLogo">
+      <div class="logo" aria-label="The Bias">THE BIAS<span class="dot">.</span></div>
+    </div>
+  </div>
 </div>
+
 <h3 class="howTitle">Clarity In The Chaos</h3>
 <p class="howBody">
             We distill the coverage into a single article you can trust: what’s consistent, and where narratives diverge.
@@ -841,14 +920,25 @@
       </p>
 <div class="hero-ctas">
 <button class="btn btn-primary" id="openWaitlistBtn4" type="button">Join waitlist</button>
-<a class="btn" href="#top">Back to top</a>
+<a class="btn" href="mailto:hello@thebias.co.uk">Email us</a>
 </div>
 <p style="margin:12px 0 0;color:rgba(17,17,17,.52);font-size:13px">
         Tip: wire this modal form to your real waitlist endpoint (Mailchimp / EmailOctopus / ConvertKit / custom).
       </p>
 </section>
+
+<div class="section-title" id="about-bias">About</div>
+<section class="card" aria-label="About The Bias" style="padding:18px;">
+  <h2 style="margin-bottom:8px;">The Bias<span class="dot">.</span></h2>
+  <p style="margin:0;color:rgba(17,17,17,.72);max-width:72ch">
+    A wide‑angle news outlet: one coherent story per event, built from broad global coverage —
+    showing what outlets agree on, where reports diverge, and the main viewpoints in play.
+  </p>
+</section>
+
+
 <footer>
-<div class="fine">© <span id="year"></span> <span class="logo">THE BIAS<span class="dot">.</span></span></div>
+<div class="fine">© <span id="year"></span> <span class="footerBrand">The Bias</span></div>
 <div class="fine">
 <a href="#" onclick="alert('Replace with your privacy policy URL.'); return false;">Privacy</a>
          · 
