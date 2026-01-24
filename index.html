@@ -588,7 +588,6 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 
 .footerBrand{ font-family: Inter, system-ui; font-weight: 500; letter-spacing: 0; }
 
-
     /* Mobile polish */
     @media (max-width: 520px){
       /* Header: keep it clean */
@@ -603,7 +602,6 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
       /* How-it-works: make diagrams feel intentional */
       .howVisual{ height: 240px; }
     }
-
 
 /* ===== Mobile-only fixes (Jan 2026) ===== */
 @media (max-width: 520px){
@@ -704,8 +702,6 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
   .howVisual--s2 svg.svgMobile{ display:block; width:100%; height:100%; }
 }
 
-
-
 /* Desktop: keep only the header CTA; hide the standalone waitlist block + hero waitlist CTA */
 @media (min-width: 768px){
   .waitlistOnlyMobile{ display:none !important; }
@@ -729,18 +725,10 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
       <nav class="nav" aria-label="Primary">
         <a class="nav-link" href="#features">Features</a>
         <a class="nav-link" href="#how">How it works</a>
-        <a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn2" aria-haspopup="dialog">
-          Get early access
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M8 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </a>
+        <a class="btn btn-primary" data-eo-form-toggle-id="2a6d361c-f943-11f0-9b96-6f0fdbc6b38c" href="#" id="openWaitlistBtn2">Get early access</a>
       </nav>
     </div>
   </header>
-
 
 <main class="wrap" id="top">
 <section aria-label="Hero" class="hero">
@@ -752,7 +740,7 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
           You get the essential facts and the major perspectives in one read, with traceable sourcing when you want to go deeper.
         </p>
 <div class="hero-ctas">
-<a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn3">Join the waitlist</a>
+<a class="btn btn-primary" data-eo-form-toggle-id="2a6d361c-f943-11f0-9b96-6f0fdbc6b38c" href="#" id="openWaitlistBtn3">Join the waitlist</a>
 <a class="btn" href="#features">Explore features</a>
 </div>
 </div>
@@ -1061,7 +1049,7 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
         Get a single email when early access is available. No spam — just the link.
       </p>
 <div class="hero-ctas">
-<button class="btn btn-primary" id="openWaitlistBtn4" type="button">Join waitlist</button>
+<a class="btn btn-primary" data-eo-form-toggle-id="2a6d361c-f943-11f0-9b96-6f0fdbc6b38c" href="#" id="openWaitlistBtn4">Join waitlist</a>
 <a class="btn" href="mailto:hello@thebias.co.uk">Email us</a>
 </div>
   <div style="margin-top:12px;">
@@ -1089,55 +1077,7 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 </div>
 </footer>
 </main>
-<!-- Simple waitlist modal (front-end only) -->
-<div aria-labelledby="modalTitle" aria-modal="true" class="modal-backdrop" id="modal" role="dialog">
-<div class="modal">
-<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
-<div>
-<h4 id="modalTitle">Join the waitlist</h4>
-<p>Get a single email when early access is available.</p>
-</div>
-<button aria-label="Close" class="btn" id="closeModalBtn" type="button">Close</button>
-</div>
-<form class="form" id="waitlistForm">
-<label class="sr-only" for="email">Email</label>
-<input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
-<button class="btn btn-primary" type="submit">Notify me</button>
-</form>
-<p id="formNote" style="margin:12px 0 0;color:rgba(17,17,17,.52);font-size:13px">
-        This demo stores nothing. Wire this to your backend / ESP endpoint.
-      </p>
-</div>
-</div>
-<script>
-    const modal = document.getElementById('modal');
-    const openBtns = ['openWaitlistBtn2','openWaitlistBtn3','openWaitlistBtn4']
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-    const closeBtn = document.getElementById('closeModalBtn');
-    const form = document.getElementById('waitlistForm');
-    const note = document.getElementById('formNote');
+<script async src="https://eomail5.com/form/2a6d361c-f943-11f0-9b96-6f0fdbc6b38c.js" data-form="2a6d361c-f943-11f0-9b96-6f0fdbc6b38c"></script>
 
-    function openModal(){
-      modal.style.display = 'flex';
-      setTimeout(() => document.getElementById('email')?.focus(), 0);
-    }
-    function closeModal(){
-      modal.style.display = 'none';
-    }
-
-    openBtns.forEach(b => b.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); }));
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
-
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      note.textContent = "Thanks — you're on the list (demo). Replace this with a real POST request.";
-      form.reset();
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
