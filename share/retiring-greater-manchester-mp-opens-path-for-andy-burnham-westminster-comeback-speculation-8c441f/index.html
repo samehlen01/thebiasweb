@@ -211,6 +211,7 @@ h1.title{
   display: flex;
   flex-direction: column;
   gap: 14px;
+  align-items: center;
 }
 .share-summary{
   margin: 0;
@@ -226,13 +227,14 @@ h1.title{
   background: transparent;
   color: inherit;
   text-decoration: none;
+  align-self: center;
 }
 .share-cta:hover{
   filter: none;
   opacity: 0.9;
 }
 .share-cta img{
-  width: 240px;
+  width: 200px;
   max-width: 100%;
   height: auto;
 }
@@ -885,6 +887,33 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
         <img src="/assets/DWLD.svg" alt="Download on iOS" />
       </a>
     </section>
+
+    <div class="footer">
+      <span>The Bias 2026</span>
+      <div class="footer-links">
+        <a class="footer-social" href="https://instagram.com/thebias_app" target="_blank" rel="noopener" aria-label="The Bias on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="footer-social" href="https://reddit.com/u/the_bias_app" target="_blank" rel="noopener" aria-label="The Bias on Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6.2c1.9 0 3.7.5 5.1 1.3" />
+              <path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3" />
+              <path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"/>
+              <circle cx="9.2" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <circle cx="14.8" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9" />
+              <circle cx="17.7" cy="6.8" r="1.3"/>
+              <path d="M12.2 4.2l2.2.5"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
