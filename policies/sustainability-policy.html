@@ -1,96 +1,529 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>Sustainability Policy – The Bias</title>
+  <link href="/assets/LOGO.png" rel="icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet"/>
+  <style>
+:root{
+      --bg:#FFFAF2;          /* Newsprint Ivory */
+      --card:#F4EEE3;        /* Contrast Print */
+      --ink:#111111;         /* Deep Black */
+      --muted:#5C5C60;
+      --hair:rgba(17,17,17,.10);
+      --gold:#C8A25D;        /* Muted Gold */
+      --accent:#7A1F27;      /* Deep Red */
+      --radius: 4px;
+      --max: 920px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      padding-top: 62px;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px 76px;}
+
+    /* Top bar (matching article pages) */
+    .appbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      background: rgba(255,250,242,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .appbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position: relative;
+    }
+    .navlink{
+      position:absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+    }
+    .navlink:hover{ color: rgba(17,17,17,.85); }
+    .about-link{
+      position:absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+    }
+    .about-link:hover{ color: rgba(17,17,17,.85); }
+
+    .logo{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  font-size: 22px;
+  text-decoration: none;
+}
+    .logo .dot{ color: var(--gold); }
+.logo-img{
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    /* Typography */
+    h1, h2, h3{margin:0}
+    h1.title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 18px 0 10px;
+    }
+    p.lede{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.85;
+      color: rgba(17,17,17,.82);
+      max-width: 74ch;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.60);
+    }
+    .kicker .pip{
+      width:6px;height:6px;border-radius:999px;background: var(--gold);
+      display:inline-block;
+    }
+
+    /* Layout blocks */
+    .hero{
+      margin-top: 22px;
+      padding: 18px 18px 22px;
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-radius: var(--radius);
+    }
+    .hero-top{
+      display:flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .tagline{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      margin-top: 6px;
+      color: rgba(17,17,17,.92);
+    }
+    .actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(255,250,242,.70);
+      text-decoration:none;
+      font-size: 13px;
+      color: rgba(17,17,17,.80);
+      white-space: nowrap;
+    }
+    .btn:hover{ background: rgba(255,250,242,.92); }
+    .btn.primary{
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+    .btn.primary:hover{ filter: brightness(.98); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (min-width: 840px){
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-radius: var(--radius);
+      padding: 16px 16px 18px;
+      min-height: 150px;
+    }
+    .card-title{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin-bottom: 10px;
+    }
+    .card-head{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.12;
+      margin-bottom: 8px;
+      letter-spacing: -0.012em;
+    }
+    .card-body{
+      margin: 0;
+      color: rgba(17,17,17,.82);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .section{ margin-top: 28px; }
+    h2.subtitle{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 650;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -0.012em;
+      margin: 0 0 8px;
+    }
+    p.para{ margin: 0 0 14px; font-size: 17px; line-height: 1.85; color: rgba(17,17,17,.90); max-width: 76ch; }
+    hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (min-width: 900px){
+      .split{ grid-template-columns: 1.25fr .75fr; }
+    }
+
+    .aside-stack{ display:grid; gap: 10px; }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 16px;
+      color: rgba(17,17,17,.88);
+    }
+    .list li{ margin: 10px 0; }
+
+    /* Feature detail blocks (full text, not "cards") */
+    .feature-blocks{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 900px){
+      .feature-blocks{
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+    }
+    .feature-title{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin: 0 0 10px 0;
+    }
+    .feature-body{
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(17,17,17,.90);
+    }
+    .feature-body em{ font-style: italic; }
+    .feature-list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(17,17,17,.88);
+    }
+    .feature-list li{ margin: 8px 0; }
+
+    .aside{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .aside-title{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin-bottom: 8px;
+    }
+    .aside-body{ font-size: 15px; color: rgba(17,17,17,.90); line-height: 1.7; margin: 0; }
+
+    .steps{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
+    }
+    .step{
+      background: rgba(255,250,242,.55);
+      border: 1px solid rgba(17,17,17,.10);
+      border-radius: var(--radius);
+      padding: 12px 12px;
+    }
+    .step-top{
+      display:flex;
+      gap: 10px;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .step-num{
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .step-title{
+      font-weight: 600;
+      color: rgba(17,17,17,.92);
+      font-size: 14px;
+      flex: 1 1 auto;
+    }
+    .step-body{
+      margin-top: 6px;
+      font-size: 14px;
+      color: rgba(17,17,17,.82);
+      line-height: 1.7;
+    }
+
+    .cta{
+      margin-top: 24px;
+      padding: 18px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17,17,17,.10);
+      background: var(--card);
+      }
+    .cta-title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .cta-text{
+      margin: 0;
+      color: rgba(17,17,17,.82);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 80ch;
+    }
+    .cta-links{
+      margin-top: 12px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .cta a{ color: inherit; }
+
+    .footer{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hair);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(17,17,17,.55);
+      flex-wrap: wrap;
+    }
+    .footer-links{ display:flex; align-items:center; gap: 8px; }
+    .footer-social{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 3px;
+      border: 1px solid rgba(17,17,17,.12);
+      color: rgba(17,17,17,.6);
+      text-decoration: none;
+    }
+    .footer-social:hover{ color: rgba(17,17,17,.85); }
+    .footer-social svg{ width: 14px; height: 14px; }
+
+    @media (max-width: 700px){
+      .wrap{padding: 0 18px 70px;}
+      h1.title{font-size: 42px;}
+      h2.subtitle{font-size: 30px;}
+    }
+
+  /* Docs (policy/support) tweaks */
+  .meta{
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(17,17,17,.70);
+    line-height: 1.7;
+  }
+  .meta strong{ font-weight: 600; color: rgba(17,17,17,.85); }
+  .doc-wrap .subtitle{ font-size: 30px; }
+  @media (max-width: 700px){
+    .doc-wrap .subtitle{font-size: 28px;}
+  }
+  .lede a{ text-decoration: underline; }
+
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Sustainability Policy – The Bias</h1>
+<header class="appbar">
+<div class="appbar-inner">
+<a class="about-link" href="/">Home</a>
+<a aria-label="The Bias" class="logo" href="#top">THE BIAS<span class="dot">.</span></a>
+</div>
+</header>
+<div id="top"></div>
 
-    <p><strong>Effective date:</strong> 1 January 2026<br>
-       <strong>Last updated:</strong> 1 January 2026</p>
+<div class="wrap doc-wrap">
+  
+<section aria-label="Sustainability Policy – The Bias" class="hero" id="top-doc">
+  <div class="hero-top">
+    <div>
+      <div class="kicker"><span aria-hidden="true" class="pip"></span>Contact</div>
+      <h1 class="title">Sustainability Policy – The Bias</h1>
+      <div class="meta"><strong>Effective date:</strong> 1 January 2026<br>
+       <strong>Last updated:</strong> 1 January 2026</div>
+      <div class="meta" style="margin-top:6px;">Questions: <a href="mailto:support@thebias.co.uk">support@thebias.co.uk</a></div>
+      <p class="lede" style="margin-top:10px;">This Sustainability Policy explains The Bias’s commitments and approach to environmental impact, estimating emissions, and offsetting carbon with high-quality carbon removal.</p>
+    </div>
+    <div aria-label="Actions" class="actions">
+      <a class="btn" href="mailto:support@thebias.co.uk">support@thebias.co.uk</a>
+    </div>
+  </div>
+</section>
 
-    <p>This Sustainability Policy explains The Bias’s commitments and approach to environmental impact, estimating emissions, and offsetting carbon with high-quality carbon removal.</p>
 
-    <h2>1) Purpose and values</h2>
+  <section class="section">
+<section class=\"section\"><h2 class=\"subtitle\">1) Purpose and values</h2>
 
-    <p>The Bias was founded to do good. We care about the impact our product has on the world — including, but not limited to, the environment.</p>
-    <p>We believe technology products should be built responsibly and transparently, and that organisations should take ownership of the external impacts created by the systems they operate.</p>
+    <p class=\"para\">The Bias was founded to do good. We care about the impact our product has on the world — including, but not limited to, the environment.</p>
+    <p class=\"para\">We believe technology products should be built responsibly and transparently, and that organisations should take ownership of the external impacts created by the systems they operate.</p>
 
-    <h2>2) Recognising the environmental impact of modern software</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">2) Recognising the environmental impact of modern software</h2>
 
-    <p>The Bias depends on modern software and computational systems that can be energy-intensive. This includes the infrastructure and algorithms required to analyse sources and produce our articles.</p>
-    <p>We recognise that this creates a real environmental footprint. Our objective is to ensure The Bias is a positive force, not a negative one, by actively measuring, reducing, and responsibly offsetting our emissions.</p>
+    <p class=\"para\">The Bias depends on modern software and computational systems that can be energy-intensive. This includes the infrastructure and algorithms required to analyse sources and produce our articles.</p>
+    <p class=\"para\">We recognise that this creates a real environmental footprint. Our objective is to ensure The Bias is a positive force, not a negative one, by actively measuring, reducing, and responsibly offsetting our emissions.</p>
 
-    <h2>3) Our commitment: 2× monthly offsets to be carbon positive</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">3) Our commitment: 2× monthly offsets to be carbon positive</h2>
 
-    <p>We commit to offsetting two times (2×) our estimated carbon emissions each month, so that we are not only carbon neutral but carbon positive.</p>
+    <p class=\"para\">We commit to offsetting two times (2×) our estimated carbon emissions each month, so that we are not only carbon neutral but carbon positive.</p>
 
-    <h3>What we include in our emissions estimate</h3>
+    <h3 class=\"feature-title\">What we include in our emissions estimate</h3>
 
-    <p>Our monthly estimate includes emissions associated with operating The Bias for that month, including (for example):</p>
-    <ul>
+    <p class=\"para\">Our monthly estimate includes emissions associated with operating The Bias for that month, including (for example):</p>
+    <ul class=\"list\">
       <li>compute, storage, and infrastructure required to produce and deliver our articles</li>
       <li>internal operational activities needed to run the Service (where measurable)</li>
     </ul>
 
-    <h3>What we do not include (for now)</h3>
+    <h3 class=\"feature-title\">What we do not include (for now)</h3>
 
-    <p>At this stage, we do not include emissions driven by user activity outside our control (for example, the electricity used to power a user’s phone while reading articles). This is currently too difficult to estimate reliably. As measurement standards improve, we may expand our reporting scope.</p>
+    <p class=\"para\">At this stage, we do not include emissions driven by user activity outside our control (for example, the electricity used to power a user’s phone while reading articles). This is currently too difficult to estimate reliably. As measurement standards improve, we may expand our reporting scope.</p>
 
-    <h2>4) Monthly reporting and transparency</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">4) Monthly reporting and transparency</h2>
 
-    <p>We publish a monthly report covering:</p>
-    <ul>
+    <p class=\"para\">We publish a monthly report covering:</p>
+    <ul class=\"list\">
       <li>our estimated carbon emissions for the reporting period</li>
       <li>the methodology and assumptions used (including limitations)</li>
       <li>our offsetting activities, including the type of offsets/removals and evidence of retirement</li>
       <li>any improvements we are making to reduce emissions at the source</li>
     </ul>
 
-    <p><strong>Most recent report:</strong> [MOST RECENT SUSTAINABILITY REPORT LINK – TBC]</p>
+    <p class=\"para\"><strong>Most recent report:</strong> [MOST RECENT SUSTAINABILITY REPORT LINK – TBC]</p>
 
-    <h2>5) How we estimate carbon emissions</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">5) How we estimate carbon emissions</h2>
 
-    <p>We are committed to transparency, but we recognise that for much of the technology we use there is no perfect, direct measurement of emissions. Infrastructure providers and computational services may provide incomplete or non-standardised emissions reporting.</p>
+    <p class=\"para\">We are committed to transparency, but we recognise that for much of the technology we use there is no perfect, direct measurement of emissions. Infrastructure providers and computational services may provide incomplete or non-standardised emissions reporting.</p>
 
-    <p>As a result, our emissions reporting is based on an informed estimation process that uses:</p>
-    <ul>
+    <p class=\"para\">As a result, our emissions reporting is based on an informed estimation process that uses:</p>
+    <ul class=\"list\">
       <li>available provider data where offered (for example, service usage and region)</li>
       <li>engineering estimates of compute and storage usage</li>
       <li>published emissions factors where appropriate</li>
       <li>conservative assumptions where uncertainty exists</li>
     </ul>
 
-    <p><strong>Methodology details (TBC):</strong> [CARBON ESTIMATION PROCESS DETAILS – TBC]</p>
+    <p class=\"para\"><strong>Methodology details (TBC):</strong> [CARBON ESTIMATION PROCESS DETAILS – TBC]</p>
 
-    <p>We treat this process as iterative and will improve accuracy over time as measurement tools, standards, and provider reporting improve.</p>
+    <p class=\"para\">We treat this process as iterative and will improve accuracy over time as measurement tools, standards, and provider reporting improve.</p>
 
-    <h2>6) Reduction-first approach</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">6) Reduction-first approach</h2>
 
-    <p>Offsetting is not a substitute for reducing emissions. Our priority order is:</p>
-    <ul>
+    <p class=\"para\">Offsetting is not a substitute for reducing emissions. Our priority order is:</p>
+    <ul class=\"list\">
       <li>Reduce emissions at the source (efficiency, architecture, and operational choices)</li>
       <li>Measure and transparently report emissions with the best available methods</li>
       <li>Offset unavoidable emissions using high-quality carbon removal (see Section 7)</li>
     </ul>
 
-    <p>Examples of reduction actions may include:</p>
-    <ul>
+    <p class=\"para\">Examples of reduction actions may include:</p>
+    <ul class=\"list\">
       <li>optimising systems to reduce computational load (efficiency improvements, caching, batching)</li>
       <li>limiting unnecessary compute and storage</li>
       <li>choosing lower-carbon infrastructure options where feasible</li>
       <li>continuously reviewing the efficiency of models and processing pipelines</li>
     </ul>
 
-    <h2>7) Offsetting policy: high-quality carbon removal, no greenwashing</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">7) Offsetting policy: high-quality carbon removal, no greenwashing</h2>
 
-    <p>We will only use high-quality carbon capture and removal methods. We will not rely on low-quality, low-cost schemes that lack measurable real-world impact or that are primarily marketing-driven.</p>
+    <p class=\"para\">We will only use high-quality carbon capture and removal methods. We will not rely on low-quality, low-cost schemes that lack measurable real-world impact or that are primarily marketing-driven.</p>
 
-    <p>Our offsetting principles include:</p>
-    <ul>
+    <p class=\"para\">Our offsetting principles include:</p>
+    <ul class=\"list\">
       <li><strong>Measurable impact:</strong> prioritising projects with robust measurement, reporting, and verification and clear retirement evidence</li>
       <li><strong>Additionality:</strong> prioritising projects that would not happen without carbon finance and that avoid double-counting</li>
       <li><strong>Durability:</strong> prioritising removals with durable storage rather than short-lived claims</li>
@@ -98,13 +531,51 @@
       <li><strong>No greenwashing:</strong> avoiding vague claims and low-quality credits that cannot be substantiated</li>
     </ul>
 
-    <h2>8) Continuous improvement</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">8) Continuous improvement</h2>
 
-    <p>We will evolve this policy as The Bias grows and as better measurement standards emerge. We will continuously improve our estimation methods, reduction practices, and reporting transparency over time.</p>
+    <p class=\"para\">We will evolve this policy as The Bias grows and as better measurement standards emerge. We will continuously improve our estimation methods, reduction practices, and reporting transparency over time.</p>
 
-    <h2>9) Updates to this policy</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">9) Updates to this policy</h2>
 
-    <p>We may update this policy as The Bias evolves. The “Last updated” date reflects the latest revision.</p>
-  </main>
+    <p class=\"para\">We may update this policy as The Bias evolves. The “Last updated” date reflects the latest revision.</p>
+</section>
+
+  <hr class="divider"/>
+
+  <section class="cta" aria-label="Contact">
+    <div class="cta-title">Sustainability reporting</div>
+    <p class="cta-text">For questions about this policy or our reporting, email support.</p>
+    <div class="cta-links">
+      <a class="btn primary" href="mailto:support@thebias.co.uk">Email support@thebias.co.uk</a>
+    </div>
+  </section>
+
+  <footer aria-label="Footer" class="footer">
+<span>The Bias 2026</span>
+<div class="footer-links">
+<a aria-label="The Bias on Instagram" class="footer-social" href="https://instagram.com/thebias_app" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect height="16" rx="4" stroke="currentColor" stroke-width="2" width="16" x="4" y="4"></rect>
+<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"></circle>
+<circle cx="17" cy="7" fill="currentColor" r="1.2"></circle>
+</svg>
+</a>
+<a aria-label="The Bias on Reddit" class="footer-social" href="https://reddit.com/u/the_bias_app" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" opacity=".8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+<path d="M12 6.2c1.9 0 3.7.5 5.1 1.3"></path>
+<path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3"></path>
+<path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"></path>
+<circle cx="9.2" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
+<circle cx="14.8" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
+<path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9"></path>
+<circle cx="17.7" cy="6.8" r="1.3"></circle>
+<path d="M12.2 4.2l2.2.5"></path>
+</g>
+</svg>
+</a>
+</div>
+</footer>
+</div>
 </body>
 </html>
