@@ -13,9 +13,6 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
-
-<link rel="icon" type="image/png" href="/assets/LOGO.png"/>
-<link rel="apple-touch-icon" href="/assets/LOGO.png"/>
 <style>
     :root{
       --bg:#FFFAF2;
@@ -716,6 +713,8 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 }
 
 </style>
+<link rel="icon" type="image/png" href="/assets/LOGO.png"/>
+<link rel="apple-touch-icon" href="/assets/LOGO.png"/>
 </head>
 <body>
 
@@ -730,14 +729,6 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
       <nav class="nav" aria-label="Primary">
         <a class="nav-link" href="#features">Features</a>
         <a class="nav-link" href="#how">How it works</a>
-
-        <a class="btn" href="#waitlist" id="openWaitlistBtn" aria-haspopup="dialog">
-          Join waitlist
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
         <a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn2" aria-haspopup="dialog">
           Get early access
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1073,11 +1064,9 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 <button class="btn btn-primary" id="openWaitlistBtn4" type="button">Join waitlist</button>
 <a class="btn" href="mailto:hello@thebias.co.uk">Email us</a>
 </div>
-  <div style="margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <p style="margin:0;color:rgba(17,17,17,.64);font-size:13px;">Follow our daily breakdowns on Instagram: <strong>@thebias_app</strong></p>
-    <a class="btn" href="https://www.instagram.com/thebias_app/" target="_blank" rel="noopener" style="padding:8px 11px;font-size:12px;">Follow</a>
+  <div style="margin-top:12px;">
+    <a href="https://www.instagram.com/thebias_app/" target="_blank" rel="noopener" style="font-size:13px;color:rgba(17,17,17,.64);text-decoration:none;border-bottom:1px solid rgba(17,17,17,.22);">Follow on Instagram</a>
   </div>
-
 <p style="margin:12px 0 0;color:rgba(17,17,17,.52);font-size:13px">
         Tip: wire this modal form to your real waitlist endpoint (Mailchimp / EmailOctopus / ConvertKit / custom).
       </p>
@@ -1122,7 +1111,7 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 </div>
 <script>
     const modal = document.getElementById('modal');
-    const openBtns = ['openWaitlistBtn','openWaitlistBtn2','openWaitlistBtn3','openWaitlistBtn4']
+    const openBtns = ['openWaitlistBtn2','openWaitlistBtn3','openWaitlistBtn4']
       .map(id => document.getElementById(id))
       .filter(Boolean);
     const closeBtn = document.getElementById('closeModalBtn');
