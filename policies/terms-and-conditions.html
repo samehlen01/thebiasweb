@@ -1,26 +1,446 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Terms &amp; Conditions – The Bias</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Terms &amp;amp; Conditions – The Bias</title>
+<link href="/assets/LOGO.png" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --bg:#FFFAF2;          /* Newsprint Ivory */
+      --card:#F4EEE3;        /* Contrast Print */
+      --ink:#111111;         /* Deep Black */
+      --muted:#5C5C60;
+      --hair:rgba(17,17,17,.10);
+      --gold:#C8A25D;        /* Muted Gold */
+      --accent:#7A1F27;      /* Deep Red */
+      --radius: 4px;
+      --max: 920px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      padding-top: 62px;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px 76px;}
+
+    /* Top bar (matching article pages) */
+    .appbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      background: rgba(255,250,242,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .appbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position: relative;
+    }
+    .navlink{
+      position:absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+    }
+    .navlink:hover{ color: rgba(17,17,17,.85); }
+    .about-link{
+      position:absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+    }
+    .about-link:hover{ color: rgba(17,17,17,.85); }
+
+    .logo{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  font-size: 22px;
+  text-decoration: none;
+}
+    .logo .dot{ color: var(--gold); }
+.logo-img{
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    /* Typography */
+    h1, h2, h3{margin:0}
+    h1.title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 18px 0 10px;
+    }
+    p.lede{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.85;
+      color: rgba(17,17,17,.82);
+      max-width: 74ch;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.60);
+    }
+    .kicker .pip{
+      width:6px;height:6px;border-radius:999px;background: var(--gold);
+      display:inline-block;
+    }
+
+    /* Layout blocks */
+    .hero{
+      margin-top: 22px;
+      padding: 18px 18px 22px;
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-radius: var(--radius);
+    }
+    .hero-top{
+      display:flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .tagline{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      margin-top: 6px;
+      color: rgba(17,17,17,.92);
+    }
+    .actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(255,250,242,.70);
+      text-decoration:none;
+      font-size: 13px;
+      color: rgba(17,17,17,.80);
+      white-space: nowrap;
+    }
+    .btn:hover{ background: rgba(255,250,242,.92); }
+    .btn.primary{
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+    .btn.primary:hover{ filter: brightness(.98); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (min-width: 840px){
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-radius: var(--radius);
+      padding: 16px 16px 18px;
+      min-height: 150px;
+    }
+    .card-title{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin-bottom: 10px;
+    }
+    .card-head{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.12;
+      margin-bottom: 8px;
+      letter-spacing: -0.012em;
+    }
+    .card-body{
+      margin: 0;
+      color: rgba(17,17,17,.82);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .section{ margin-top: 28px; }
+    h2.subtitle{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 650;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -0.012em;
+      margin: 0 0 8px;
+    }
+    p.para{ margin: 0 0 14px; font-size: 17px; line-height: 1.85; color: rgba(17,17,17,.90); max-width: 76ch; }
+    hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (min-width: 900px){
+      .split{ grid-template-columns: 1.25fr .75fr; }
+    }
+
+    .aside-stack{ display:grid; gap: 10px; }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 16px;
+      color: rgba(17,17,17,.88);
+    }
+    .list li{ margin: 10px 0; }
+
+    /* Feature detail blocks (full text, not "cards") */
+    .feature-blocks{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 900px){
+      .feature-blocks{
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+    }
+    .feature-title{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin: 0 0 10px 0;
+    }
+    .feature-body{
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(17,17,17,.90);
+    }
+    .feature-body em{ font-style: italic; }
+    .feature-list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(17,17,17,.88);
+    }
+    .feature-list li{ margin: 8px 0; }
+
+    .aside{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .aside-title{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin-bottom: 8px;
+    }
+    .aside-body{ font-size: 15px; color: rgba(17,17,17,.90); line-height: 1.7; margin: 0; }
+
+    .steps{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
+    }
+    .step{
+      background: rgba(255,250,242,.55);
+      border: 1px solid rgba(17,17,17,.10);
+      border-radius: var(--radius);
+      padding: 12px 12px;
+    }
+    .step-top{
+      display:flex;
+      gap: 10px;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .step-num{
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .step-title{
+      font-weight: 600;
+      color: rgba(17,17,17,.92);
+      font-size: 14px;
+      flex: 1 1 auto;
+    }
+    .step-body{
+      margin-top: 6px;
+      font-size: 14px;
+      color: rgba(17,17,17,.82);
+      line-height: 1.7;
+    }
+
+    .cta{
+      margin-top: 24px;
+      padding: 18px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17,17,17,.10);
+      background: var(--card);
+      }
+    .cta-title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .cta-text{
+      margin: 0;
+      color: rgba(17,17,17,.82);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 80ch;
+    }
+    .cta-links{
+      margin-top: 12px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .cta a{ color: inherit; }
+
+    .footer{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hair);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(17,17,17,.55);
+      flex-wrap: wrap;
+    }
+    .footer-links{ display:flex; align-items:center; gap: 8px; }
+    .footer-social{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 3px;
+      border: 1px solid rgba(17,17,17,.12);
+      color: rgba(17,17,17,.6);
+      text-decoration: none;
+    }
+    .footer-social:hover{ color: rgba(17,17,17,.85); }
+    .footer-social svg{ width: 14px; height: 14px; }
+
+    @media (max-width: 700px){
+      .wrap{padding: 0 18px 70px;}
+      h1.title{font-size: 42px;}
+      h2.subtitle{font-size: 30px;}
+    }
+  
+  .meta{margin-top:10px;font-size:13px;color:rgba(17,17,17,.70);line-height:1.7}
+  .meta strong{font-weight:600;color:rgba(17,17,17,.85)}
+  .doc-wrap .subtitle{font-size:30px}
+  @media (max-width:700px){.doc-wrap .subtitle{font-size:28px}}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Terms &amp; Conditions – The Bias</h1>
+<header class="appbar">
+<div class="appbar-inner">
+<a class="about-link" href="/">Home</a>
+<a aria-label="The Bias" class="logo" href="#top">THE BIAS<span class="dot">.</span></a>
+</div>
+</header>
+<div class="wrap doc-wrap">
 
-    <p><strong>Effective date:</strong> 1 January 2026<br>
-       <strong>Last updated:</strong> 1 January 2026</p>
+<section class="hero">
+  <div class="hero-top">
+    <div>
+      <div class="kicker"><span class="pip"></span>Contact</div>
+      <h1 class="title">Terms &amp;amp; Conditions – The Bias</h1>
+      <div class="meta"><strong>Effective date:</strong> 1 January 2026<br>
+       <strong>Last updated:</strong> 1 January 2026</div>
+      <div class="meta" style="margin-top:6px;">
+        Terms: <a href="mailto:support@thebias.co.uk">support@thebias.co.uk</a> ·
+        Privacy: <a href="mailto:privacy@thebias.co.uk">privacy@thebias.co.uk</a>
+      </div>
+      <p class="lede" style="margin-top:10px;">These Terms &amp; Conditions (“Terms”) govern your use of the The Bias mobile application and related services (together, the “Service”). By accessing or using the Service, you agree to these Terms.</p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="mailto:support@thebias.co.uk">support@thebias.co.uk</a>
+    </div>
+  </div>
+</section>
 
-    <p>These Terms &amp; Conditions (“Terms”) govern your use of the The Bias mobile application and related services (together, the “Service”). By accessing or using the Service, you agree to these Terms.</p>
+<section class="section"><section class=\"section\"><h2 class=\"subtitle\">1) Who we are and how to contact us</h2>
 
-    <p>If you do not agree, do not use the Service.</p>
+    <p class=\"para\">The Service is provided by The Bias.</p>
 
-    <h2>1) Who we are and how to contact us</h2>
-
-    <p>The Service is provided by The Bias.</p>
-
-    <ul>
+    <ul class=\"list\">
       <li><strong>Operated by:</strong> [OPERATOR LEGAL NAME – TBC]</li>
       <li><strong>Registered address:</strong> [REGISTERED ADDRESS – TBC]</li>
       <li><strong>Company number:</strong> [COMPANY NUMBER – TBC]</li>
@@ -28,112 +448,147 @@
       <li><strong>Privacy:</strong> privacy@thebias.co.uk</li>
     </ul>
 
-    <h2>2) Eligibility</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">2) Eligibility</h2>
 
-    <p>You must be 13 years or older to use the Service.</p>
+    <p class=\"para\">You must be 13 years or older to use the Service.</p>
 
-    <h2>3) Accounts and Sign in with Apple</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">3) Accounts and Sign in with Apple</h2>
 
-    <p>You must create an account to use the Service. We use Sign in with Apple for authentication.</p>
+    <p class=\"para\">You must create an account to use the Service. We use Sign in with Apple for authentication.</p>
 
-    <p>You are responsible for:</p>
-    <ul>
+    <p class=\"para\">You are responsible for:</p>
+    <ul class=\"list\">
       <li>keeping your device and Apple ID secure</li>
       <li>any activity in the Service on your device/account</li>
       <li>ensuring that information you provide (such as your name and region) is accurate</li>
     </ul>
 
-    <p>We may suspend or restrict access if we reasonably believe this is necessary to:</p>
-    <ul>
+    <p class=\"para\">We may suspend or restrict access if we reasonably believe this is necessary to:</p>
+    <ul class=\"list\">
       <li>protect the security or integrity of the Service</li>
       <li>prevent misuse, fraud, or unlawful activity</li>
       <li>enforce these Terms</li>
     </ul>
 
-    <h2>4) The Service</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">4) The Service</h2>
 
-    <p>The Service provides access to news content and related features.</p>
-    <p>Content is provided for general information purposes. While we aim for accuracy, we do not guarantee that content will always be complete, current, or error-free.</p>
+    <p class=\"para\">The Service provides access to news content and related features.</p>
+    <p class=\"para\">Content is provided for general information purposes. While we aim for accuracy, we do not guarantee that content will always be complete, current, or error-free.</p>
 
-    <h2>5) Subscriptions (Apple billing only)</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">5) Subscriptions (Apple billing only)</h2>
 
-    <p>Some features are available only with a paid subscription (“Subscription”). Subscriptions are purchased only via Apple’s in-app purchase system.</p>
+    <p class=\"para\">Some features are available only with a paid subscription (“Subscription”). Subscriptions are purchased only via Apple’s in-app purchase system.</p>
 
-    <h3>5.1 Plans and pricing</h3>
+    <h3 class=\"feature-title\">5.1 Plans and pricing</h3>
 
-    <p>We currently offer these auto-renewing subscriptions:</p>
-    <ul>
+    <p class=\"para\">We currently offer these auto-renewing subscriptions:</p>
+    <ul class=\"list\">
       <li>Premium Monthly — £7.99 per month</li>
       <li>Premium Yearly — £89.99 per year</li>
     </ul>
 
-    <p>Pricing may change in the future. Any changes for Apple-billed subscriptions are handled under Apple’s processes.</p>
+    <p class=\"para\">Pricing may change in the future. Any changes for Apple-billed subscriptions are handled under Apple’s processes.</p>
 
-    <h3>5.2 Auto-renewal</h3>
+    <h3 class=\"feature-title\">5.2 Auto-renewal</h3>
 
-    <p>Unless you cancel, your Subscription automatically renews at the end of each billing period. Apple will charge the payment method associated with your Apple ID.</p>
+    <p class=\"para\">Unless you cancel, your Subscription automatically renews at the end of each billing period. Apple will charge the payment method associated with your Apple ID.</p>
 
-    <h3>5.3 Free trial</h3>
+    <h3 class=\"feature-title\">5.3 Free trial</h3>
 
-    <p>We offer a 7-day free trial (where available). Unless you cancel before the trial ends, your Subscription will convert to a paid subscription and you will be charged via Apple.</p>
+    <p class=\"para\">We offer a 7-day free trial (where available). Unless you cancel before the trial ends, your Subscription will convert to a paid subscription and you will be charged via Apple.</p>
 
-    <h3>5.4 Managing and cancelling</h3>
+    <h3 class=\"feature-title\">5.4 Managing and cancelling</h3>
 
-    <p>You can manage or cancel your Subscription through your Apple ID subscription settings. Cancellation takes effect at the end of the current billing period (or trial), and you will retain access until then.</p>
+    <p class=\"para\">You can manage or cancel your Subscription through your Apple ID subscription settings. Cancellation takes effect at the end of the current billing period (or trial), and you will retain access until then.</p>
 
-    <h3>5.5 Refunds</h3>
+    <h3 class=\"feature-title\">5.5 Refunds</h3>
 
-    <p>Purchases are processed by Apple. We do not offer refunds directly. If you believe a refund is appropriate, you must request it through Apple under Apple’s policies and processes.</p>
+    <p class=\"para\">Purchases are processed by Apple. We do not offer refunds directly. If you believe a refund is appropriate, you must request it through Apple under Apple’s policies and processes.</p>
 
-    <h2>6) Acceptable use</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">6) Acceptable use</h2>
 
-    <p>You must not:</p>
-    <ul>
+    <p class=\"para\">You must not:</p>
+    <ul class=\"list\">
       <li>attempt to bypass subscription checks or access controls</li>
       <li>interfere with or disrupt the Service</li>
       <li>use the Service unlawfully or in a way that infringes others’ rights</li>
       <li>reverse engineer, decompile, or attempt to extract source code (except where permitted by law)</li>
     </ul>
 
-    <h2>7) AI-assisted features</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">7) AI-assisted features</h2>
 
-    <p>The Service may include AI-assisted features (for example, summarisation of article text). AI outputs may be incorrect or incomplete. Do not rely on AI outputs as professional advice (including legal, medical, or financial advice).</p>
+    <p class=\"para\">The Service may include AI-assisted features (for example, summarisation of article text). AI outputs may be incorrect or incomplete. Do not rely on AI outputs as professional advice (including legal, medical, or financial advice).</p>
 
-    <h2>8) Intellectual property</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">8) Intellectual property</h2>
 
-    <p>The App, branding, and associated intellectual property rights are owned by or licensed to us. We grant you a personal, non-exclusive, non-transferable, revocable licence to use the App for personal, non-commercial purposes, subject to these Terms.</p>
+    <p class=\"para\">The App, branding, and associated intellectual property rights are owned by or licensed to us. We grant you a personal, non-exclusive, non-transferable, revocable licence to use the App for personal, non-commercial purposes, subject to these Terms.</p>
 
-    <h2>9) Changes to the Service and Terms</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">9) Changes to the Service and Terms</h2>
 
-    <p>We may update the Service or these Terms from time to time. If we make material changes, we will take reasonable steps to notify you in-app.</p>
-    <p>If you do not agree to changes, you should stop using the Service and (if you have a Subscription) cancel it through Apple.</p>
+    <p class=\"para\">We may update the Service or these Terms from time to time. If we make material changes, we will take reasonable steps to notify you in-app.</p>
+    <p class=\"para\">If you do not agree to changes, you should stop using the Service and (if you have a Subscription) cancel it through Apple.</p>
 
-    <h2>10) Liability</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">10) Liability</h2>
 
-    <p>Nothing in these Terms limits or excludes liability where it would be unlawful to do so (including liability for death or personal injury caused by negligence, or fraud).</p>
-    <p>Subject to that, we are responsible to you for foreseeable loss and damage caused by us. We are not responsible for:</p>
-    <ul>
+    <p class=\"para\">Nothing in these Terms limits or excludes liability where it would be unlawful to do so (including liability for death or personal injury caused by negligence, or fraud).</p>
+    <p class=\"para\">Subject to that, we are responsible to you for foreseeable loss and damage caused by us. We are not responsible for:</p>
+    <ul class=\"list\">
       <li>losses not caused by our breach or negligence</li>
       <li>business losses (the Service is for personal/consumer use)</li>
     </ul>
-    <p>Nothing in these Terms affects your statutory rights as a consumer.</p>
+    <p class=\"para\">Nothing in these Terms affects your statutory rights as a consumer.</p>
 
-    <h2>11) Privacy</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">11) Privacy</h2>
 
-    <p>Our Privacy Policy explains how we handle personal data and forms part of your agreement with us. It is available within the App and/or where we otherwise make it available to you.</p>
+    <p class=\"para\">Our Privacy Policy explains how we handle personal data and forms part of your agreement with us. It is available within the App and/or where we otherwise make it available to you.</p>
 
-    <h2>12) Termination and account deletion</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">12) Termination and account deletion</h2>
 
-    <p>You may stop using the Service at any time.</p>
+    <p class=\"para\">You may stop using the Service at any time.</p>
 
-    <p>You can delete your account in the App:</p>
-    <p><strong>Profile icon (top right) → Delete account</strong></p>
+    <p class=\"para\">You can delete your account in the App:</p>
+    <p class=\"para\"><strong>Profile icon (top right) → Delete account</strong></p>
 
-    <p>We may suspend or terminate your access as described in these Terms. If your account is terminated, access to subscription features may end, subject to Apple’s processes.</p>
+    <p class=\"para\">We may suspend or terminate your access as described in these Terms. If your account is terminated, access to subscription features may end, subject to Apple’s processes.</p>
 
-    <h2>13) Governing law</h2>
+    <section class=\"section\"><h2 class=\"subtitle\">13) Governing law</h2>
 
-    <p>These Terms are governed by the laws of England and Wales, and disputes will be handled by the courts of England and Wales, except where mandatory consumer protection rules apply.</p>
-  </main>
+    <p class=\"para\">These Terms are governed by the laws of England and Wales, and disputes will be handled by the courts of England and Wales, except where mandatory consumer protection rules apply.</p>
+  </main></section>
+<hr class="divider"/>
+<section class="cta">
+  <div class="cta-title">Questions about these terms?</div>
+  <p class="cta-text">If anything here is unclear, email us.</p>
+  <div class="cta-links">
+    <a class="btn primary" href="mailto:support@thebias.co.uk">Email support@thebias.co.uk</a>
+  </div>
+</section>
+<footer aria-label="Footer" class="footer">
+<span>The Bias 2026</span>
+<div class="footer-links">
+<a aria-label="The Bias on Instagram" class="footer-social" href="https://instagram.com/thebias_app" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect height="16" rx="4" stroke="currentColor" stroke-width="2" width="16" x="4" y="4"></rect>
+<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"></circle>
+<circle cx="17" cy="7" fill="currentColor" r="1.2"></circle>
+</svg>
+</a>
+<a aria-label="The Bias on Reddit" class="footer-social" href="https://reddit.com/u/the_bias_app" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" opacity=".8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+<path d="M12 6.2c1.9 0 3.7.5 5.1 1.3"></path>
+<path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3"></path>
+<path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"></path>
+<circle cx="9.2" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
+<circle cx="14.8" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
+<path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9"></path>
+<circle cx="17.7" cy="6.8" r="1.3"></circle>
+<path d="M12.2 4.2l2.2.5"></path>
+</g>
+</svg>
+</a>
+</div>
+</footer>
+</div>
 </body>
 </html>
