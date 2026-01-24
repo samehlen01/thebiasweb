@@ -490,6 +490,9 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
   
 .logo--mini{ font-size: 18px; }
 
+/* default: hide mobile-only svg */
+.howVisual--s2 svg.svgMobile{ display:none; }
+
 .howWrap{ border-radius:16px; }
 .howSlide{ border-radius:16px; }
 .howVisual{ border-radius:12px; }
@@ -607,58 +610,97 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
   /* Prevent any horizontal spill */
   html, body{ overflow-x:hidden; }
 
-  /* Header: bring back tagline without crowding */
+  /* Header (mobile): single-row brandlock (logo + tagline), CTA stays one-line */
+  body{ padding-top: 60px; }
   .appbar-inner{
-    padding: 10px 14px;
-    flex-direction: column;
-    align-items: stretch;
+    padding: 10px 12px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
   }
   .brandlock{
     display:flex;
-    flex-direction: column;
-    align-items:flex-start;
-    gap: 4px;
+    flex-direction: row;
+    align-items:center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .logo{
+    font-size: 18px;
+    white-space: nowrap;
   }
   .anchor{
     display:block !important;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.1;
     letter-spacing: .01em;
     color: rgba(17,17,17,.60);
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
   .nav{
-    width:100%;
-    justify-content: flex-end;
-    gap: 10px;
+    width:auto;
+    justify-content:flex-end;
+    gap: 8px;
+    flex: 0 0 auto;
   }
   /* Keep only the primary CTA on mobile */
   #openWaitlistBtn{ display:none !important; }
   #openWaitlistBtn2{
-    padding: 10px 12px;
-    font-size: 13px;
+    padding: 9px 10px;
+    font-size: 12px;
     border-radius: 999px;
+    white-space: nowrap; /* “Get early access” stays one line */
   }
+  #openWaitlistBtn2 svg{ display:none; }
 
   /* Hero preview: keep the phone mock inside its container */
+  .hero{ overflow:hidden; }
   .phoneShell{
     width: 100%;
     max-width: 440px;
     margin: 0 auto;
     padding: 14px;
   }
-  .hero{ overflow:hidden; }
+
+  /* Phone preview top row: keep logo + meta on one line (no wrapping logo) */
+  .phoneTop{ flex-wrap: nowrap; }
+  .logo--mini{ font-size: 16px; white-space: nowrap; flex: 0 0 auto; }
+  .chipRow{
+    font-size: 11px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
 
   /* How it works: bigger cards + bigger visuals */
   .howSlide{
-    min-height: 660px;
+    min-height: 760px;
     padding: 18px;
     gap: 12px;
   }
   .howVisual{
-    height: 300px;
+    height: 420px;
   }
+
+  /* Slide 1 & 2 visuals: rotate to portrait + scale up */
+  .howVisual--s1 svg{
+    width: 100%;
+    height: 100%;
+    transform: rotate(90deg) scale(1.15);
+    transform-origin: center;
+  }
+
+  /* Slide 2 uses a mobile-specific SVG so text stays horizontal */
+  .howVisual--s2 svg.svgDesktop{ display:none; }
+  .howVisual--s2 svg.svgMobile{ display:block; width:100%; height:100%; }
 }
+
 
 </style>
 </head>
@@ -808,7 +850,7 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 <div class="howTopRow">
 <div class="howTopBrand"><a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a></div>
 </div>
-<div aria-hidden="true" class="howVisual">
+<div aria-hidden="true" class="howVisual howVisual--s1">
 <svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <filter id="softAud"><fegaussianblur stddeviation="0.9"></fegaussianblur></filter>
@@ -859,8 +901,8 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 <div class="howTopRow">
 <div class="howTopBrand"><a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a></div>
 </div>
-<div aria-hidden="true" class="howVisual">
-<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<div aria-hidden="true" class="howVisual howVisual--s2">
+<svg class="svgDesktop" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
 <rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
 <!-- incoming article cards -->
 <g opacity="0.97">
@@ -898,6 +940,44 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 <text fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13.2" x="650" y="152">• Where reports diverge</text>
 <text fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13.2" x="650" y="176">• Main viewpoints</text>
 </svg>
+<svg class="svgMobile" viewBox="0 0 260 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="0" y="0" width="260" height="900" fill="rgba(244,238,227,.10)"/>
+  <!-- incoming cards (stacked) -->
+  <g opacity="0.97">
+    <rect x="20" y="70" width="220" height="76" rx="18" fill="rgba(255,250,242,.92)" stroke="rgba(17,17,17,.10)"/>
+    <text x="36" y="112" fill="rgba(17,17,17,.74)" font-family="Source Serif 4, Georgia, serif" font-size="13.8" font-weight="700">Strike forces commuters</text>
+
+    <rect x="20" y="168" width="220" height="76" rx="18" fill="rgba(255,250,242,.92)" stroke="rgba(17,17,17,.10)"/>
+    <text x="36" y="210" fill="rgba(17,17,17,.74)" font-family="Source Serif 4, Georgia, serif" font-size="13.8" font-weight="700">Union says pay fell short</text>
+
+    <rect x="20" y="266" width="220" height="76" rx="18" fill="rgba(255,250,242,.92)" stroke="rgba(17,17,17,.10)"/>
+    <text x="36" y="308" fill="rgba(17,17,17,.74)" font-family="Source Serif 4, Georgia, serif" font-size="13.8" font-weight="700">Emergency timetable set</text>
+  </g>
+
+  <!-- prism -->
+  <path d="M70 380 L130 470 L190 380 Z" fill="rgba(255,250,242,.78)" stroke="rgba(17,17,17,.14)" stroke-width="2"/>
+  <!-- lines into prism -->
+  <g stroke="rgba(17,17,17,.14)" stroke-linecap="round" stroke-width="2.5">
+    <path d="M130 342 L130 380"/>
+    <path d="M130 342 L150 380"/>
+    <path d="M130 342 L110 380"/>
+  </g>
+
+  <!-- outgoing beam -->
+  <g stroke="rgba(200,162,93,.90)" stroke-linecap="round" stroke-width="6">
+    <path d="M130 470 L130 520"/>
+  </g>
+
+  <!-- synthesis card -->
+  <rect x="26" y="540" width="208" height="220" rx="22" fill="rgba(255,250,242,.98)" stroke="rgba(17,17,17,.12)"/>
+  <text x="44" y="585" fill="rgba(17,17,17,.82)" font-family="Source Serif 4, Georgia, serif" font-size="15.2" font-weight="800">Transit strike:</text>
+  <text x="44" y="607" fill="rgba(17,17,17,.82)" font-family="Source Serif 4, Georgia, serif" font-size="15.2" font-weight="800">what’s known</text>
+
+  <text x="44" y="648" fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13">• What most agree on</text>
+  <text x="44" y="676" fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13">• Where reports diverge</text>
+  <text x="44" y="704" fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13">• Main viewpoints</text>
+</svg>
+
 </div>
 <h3 class="howTitle">One Event, Many Angles</h3>
 <p class="howBody">
