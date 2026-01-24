@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>THE BIAS. — One story, many angles.</title>
+<meta content="The Bias is a wide-angle news outlet: one coherent story built from broad global coverage, with traceable sourcing." name="description"/>
+<meta content="THE BIAS. — One story, many angles." property="og:title"/>
+<meta content="See the full picture: the key facts, major perspectives, and where coverage diverges — with sources." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --bg:#FFFAF2;
+      --card:#F4EEE3;
+      --ink:#111111;
+      --muted:#5C5C60;
+      --hair:rgba(17,17,17,.10);
+      --hair2:rgba(17,17,17,.08);
+      --gold:#C8A25D;
+      --deep:#7A1F27;
+      --rose:rgba(122,31,39,.18);
+      --radius:18px;
+      --max: 1040px;
+    }
+
+    
+
+.logo{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  font-size: 22px;
+  text-decoration: none;
+}
+.logo .dot{ color: var(--gold); }
+
+*{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      padding-top: 62px;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px 76px;}
+
+    /* Appbar */
+    .appbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      background: rgba(255,250,242,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .appbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 22px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brandlock{
+      display:flex;
+      align-items:baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+    .anchor{
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-link{
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+    .nav-link:hover{ color: rgba(17,17,17,.85); background: rgba(0,0,0,.03); }
+
+    .btn{
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(244,238,227,.55);
+      color: rgba(17,17,17,.82);
+      border-radius: 999px;
+      padding: 10px 13px;
+      cursor:pointer;
+      font-size: 13px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .btn:hover{ background: rgba(244,238,227,.9); }
+    .btn-primary{
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+    .btn-primary:hover{ filter: brightness(.98); }
+    .btn svg{ width: 16px; height: 16px; }
+
+    /* Hero */
+    .hero{
+      padding-top: 30px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items:center;
+    }
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin: 8px 0 12px;
+    }
+    h1.title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1.05;
+      letter-spacing: -1.1px;
+      margin: 0 0 14px;
+    }
+    .gold-dot{ color: var(--gold); }
+    .subtitle{
+      max-width: 60ch;
+      color: rgba(17,17,17,.72);
+      font-size: 18px;
+      margin: 0 0 18px;
+    }
+    .hero-ctas{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 18px 0 0;
+    }
+
+    /* Mock phone (placeholder) */
+    .phoneShell{
+      border-radius: 34px;
+      background: rgba(244,238,227,.42);
+      border: 1px solid rgba(17,17,17,.10);
+      padding: 18px;
+      position: relative;
+      min-height: 420px;
+      box-shadow: 0 18px 50px rgba(17,17,17,.08);
+      overflow:hidden;
+    }
+    .paperTexture{
+      position:absolute;
+      inset:0;
+      opacity:.35;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(17,17,17,.07), transparent 55%),
+        radial-gradient(circle at 70% 65%, rgba(17,17,17,.06), transparent 50%),
+        linear-gradient(180deg, rgba(255,255,255,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .phoneCard{
+      background: rgba(255,250,242,.96);
+      border: 1px solid rgba(17,17,17,.10);
+      border-radius: 22px;
+      padding: 18px;
+      position: relative;
+    }
+    .phoneTop{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+    .miniLogo{
+      font-family: "Source Serif 4", ui-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 18px;
+      display:flex;
+      gap: 4px;
+      align-items:baseline;
+      white-space: nowrap;
+    }
+    .miniLogo span:last-child{ color: var(--gold); }
+    .chipRow{
+      display:flex;
+      gap: 10px;
+      color: rgba(17,17,17,.55);
+      font-size: 12px;
+      align-items:center;
+      white-space: nowrap;
+    }
+    .chipDot{
+      width: 3px; height: 3px; border-radius: 999px;
+      background: rgba(17,17,17,.35);
+      display:inline-block;
+    }
+    .phoneHeadline{
+      font-family: "Source Serif 4", ui-serif;
+      font-weight: 650;
+      letter-spacing: -0.6px;
+      font-size: 28px;
+      line-height: 1.15;
+      margin: 6px 0 10px;
+    }
+    .phoneSub{
+      color: rgba(17,17,17,.62);
+      margin: 0 0 12px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .claimHint{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,17,17,.10);
+      background: rgba(244,238,227,.55);
+      color: rgba(17,17,17,.62);
+      padding: 8px 12px;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    .claimSwatch{
+      width: 14px; height: 10px;
+      border-radius: 3px;
+      background: rgba(200,162,93,.45);
+      border: 1px solid rgba(17,17,17,.08);
+    }
+
+    /* Section */
+    .section-title{
+      margin: 44px 0 12px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+    }
+
+    /* Feature grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 880px){
+      .grid{ grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.10);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: 0 1px 0 rgba(17,17,17,.04);
+    }
+    .card h2{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 650;
+      letter-spacing: -0.35px;
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+    .card p{ margin: 0 0 10px; color: rgba(17,17,17,.72); }
+
+    .pillrow{ display:flex; flex-wrap: wrap; gap: 8px; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      border: 1px solid rgba(17,17,17,.10);
+      background: rgba(255,255,255,.35);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 13px;
+      color: rgba(17,17,17,.70);
+      line-height: 1;
+    }
+    .pill-dot{
+      width: 7px; height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+      opacity: .9;
+      flex: 0 0 7px;
+    }
+
+    /* HOW IT WORKS — carousel */
+    .howWrap{
+      background: rgba(244,238,227,.34);
+      border: 1px solid var(--hair2);
+      border-radius: 22px;
+      padding: 16px;
+    }
+    .howCarousel{
+      display:flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 6px 2px 6px;
+    }
+    .howCarousel::-webkit-scrollbar{ height: 10px; }
+    .howCarousel::-webkit-scrollbar-thumb{
+      background: rgba(17,17,17,.10);
+      border-radius: 999px;
+      border: 3px solid rgba(0,0,0,0);
+      background-clip: padding-box;
+    }
+    .howSlide{
+      flex: 0 0 min(720px, 92%);
+      scroll-snap-align: start;
+      background: rgba(255,250,242,.92);
+      border: 1px solid rgba(17,17,17,.10);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 60px rgba(17,17,17,.07);
+      overflow:hidden;
+      min-height: 520px;
+
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    @media (min-width: 980px){
+      .howSlide{ flex-basis: 760px; min-height: 540px; }
+    }
+
+    .howTopRow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      padding-top: 2px;
+    }
+    .howTopBrand{
+      text-align:center;
+      font-family: "Source Serif 4", ui-serif;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 20px;
+      color: rgba(17,17,17,.82);
+    }
+    .howTopBrand .howVariant{
+      position:absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.45);
+      border: 1px solid rgba(17,17,17,.10);
+      background: rgba(244,238,227,.45);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .howVisual{
+      height: 230px;
+      border-radius: 18px;
+      background: rgba(244,238,227,.25);
+      border: 1px solid rgba(17,17,17,.06);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .howVisual svg{ width: 100%; height: 100%; }
+
+    .howTitle{
+      font-family: "Source Serif 4", ui-serif;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      font-size: 48px;
+      line-height: 1.08;
+      margin: 0;
+    }
+    .howBody{
+      margin: 0;
+      color: rgba(17,17,17,.72);
+      font-size: 18px;
+      max-width: 62ch;
+    }
+    .spacer{ flex: 1; }
+
+    /* Footer */
+    footer{
+      margin-top: 44px;
+      padding-top: 22px;
+      border-top: 1px solid var(--hair);
+      color: rgba(17,17,17,.55);
+      font-size: 13px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items:center;
+      justify-content: space-between;
+    }
+    .fine a{ text-decoration: none; border-bottom: 1px solid rgba(17,17,17,.18); }
+    .fine a:hover{ border-bottom-color: rgba(17,17,17,.35); }
+
+    /* Modal (simple) */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(17,17,17,.35);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 22px;
+      z-index: 50;
+    }
+    .modal{
+      width: min(560px, 100%);
+      background: var(--bg);
+      border: 1px solid rgba(17,17,17,.14);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(17,17,17,.18);
+    }
+    .modal h4{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      margin: 0 0 6px;
+      font-size: 22px;
+      letter-spacing: -0.4px;
+    }
+    .modal p{ margin: 0 0 12px; color: rgba(17,17,17,.72); }
+    .form{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    input[type="email"]{
+      flex: 1 1 220px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(244,238,227,.55);
+      padding: 11px 14px;
+      font-size: 14px;
+      outline: none;
+    }
+    input[type="email"]:focus{
+      border-color: rgba(200,162,93,.85);
+      box-shadow: 0 0 0 4px rgba(200,162,93,.18);
+    }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+      clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+
+    @media (max-width: 520px){
+      h1.title{ font-size: 42px; }
+      .anchor{ display:none; }
+      .nav-link{ display:none; }
+      .howTitle{ font-size: 40px; }
+      .howVariant{ display:none; }
+      .howSlide{ min-height: 560px; }
+    }
+  
+    .howVariant{display:none!important;}
+  </style>
+</head>
+<body>
+<header class="appbar" role="banner">
+<div class="appbar-inner">
+<div class="brandlock">
+<a aria-label="The Bias home" class="logo" href="#top">THE BIAS<span class="dot">.</span></a>
+<div class="anchor">One story, many angles.</div>
+</div>
+<nav aria-label="Primary" class="nav">
+<a class="nav-link" href="#features">Features</a>
+<a class="nav-link" href="#how">How it works</a>
+<a aria-haspopup="dialog" class="btn" href="#waitlist" id="openWaitlistBtn">
+          Join waitlist
+          <svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M9 7h8v8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn2">
+          Get early access
+          <svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M12 3v10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M8 10l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M5 21h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</a>
+</nav>
+</div>
+</header>
+<main class="wrap" id="top">
+<section aria-label="Hero" class="hero">
+<div>
+<div class="kicker">Wide-angle clarity</div>
+<h1 class="title">See the full picture<span class="gold-dot">.</span></h1>
+<p class="subtitle">
+          The Bias is a wide-angle news outlet — one coherent story per event, built from broad global coverage.
+          You get the essential facts and the major perspectives in one read, with traceable sourcing when you want to go deeper.
+        </p>
+<div class="hero-ctas">
+<a class="btn btn-primary" href="#waitlist" id="openWaitlistBtn3">Join the waitlist</a>
+<a class="btn" href="#features">Explore features</a>
+</div>
+</div>
+<div aria-label="Product preview" class="phoneShell">
+<div aria-hidden="true" class="paperTexture"></div>
+<div class="phoneCard">
+<div class="phoneTop">
+<div class="miniLogo">THE BIAS<span>.</span></div>
+<div aria-label="Meta" class="chipRow">
+<span>4-min read</span>
+<span aria-hidden="true" class="chipDot"></span>
+<span>Hundreds of sources</span>
+</div>
+</div>
+<div class="phoneHeadline">Hundreds of sources. One story.</div>
+<p class="phoneSub">
+            A premium, readable brief: what outlets agree on, where reports differ, and the main viewpoints — without opening ten tabs.
+          </p>
+<div class="claimHint">
+<span aria-hidden="true" class="claimSwatch"></span>
+            Claim mode on: tap a claim to see its source
+          </div>
+</div>
+</div>
+</section>
+<div class="section-title" id="features">Features</div>
+<section aria-label="Feature cards" class="grid">
+<article class="card">
+<h2>Hundreds of sources. One story<span class="gold-dot">.</span></h2>
+<p>
+          One clean read that combines the key facts and major angles across outlets and countries — designed for clarity over chaos.
+        </p>
+<div aria-label="Highlights" class="pillrow">
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Essential facts</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Major perspectives</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Coherent narrative</span>
+</div>
+</article>
+<article class="card">
+<h2>Transparency built into every story<span class="gold-dot">.</span></h2>
+<p>
+          Turn on Claim Mode to see where statements come from — and explore the full reading list behind the article.
+        </p>
+<div aria-label="Highlights" class="pillrow">
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Tap-to-source</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Supporting evidence</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Traceable confidence</span>
+</div>
+</article>
+<article class="card">
+<h2>Get the global perspective<span class="gold-dot">.</span></h2>
+<p>
+          Swipe through an International Outlook to see how overseas outlets frame the story — and what domestic coverage may miss.
+        </p>
+<div aria-label="Highlights" class="pillrow">
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Home + abroad</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Country-by-country</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Added context</span>
+</div>
+</article>
+<article class="card">
+<h2>Make up your own mind<span class="gold-dot">.</span></h2>
+<p>
+          We surface framing differences, highlight conflicting accounts, and make uncertainty explicit — so you can decide for yourself.
+        </p>
+<div aria-label="Highlights" class="pillrow">
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Where outlets diverge</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Disputed details</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Calm, rigorous tone</span>
+</div>
+</article>
+<article class="card">
+<h2>Your news. Your way<span class="gold-dot">.</span></h2>
+<p>
+          Choose what you follow, then pick a Feed Profile — a steady mix of editorial priority and personalisation, without black‑box engagement ranking.
+        </p>
+<div aria-label="Highlights" class="pillrow">
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Choose interests</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Feed profiles</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> You stay in control</span>
+</div>
+</article>
+<article class="card">
+<h2>A weekly newspaper. Built for you<span class="gold-dot">.</span></h2>
+<p>
+          The Rundown is your in‑app weekend paper: a personalised edition built around what you follow and the week’s key stories.
+        </p>
+<div aria-label="Highlights" class="pillrow">
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Weekend Edition</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> Calm sitting</span>
+<span class="pill"><span aria-hidden="true" class="pill-dot"></span> What to watch next</span>
+</div>
+</article>
+</section>
+<div class="section-title" id="how">How it works</div>
+<section aria-label="How it works carousel" class="howWrap">
+<div aria-label="How it works slides (selected set)" class="howCarousel" role="region" tabindex="0">
+<article class="howSlide">
+<div class="howTopRow">
+<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+</div>
+<div aria-hidden="true" class="howVisual">
+<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="softAud"><fegaussianblur stddeviation="0.9"></fegaussianblur></filter>
+</defs>
+<rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
+<!-- auditorium dots (no stage card) -->
+<g opacity="0.92">
+<g fill="rgba(17,17,17,.18)">
+<circle cx="450" cy="98" r="4.5"></circle>
+<circle cx="420" cy="104" r="4.5"></circle><circle cx="480" cy="104" r="4.5"></circle>
+<circle cx="390" cy="112" r="4.5"></circle><circle cx="510" cy="112" r="4.5"></circle>
+<circle cx="360" cy="124" r="4.5"></circle><circle cx="540" cy="124" r="4.5"></circle>
+<circle cx="330" cy="140" r="4.5"></circle><circle cx="570" cy="140" r="4.5"></circle>
+<circle cx="300" cy="160" r="4.5"></circle><circle cx="600" cy="160" r="4.5"></circle>
+<circle cx="270" cy="184" r="4.5"></circle><circle cx="630" cy="184" r="4.5"></circle>
+</g>
+<g fill="rgba(17,17,17,.14)">
+<circle cx="450" cy="152" r="4.5"></circle>
+<circle cx="410" cy="160" r="4.5"></circle><circle cx="490" cy="160" r="4.5"></circle>
+<circle cx="370" cy="172" r="4.5"></circle><circle cx="530" cy="172" r="4.5"></circle>
+<circle cx="330" cy="188" r="4.5"></circle><circle cx="570" cy="188" r="4.5"></circle>
+<circle cx="290" cy="206" r="4.5"></circle><circle cx="610" cy="206" r="4.5"></circle>
+</g>
+<g fill="rgba(17,17,17,.10)">
+<circle cx="450" cy="206" r="4.5"></circle>
+<circle cx="400" cy="216" r="4.5"></circle><circle cx="500" cy="216" r="4.5"></circle>
+<circle cx="350" cy="230" r="4.5"></circle><circle cx="550" cy="230" r="4.5"></circle>
+</g>
+</g>
+<!-- a few gold “voices” -->
+<circle cx="330" cy="140" fill="rgba(200,162,93,.55)" r="5.3"></circle>
+<circle cx="600" cy="160" fill="rgba(200,162,93,.45)" r="5.3"></circle>
+<circle cx="510" cy="112" fill="rgba(122,31,39,.18)" r="5.3"></circle>
+<!-- soft arc -->
+<path d="M210 226 C310 252 590 252 690 226" fill="none" filter="url(#softAud)" stroke="rgba(17,17,17,.10)" stroke-width="3"></path>
+</svg>
+</div>
+<h3 class="howTitle">We Read The Whole Room.</h3>
+<p class="howBody">
+            Thousands of outlets. Thousands of angles. We analyse coverage across the media spectrum so no single outlet sets the narrative.
+          </p>
+<div aria-hidden="true" class="spacer"></div>
+</article>
+<article class="howSlide">
+<div class="howTopRow">
+<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+</div>
+<div aria-hidden="true" class="howVisual">
+<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
+<!-- incoming article cards -->
+<g opacity="0.97">
+<rect fill="rgba(255,250,242,.92)" height="56" rx="18" stroke="rgba(17,17,17,.10)" width="300" x="64" y="36"></rect>
+<text fill="rgba(17,17,17,.74)" font-family="Source Serif 4, Georgia, serif" font-size="14.5" font-weight="700" x="86" y="68">
+      Strike forces commuters to reroute
+    </text>
+<rect fill="rgba(255,250,242,.92)" height="56" rx="18" stroke="rgba(17,17,17,.10)" width="300" x="64" y="102"></rect>
+<text fill="rgba(17,17,17,.74)" font-family="Source Serif 4, Georgia, serif" font-size="14.5" font-weight="700" x="86" y="134">
+      Union says pay offer fell short
+    </text>
+<rect fill="rgba(255,250,242,.92)" height="56" rx="18" stroke="rgba(17,17,17,.10)" width="300" x="64" y="168"></rect>
+<text fill="rgba(17,17,17,.74)" font-family="Source Serif 4, Georgia, serif" font-size="14.5" font-weight="700" x="86" y="200">
+      City: emergency timetable planned
+    </text>
+</g>
+<!-- lines to prism -->
+<g stroke="rgba(17,17,17,.14)" stroke-linecap="round" stroke-width="2.5">
+<path d="M364 64 L400 104"></path>
+<path d="M364 130 L400 130"></path>
+<path d="M364 196 L400 156"></path>
+</g>
+<!-- prism -->
+<path d="M400 86 L540 130 L400 174 Z" fill="rgba(255,250,242,.78)" stroke="rgba(17,17,17,.14)" stroke-width="2"></path>
+<!-- outgoing beam -->
+<g stroke="rgba(200,162,93,.90)" stroke-linecap="round" stroke-width="6">
+<path d="M540 130 L620 130"></path>
+</g>
+<!-- synthesis card -->
+<rect fill="rgba(255,250,242,.98)" height="132" rx="20" stroke="rgba(17,17,17,.12)" width="260" x="620" y="64"></rect>
+<text fill="rgba(17,17,17,.82)" font-family="Source Serif 4, Georgia, serif" font-size="16.2" font-weight="800" x="650" y="96">
+    Transit strike: what’s known
+  </text>
+<text fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13.2" x="650" y="128">• What most outlets agree on</text>
+<text fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13.2" x="650" y="152">• Where reports diverge</text>
+<text fill="rgba(17,17,17,.58)" font-family="Inter, system-ui" font-size="13.2" x="650" y="176">• Main viewpoints</text>
+</svg>
+</div>
+<h3 class="howTitle">One Event, Many Angles</h3>
+<p class="howBody">
+            We track real-world events as they unfold, then group coverage so you can see what everyone agrees on and where perspectives diverge.
+          </p>
+<div aria-hidden="true" class="spacer"></div>
+</article>
+<article class="howSlide">
+<div class="howTopRow">
+<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+</div>
+<div aria-hidden="true" class="howVisual">
+<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
+<!-- page -->
+<rect fill="rgba(255,250,242,.98)" height="204" rx="20" stroke="rgba(17,17,17,.12)" width="680" x="110" y="28"></rect>
+<text fill="rgba(17,17,17,.82)" font-family="Source Serif 4, Georgia, serif" font-size="18" font-weight="800" x="150" y="62">
+    What happened
+  </text>
+<!-- paragraph highlights (target phrases) -->
+<rect fill="rgba(200,162,93,.28)" height="20" rx="10" width="258" x="150" y="86"></rect>
+<rect fill="rgba(200,162,93,.22)" height="20" rx="10" width="430" x="150" y="114"></rect>
+<rect fill="rgba(122,31,39,.14)" height="20" rx="10" width="350" x="150" y="142"></rect>
+<rect fill="rgba(122,31,39,.12)" height="20" rx="10" width="300" x="150" y="170"></rect>
+<!-- paragraph (readable, normal prose) -->
+<text fill="rgba(17,17,17,.74)" font-family="Inter, system-ui" font-size="14.5" x="150" y="101">
+<tspan dy="0" x="150">A 24‑hour transit strike began early Monday, leaving most routes offline.</tspan>
+<tspan dy="28" x="150">Officials said a reduced timetable would run; the union blamed pay and staffing.</tspan>
+<tspan dy="28" x="150">Some coverage led with commuter disruption, while others centred negotiations.</tspan>
+<tspan dy="28" x="150">The shared facts stayed similar — the emphasis and tone were what changed.</tspan>
+</text>
+<!-- tiny key -->
+<g opacity="0.85">
+<rect fill="rgba(244,238,227,.55)" height="56" rx="18" stroke="rgba(17,17,17,.08)" width="178" x="612" y="44"></rect>
+<circle cx="634" cy="70" fill="rgba(200,162,93,.68)" r="6.2"></circle>
+<text fill="rgba(17,17,17,.56)" font-family="Inter, system-ui" font-size="12.8" x="646" y="74">Verified detail</text>
+<circle cx="634" cy="92" fill="rgba(122,31,39,.22)" r="6.2"></circle>
+<text fill="rgba(17,17,17,.56)" font-family="Inter, system-ui" font-size="12.8" x="646" y="96">Framing choice</text>
+</g>
+</svg>
+</div>
+<h3 class="howTitle">Separate Fact<br/>From Framing</h3>
+<p class="howBody">
+            We analyse coverage, separating reported facts from framing and perspectives.
+          </p>
+<div aria-hidden="true" class="spacer"></div>
+</article>
+<article class="howSlide">
+<div class="howTopRow">
+<div class="howTopBrand logo">THE BIAS<span class="dot">.</span></div>
+</div>
+<div aria-hidden="true" class="howVisual">
+<svg viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="blur6"><fegaussianblur stddeviation="6"></fegaussianblur></filter>
+<lineargradient id="fade3" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="rgba(255,250,242,.10)"></stop>
+<stop offset="100%" stop-color="rgba(255,250,242,.62)"></stop>
+</lineargradient>
+</defs>
+<rect fill="rgba(244,238,227,.10)" height="260" width="900" x="0" y="0"></rect>
+<!-- blurred headline cards -->
+<g filter="url(#blur6)" opacity="0.92">
+<rect fill="rgba(255,250,242,.92)" height="82" rx="20" stroke="rgba(17,17,17,.10)" width="380" x="95" y="30"></rect>
+<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="125" y="66">
+      Strike begins after talks fail
+    </text>
+<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="125" y="92">
+      Services reduced • delays expected
+    </text>
+<rect fill="rgba(255,250,242,.92)" height="82" rx="20" stroke="rgba(17,17,17,.10)" width="330" x="505" y="40"></rect>
+<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="535" y="76">
+      Union: pay offer not enough
+    </text>
+<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="535" y="102">
+      Officials call for return to talks
+    </text>
+<rect fill="rgba(255,250,242,.92)" height="88" rx="20" stroke="rgba(17,17,17,.10)" width="360" x="120" y="138"></rect>
+<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="150" y="178">
+      Economic costs mount
+    </text>
+<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="150" y="204">
+      Businesses warn of lost revenue
+    </text>
+<rect fill="rgba(255,250,242,.92)" height="86" rx="20" stroke="rgba(17,17,17,.10)" width="320" x="510" y="146"></rect>
+<text fill="rgba(17,17,17,.34)" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="700" x="540" y="184">
+      What happens next?
+    </text>
+<text fill="rgba(17,17,17,.24)" font-family="Inter, system-ui" font-size="13" x="540" y="210">
+      Key unknowns remain
+    </text>
+</g>
+<rect fill="url(#fade3)" height="260" opacity="0.78" width="900" x="0" y="0"></rect>
+<!-- crisp centre logo chip -->
+<g opacity="1">
+<rect fill="rgba(255,250,242,.985)" height="76" rx="26" stroke="rgba(17,17,17,.14)" width="240" x="330" y="92"></rect>
+<text dominant-baseline="middle" fill="rgba(17,17,17,.92)" font-family="Source Serif 4, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.7px" text-anchor="middle" x="450" y="130">THE BIAS</text>
+<text dominant-baseline="middle" fill="rgba(200,162,93,.98)" font-family="Source Serif 4, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.7px" text-anchor="start" x="524" y="130">.</text>
+</g>
+</svg>
+</div>
+<h3 class="howTitle">Clarity In The Chaos</h3>
+<p class="howBody">
+            We distill the coverage into a single article you can trust: what’s consistent, and where narratives diverge.
+          </p>
+<div aria-hidden="true" class="spacer"></div>
+</article>
+</div>
+</section>
+<div class="section-title" id="waitlist">Get early access</div>
+<section aria-label="Waitlist" class="card" style="padding:18px;">
+<h2 style="margin-bottom:8px;">Join the waitlist<span class="gold-dot">.</span></h2>
+<p style="margin:0 0 14px;color:rgba(17,17,17,.72);max-width:68ch">
+        Get a single email when early access is available. No spam — just the link.
+      </p>
+<div class="hero-ctas">
+<button class="btn btn-primary" id="openWaitlistBtn4" type="button">Join waitlist</button>
+<a class="btn" href="#top">Back to top</a>
+</div>
+<p style="margin:12px 0 0;color:rgba(17,17,17,.52);font-size:13px">
+        Tip: wire this modal form to your real waitlist endpoint (Mailchimp / EmailOctopus / ConvertKit / custom).
+      </p>
+</section>
+<footer>
+<div class="fine">© <span id="year"></span> <span class="logo">THE BIAS<span class="dot">.</span></span></div>
+<div class="fine">
+<a href="#" onclick="alert('Replace with your privacy policy URL.'); return false;">Privacy</a>
+         · 
+        <a href="#" onclick="alert('Replace with your contact URL/email.'); return false;">Contact</a>
+</div>
+</footer>
+</main>
+<!-- Simple waitlist modal (front-end only) -->
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal-backdrop" id="modal" role="dialog">
+<div class="modal">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+<div>
+<h4 id="modalTitle">Join the waitlist</h4>
+<p>Get a single email when early access is available.</p>
+</div>
+<button aria-label="Close" class="btn" id="closeModalBtn" type="button">Close</button>
+</div>
+<form class="form" id="waitlistForm">
+<label class="sr-only" for="email">Email</label>
+<input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+<button class="btn btn-primary" type="submit">Notify me</button>
+</form>
+<p id="formNote" style="margin:12px 0 0;color:rgba(17,17,17,.52);font-size:13px">
+        This demo stores nothing. Wire this to your backend / ESP endpoint.
+      </p>
+</div>
+</div>
+<script>
+    const modal = document.getElementById('modal');
+    const openBtns = ['openWaitlistBtn','openWaitlistBtn2','openWaitlistBtn3','openWaitlistBtn4']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    const closeBtn = document.getElementById('closeModalBtn');
+    const form = document.getElementById('waitlistForm');
+    const note = document.getElementById('formNote');
+
+    function openModal(){
+      modal.style.display = 'flex';
+      setTimeout(() => document.getElementById('email')?.focus(), 0);
+    }
+    function closeModal(){
+      modal.style.display = 'none';
+    }
+
+    openBtns.forEach(b => b.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); }));
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      note.textContent = "Thanks — you're on the list (demo). Replace this with a real POST request.";
+      form.reset();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
