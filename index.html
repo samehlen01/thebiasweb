@@ -633,14 +633,15 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
   }
   .anchor{
     display:block !important;
-    font-size: 12px;
+    font-size: clamp(8px, 2.2vw, 10px);
     line-height: 1.1;
-    letter-spacing: .01em;
+    letter-spacing: 0;
     color: rgba(17,17,17,.60);
     white-space: nowrap;
-    overflow:hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
+    text-overflow: clip;
     min-width: 0;
+    flex: 1 1 auto;
   }
   .nav{
     width:auto;
@@ -669,9 +670,9 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 
   /* Phone preview top row: keep logo + meta on one line (no wrapping logo) */
   .phoneTop{ flex-wrap: nowrap; }
-  .logo--mini{ font-size: 16px; white-space: nowrap; flex: 0 0 auto; }
+  .logo--mini{ font-size: 14px; white-space: nowrap; flex: 0 0 auto; }
   .chipRow{
-    font-size: 11px;
+    font-size: 10px;
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;
@@ -680,19 +681,21 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 
   /* How it works: bigger cards + bigger visuals */
   .howSlide{
-    min-height: 760px;
+    min-height: 920px;
     padding: 18px;
     gap: 12px;
   }
   .howVisual{
-    height: 420px;
+    height: 580px;
   }
 
   /* Slide 1 & 2 visuals: rotate to portrait + scale up */
+  .howVisual--s1{ overflow:hidden; }
   .howVisual--s1 svg{
-    width: 100%;
-    height: 100%;
-    transform: rotate(90deg) scale(1.15);
+    width: 140%;
+    height: 140%;
+    display:block;
+    transform: rotate(90deg) scale(2.15);
     transform-origin: center;
   }
 
@@ -994,19 +997,18 @@ box-shadow: 0 18px 50px rgba(17,17,17,.08);
 <div class="howVisual" aria-hidden="true">
   <div class="paraMock">
     <p>
-      Transit workers began a <span class="hl-gold">24‑hour strike</span> at <span class="hl-gold">6:00 a.m.</span>,
-      halting most services across the network. Officials said <span class="hl-gold">limited routes</span> will run under an
-      <span class="hl-gold">emergency timetable</span>, while the union pointed to <span class="hl-rose">pay</span> and
-      <span class="hl-rose">staffing levels</span>. Some outlets lead with <span class="hl-rose">commuter disruption</span>
-      and cancellations; others focus on the <span class="hl-rose">negotiation breakdown</span> and what it suggests about
-      wider labour tensions.
-</p>
+<span class="hl-gold">Transit workers began a 24‑hour strike at 6:00 a.m., halting most services across the network.</span>
+      <span class="hl-rose">Officials warned commuters to expect “severe disruption” and urged people to avoid peak travel.</span>
+      <span class="hl-gold">The union said overnight talks broke down, and the city published an emergency timetable with limited routes.</span>
+      <span class="hl-rose">Union leaders described the latest pay offer as “falling short”, while the mayor called the walkout “unnecessary”.</span>
+      <span class="hl-gold">Further negotiations are expected, but no return‑to‑work time was announced by midday.</span>
+    </p>
   </div>
 </div>
 
-<h3 class="howTitle">Separate Fact<br/>From Framing</h3>
+<h3 class="howTitle">What Happened — And The Angle</h3>
 <p class="howBody">
-            We analyse coverage, separating reported facts from framing and perspectives.
+            Read a clean account — with emphasis and interpretation made visible.
           </p>
 <div aria-hidden="true" class="spacer"></div>
 </article>
