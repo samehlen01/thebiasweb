@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>What we do – The Bias</title>
+<link href="/assets/LOGO.png" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet"/>
+<style>
+
+    :root{
+      --bg:#FFFAF2;          /* Newsprint Ivory */
+      --card:#F4EEE3;        /* Contrast Print */
+      --ink:#111111;         /* Deep Black */
+      --muted:#5C5C60;
+      --hair:rgba(17,17,17,.10);
+      --gold:#C8A25D;        /* Muted Gold */
+      --accent:#7A1F27;      /* Deep Red */
+      --radius: 4px;
+      --max: 920px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      padding-top: 62px;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px 76px;}
+
+    /* Top bar (matching article pages) */
+    .appbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      background: rgba(255,250,242,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .appbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position: relative;
+    }
+    .navlink{
+      position:absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+    }
+    .navlink:hover{ color: rgba(17,17,17,.85); }
+    .about-link{
+      position:absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      text-decoration: none;
+    }
+    .about-link:hover{ color: rgba(17,17,17,.85); }
+
+    .logo{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  font-size: 22px;
+  text-decoration: none;
+}
+    .logo .dot{ color: var(--gold); }
+.logo-img{
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    /* Typography */
+    h1, h2, h3{margin:0}
+    h1.title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 18px 0 10px;
+    }
+    p.lede{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.85;
+      color: rgba(17,17,17,.82);
+      max-width: 74ch;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.60);
+    }
+    .kicker .pip{
+      width:6px;height:6px;border-radius:999px;background: var(--gold);
+      display:inline-block;
+    }
+
+    /* Layout blocks */
+    .hero{
+      margin-top: 22px;
+      padding: 18px 18px 22px;
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-radius: var(--radius);
+    }
+    .hero-top{
+      display:flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .tagline{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      margin-top: 6px;
+      color: rgba(17,17,17,.92);
+    }
+    .actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(255,250,242,.70);
+      text-decoration:none;
+      font-size: 13px;
+      color: rgba(17,17,17,.80);
+      white-space: nowrap;
+    }
+    .btn:hover{ background: rgba(255,250,242,.92); }
+    .btn.primary{
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+    .btn.primary:hover{ filter: brightness(.98); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (min-width: 840px){
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-radius: var(--radius);
+      padding: 16px 16px 18px;
+      min-height: 150px;
+    }
+    .card-title{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin-bottom: 10px;
+    }
+    .card-head{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.12;
+      margin-bottom: 8px;
+      letter-spacing: -0.012em;
+    }
+    .card-body{
+      margin: 0;
+      color: rgba(17,17,17,.82);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .section{ margin-top: 28px; }
+    h2.subtitle{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 650;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -0.012em;
+      margin: 0 0 8px;
+    }
+    p.para{ margin: 0 0 14px; font-size: 17px; line-height: 1.85; color: rgba(17,17,17,.90); max-width: 76ch; }
+    hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (min-width: 900px){
+      .split{ grid-template-columns: 1.25fr .75fr; }
+    }
+
+    .aside-stack{ display:grid; gap: 10px; }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 16px;
+      color: rgba(17,17,17,.88);
+    }
+    .list li{ margin: 10px 0; }
+
+    /* Feature detail blocks (full text, not "cards") */
+    .feature-blocks{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 900px){
+      .feature-blocks{
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+    }
+    .feature-title{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin: 0 0 10px 0;
+    }
+    .feature-body{
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(17,17,17,.90);
+    }
+    .feature-body em{ font-style: italic; }
+    .feature-list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(17,17,17,.88);
+    }
+    .feature-list li{ margin: 8px 0; }
+
+    .aside{
+      background: var(--card);
+      border: 1px solid rgba(17,17,17,.08);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .aside-title{
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,.55);
+      margin-bottom: 8px;
+    }
+    .aside-body{ font-size: 15px; color: rgba(17,17,17,.90); line-height: 1.7; margin: 0; }
+
+    .steps{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
+    }
+    .step{
+      background: rgba(255,250,242,.55);
+      border: 1px solid rgba(17,17,17,.10);
+      border-radius: var(--radius);
+      padding: 12px 12px;
+    }
+    .step-top{
+      display:flex;
+      gap: 10px;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .step-num{
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .step-title{
+      font-weight: 600;
+      color: rgba(17,17,17,.92);
+      font-size: 14px;
+      flex: 1 1 auto;
+    }
+    .step-body{
+      margin-top: 6px;
+      font-size: 14px;
+      color: rgba(17,17,17,.82);
+      line-height: 1.7;
+    }
+
+    .cta{
+      margin-top: 24px;
+      padding: 18px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17,17,17,.10);
+      background: var(--card);
+      }
+    .cta-title{
+      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .cta-text{
+      margin: 0;
+      color: rgba(17,17,17,.82);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 80ch;
+    }
+    .cta-links{
+      margin-top: 12px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .cta a{ color: inherit; }
+
+    .footer{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hair);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(17,17,17,.55);
+      flex-wrap: wrap;
+    }
+    .footer-links{ display:flex; align-items:center; gap: 8px; }
+    .footer-social{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 3px;
+      border: 1px solid rgba(17,17,17,.12);
+      color: rgba(17,17,17,.6);
+      text-decoration: none;
+    }
+    .footer-social:hover{ color: rgba(17,17,17,.85); }
+    .footer-social svg{ width: 14px; height: 14px; }
+
+    @media (max-width: 700px){
+      .wrap{padding: 0 18px 70px;}
+      h1.title{font-size: 42px;}
+      h2.subtitle{font-size: 30px;}
+    }
+  
+
+  .doc-wrap .subtitle{font-size:30px}
+  @media (max-width:700px){.doc-wrap .subtitle{font-size:28px}}
+
+  /* Enhancements for scannability and structure */
+  .subtitle + .subhead {
+    margin-top: -6px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: rgba(17,17,17,.55);
+  }
+  .section { margin-top: 48px; }
+  .section + .section { margin-top: 56px; }
+
+  /* FOCS 2x2 grid */
+  .focs-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin:20px 0 22px;
+  }
+  .focs-item{
+    border:1px solid rgba(17,17,17,.12);
+    border-radius: var(--radius);
+    padding:14px;
+    background: rgba(255,250,242,.45);
+  }
+  .focs-item strong{
+    display:block;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:12px;
+    margin-bottom:6px;
+  }
+
+  /* Jump links */
+  .toc{
+    margin-top:14px;
+    font-size:13px;
+    color: rgba(17,17,17,.65);
+  }
+  .toc a{ text-decoration:none; }
+  .toc span{ margin-right:10px; }
+
+  /* Quieter close */
+  .quiet-close{
+    text-align:center;
+    color: rgba(17,17,17,.65);
+    margin:60px 0 20px;
+  }
+
+/* --- What we do: readability upgrades --- */
+.section{ margin-top: 26px; } /* more vertical rhythm */
+@media (max-width:700px){ .section{ margin-top: 22px; } }
+
+.subhead{
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(17,17,17,.62);
+}
+.jump{
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  font-size: 13px;
+}
+.jump a{
+  color: rgba(17,17,17,.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(17,17,17,.18);
+}
+.jump a:hover{ border-bottom-color: rgba(17,17,17,.45); }
+
+.hr-soft{
+  height: 1px;
+  border: 0;
+  background: rgba(17,17,17,.10);
+  margin: 26px 0 0;
+}
+
+.focs-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width:700px){
+  .focs-grid{ grid-template-columns: 1fr; }
+}
+.focs-card{
+  border: 1px solid rgba(17,17,17,.12);
+  border-radius: var(--radius);
+  background: rgba(255,250,242,.55);
+  padding: 14px 14px;
+}
+.focs-card .label{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.55);
+  margin: 0 0 8px;
+}
+.focs-card .desc{
+  margin: 0;
+  color: rgba(17,17,17,.86);
+}
+
+.callout{
+  border: 1px solid rgba(17,17,17,.12);
+  border-radius: var(--radius);
+  background: rgba(244,238,227,.70);
+  padding: 14px 14px;
+  margin-top: 14px;
+}
+.callout strong{ font-weight: 600; }
+.callout p{ margin: 0; }
+
+.emphasis{
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(17,17,17,.18);
+  color: rgba(17,17,17,.80);
+}
+
+/* --- Closing motif --- */
+.close-wrap{
+  margin-top: 26px;
+  text-align: center;
+}
+.close-dot{
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C9A24D; /* warm gold */
+  margin-bottom: 8px;
+}
+.close-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.55);
+  margin: 6px 0 6px;
+}
+
+.quiet-close{
+    text-align: center;
+    margin: 26px 0 14px;
+  }
+  .quiet-close .qc-title{
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.25;
+    color: rgba(17,17,17,.92);
+    margin-bottom: 6px;
+  }
+  .quiet-close .qc-text{
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(17,17,17,.70);
+  }
+
+  .gold-stop{
+    color: #C8A25D;
+  }
+
+</style>
+</head>
+<body>
+<header class="appbar">
+<div class="appbar-inner">
+<a class="about-link" href="/">Home</a>
+<a aria-label="The Bias" class="logo" href="#top">THE BIAS<span class="dot">.</span></a>
+</div>
+</header>
+<div class="wrap doc-wrap">
+
+<section class="hero">
+  <div class="hero-top">
+    <div>
+      <div class="kicker"><span class="pip"></span>Mission</div>
+      <h1 class="title">What we do</h1>
+      <p class="lede" style="margin-top:10px;">
+        Wide-angle journalism is our response to single‑lens news — built to show the full picture of complex events.
+      </p>
+
+<div class="toc">
+  <span><a href="#wide-angle">Wide-angle journalism</a></span>
+  <span><a href="#focs">The FOCS framework</a></span>
+  <span><a href="#how-it-works">How it works</a></span>
+  <span><a href="#why-now">Why this couldn’t exist before</a></span>
+</div>
+
+    </div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="subtitle" id="wide-angle">What is wide-angle journalism?</h2>
+<p class="subhead">A different way of constructing news stories</p>
+  <p class="para">
+    The Bias is the world’s first wide-angle news outlet. Wide-angle journalism is a concept we developed in response
+    to how most news is still produced today. Traditional outlets usually tell stories through a single editorial lens —
+    that of a writer, editor, or publication.
+  </p>
+  <p class="para">
+    A wide-angle news outlet takes a different approach. Instead of presenting one interpretation, it aims to show the
+    full picture of a real-world event by bringing together broad coverage, key facts, major perspectives, where coverage conflicts, and what remains unclear — in one coherent read.
+  </p>
+</section>
+
+<section class="section" id="values">
+  <h2 class="subtitle">The values behind wide-angle journalism</h2>
+  
+<p class="subhead">Principles that shape how every article is built</p>
+  <p class="para">
+    Wide-angle journalism isn’t just about using more sources. It’s underpinned by three core values that directly
+    shape how every article at The Bias is built.
+  </p>
+  <ul class="list">
+    <li><strong>Agency</strong> — we don’t try to steer readers toward a conclusion. Our role is to equip people with
+    the information they need to form their own views.</li>
+    <li><strong>Transparency</strong> — readers are given visibility into where information comes from and how claims
+    are supported.</li>
+    <li><strong>Honesty</strong> — uncertainty, disagreement, and speculation are surfaced clearly rather than hidden.</li>
+  </ul>
+</section>
+
+<section class="section">
+  
+<h2 class="subtitle" id="focs">The FOCS framework</h2>
+<p class="subhead">Separating certainty, interpretation, and uncertainty</p>
+<p class="para">
+  To turn wide-angle journalism from an idea into a working system, we developed the FOCS framework.
+</p>
+<div class="focs-grid">
+  <div class="focs-item"><strong>Fact</strong>Verifiable claims supported by reporting</div>
+<div class="focs-item"><strong>Opinion</strong>Interpretation, judgement, or viewpoint</div>
+  <div class="focs-item"><strong>Consequence</strong>Discussed implications or downstream effects</div>
+  <div class="focs-item"><strong>Speculation</strong>Projections, assumptions, or unresolved possibilities</div>
+</div>
+<p class="para">
+  By separating reporting into these categories, FOCS helps distinguish what is established, what is interpretive,
+  and what remains uncertain — making disagreement and consensus easier to see at a glance.
+</p>
+</section>
+
+<section class="section">
+  <h2 class="subtitle" id="how-it-works">How it works</h2>
+<p class="subhead">From breaking news to a single coherent article</p>
+  <p class="para">
+    Behind every article is a system designed to follow stories as they emerge and evolve. Our news engine combines
+    custom-built algorithms with large language models to analyse coverage and synthesise original reporting.
+  </p>
+  <ol class="list">
+    <li><strong>Ingestion</strong> — our engine continuously monitors a broad range of sources (currently over 300),
+    tracking stories as they break.</li>
+    <li><strong>Clustering</strong> — articles are grouped using semantic similarity, allowing us to track real-world
+    events even when outlets frame them differently.</li>
+    <li><strong>Analysis</strong> — coverage is examined using the FOCS framework to separate facts, opinions,
+    consequences, and speculation.</li>
+    <li><strong>Synthesis</strong> — we publish a single article that shows what’s agreed, what’s contested, and what
+    remains uncertain. When you want to go deeper, key claims can be traced back to the reporting behind them.</li>
+  </ol>
+</section>
+
+<section class="section">
+  <h2 class="subtitle" id="why-now">Why this couldn’t exist before</h2>
+<p class="subhead">Scale, speed, and synthesis made possible by recent advances</p>
+  <p class="para">
+    Wide-angle journalism requires breadth and speed at the same time. To present the full picture of a breaking
+    story, large volumes of reporting must be analysed, grouped, and understood in near real time.
+  </p>
+  <p class="para">
+    Until recently, this wasn’t feasible. Manually tracking hundreds of sources, clustering related coverage, and
+    extracting structure from reporting would have been too slow and inconsistent to keep pace with the news cycle.
+  </p>
+  <p class="para">
+    Advances in embedding models now allow us to cluster articles by meaning rather than headlines, while faster
+    large-scale language analysis enables high-quality synthesis at scale. This makes it possible to build clear,
+    timely articles that reflect genuine agreement, disagreement, and uncertainty across sources.
+  </p>
+  <p class="para">
+    Wide-angle journalism becomes practical when analysis and synthesis can run fast enough, accurately enough, and at sufficient scale to keep pace with the news cycle and stay useful to readers.
+  </p>
+</section>
+
+<hr class="hr-soft" aria-hidden="true"/>
+<section class="section" id="reader">
+  <h2 class="subtitle">Built around the reader</h2>
+  <p class="subhead">A premium, calm reading experience — designed for one coherent read.</p>
+  <p class="para">
+    Before building The Bias, we spent extensive time exploring existing news products. Many aggregators and
+    summarisers contain useful elements, but most still require readers to jump between articles to get a balanced
+    view.
+  </p>
+  <p class="para">
+    We decided to put user experience at the centre of everything we do. Reading The Bias is designed for one calm, high-quality sitting — with the feel of a Sunday paper.
+  </p>
+</section>
+
+<section class="section" id="features">
+  <h2 class="subtitle">Other key features</h2>
+  <p class="subhead">Tools that add breadth and depth without adding clutter.</p>
+  <ul class="list">
+    <li><strong>International Outlook</strong> — see how outlets in different countries report on the same event and
+    what domestic coverage may be missing.</li>
+    <li><strong>The Rundown</strong> — a weekly, personalised newspaper built around the topics you care about,
+    including under-reported stories and key developments to watch.</li>
+  </ul>
+</section>
+
+<section class="section" id="next">
+  <h2 class="subtitle">Looking ahead</h2>
+  <p class="subhead">What we’re building next to widen the lens further.</p>
+  <ul class="list">
+    <li><strong>Language extensions</strong> — support for 10+ languages so access to perspective isn’t limited by
+    language.</li>
+    <li><strong>Audio</strong> — in-app, podcast-style listening to understand the full picture on the go.</li>
+  </ul>
+</section>
+
+<hr class="divider"/>
+
+<div class="quiet-close" aria-label="Closing line">
+  <div class="qc-title">One story. Many angles<span class="gold-stop">,</span></div>
+  <div class="qc-text">A clearer way to understand the news.</div>
+</div>
+
+<footer aria-label="Footer" class="footer">
+<span>The Bias 2026</span>
+<div class="footer-links">
+<a aria-label="The Bias on Instagram" class="footer-social" href="https://instagram.com/thebias_app" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect height="16" rx="4" stroke="currentColor" stroke-width="2" width="16" x="4" y="4"></rect>
+<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"></circle>
+<circle cx="17" cy="7" fill="currentColor" r="1.2"></circle>
+</svg>
+</a>
+<a aria-label="The Bias on Reddit" class="footer-social" href="https://reddit.com/u/the_bias_app" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" opacity=".8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+<path d="M12 6.2c1.9 0 3.7.5 5.1 1.3"></path>
+<path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3"></path>
+<path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"></path>
+<circle cx="9.2" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
+<circle cx="14.8" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
+<path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9"></path>
+<circle cx="17.7" cy="6.8" r="1.3"></circle>
+<path d="M12.2 4.2l2.2.5"></path>
+</g>
+</svg>
+</a>
+</div>
+</footer>
+</div>
+</body>
+</html>
