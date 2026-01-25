@@ -920,70 +920,6 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 }
 .cta-btn:hover{ background: rgba(17,18,20,.98); }
 
-/* Scroll nudge */
-.nudge{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 66px; /* above follow bar */
-  z-index: 40;
-  display: none;
-  padding: 10px 14px;
-}
-.nudge.show{ display:block; }
-.nudge-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  border-radius: 14px;
-  border: 1px solid rgba(17,18,20,.12);
-  background: rgba(255,250,242,.96);
-  box-shadow: 0 18px 45px rgba(0,0,0,.12);
-  padding: 10px 12px;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.nudge-title{
-  font-weight: 650;
-  color: rgba(17,18,20,.88);
-  font-size: 13px;
-}
-.nudge-sub{
-  font-size: 12px;
-  color: rgba(17,18,20,.60);
-}
-.nudge-actions{
-  display:flex;
-  align-items:center;
-  gap: 8px;
-}
-.nudge-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 9px 12px;
-  border-radius: 12px;
-  background: rgba(17,18,20,.92);
-  color: rgba(255,250,242,.98);
-  text-decoration:none;
-  font-weight: 650;
-  font-size: 12px;
-}
-.nudge-btn:hover{ background: rgba(17,18,20,.98); }
-.nudge-close{
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  border: 1px solid rgba(17,18,20,.12);
-  background: transparent;
-  color: rgba(17,18,20,.70);
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
-}
-.nudge-close:hover{ color: rgba(17,18,20,.95); background: rgba(0,0,0,.03); }
-
 /* Exit modal show helpers */
 .modal-backdrop.show{ display:block; }
 .modal.show{ display:block; }
@@ -992,8 +928,6 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   .cta-card{ grid-template-columns: 1fr; }
   .cta-right{ align-items: stretch; }
   .cta-btn{ width: 100%; }
-  .nudge-inner{ flex-direction: column; align-items: stretch; }
-  .nudge-actions{ justify-content: space-between; width:100%; }
 }
 </style>
 </head>
@@ -1019,7 +953,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/harry-styles-announces-first-tour-in-three-years-with-seven-city-global-residency-including-six-wembley-shows-1769362563-9ae8369b.png" alt="Hero image" /></div>
 
     <section class="meta-card">
-      <div class="meta-row"><span class="meta-item left">Updated 1d ago</span><span class="dot-sep"></span><span class="meta-item center">3-min read</span><span class="dot-sep"></span><span class="meta-item right">10 sources</span></div>
+      <div class="meta-row"><span class="meta-item left">Updated 2d ago</span><span class="dot-sep"></span><span class="meta-item center">3-min read</span><span class="dot-sep"></span><span class="meta-item right">10 sources</span></div>
 
       <div class="meters">
         <div class="meter">
@@ -1060,6 +994,18 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     <div class="claim-toast" id="claim-toast">Claim mode on, tap a claim to see its source</div>
 
     <main class="content">
+      
+<div class="cta-card" role="region" aria-label="Join The Bias waitlist">
+  <div class="cta-left">
+    <div class="cta-eyebrow">The Bias</div>
+    <div class="cta-title">Want this for every major headline? Join the iOS waitlist.</div>
+    <div class="cta-sub">Sign up for updates and early access to our iOS launch.</div>
+  </div>
+  <div class="cta-right">
+    <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
+  </div>
+</div>
+
       
       <p class="para" data-block="b1">Harry Styles announced a seven-city 2026 residency called Together, Together that comprises 50 shows across seven cities. It is his first tour in three years. He released a new single, Aperture, on January 22, 2026. His fourth album, KISS ALL THE TIME. DISCO, OCCASIONALLY, is set for release on March 6, 2026.</p><h2 class="subtitle">Tour schedule and venues</h2><div class="stat-card" data-block="b3"><div class="stat-value">50</div><div class="stat-label">Total shows</div><div class="stat-note">Seven-city residency in 2026</div></div><p class="para" data-block="b4">New York&#x27;s run will include 30 shows at Madison Square Garden. Forbes and the Lancashire Post, citing an official statement from Styles, reported a six-night stint at Wembley Stadium beginning on June 12. By contrast, the Daily Mail reported the London shows as a six-night run at Wembley Arena.</p><ul class="list unordered" data-block="b5">
 <li>Amsterdam</li>
@@ -1138,19 +1084,6 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   </div>
 
 
-  <div class="nudge" id="email-nudge" aria-hidden="true">
-    <div class="nudge-inner">
-      <div class="nudge-copy">
-        <div class="nudge-title">Get updates + early access</div>
-        <div class="nudge-sub">Join the iOS waitlist in 5 seconds.</div>
-      </div>
-      <div class="nudge-actions">
-        <a class="nudge-btn" data-eo-form-toggle-id="6a8c2966-fa05-11f0-be4c-55a1a8dee440" href="#">Join waitlist</a>
-        <button class="nudge-close" id="nudge-close" aria-label="Dismiss">×</button>
-      </div>
-    </div>
-  </div>
-
   <div class="modal-backdrop" id="exit-backdrop" aria-hidden="true"></div>
   <section class="modal" id="exit-modal" role="dialog" aria-modal="true" aria-label="Join the waitlist">
     <div class="modal-inner">
@@ -1163,7 +1096,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
         Want this for every major headline? Join the iOS waitlist.
       </div>
       <div style="margin-top:12px;display:flex;gap:10px;align-items:center;justify-content:flex-end;">
-        <a class="cta-btn" style="min-width:auto;padding:10px 12px;font-size:13px;" data-eo-form-toggle-id="6a8c2966-fa05-11f0-be4c-55a1a8dee440" href="#">Join the waitlist</a>
+        <a class="cta-btn" style="min-width:auto;padding:10px 12px;font-size:13px;" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
         <button class="close-btn" data-close-exit style="border-radius:12px;">Not now</button>
       </div>
     </div>
@@ -1349,8 +1282,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 })();</script>
   
   <!-- EmailOctopus (articles only) -->
-  <script async src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
-  <script async src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+  
 
   <script>
   (function(){
@@ -1361,68 +1293,33 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
       }, {passive:true});
     });
     const clickedWaitlist = () => sessionStorage.getItem("tb_waitlist_clicked") === "1";
-
-    // ===== Scroll nudge (mobile only) =====
-    const nudge = document.getElementById("email-nudge");
-    const closeBtn = document.getElementById("nudge-close");
-
-    const NUDGE_KEY = "tb_nudge_dismissed_v1";
-    const dismissedRecently = () => {
-      const raw = localStorage.getItem(NUDGE_KEY);
-      if(!raw) return false;
-      const ts = parseInt(raw, 10);
-      if(!Number.isFinite(ts)) return false;
-      const days7 = 7 * 24 * 60 * 60 * 1000;
-      return (Date.now() - ts) < days7;
-    };
-    const dismissNudge = () => localStorage.setItem(NUDGE_KEY, String(Date.now()));
-
-    function showNudge(){
-      if(!nudge) return;
-      if(nudge.classList.contains("show")) return;
-      if(clickedWaitlist()) return;
-      if(dismissedRecently()) return;
-      nudge.classList.add("show");
-      nudge.setAttribute("aria-hidden", "false");
-    }
-    function hideNudge(){
-      if(!nudge) return;
-      nudge.classList.remove("show");
-      nudge.setAttribute("aria-hidden", "true");
-    }
-    if(closeBtn){
-      closeBtn.addEventListener("click", () => {
-        dismissNudge();
-        hideNudge();
-      });
-    }
-
-    // Show only after BOTH: 14s time-on-page + 55% scroll depth
-    const start = Date.now();
-    function shouldTriggerNudge(){
-      if(window.innerWidth >= 900) return false; // desktop uses exit intent
-      if(clickedWaitlist() || dismissedRecently()) return false;
-      const doc = document.documentElement;
-      const scrollTop = window.scrollY || doc.scrollTop || 0;
-      const scrollHeight = doc.scrollHeight - doc.clientHeight;
-      if(scrollHeight <= 0) return false;
-      const pct = scrollTop / scrollHeight;
-      const t = Date.now() - start;
-      return (t >= 14000 && pct >= 0.55);
-    }
-    function checkNudge(){
-      if(shouldTriggerNudge()){
-        showNudge();
-        window.removeEventListener("scroll", checkNudge, {passive:true});
-      }
-    }
-    window.addEventListener("scroll", checkNudge, {passive:true});
-    setTimeout(checkNudge, 14000);
+    const pageStart = Date.now();
 
     // ===== Exit intent (desktop only) =====
     const exitBackdrop = document.getElementById("exit-backdrop");
     const exitModal = document.getElementById("exit-modal");
     const EXIT_KEY = "tb_exit_shown_v1";
+    const EXIT_COOLDOWN_KEY = "tb_exit_cooldown_v1";
+    const EXIT_COOLDOWN_MS = 3 * 24 * 60 * 60 * 1000;
+    const exitDismissedRecently = () => {
+      const raw = localStorage.getItem(EXIT_COOLDOWN_KEY);
+      if(!raw) return false;
+      const ts = parseInt(raw, 10);
+      if(!Number.isFinite(ts)) return false;
+      return (Date.now() - ts) < EXIT_COOLDOWN_MS;
+    };
+    const markExitShown = () => {
+      sessionStorage.setItem(EXIT_KEY, "1");
+      localStorage.setItem(EXIT_COOLDOWN_KEY, String(Date.now()));
+    };
+    const exitReady = () => {
+      if((Date.now() - pageStart) < 12000) return false;
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop || 0;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) : 0;
+      return scrollTop >= 240 || pct >= 0.2;
+    };
 
     function openExit(){
       if(!exitBackdrop || !exitModal) return;
@@ -1446,14 +1343,18 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
       if(window.innerWidth < 900) return;
       if(clickedWaitlist()) return;
       if(sessionStorage.getItem(EXIT_KEY) === "1") return;
+      if(exitDismissedRecently()) return;
+      if(!exitReady()) return;
       // true exit towards top
       if(!e.relatedTarget && e.clientY <= 0){
-        sessionStorage.setItem(EXIT_KEY, "1");
+        markExitShown();
         openExit();
       }
     });
   })();
   </script>
 
+  <script async src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
+  <script async src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
 </body>
 </html>
