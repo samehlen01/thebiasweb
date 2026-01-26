@@ -19,6 +19,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
+  
+  <link rel="preconnect" href="https://eomail5.com" crossorigin>
+  <link rel="dns-prefetch" href="//eomail5.com">
+
   <style>:root{
   --bg:#FFFAF2;
   --card:#F4EEE3;
@@ -873,7 +877,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 .cta-card{
   margin: 14px 0 18px;
   padding: 14px;
-  border: 1px solid rgba(17,18,20,.10);
+  border:  1px solid var(--gold);
   background: rgba(255,250,242,.92);
   border-radius: 14px;
   display: grid;
@@ -917,14 +921,14 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   justify-content:center;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(17,18,20,.92);
-  color: rgba(255,250,242,.98);
+  background:  var(--gold);
+  color:  rgba(17,18,20,.92);
   text-decoration: none;
   font-weight: 650;
   font-size: 13px;
   min-width: 180px;
 }
-.cta-btn:hover{ background: rgba(17,18,20,.98); }
+.cta-btn:hover{ background:  rgba(201,163,74,.95); }
 
 /* Exit modal show helpers */
 .modal-backdrop.show{ display:block; }
@@ -935,6 +939,67 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   .cta-right{ align-items: stretch; }
   .cta-btn{ width: 100%; }
 }
+
+/* ===== EmailOctopus fallback (blocked scripts / in-app browsers) ===== */
+.eo-fallback{
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 86px;
+  z-index: 45;
+  display:none;
+}
+.eo-fallback.show{ display:block; }
+.eo-fallback-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,250,242,.96);
+  box-shadow: 0 18px 45px rgba(0,0,0,.12);
+  padding: 12px 12px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.eo-fallback-copy{
+  font-size: 12px;
+  color: rgba(17,18,20,.72);
+  line-height: 1.5;
+}
+.eo-fallback-actions{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+.eo-fallback-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: rgba(17,18,20,.92);
+  color: rgba(255,250,242,.98);
+  text-decoration:none;
+  font-weight: 650;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.eo-fallback-btn:hover{ background: rgba(17,18,20,.98); }
+.eo-fallback-close{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: transparent;
+  color: rgba(17,18,20,.70);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.eo-fallback-close:hover{ color: rgba(17,18,20,.95); background: rgba(0,0,0,.03); }
+
 </style>
 </head>
 <body id="top">
@@ -1335,8 +1400,8 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   })();
   </script>
 
-  <script async src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
-  <script async src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+  <script data-cfasync="false" src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
+  <script data-cfasync="false" src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
 
 <script>
 (function(){
@@ -1388,6 +1453,65 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   }, true);
 })();
 </script>
+
+
+  <!-- EmailOctopus fallback banner (only shows if modal fails to open) -->
+  <div class="eo-fallback" id="eo-fallback" aria-hidden="true">
+    <div class="eo-fallback-inner">
+      <div class="eo-fallback-copy">
+        If the sign‑up form didn’t open, your browser may be blocking it. Try “Open in browser”, then tap <b>Join the waitlist</b> again.
+      </div>
+      <div class="eo-fallback-actions">
+        <a class="eo-fallback-btn" href="https://thebias.co.uk" target="_blank" rel="noopener">Open in browser</a>
+        <button class="eo-fallback-close" id="eo-fallback-close" aria-label="Dismiss">×</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+  (function(){
+    const fallback = document.getElementById("eo-fallback");
+    const fallbackClose = document.getElementById("eo-fallback-close");
+
+    function showFallback(){
+      if(!fallback) return;
+      fallback.classList.add("show");
+      fallback.setAttribute("aria-hidden", "false");
+    }
+    function hideFallback(){
+      if(!fallback) return;
+      fallback.classList.remove("show");
+      fallback.setAttribute("aria-hidden", "true");
+    }
+    if(fallbackClose){
+      fallbackClose.addEventListener("click", hideFallback);
+    }
+
+    // Prevent "#" navigation (but do NOT stop propagation, so EmailOctopus can still catch the click)
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[data-eo-form-toggle-id]');
+      if(!a) return;
+      e.preventDefault();
+    }, true);
+
+    // After a click, if no EO iframe appears, show a friendly fallback banner.
+    function modalExists(){
+      return !!document.querySelector('iframe[src*="eomail5.com"], iframe[src*="emailoctopus"]');
+    }
+
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('[data-eo-form-toggle-id]');
+      if(!a) return;
+
+      // Give EO a moment to inject the modal
+      setTimeout(() => {
+        if(!modalExists()) showFallback();
+      }, 850);
+    }, true);
+  })();
+  </script>
 
 </body>
 </html>
