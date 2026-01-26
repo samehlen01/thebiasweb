@@ -17,11 +17,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-
-  
   <link rel="preconnect" href="https://eomail5.com" crossorigin>
   <link rel="dns-prefetch" href="//eomail5.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
   <style>:root{
   --bg:#FFFAF2;
@@ -877,7 +875,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 .cta-card{
   margin: 14px 0 18px;
   padding: 14px;
-  border:  1px solid var(--gold);
+  border: 1px solid var(--gold);
   background: rgba(255,250,242,.92);
   border-radius: 14px;
   display: grid;
@@ -921,14 +919,14 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   justify-content:center;
   padding: 10px 12px;
   border-radius: 12px;
-  background:  var(--gold);
-  color:  rgba(17,18,20,.92);
+  background: var(--gold);
+  color: rgba(17,18,20,.92);
   text-decoration: none;
   font-weight: 650;
   font-size: 13px;
   min-width: 180px;
 }
-.cta-btn:hover{ background:  rgba(201,163,74,.95); }
+.cta-btn:hover{ background: rgba(17,18,20,.98); }
 
 /* Exit modal show helpers */
 .modal-backdrop.show{ display:block; }
@@ -940,14 +938,15 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   .cta-btn{ width: 100%; }
 }
 
-/* ===== EmailOctopus fallback (blocked scripts / in-app browsers) ===== */
+/* ===== EmailOctopus fallback banner ===== */
 .eo-fallback{
   position: fixed;
-  left: 12px;
-  right: 12px;
-  bottom: 86px;
-  z-index: 45;
-  display:none;
+  left: 0;
+  right: 0;
+  bottom: 66px; /* sits above follow bar */
+  z-index: 60;
+  display: none;
+  padding: 10px 14px;
 }
 .eo-fallback.show{ display:block; }
 .eo-fallback-inner{
@@ -957,7 +956,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   border: 1px solid rgba(17,18,20,.12);
   background: rgba(255,250,242,.96);
   box-shadow: 0 18px 45px rgba(0,0,0,.12);
-  padding: 12px 12px;
+  padding: 10px 12px;
   display:flex;
   align-items:center;
   justify-content: space-between;
@@ -965,13 +964,14 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 }
 .eo-fallback-copy{
   font-size: 12px;
+  line-height: 1.45;
   color: rgba(17,18,20,.72);
-  line-height: 1.5;
 }
 .eo-fallback-actions{
   display:flex;
   align-items:center;
   gap: 8px;
+  flex-shrink: 0;
 }
 .eo-fallback-btn{
   display:inline-flex;
@@ -979,14 +979,14 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   justify-content:center;
   padding: 9px 12px;
   border-radius: 12px;
-  background: rgba(17,18,20,.92);
-  color: rgba(255,250,242,.98);
+  background: var(--gold);
+  color: rgba(17,18,20,.92);
   text-decoration:none;
   font-weight: 650;
   font-size: 12px;
   white-space: nowrap;
 }
-.eo-fallback-btn:hover{ background: rgba(17,18,20,.98); }
+.eo-fallback-btn:hover{ filter: brightness(.97); }
 .eo-fallback-close{
   width: 30px;
   height: 30px;
@@ -1000,6 +1000,11 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 }
 .eo-fallback-close:hover{ color: rgba(17,18,20,.95); background: rgba(0,0,0,.03); }
 
+@media (max-width: 680px){
+  .eo-fallback-inner{ flex-direction: column; align-items: stretch; }
+  .eo-fallback-actions{ justify-content: space-between; width:100%; }
+  .eo-fallback-btn{ width:100%; }
+}
 </style>
 </head>
 <body id="top">
@@ -1024,7 +1029,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/trump-threatens-100-tariffs-on-canada-over-potential-china-deal-1769362512-d1fc81cc.png" alt="Hero image" /></div>
 
     <section class="meta-card">
-      <div class="meta-row"><span class="meta-item left">Updated 21h ago</span><span class="dot-sep"></span><span class="meta-item center">5-min read</span><span class="dot-sep"></span><span class="meta-item right">12 sources</span></div>
+      <div class="meta-row"><span class="meta-item left">Updated 1d ago</span><span class="dot-sep"></span><span class="meta-item center">5-min read</span><span class="dot-sep"></span><span class="meta-item right">12 sources</span></div>
 
       <div class="meters">
         <div class="meter">
@@ -1066,36 +1071,28 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 
     <main class="content">
       
-<p class="para" data-block="b1">Trump threatens 100% tariffs on Canada over potential China deal and diplomatic dispute that followed after President Donald Trump posted on Truth Social: &quot;If Canada makes a deal with China, it will immediately be hit with a 100% Tariff against all Canadian goods and products coming into the U.S.A.&quot;</p><blockquote class="quote" data-block="b2"><span class="quote-line top" aria-hidden="true"></span>If Canada makes a deal with China, it will immediately be hit with a 100% Tariff against all Canadian goods and products coming into the U.S.A.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Donald Trump, U.S. President</div><p class="para" data-block="b3">In the same Truth Social thread he alleged, &quot;If Governor Carney thinks he is going to make Canada a &#x27;Drop Off Port&#x27; for China to send goods and products into the United States, he is sorely mistaken,&quot; and he speculated that &quot;China will eat Canada alive, completely devour it, including the destruction of their businesses, social fabric, and general way of life.&quot;</p><h2 class="subtitle">What the Canada-China agreement would do</h2><p class="para" data-block="b5">Mark Carney described a package of trade changes with China, saying, &quot;Under the agreement reached between Carney and Chinese President Xi Jinping last week, China will lower levies on Canadian canola oil from 85% to 15% by March, while Canada will tax Chinese EVs at the most-favoured-nation rate, 6.1% – down from 100%.&quot; He also said, &quot;Ottawa, in return, will allow 49,000 Chinese EVs into the Canadian market.&quot;</p><p class="para" data-block="b6">Canada&#x27;s U.S. trade minister Dominic LeBlanc said in a statement, &quot;There is no pursuit of a free trade deal with China.&quot;</p><h2 class="subtitle">U.S. reactions and mixed signals</h2><p class="para" data-block="b8">Earlier, at the White House on Jan. 16, Trump told reporters, &quot;That&#x27;s what he should be doing. It&#x27;s a good thing for him to sign a trade deal. If you can get a deal with China, you should do that.&quot;</p><p class="para" data-block="b9">That earlier encouragement sits in stark contrast with his later Truth Social warning of a 100% tariff on Canadian goods.</p><p class="para" data-block="b10">In August 2025, Trump raised the tariff on Canadian goods to 35%.</p><p class="para" data-block="b11">Trump said, &quot;Canada lives because of the United States.&quot; Mark Carney, speaking in Davos, countered, &quot;Canada doesn&#x27;t live because of the United States. Canada thrives because we are Canadian.&quot;</p><p class="para" data-block="b12">Matthew Holmes, executive vice president and chief of public policy at the Canadian Chamber of Commerce, said, &quot;Canada&#x27;s government has transparently outlined that the agreement with China is fundamentally about domestic consumers and businesses in Canada and China, not schemes aimed at other markets.&quot; Daniel Béland, a political scientist at McGill University, said, &quot;there was a sense Trump showed more respect for Carney than for Trudeau. Now, after Carney&#x27;s visit to China and, even more, his widely celebrated Davos speech, which clearly outshined and upset Trump, the gloves are off.&quot;</p>
+      
+      <p class="para" data-block="b1">This article covers the event Trump threatens 100% tariffs on Canada over potential China deal and the diplomatic dispute that followed after President Donald Trump posted on Truth Social: &quot;If Canada makes a deal with China, it will immediately be hit with a 100% Tariff against all Canadian goods and products coming into the U.S.A.&quot;</p><blockquote class="quote" data-block="b2"><span class="quote-line top" aria-hidden="true"></span>If Canada makes a deal with China, it will immediately be hit with a 100% Tariff against all Canadian goods and products coming into the U.S.A.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Donald Trump, U.S. President</div><p class="para" data-block="b3">In the same Truth Social thread he alleged, &quot;If Governor Carney thinks he is going to make Canada a &#x27;Drop Off Port&#x27; for China to send goods and products into the United States, he is sorely mistaken,&quot; and he speculated that &quot;China will eat Canada alive, completely devour it, including the destruction of their businesses, social fabric, and general way of life.&quot;</p><h2 class="subtitle">What the Canada-China agreement would do</h2><p class="para" data-block="b5">Mark Carney described a package of trade changes with China, saying, &quot;Under the agreement reached between Carney and Chinese President Xi Jinping last week, China will lower levies on Canadian canola oil from 85% to 15% by March, while Canada will tax Chinese EVs at the most-favoured-nation rate, 6.1% – down from 100%.&quot; He also said, &quot;Ottawa, in return, will allow 49,000 Chinese EVs into the Canadian market.&quot;</p><p class="para" data-block="b6">Canada&#x27;s U.S. trade minister Dominic LeBlanc said in a statement, &quot;There is no pursuit of a free trade deal with China.&quot;</p><h2 class="subtitle">U.S. reactions and mixed signals</h2><p class="para" data-block="b8">Earlier, at the White House on Jan. 16, Trump told reporters, &quot;That&#x27;s what he should be doing. It&#x27;s a good thing for him to sign a trade deal. If you can get a deal with China, you should do that.&quot;</p><p class="para" data-block="b9">That earlier encouragement sits in stark contrast with his later Truth Social warning of a 100% tariff on Canadian goods.</p><p class="para" data-block="b10">In August 2025, Trump raised the tariff on Canadian goods to 35%.</p><p class="para" data-block="b11">Trump said, &quot;Canada lives because of the United States.&quot; Mark Carney, speaking in Davos, countered, &quot;Canada doesn&#x27;t live because of the United States. Canada thrives because we are Canadian.&quot;</p><p class="para" data-block="b12">Matthew Holmes, executive vice president and chief of public policy at the Canadian Chamber of Commerce, said, &quot;Canada&#x27;s government has transparently outlined that the agreement with China is fundamentally about domestic consumers and businesses in Canada and China, not schemes aimed at other markets.&quot; Daniel Béland, a political scientist at McGill University, said, &quot;there was a sense Trump showed more respect for Carney than for Trudeau. Now, after Carney&#x27;s visit to China and, even more, his widely celebrated Davos speech, which clearly outshined and upset Trump, the gloves are off.&quot;</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
     <div class="cta-eyebrow">The Bias</div>
     <div class="cta-explainer">Modern news forces a trade-off: one lens or ten tabs. The Bias is the wide-angle view — key facts and major perspectives in one read. Instead of headlines and hot takes, we pull together what different outlets are actually saying — and where their reporting starts to differ. Most stories include an international outlook, showing what overseas coverage is emphasising.</div>
-    <div class="cta-title">Want the wide-angle view in your feed?</div>
-    <div class="cta-sub">Join the iOS waitlist for launch updates and early access.</div>
+    <div class="cta-title">Get the wide-angle view on iOS — without ten tabs</div>
+    <div class="cta-sub">We’ll email you first when it’s ready — plus new wide-angle briefings.</div>
   </div>
   <div class="cta-right">
     <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
   </div>
 </div>
-
+<h2 class="subtitle" id="economic-stakes">Economic stakes and numbers</h2><div class="stat-card" data-block="b14"><div class="stat-value">C$3.6 billion (US$2.7 billion)</div><div class="stat-label">Daily Canada–U.S. goods and services crossing the border</div><div class="stat-note">Canada is the top export destination for 36 U.S. states; about 60% of U.S. crude oil imports and 85% of U.S. electricity imports come from Canada.</div></div><p class="para" data-block="b15">Those figures underline why analysts warned that if the United States were to curtail access to Canadian products &#x27;it would have sweeping consequences for its northern neighbour.&#x27;</p><p class="para" data-block="b16">Trump also used Truth Social to withdraw a previously extended invitation, writing, &quot;Dear Prime Minister Carney, Please let this Letter serve to represent that the Board of Peace is withdrawing its invitation to you regarding Canada&#x27;s joining, what will be, the most prestigious Board of Leaders ever assembled, at any time.&quot;</p><blockquote class="quote" data-block="b17"><span class="quote-line top" aria-hidden="true"></span>Middle powers must act together because if you are not at the table, you are on the menu.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Mark Carney</div><p class="para" data-block="b18">At Davos Carney argued that the US-led world order had been ruptured and framed the deal as part of a strategy for middle powers to coordinate their interests.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b20">Reporting across outlets agrees that Mark Carney announced an arrangement with China that would lower levies on Canadian canola oil from 85% to 15% by March and reduce duties on Chinese electric vehicles; Carney said Ottawa expects those canola tariffs to fall by 1 March. President Trump has publicly warned of a possible 100% tariff and in August 2025 raised the tariff on Canadian goods to 35%. Canada&#x27;s U.S. trade minister Dominic LeBlanc said, &quot;There is no pursuit of a free trade deal with China.&quot; Business groups and analysts, including Matthew Holmes, said, &quot;Canada&#x27;s government has transparently outlined that the agreement with China is fundamentally about domestic consumers and businesses in Canada and China, not schemes aimed at other markets,&quot; and the BBC observed the deal could see &quot;more Chinese investments in Canada.&quot; NPR cautioned that a U.S. posture that &quot;does not need access to any Canadian products&quot; could, as it warned, &quot;have sweeping consequences for its northern neighbour.&quot; The principal disputes are over the scope of Canada&#x27;s engagement with China and how Washington will respond; most reporting points to further diplomatic exchanges and monitoring of tariff moves as the next steps.</p>
       
-      
-<h2 class="subtitle" id="economic-stakes">Economic stakes and numbers</h2>
-<div class="stat-card" data-block="b14">
-  <div class="stat-value">C$3.6 billion (US$2.7 billion)</div>
-  <div class="stat-label">Daily Canada–U.S. goods and services crossing the border</div>
-  <div class="stat-note">Canada is the top export destination for 36 U.S. states; about 60% of U.S. crude oil imports and 85% of U.S. electricity imports come from Canada.</div>
-</div>
-<p class="para" data-block="b15">Those figures underline why analysts warned that if the United States were to curtail access to Canadian products &#x27;it would have sweeping consequences for its northern neighbour.&#x27;</p><p class="para" data-block="b16">Trump also used Truth Social to withdraw a previously extended invitation, writing, &quot;Dear Prime Minister Carney, Please let this Letter serve to represent that the Board of Peace is withdrawing its invitation to you regarding Canada&#x27;s joining, what will be, the most prestigious Board of Leaders ever assembled, at any time.&quot;</p><blockquote class="quote" data-block="b17"><span class="quote-line top" aria-hidden="true"></span>Middle powers must act together because if you are not at the table, you are on the menu.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Mark Carney</div><p class="para" data-block="b18">At Davos Carney argued that the US-led world order had been ruptured and framed the deal as part of a strategy for middle powers to coordinate their interests.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b20">Reporting across outlets agrees that Mark Carney announced an arrangement with China that would lower levies on Canadian canola oil from 85% to 15% by March and reduce duties on Chinese electric vehicles; Carney said Ottawa expects those canola tariffs to fall by 1 March. President Trump has publicly warned of a possible 100% tariff and in August 2025 raised the tariff on Canadian goods to 35%. Canada&#x27;s U.S. trade minister Dominic LeBlanc said, &quot;There is no pursuit of a free trade deal with China.&quot; Business groups and analysts, including Matthew Holmes, said, &quot;Canada&#x27;s government has transparently outlined that the agreement with China is fundamentally about domestic consumers and businesses in Canada and China, not schemes aimed at other markets,&quot; and the BBC observed the deal could see &quot;more Chinese investments in Canada.&quot; NPR cautioned that a U.S. posture that &quot;does not need access to any Canadian products&quot; could, as it warned, &quot;have sweeping consequences for its northern neighbour.&quot; The principal disputes are over the scope of Canada&#x27;s engagement with China and how Washington will respond; most reporting points to further diplomatic exchanges and monitoring of tariff moves as the next steps.</p>
-      
-      
+      <p class="para" style="font-size:13px;color:rgba(17,18,20,.65);margin-top:4px;">Built from coverage across multiple outlets and regions.</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
     <div class="cta-eyebrow">The Bias</div>
     
-    <div class="cta-title">Want this for every major headline? Join the iOS waitlist.</div>
-    <div class="cta-sub">Sign up for updates and early access to our iOS launch.</div>
+    <div class="cta-title">Want this kind of clarity next time a major story breaks?</div>
+    <div class="cta-sub">Join the iOS waitlist for early access to future wide-angle briefings.</div>
   </div>
   <div class="cta-right">
     <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
@@ -1146,7 +1143,47 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
       </div>
     </div>
   </div>
-</section>
+
+  <div class="follow-bar" id="follow-bar" role="region" aria-label="Join The Bias waitlist">
+    <div class="follow-pill">
+      <a class="follow-link" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join waitlist</a>
+      <span class="follow-sep">•</span>
+      <a class="follow-link" href="https://instagram.com/thebias_app" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <button class="follow-dismiss" id="follow-dismiss" aria-label="Dismiss">×</button>
+  </div>
+
+
+  <div class="modal-backdrop" id="exit-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="exit-modal" role="dialog" aria-modal="true" aria-label="Join the waitlist">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title">Before you go…</div>
+        <button class="close-btn" data-close-exit>Close</button>
+      </div>
+      <div style="padding-top:12px;color:rgba(17,18,20,.78);font-size:15px;line-height:1.7;">
+        Want this for every major headline? Join the iOS waitlist.
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;align-items:center;justify-content:flex-end;">
+        <a class="cta-btn" style="min-width:auto;padding:10px 12px;font-size:13px;" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
+        <button class="close-btn" data-close-exit style="border-radius:12px;">Not now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EmailOctopus fallback (blocked scripts / in-app browsers) -->
+  <div class="eo-fallback" id="eo-fallback" role="region" aria-label="Waitlist signup help">
+    <div class="eo-fallback-inner">
+      <div class="eo-fallback-copy">
+        If the signup window didn’t open, your browser may be blocking it.
+      </div>
+      <div class="eo-fallback-actions">
+        <a class="eo-fallback-btn" id="eo-fallback-open" href="/waitlist">Open signup</a>
+        <button class="eo-fallback-close" id="eo-fallback-close" aria-label="Dismiss">×</button>
+      </div>
+    </div>
+  </div>
 
 
   <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
@@ -1400,10 +1437,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   })();
   </script>
 
-  <script data-cfasync="false" src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
-  <script data-cfasync="false" src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
-
-<script>
+  <script>
 (function(){
   var slug = (location.pathname || '').split('/').filter(Boolean).pop() || 'unknown';
   function beacon(path){
@@ -1428,7 +1462,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
           entries.forEach(function(ent){
             if (ent.isIntersecting){
               sessionStorage.setItem(k, '1');
-              beacon('/functions/t/reach-economic-stakes/' + encodeURIComponent(slug));
+              beacon('/t/reach-economic-stakes/' + encodeURIComponent(slug));
               try{ obs.disconnect(); }catch(e){}
             }
           });
@@ -1454,63 +1488,53 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 })();
 </script>
 
-
-  <!-- EmailOctopus fallback banner (only shows if modal fails to open) -->
-  <div class="eo-fallback" id="eo-fallback" aria-hidden="true">
-    <div class="eo-fallback-inner">
-      <div class="eo-fallback-copy">
-        If the sign‑up form didn’t open, your browser may be blocking it. Try “Open in browser”, then tap <b>Join the waitlist</b> again.
-      </div>
-      <div class="eo-fallback-actions">
-        <a class="eo-fallback-btn" href="https://thebias.co.uk" target="_blank" rel="noopener">Open in browser</a>
-        <button class="eo-fallback-close" id="eo-fallback-close" aria-label="Dismiss">×</button>
-      </div>
-    </div>
-  </div>
-
-
-
   <script>
-  (function(){
-    const fallback = document.getElementById("eo-fallback");
-    const fallbackClose = document.getElementById("eo-fallback-close");
-
-    function showFallback(){
-      if(!fallback) return;
-      fallback.classList.add("show");
-      fallback.setAttribute("aria-hidden", "false");
-    }
-    function hideFallback(){
-      if(!fallback) return;
-      fallback.classList.remove("show");
-      fallback.setAttribute("aria-hidden", "true");
-    }
-    if(fallbackClose){
-      fallbackClose.addEventListener("click", hideFallback);
-    }
-
-    // Prevent "#" navigation (but do NOT stop propagation, so EmailOctopus can still catch the click)
+    // Prevent "#" navigation while still letting EmailOctopus handle the click.
     document.addEventListener("click", (e) => {
-      const a = e.target.closest('a[data-eo-form-toggle-id]');
-      if(!a) return;
+      const t = e.target.closest('a[data-eo-form-toggle-id]');
+      if (!t) return;
       e.preventDefault();
     }, true);
+  </script>
 
-    // After a click, if no EO iframe appears, show a friendly fallback banner.
-    function modalExists(){
-      return !!document.querySelector('iframe[src*="eomail5.com"], iframe[src*="emailoctopus"]');
-    }
+  <script data-cfasync="false" src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
+  <script data-cfasync="false" src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
 
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest('[data-eo-form-toggle-id]');
-      if(!a) return;
+  <script>
+    (function(){
+      const fallback = document.getElementById("eo-fallback");
+      const closeBtn = document.getElementById("eo-fallback-close");
+      const openBtn = document.getElementById("eo-fallback-open");
 
-      // Give EO a moment to inject the modal
-      setTimeout(() => {
-        if(!modalExists()) showFallback();
-      }, 850);
-    }, true);
-  })();
+      function modalSeemsPresent(){
+        return !!document.querySelector(
+          'iframe[src*="eomail5.com"], iframe[src*="emailoctopus"], [class*="eo"], [id*="eo-modal"], [id*="emailoctopus"]'
+        );
+      }
+
+      function showFallback(){
+        if (!fallback) return;
+        fallback.classList.add("show");
+      }
+      function hideFallback(){
+        if (!fallback) return;
+        fallback.classList.remove("show");
+      }
+
+      if (closeBtn) closeBtn.addEventListener("click", hideFallback);
+
+      document.addEventListener("click", (e) => {
+        const t = e.target.closest('[data-eo-form-toggle-id]');
+        if (!t) return;
+
+        // Give EmailOctopus a moment to inject/open. If nothing appears, show fallback.
+        setTimeout(() => {
+          if (!modalSeemsPresent()){
+            showFallback();
+          }
+        }, 850);
+      }, true);
+    })();
   </script>
 
 </body>
