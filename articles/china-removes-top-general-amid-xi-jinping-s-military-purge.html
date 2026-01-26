@@ -127,6 +127,7 @@ a{color:inherit}
   gap: 10px;
   justify-content: center;
 }
+.follow-bar.show{ display: flex; }
 .follow-pill{
   flex: 0 1 auto;
   max-width: 340px;
@@ -176,10 +177,10 @@ h1.title{
   .wrap{padding: 0 18px 60px;}
   h1.title{font-size: 38px;}
   body{ padding-bottom: 84px; }
-  .follow-bar{ display: flex; }
-  .meta-actions{ justify-content: center; }
+  .follow-bar{ display: none; }
+  .meta-actions{ grid-template-columns: 1fr; }
   .meta-cta{ justify-content: center; width: 100%; }
-  .meta-jump{ width: 100%; text-align: center; }
+  .meta-jump{ width: 100%; text-align: center; justify-content: center; }
 }
 
 .hero{ margin-top: 14px; }
@@ -270,12 +271,11 @@ body.claim-mode .claim-toast{ display:block; }
   width: 100%;
 }
 .meta-actions{
-  margin-top: 10px;
-  display:flex;
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items:center;
-  justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap;
 }
 .meta-cta{
   display:flex;
@@ -283,6 +283,12 @@ body.claim-mode .claim-toast{ display:block; }
   gap: 10px;
   font-size: 12px;
   color: var(--muted);
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,250,242,.9);
+  border: 1px solid rgba(17,18,20,.12);
+  box-shadow: 0 8px 20px rgba(17,18,20,.08);
 }
 .meta-cta-btn{
   display:inline-flex;
@@ -302,6 +308,14 @@ body.claim-mode .claim-toast{ display:block; }
   font-size: 12px;
   color: var(--gold);
   text-decoration: none;
+  display:inline-flex;
+  align-items:center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,250,242,.9);
+  box-shadow: 0 8px 20px rgba(17,18,20,.08);
 }
 .meta-jump:hover{ text-decoration: underline; }
 .meta-item{
@@ -1075,7 +1089,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 
     <section class="meta-card">
       <div class="meta-row"><span class="meta-item left">Updated 7h ago</span><span class="dot-sep"></span><span class="meta-item center">3-min read</span><span class="dot-sep"></span><span class="meta-item right">60 sources</span></div>
-      <div class="meta-actions"><div class="meta-cta"><span>Get The Bias by email</span><a class="meta-cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join waitlist</a></div><a class="meta-jump" href="#international-outlook">Jump to International Outlook</a></div>
+      <div class="meta-actions"><a class="meta-jump" href="#international-outlook">Jump to International Outlook</a><div class="meta-cta"><span>Get The Bias by email</span><a class="meta-cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join waitlist</a></div><div></div></div>
 
       <div class="meters">
         <div class="meter">
@@ -1488,6 +1502,35 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
         openExit();
       }
     });
+
+    // ===== Follow pill (mobile only, show after 30% scroll) =====
+    const followBar = document.getElementById("follow-bar");
+    const followDismiss = document.getElementById("follow-dismiss");
+    function showFollowBar(){
+      if (!followBar) return;
+      followBar.classList.add("show");
+    }
+    function hideFollowBar(){
+      if (!followBar) return;
+      followBar.classList.remove("show");
+    }
+    if (followDismiss){
+      followDismiss.addEventListener("click", () => hideFollowBar());
+    }
+    function checkFollowBar(){
+      if (!followBar) return;
+      if (window.innerWidth >= 700) return;
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop || 0;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+      if (scrollHeight <= 0) return;
+      const pct = scrollTop / scrollHeight;
+      if (pct >= 0.3){
+        showFollowBar();
+        window.removeEventListener("scroll", checkFollowBar, {passive:true});
+      }
+    }
+    window.addEventListener("scroll", checkFollowBar, {passive:true});
   })();
   </script>
 
@@ -1538,6 +1581,20 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     var a = ev.target && ev.target.closest ? ev.target.closest('a[href*="instagram.com/thebias_app"]') : null;
     if (!a) return;
     beacon('/functions/t/ig-click/' + encodeURIComponent(slug));
+  }, true);
+
+  // Jump: International Outlook (strip hash after scroll)
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href=\"#international-outlook\"]') : null;
+    if (!a) return;
+    ev.preventDefault();
+    var target = document.getElementById('international-outlook');
+    if (target && target.scrollIntoView){
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    try{
+      history.replaceState(null, document.title, location.pathname + location.search);
+    }catch(e){}
   }, true);
 })();
 </script>
