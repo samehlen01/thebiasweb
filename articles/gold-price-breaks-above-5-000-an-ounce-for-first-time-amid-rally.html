@@ -426,6 +426,87 @@ body.claim-mode .claim-toast{ display:block; }
   mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
 }
+.intl-gate-wrap{
+  position: relative;
+  --intl-bleed: 8px;
+}
+.intl-blur-layer{ display:none; }
+.intl-gate-wrap.is-locked .intl-strip{
+  position: relative;
+  z-index: 1;
+}
+.intl-gate-wrap.is-locked .intl-blur-layer{
+  display:block;
+  position:absolute;
+  left: calc(0px - var(--intl-bleed));
+  right: calc(0px - var(--intl-bleed));
+  top: var(--intl-blur-start, 200px);
+  bottom:0;
+  pointer-events: none;
+  z-index: 3;
+  background: rgba(255,250,242,.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, transparent 0px, rgba(0,0,0,1) 18px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, rgba(0,0,0,1) 18px);
+}
+.intl-gate-overlay{
+  position:absolute;
+  left: 50%;
+  top: calc(var(--intl-blur-start, 200px) + clamp(85px, 10vw, 165px));
+  transform: translateX(-50%);
+  width: min(420px, 92%);
+  background: rgba(255,250,242,.94);
+  border: 1px solid rgba(17,18,20,.10);
+  border-radius: 14px;
+  padding: 12px 12px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.10);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+.intl-gate-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+.intl-gate-title{
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px 0;
+}
+.intl-gate-sub{
+  font-size: 13px;
+  color: rgba(17,18,20,.82);
+  margin: 0 0 10px 0;
+}
+.intl-gate-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  text-decoration: none;
+  appearance: none;
+  border: 1px solid rgba(17,18,20,.14);
+  background: rgba(244,238,227,.85);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-weight: 750;
+  font-size: 13px;
+  cursor: pointer;
+}
+.intl-gate-btn:hover{ background: rgba(244,238,227,1); }
+.intl-gate-note{
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(17,18,20,.55);
+}
+
+@media (min-width: 701px){
+  .intl-gate-wrap{ --intl-bleed: 8px; }
+}
 .intl-strip::-webkit-scrollbar{ height: 6px; }
 .intl-strip::-webkit-scrollbar-thumb{
   background: rgba(17,18,20,.2);
@@ -1139,12 +1220,12 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 </div>
 <h2 class="subtitle" id="economic-stakes">What drove the rally</h2><p class="para" data-block="b7">Analysts said robust central-bank buying and large institutional flows were major drivers of the move. Western ETF holdings have climbed by about 500 tonnes since the start of 2025. A softer US dollar made dollar-priced gold cheaper for holders of other currencies.</p><p class="para" data-block="b8">Market watchers described gold as a safe-haven asset that investors buy in times of uncertainty and when interest rates fall. Expectations of lower rates reduced the appeal of bonds and supported demand for gold, commentators said.</p><h2 class="subtitle">Differing explanations and investor views</h2><p class="para" data-block="b10">The Daily Mail and The Guardian argued that President Donald Trump&#x27;s tariff threats and actions around Greenland turbocharged demand by increasing geopolitical and trade uncertainty.</p><p class="para" data-block="b11">Goldman Sachs told CNBC the rally is increasingly powered by broad-based demand, including central-bank buying, ETF inflows and physical purchases by wealthy families.</p><p class="para" data-block="b12">Some market analysts cautioned that the rally could be vulnerable should upward momentum falter.</p><p class="para" data-block="b13">Susannah Streeter, chief investment strategist at Wealth Club, said gold &quot;seems to know no bounds&quot; amid ongoing political uncertainty.</p><blockquote class="quote" data-block="b14"><span class="quote-line top" aria-hidden="true"></span>When you own gold, it&#x27;s not attached to the debt of somebody else like a bond is or an equity where the performance of a company will drive performance,<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Nicholas Frappell, global head of institutional markets at ABC Refinery</div><p class="para" data-block="b15">Frappell framed gold as detached from corporate or sovereign debt and said it can serve as a portfolio diversifier. &quot;It&#x27;s a really good diversifier in a very uncertain world,&quot; he added.</p><p class="para" data-block="b16">Silver climbed above $100 an ounce for the first time. Silver traded near $107.9 per ounce in early Monday trading.</p><h2 class="subtitle">Market implications for savers</h2><p class="para" data-block="b18">The rally has prompted renewed interest from pension savers about whether gold could be added to retirement pots, research by Standard Life suggested.</p><p class="para" data-block="b19">Holding physical gold inside a pension can be complex and costly because it generally requires a self-invested personal pension that meets strict HMRC rules.</p><h2 class="subtitle">Forecasts and risks</h2><p class="para" data-block="b21">Goldman Sachs raised its December 2026 gold price forecast to $5,400 an ounce, a forecast reported by CNBC.</p><p class="para" data-block="b22">The bank said that outcome depends on hedges against global macro-policy risks remaining in place through 2026, an assumption the bank identified as uncertain.</p><p class="para" data-block="b23">Other market analysts cautioned that prices could fall if upward momentum falters, a scenario they flagged as plausible downside risk.</p><p class="para" data-block="b24">Steve Miller of The Guardian said &quot;It could well have some further upside.&quot;</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b26">Reporting largely agrees that gold has reached unprecedented levels and that large institutional flows and central-bank buying have been significant contributors. Some outlets, notably The Daily Mail and The Guardian, have linked the recent surge to actions by President Donald Trump, while Goldman Sachs and others attribute it to broader buying by central banks, ETFs and wealthy families. Goldman Sachs&#x27; raised December 2026 forecast to $5,400 and analysts&#x27; warnings that momentum could fade were presented as projections, leaving near-term direction dependent on further ETF flows, central-bank purchases and the US dollar&#x27;s path.</p>
       
-      <hr class="divider" /><section class="intl-section" id="international-outlook"><h2 class="intl-title">International Outlook</h2><p class="intl-sub"><span class="intl-sub-mobile">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</span><span class="intl-sub-desktop">Scroll to see how overseas media are framing the story and what domestic news is not reporting.</span></p><div class="intl-strip"><article class="intl-card"><div class="intl-country">Hong Kong</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Hong Kong Free Press</div><div class="intl-body"><p class="para" data-block="b27">Hong Kong signed a deal with the Shanghai Gold Exchange to create cross‑boundary trade‑clearing, expand storage capacity to 2,000 tonnes within three years and run a central‑clearing trial this year.</p><p class="para" data-block="b28">Officials framed the move as positioning Hong Kong as a regional gold reserve hub, aiming to scale storage from roughly 150 tonnes toward 2,000 tonnes and to begin trial operations this year.</p></div></article><article class="intl-card"><div class="intl-country">India</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Indian Express</div><div class="intl-body"><blockquote class="quote" data-block="b29"><span class="quote-line top" aria-hidden="true"></span>Meaningful de‑dollarisation would have profound implications for the global security architecture, reducing the United States’ capacity to fund its military and impose coercive economic pressure.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Ali Ahmadi, Director of Geoeconomics &amp; Sanctions, ReshapeRisk</div><p class="para" data-block="b30">Indian Express reported the RBI now holds about 17% of its foreign‑exchange reserves in gold (up from 12% a year earlier) and that nearly a third of a recent $14bn weekly rise in reserves reflected appreciation of its 880‑tonne gold holding. It also cited World Gold Council data showing central‑bank buying led by Poland (95t), Kazakhstan (49t) and Brazil (43t), and IMF data that the dollar&#x27;s share of global reserves fell to 58.5% in 2024.</p></div></article><article class="intl-card"><div class="intl-country">Russia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">The Bell Russia</div><div class="intl-body"><p class="para" data-block="b31">The Bell relayed Bloomberg analysis that gold has risen about 1,600% since 2000 and has systematically outperformed the S&amp;P 500 Total Return; it added that publicly disclosed central‑bank gold holdings have exceeded dollar‑valued US government debt holdings since end‑2025.</p></div></article><article class="intl-card"><div class="intl-country">Turkey</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Daily Sabah Turkey</div><div class="intl-body"><p class="para" data-block="b32">Daily Sabah ran several forecasts and flow figures emphasising institutional demand and central‑bank accumulation.</p><ul class="list unordered" data-block="b33">
+      <hr class="divider" /><section class="intl-section" id="international-outlook"><h2 class="intl-title">International Outlook</h2><p class="intl-sub"><span class="intl-sub-mobile">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</span><span class="intl-sub-desktop">Scroll to see how overseas media are framing the story and what domestic news is not reporting.</span></p><div class="intl-gate-wrap is-locked" id="intl-gate-wrap"><div class="intl-strip"><article class="intl-card intl-preview"><div class="intl-country">Hong Kong</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Hong Kong Free Press</div><div class="intl-body"><p class="para" data-block="b27">Hong Kong signed a deal with the Shanghai Gold Exchange to create cross‑boundary trade‑clearing, expand storage capacity to 2,000 tonnes within three years and run a central‑clearing trial this year.</p><p class="para" data-block="b28">Officials framed the move as positioning Hong Kong as a regional gold reserve hub, aiming to scale storage from roughly 150 tonnes toward 2,000 tonnes and to begin trial operations this year.</p></div></article><article class="intl-card"><div class="intl-country">India</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Indian Express</div><div class="intl-body"><blockquote class="quote" data-block="b29"><span class="quote-line top" aria-hidden="true"></span>Meaningful de‑dollarisation would have profound implications for the global security architecture, reducing the United States’ capacity to fund its military and impose coercive economic pressure.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Ali Ahmadi, Director of Geoeconomics &amp; Sanctions, ReshapeRisk</div><p class="para" data-block="b30">Indian Express reported the RBI now holds about 17% of its foreign‑exchange reserves in gold (up from 12% a year earlier) and that nearly a third of a recent $14bn weekly rise in reserves reflected appreciation of its 880‑tonne gold holding. It also cited World Gold Council data showing central‑bank buying led by Poland (95t), Kazakhstan (49t) and Brazil (43t), and IMF data that the dollar&#x27;s share of global reserves fell to 58.5% in 2024.</p></div></article><article class="intl-card"><div class="intl-country">Russia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">The Bell Russia</div><div class="intl-body"><p class="para" data-block="b31">The Bell relayed Bloomberg analysis that gold has risen about 1,600% since 2000 and has systematically outperformed the S&amp;P 500 Total Return; it added that publicly disclosed central‑bank gold holdings have exceeded dollar‑valued US government debt holdings since end‑2025.</p></div></article><article class="intl-card"><div class="intl-country">Turkey</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Daily Sabah Turkey</div><div class="intl-body"><p class="para" data-block="b32">Daily Sabah ran several forecasts and flow figures emphasising institutional demand and central‑bank accumulation.</p><ul class="list unordered" data-block="b33">
 <li>LBMA analysts&#x27; 2026 survey: upside as high as $7,150 and an average forecast of $4,742.</li>
 <li>World Gold Council data: gold‑backed ETFs saw record 2025 inflows of about $89 billion, totalling roughly 801 metric tons.</li>
 <li>Goldman Sachs forecast purchases could average about 60 metric tons per month as emerging‑market central banks diversify into gold.</li>
 <li>Poland intends to lift official gold reserves from about 550 tonnes at end‑2025 to 700 tonnes.</li>
-</ul><p class="para" data-block="b34">Daily Sabah cited the LBMA survey, World Gold Council figures and Goldman Sachs for these numbers, underlining both ETF flows and ongoing central‑bank buying highlighted elsewhere.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Die Presse Austria, Der Standard Austria, Le Figaro, ZDF Heute</div><div class="intl-body"><p class="para" data-block="b35">European outlets reported global mine production of about 3,645 tonnes in 2024 (the second‑highest annual figure) and 2,717 tonnes in the first three quarters of 2025, up 16 tonnes year‑on‑year.</p><p class="para" data-block="b36">Der Standard put the euro price near €4,295 as a softer dollar limited euro‑area gains; Le Figaro quoted the World Gold Council saying gold could still rise 15–30% in 2026 and described a &#x27;vicious circle&#x27; between tensions and safe‑haven buying; ZDF noted the Bundesbank held about 3,352 tonnes at end‑2024, with roughly 37% stored at the New York Fed.</p></div></article><article class="intl-card"><div class="intl-country">Sub‑Saharan Africa</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Channels TV Nigeria, News24 South Africa</div><div class="intl-body"><blockquote class="quote" data-block="b37"><span class="quote-line top" aria-hidden="true"></span>Gold is the inverse of confidence.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Max Belmont, portfolio manager, First Eagle Investment Management</div><p class="para" data-block="b38">Channels TV cited World Gold Council data showing gold demand by value jumped 44% year‑on‑year to a record $146 billion in Q3. News24 described recent flows as a &#x27;debasement trade&#x27;, said gold has more than doubled over two years and reported it was up over 17% so far this year; it also highlighted family offices buying for generational protection and that the rand strengthened to about R16.08 per dollar in early Asian trading.</p></div></article><article class="intl-card"><div class="intl-country">East Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Kyunghyang Shinmun (KR)</div><div class="intl-body"><p class="para" data-block="b39">Kyunghyang reported KRX domestic gold closed at a record 238,000 won per gram (up 1.67%) and that some private dealers were buying at above 1,000,000 won per don (3.75g). The paper also cited global mine output (3,645t in 2024; 2,717t in the first three quarters of 2025) and quoted an analyst saying fears over Fed independence and AI‑investment risks are stimulating demand.</p></div></article><article class="intl-card"><div class="intl-country">Oceania</div><div class="intl-sources-title">Sources</div><div class="intl-sources">ABC Australia</div><div class="intl-body"><p class="para" data-block="b40">ABC put the Australian‑dollar gold price near A$7,325 per ounce and reported heavy retail demand: the Perth Mint said thousands of customers were queuing weekly in October to buy bars or sell jewellery.</p></div></article><article class="intl-card"><div class="intl-country">Latin America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">El Financiero (Mexico)</div><div class="intl-body"><p class="para" data-block="b41">El Financiero reported gold had gained about 8.5% over the prior week while the Bloomberg Dollar Spot Index fell roughly 1.6% over the same week — its biggest weekly drop since May — which the paper said made gold cheaper for many buyers.</p></div></article><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Dawn Pakistan</div><div class="intl-body"><p class="para" data-block="b42">Dawn quoted Metals Focus forecasting prices could peak around $5,500 later in the year and carried a Capital.com analyst who described the immediate catalyst as &#x27;a crisis of confidence&#x27; in the US administration triggered by recent erratic decision‑making.</p></div></article></div></section>
+</ul><p class="para" data-block="b34">Daily Sabah cited the LBMA survey, World Gold Council figures and Goldman Sachs for these numbers, underlining both ETF flows and ongoing central‑bank buying highlighted elsewhere.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Die Presse Austria, Der Standard Austria, Le Figaro, ZDF Heute</div><div class="intl-body"><p class="para" data-block="b35">European outlets reported global mine production of about 3,645 tonnes in 2024 (the second‑highest annual figure) and 2,717 tonnes in the first three quarters of 2025, up 16 tonnes year‑on‑year.</p><p class="para" data-block="b36">Der Standard put the euro price near €4,295 as a softer dollar limited euro‑area gains; Le Figaro quoted the World Gold Council saying gold could still rise 15–30% in 2026 and described a &#x27;vicious circle&#x27; between tensions and safe‑haven buying; ZDF noted the Bundesbank held about 3,352 tonnes at end‑2024, with roughly 37% stored at the New York Fed.</p></div></article><article class="intl-card"><div class="intl-country">Sub‑Saharan Africa</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Channels TV Nigeria, News24 South Africa</div><div class="intl-body"><blockquote class="quote" data-block="b37"><span class="quote-line top" aria-hidden="true"></span>Gold is the inverse of confidence.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Max Belmont, portfolio manager, First Eagle Investment Management</div><p class="para" data-block="b38">Channels TV cited World Gold Council data showing gold demand by value jumped 44% year‑on‑year to a record $146 billion in Q3. News24 described recent flows as a &#x27;debasement trade&#x27;, said gold has more than doubled over two years and reported it was up over 17% so far this year; it also highlighted family offices buying for generational protection and that the rand strengthened to about R16.08 per dollar in early Asian trading.</p></div></article><article class="intl-card"><div class="intl-country">East Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Kyunghyang Shinmun (KR)</div><div class="intl-body"><p class="para" data-block="b39">Kyunghyang reported KRX domestic gold closed at a record 238,000 won per gram (up 1.67%) and that some private dealers were buying at above 1,000,000 won per don (3.75g). The paper also cited global mine output (3,645t in 2024; 2,717t in the first three quarters of 2025) and quoted an analyst saying fears over Fed independence and AI‑investment risks are stimulating demand.</p></div></article><article class="intl-card"><div class="intl-country">Oceania</div><div class="intl-sources-title">Sources</div><div class="intl-sources">ABC Australia</div><div class="intl-body"><p class="para" data-block="b40">ABC put the Australian‑dollar gold price near A$7,325 per ounce and reported heavy retail demand: the Perth Mint said thousands of customers were queuing weekly in October to buy bars or sell jewellery.</p></div></article><article class="intl-card"><div class="intl-country">Latin America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">El Financiero (Mexico)</div><div class="intl-body"><p class="para" data-block="b41">El Financiero reported gold had gained about 8.5% over the prior week while the Bloomberg Dollar Spot Index fell roughly 1.6% over the same week — its biggest weekly drop since May — which the paper said made gold cheaper for many buyers.</p></div></article><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Dawn Pakistan</div><div class="intl-body"><p class="para" data-block="b42">Dawn quoted Metals Focus forecasting prices could peak around $5,500 later in the year and carried a Capital.com analyst who described the immediate catalyst as &#x27;a crisis of confidence&#x27; in the US administration triggered by recent erratic decision‑making.</p></div></article></div><div class="intl-blur-layer" aria-hidden="true"></div><div class="intl-gate-overlay" id="intl-gate-overlay" role="region" aria-label="Email signup to view International Outlook"><div class="intl-gate-kicker">Email signup</div><div class="intl-gate-title">International Outlook</div><div class="intl-gate-sub">See what overseas outlets highlighted that domestic coverage barely mentioned — extra context, different priorities, and details that change how the story reads.</div><a class="intl-gate-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Sign up to mailing list</a><div class="intl-gate-note" id="intl-gate-note">1–2 emails/week. Unsubscribe anytime.</div></div></div></section>
 <p class="para" style="font-size:13px;color:rgba(17,18,20,.65);margin-top:4px;">Built from coverage across multiple outlets and regions.</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
@@ -1637,6 +1718,146 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
         }, 850);
       }, true);
     })();
+  </script>
+
+  <script>
+(function(){
+  const KEY = "tb_intl_unlocked_v1";
+  const wrap = document.getElementById("intl-gate-wrap");
+  const overlay = document.getElementById("intl-gate-overlay");
+  const strip = wrap ? wrap.querySelector(".intl-strip") : null;
+  const FORM_ID = "4fae613c-fa04-11f0-8687-7b599f2db40d";
+
+  if(!wrap) return;
+
+  function isEmailOctopusRequest(url){
+    try{
+      if (!url) return false;
+      const s = String(url);
+      return s.indexOf("eomail5.com/form/" + FORM_ID) !== -1;
+    }catch(e){
+      return false;
+    }
+  }
+
+  function isUnlocked(){
+    try{
+      return localStorage.getItem(KEY) === "1";
+    }catch(e){
+      return false;
+    }
+  }
+
+  function setBlurStart(){
+    if(!wrap.classList.contains("is-locked")) return;
+    if(!strip) return;
+
+    const para = wrap.querySelector(".intl-card.intl-preview .intl-body > p.para");
+    if(!para) return;
+
+    const stripRect = strip.getBoundingClientRect();
+    const paraRect  = para.getBoundingClientRect();
+    const cs = getComputedStyle(para);
+
+    let lh = parseFloat(cs.lineHeight);
+    if(!lh || Number.isNaN(lh)){
+      const fs = parseFloat(cs.fontSize) || 16;
+      lh = fs * 1.35;
+    }
+
+    const start = (paraRect.top - stripRect.top) + (lh * 2);
+    const px = Math.max(0, Math.round(start - 6));
+    wrap.style.setProperty("--intl-blur-start", px + "px");
+  }
+
+  function unlock(persist){
+    wrap.classList.remove("is-locked");
+    if(overlay) overlay.style.display = "none";
+    if(persist){
+      try{ localStorage.setItem(KEY, "1"); }catch(e){}
+    }
+  }
+
+  function lock(){
+    wrap.classList.add("is-locked");
+    if(overlay) overlay.style.display = "";
+    setBlurStart();
+  }
+
+  if(isUnlocked()){
+    unlock(false);
+  }else{
+    lock();
+  }
+
+  // Detect EmailOctopus signup POSTs (fetch/XHR) and unlock on success.
+  try{
+    if (window.fetch){
+      const origFetch = window.fetch.bind(window);
+      window.fetch = function(){
+        const args = arguments;
+        let url = "";
+        try{
+          url = typeof args[0] === "string" ? args[0] : (args[0] && args[0].url) || "";
+        }catch(e){}
+        const p = origFetch.apply(this, args);
+        if (isEmailOctopusRequest(url)){
+          p.then((res) => {
+            if (res && res.ok){
+              unlock(true);
+            }
+          }).catch(() => {});
+        }
+        return p;
+      };
+    }
+  }catch(e){}
+
+  try{
+    const origOpen = XMLHttpRequest.prototype.open;
+    const origSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function(method, url){
+      try{
+        this.__tb_eo = isEmailOctopusRequest(url);
+      }catch(e){
+        this.__tb_eo = false;
+      }
+      return origOpen.apply(this, arguments);
+    };
+    XMLHttpRequest.prototype.send = function(){
+      if (this.__tb_eo){
+        this.addEventListener("load", () => {
+          if (this.status >= 200 && this.status < 300){
+            unlock(true);
+          }
+        });
+      }
+      return origSend.apply(this, arguments);
+    };
+  }catch(e){}
+
+  window.addEventListener("resize", setBlurStart);
+  window.addEventListener("orientationchange", setBlurStart);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(setBlurStart).catch(()=>{});
+  }
+
+  window.addEventListener("message", (event) => {
+    try{
+      const host = new URL(event.origin).hostname;
+      const ok = /(^|\.)eomail\d*\.com$|(^|\.)eocampaign\d*\.com$|(^|\.)emailoctopus\.com$/i.test(host);
+      if(!ok) return;
+    }catch(e){
+      return;
+    }
+
+    const data = event.data;
+    const text = (typeof data === "string") ? data : JSON.stringify(data || {});
+    if(/success|subscribed|thank/i.test(text)){
+      unlock(true);
+    }
+  }, false);
+})();
   </script>
 
 </body>
