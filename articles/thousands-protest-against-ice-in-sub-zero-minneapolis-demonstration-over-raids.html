@@ -426,7 +426,10 @@ body.claim-mode .claim-toast{ display:block; }
   mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
 }
-.intl-gate-wrap{ position: relative; }
+.intl-gate-wrap{
+  position: relative;
+  --intl-bleed: 0px;
+}
 .intl-blur-layer{ display:none; }
 .intl-gate-wrap.is-locked .intl-strip{
   position: relative;
@@ -435,8 +438,8 @@ body.claim-mode .claim-toast{ display:block; }
 .intl-gate-wrap.is-locked .intl-blur-layer{
   display:block;
   position:absolute;
-  left:0;
-  right:0;
+  left: calc(0px - var(--intl-bleed));
+  right: calc(0px - var(--intl-bleed));
   top: var(--intl-blur-start, 200px);
   bottom:0;
   pointer-events: none;
@@ -499,6 +502,10 @@ body.claim-mode .claim-toast{ display:block; }
   margin-top: 8px;
   font-size: 11px;
   color: rgba(17,18,20,.55);
+}
+
+@media (max-width: 700px){
+  .intl-gate-wrap{ --intl-bleed: 8px; }
 }
 .intl-strip::-webkit-scrollbar{ height: 6px; }
 .intl-strip::-webkit-scrollbar-thumb{
@@ -1714,6 +1721,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   const wrap = document.getElementById("intl-gate-wrap");
   const overlay = document.getElementById("intl-gate-overlay");
   const strip = wrap ? wrap.querySelector(".intl-strip") : null;
+  const FORM_ID = "4fae613c-fa04-11f0-8687-7b599f2db40d";
 
   if(!wrap) return;
 
@@ -1721,6 +1729,16 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     try{
       const c = document.cookie || "";
       return /(?:^|;\s*)(eo|eomail|emailoctopus|octopus)[^=]*=/i.test(c);
+    }catch(e){
+      return false;
+    }
+  }
+
+  function isEmailOctopusRequest(url){
+    try{
+      if (!url) return false;
+      const s = String(url);
+      return s.indexOf("eomail5.com/form/" + FORM_ID) !== -1;
     }catch(e){
       return false;
     }
@@ -1775,6 +1793,52 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   }else{
     lock();
   }
+
+  // Detect EmailOctopus signup POSTs (fetch/XHR) and unlock on success.
+  try{
+    if (window.fetch){
+      const origFetch = window.fetch.bind(window);
+      window.fetch = function(){
+        const args = arguments;
+        let url = "";
+        try{
+          url = typeof args[0] === "string" ? args[0] : (args[0] && args[0].url) || "";
+        }catch(e){}
+        const p = origFetch.apply(this, args);
+        if (isEmailOctopusRequest(url)){
+          p.then((res) => {
+            if (res && res.ok){
+              unlock(true);
+            }
+          }).catch(() => {});
+        }
+        return p;
+      };
+    }
+  }catch(e){}
+
+  try{
+    const origOpen = XMLHttpRequest.prototype.open;
+    const origSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function(method, url){
+      try{
+        this.__tb_eo = isEmailOctopusRequest(url);
+      }catch(e){
+        this.__tb_eo = false;
+      }
+      return origOpen.apply(this, arguments);
+    };
+    XMLHttpRequest.prototype.send = function(){
+      if (this.__tb_eo){
+        this.addEventListener("load", () => {
+          if (this.status >= 200 && this.status < 300){
+            unlock(true);
+          }
+        });
+      }
+      return origSend.apply(this, arguments);
+    };
+  }catch(e){}
 
   window.addEventListener("resize", setBlurStart);
   window.addEventListener("orientationchange", setBlurStart);
