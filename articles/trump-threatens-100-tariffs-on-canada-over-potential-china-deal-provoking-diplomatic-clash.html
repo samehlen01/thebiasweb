@@ -1363,7 +1363,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
           entries.forEach(function(ent){
             if (ent.isIntersecting){
               sessionStorage.setItem(k, '1');
-              beacon('/t/reach-economic-stakes/' + encodeURIComponent(slug));
+              beacon('/functions/t/reach-economic-stakes/' + encodeURIComponent(slug));
               try{ obs.disconnect(); }catch(e){}
             }
           });
@@ -1377,14 +1377,14 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   document.addEventListener('click', function(ev){
     var a = ev.target && ev.target.closest ? ev.target.closest('[data-eo-form-toggle-id]') : null;
     if (!a) return;
-    beacon('/t/waitlist-click/' + encodeURIComponent(slug));
+    beacon('/functions/t/waitlist-click/' + encodeURIComponent(slug));
   }, true);
 
   // Click: Instagram
   document.addEventListener('click', function(ev){
     var a = ev.target && ev.target.closest ? ev.target.closest('a[href*="instagram.com/thebias_app"]') : null;
     if (!a) return;
-    beacon('/t/ig-click/' + encodeURIComponent(slug));
+    beacon('/functions/t/ig-click/' + encodeURIComponent(slug));
   }, true);
 })();
 </script>
