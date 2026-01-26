@@ -17,6 +17,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://eomail5.com" crossorigin>
+  <link rel="dns-prefetch" href="//eomail5.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
   <style>:root{
@@ -873,7 +875,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 .cta-card{
   margin: 14px 0 18px;
   padding: 14px;
-  border: 1px solid rgba(17,18,20,.10);
+  border: 1px solid var(--gold);
   background: rgba(255,250,242,.92);
   border-radius: 14px;
   display: grid;
@@ -917,8 +919,8 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   justify-content:center;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(17,18,20,.92);
-  color: rgba(255,250,242,.98);
+  background: var(--gold);
+  color: rgba(17,18,20,.92);
   text-decoration: none;
   font-weight: 650;
   font-size: 13px;
@@ -934,6 +936,74 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   .cta-card{ grid-template-columns: 1fr; }
   .cta-right{ align-items: stretch; }
   .cta-btn{ width: 100%; }
+}
+
+/* ===== EmailOctopus fallback banner ===== */
+.eo-fallback{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 66px; /* sits above follow bar */
+  z-index: 60;
+  display: none;
+  padding: 10px 14px;
+}
+.eo-fallback.show{ display:block; }
+.eo-fallback-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,250,242,.96);
+  box-shadow: 0 18px 45px rgba(0,0,0,.12);
+  padding: 10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.eo-fallback-copy{
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(17,18,20,.72);
+}
+.eo-fallback-actions{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.eo-fallback-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: var(--gold);
+  color: rgba(17,18,20,.92);
+  text-decoration:none;
+  font-weight: 650;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.eo-fallback-btn:hover{ filter: brightness(.97); }
+.eo-fallback-close{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: transparent;
+  color: rgba(17,18,20,.70);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.eo-fallback-close:hover{ color: rgba(17,18,20,.95); background: rgba(0,0,0,.03); }
+
+@media (max-width: 680px){
+  .eo-fallback-inner{ flex-direction: column; align-items: stretch; }
+  .eo-fallback-actions{ justify-content: space-between; width:100%; }
+  .eo-fallback-btn{ width:100%; }
 }
 </style>
 </head>
@@ -959,7 +1029,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/federal-border-patrol-agents-fatally-shoot-alex-jeffrey-pretti-an-icu-nurse-in-minneapolis-during-immigration-crackdown-videos-mass-protests-legal-orders-and-congressional-threats-to-block-dhs-funding-1769362564-be7c69e6.png" alt="Hero image" /></div>
 
     <section class="meta-card">
-      <div class="meta-row"><span class="meta-item left">Updated 10h ago</span><span class="dot-sep"></span><span class="meta-item center">6-min read</span><span class="dot-sep"></span><span class="meta-item right">237 sources</span></div>
+      <div class="meta-row"><span class="meta-item left">Updated 1d ago</span><span class="dot-sep"></span><span class="meta-item center">6-min read</span><span class="dot-sep"></span><span class="meta-item right">237 sources</span></div>
 
       <div class="meters">
         <div class="meter">
@@ -1001,22 +1071,22 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 
     <main class="content">
       
+      
+      <p class="para" data-block="b1">Federal/Border Patrol agents fatally shoot Alex Jeffrey Pretti (an ICU nurse) in Minneapolis during immigration crackdown — videos, mass protests, legal orders and congressional threats to block DHS funding.
+
+The incident occurred in south Minneapolis when a Border Patrol agent shot and killed 37-year-old Alex Jeffrey Pretti near Glam Doll Donuts; publicly available videos have since circulated, protests spread to multiple U.S. cities, a federal judge issued a temporary order barring the Trump administration from destroying or altering evidence, and Senate Democrats said they would block a spending package that included money for DHS.</p><h2 class="subtitle">What happened</h2><p class="para" data-block="b3">The Department of Homeland Security said the man approached U.S. Border Patrol officers with a 9 mm semi-automatic handgun, resisted attempts to disarm him, and that an agent fired &#x27;defensive shots.&#x27; DHS said medics on scene immediately delivered medical aid but the subject was pronounced dead at the scene. DHS officials also said agents were conducting an operation targeting Jose Huerta-Chuma. Pretti&#x27;s death was the second fatal shooting of a Minneapolis protester in less than three weeks, after Renee Nicole Good was killed earlier in January. Video analysis suggests roughly ten shots were fired.</p><p class="para" data-block="b4">Bystander videos and independent reviewers say the available footage does not show Pretti pointing or drawing a weapon; several clips show him holding a phone, being pepper-sprayed and wrestled to the ground. Other footage appears to show a federal agent removing a handgun from Pretti&#x27;s waistband immediately before shots were fired, and a social-media video appears to show a DHS officer clapping as another agent fired.</p><p class="para" data-block="b5">A physician who filed an affidavit said ICE agents initially prevented him from reaching Pretti and that agents appeared to be counting his bullet wounds instead of performing CPR. Drew Evans, superintendent of the Minnesota Bureau of Criminal Apprehension, said his agency had a signed judicial warrant but was denied physical access to the shooting scene by federal officials.</p><blockquote class="quote" data-block="b6"><span class="quote-line top" aria-hidden="true"></span>This is the gunman’s gun, loaded (with two additional full magazines!), and ready to go—What is that all about? Where are the local Police? Why weren’t they allowed to protect ICE Officers?<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— President Donald Trump</div><p class="para" data-block="b7">The president posted images of the recovered pistol and defended agents, blaming local officials for not protecting ICE officers.</p><h2 class="subtitle">Legal orders and access</h2><p class="para" data-block="b9">A U.S. District judge, Eric Tostrud, granted a temporary order barring the administration from destroying or altering evidence related to the shooting. U.S. District Judge Kate Menendez issued a separate ruling barring federal officers from detaining or deploying tear gas against peaceful protesters in Minnesota. Despite those rulings, Border Patrol commander Gregory Bovino said agents would continue to use tear gas and less-lethal munitions against violent protesters. DHS Secretary Kristi Noem said the Department of Homeland Security would lead the investigation into the shooting.</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
     <div class="cta-eyebrow">The Bias</div>
     <div class="cta-explainer">Modern news forces a trade-off: one lens or ten tabs. The Bias is the wide-angle view — key facts and major perspectives in one read. Instead of headlines and hot takes, we pull together what different outlets are actually saying — and where their reporting starts to differ. Most stories include an international outlook, showing what overseas coverage is emphasising.</div>
-    <div class="cta-title">Want the wide-angle view in your feed?</div>
-    <div class="cta-sub">Join the iOS waitlist for launch updates and early access.</div>
+    <div class="cta-title">Get the wide-angle view on iOS — without ten tabs</div>
+    <div class="cta-sub">We’ll email you first when it’s ready — plus new wide-angle briefings.</div>
   </div>
   <div class="cta-right">
     <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
   </div>
 </div>
-
-      
-      <p class="para" data-block="b1">Federal/Border Patrol agents fatally shoot Alex Jeffrey Pretti (an ICU nurse) in Minneapolis during immigration crackdown — videos, mass protests, legal orders and congressional threats to block DHS funding.
-
-The incident occurred in south Minneapolis when a Border Patrol agent shot and killed 37-year-old Alex Jeffrey Pretti near Glam Doll Donuts; publicly available videos have since circulated, protests spread to multiple U.S. cities, a federal judge issued a temporary order barring the Trump administration from destroying or altering evidence, and Senate Democrats said they would block a spending package that included money for DHS.</p><h2 class="subtitle">What happened</h2><p class="para" data-block="b3">The Department of Homeland Security said the man approached U.S. Border Patrol officers with a 9 mm semi-automatic handgun, resisted attempts to disarm him, and that an agent fired &#x27;defensive shots.&#x27; DHS said medics on scene immediately delivered medical aid but the subject was pronounced dead at the scene. DHS officials also said agents were conducting an operation targeting Jose Huerta-Chuma. Pretti&#x27;s death was the second fatal shooting of a Minneapolis protester in less than three weeks, after Renee Nicole Good was killed earlier in January. Video analysis suggests roughly ten shots were fired.</p><p class="para" data-block="b4">Bystander videos and independent reviewers say the available footage does not show Pretti pointing or drawing a weapon; several clips show him holding a phone, being pepper-sprayed and wrestled to the ground. Other footage appears to show a federal agent removing a handgun from Pretti&#x27;s waistband immediately before shots were fired, and a social-media video appears to show a DHS officer clapping as another agent fired.</p><p class="para" data-block="b5">A physician who filed an affidavit said ICE agents initially prevented him from reaching Pretti and that agents appeared to be counting his bullet wounds instead of performing CPR. Drew Evans, superintendent of the Minnesota Bureau of Criminal Apprehension, said his agency had a signed judicial warrant but was denied physical access to the shooting scene by federal officials.</p><blockquote class="quote" data-block="b6"><span class="quote-line top" aria-hidden="true"></span>This is the gunman’s gun, loaded (with two additional full magazines!), and ready to go—What is that all about? Where are the local Police? Why weren’t they allowed to protect ICE Officers?<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— President Donald Trump</div><p class="para" data-block="b7">The president posted images of the recovered pistol and defended agents, blaming local officials for not protecting ICE officers.</p><h2 class="subtitle">Legal orders and access</h2><p class="para" data-block="b9">A U.S. District judge, Eric Tostrud, granted a temporary order barring the administration from destroying or altering evidence related to the shooting. U.S. District Judge Kate Menendez issued a separate ruling barring federal officers from detaining or deploying tear gas against peaceful protesters in Minnesota. Despite those rulings, Border Patrol commander Gregory Bovino said agents would continue to use tear gas and less-lethal munitions against violent protesters. DHS Secretary Kristi Noem said the Department of Homeland Security would lead the investigation into the shooting.</p><h2 class="subtitle">Reactions and politics</h2><p class="para" data-block="b11">Pretti&#x27;s parents denounced what they called &#x27;sickening lies&#x27; from the administration and said Alex was not holding a gun when he was attacked. Governor Tim Walz and Mayor Jacob Frey called for federal immigration agents to leave Minnesota and for the operation to end; Frey said video shows agents pummeling and killing a constituent.</p><p class="para" data-block="b12">Homeland Security Secretary Kristi Noem and other administration officials characterized the crowd as a &#x27;violent riot&#x27; and questioned why protesters would bring a gun to a demonstration. Some administration statements went further, characterizing Pretti as a domestic terrorist who intended to massacre law enforcement. Minneapolis Police Chief Brian O&#x27;Hara said Pretti was believed to be a lawful gun owner with a permit, while Border Patrol commander Gregory Bovino defended the shooting, saying the officer who fired had been with the agency eight years and was highly trained.</p><p class="para" data-block="b13">Senator Bill Cassidy called the events &#x27;incredibly disturbing&#x27; and urged a full joint federal and state investigation. The National Rifle Association and other gun-rights groups criticized suggestions that approaching officers with a legal firearm should be equated with violence, while commentator Dana Loesch warned that &#x27;Statements like this don’t help&#x27; and Bill Essayli wrote that approaching law enforcement with a gun makes it more likely officers will be legally justified in shooting.</p><h2 class="subtitle">Protests and consequences</h2><p class="para" data-block="b15">Federal agents deployed tear gas and pepper balls and made arrests at demonstrations that followed the shooting, and DHS said an officer had his finger bitten off during clashes. Demonstrations broke out in multiple cities, including more than 1,000 people in New York and hundreds in Minneapolis; local officials requested activation of the Minnesota National Guard to assist law enforcement. The NBA postponed the Timberwolves–Warriors game to prioritize community safety. An online fundraiser for Pretti&#x27;s family raised more than $230,000 within hours.</p><h2 class="subtitle">Speculation and next steps</h2><p class="para" data-block="b17">Journalists and observers have speculated that Pretti&#x27;s gun may have accidentally discharged while in an officer&#x27;s hands or that agents may have assumed earlier gunfire came from him, prompting subsequent shots. Rob Doar of the Minnesota Gun Owners Caucus said the video gave the impression Pretti was disarmed before he was shot. An unnamed DHS insider told a news outlet the department rushed to justify the shooting. Some commentators and Trump-aligned voices discussed the theoretical use of the Insurrection Act, and analysts and activists warned the shootings could increase pressure to defund or reform ICE and DHS.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b19">Reporting agrees that Alex Jeffrey Pretti died following an encounter with federal Border Patrol officers in south Minneapolis and that video, protests and legal actions followed; federal officials say Pretti approached agents with a 9 mm pistol and that medics on scene delivered aid, while family members, bystanders and independent reviewers dispute that account and say footage does not show him drawing or firing a weapon. Investigations are underway: DHS has said it will lead the probe, judges have ordered evidence preserved, Minnesota investigators say they were denied access to the scene, Senate Democrats have signaled they will not back spending that includes DHS funding, and Sen. Bill Cassidy has called for a full joint federal and state investigation.</p>
+<h2 class="subtitle" id="economic-stakes">Reactions and politics</h2><p class="para" data-block="b11">Pretti&#x27;s parents denounced what they called &#x27;sickening lies&#x27; from the administration and said Alex was not holding a gun when he was attacked. Governor Tim Walz and Mayor Jacob Frey called for federal immigration agents to leave Minnesota and for the operation to end; Frey said video shows agents pummeling and killing a constituent.</p><p class="para" data-block="b12">Homeland Security Secretary Kristi Noem and other administration officials characterized the crowd as a &#x27;violent riot&#x27; and questioned why protesters would bring a gun to a demonstration. Some administration statements went further, characterizing Pretti as a domestic terrorist who intended to massacre law enforcement. Minneapolis Police Chief Brian O&#x27;Hara said Pretti was believed to be a lawful gun owner with a permit, while Border Patrol commander Gregory Bovino defended the shooting, saying the officer who fired had been with the agency eight years and was highly trained.</p><p class="para" data-block="b13">Senator Bill Cassidy called the events &#x27;incredibly disturbing&#x27; and urged a full joint federal and state investigation. The National Rifle Association and other gun-rights groups criticized suggestions that approaching officers with a legal firearm should be equated with violence, while commentator Dana Loesch warned that &#x27;Statements like this don’t help&#x27; and Bill Essayli wrote that approaching law enforcement with a gun makes it more likely officers will be legally justified in shooting.</p><h2 class="subtitle">Protests and consequences</h2><p class="para" data-block="b15">Federal agents deployed tear gas and pepper balls and made arrests at demonstrations that followed the shooting, and DHS said an officer had his finger bitten off during clashes. Demonstrations broke out in multiple cities, including more than 1,000 people in New York and hundreds in Minneapolis; local officials requested activation of the Minnesota National Guard to assist law enforcement. The NBA postponed the Timberwolves–Warriors game to prioritize community safety. An online fundraiser for Pretti&#x27;s family raised more than $230,000 within hours.</p><h2 class="subtitle">Speculation and next steps</h2><p class="para" data-block="b17">Journalists and observers have speculated that Pretti&#x27;s gun may have accidentally discharged while in an officer&#x27;s hands or that agents may have assumed earlier gunfire came from him, prompting subsequent shots. Rob Doar of the Minnesota Gun Owners Caucus said the video gave the impression Pretti was disarmed before he was shot. An unnamed DHS insider told a news outlet the department rushed to justify the shooting. Some commentators and Trump-aligned voices discussed the theoretical use of the Insurrection Act, and analysts and activists warned the shootings could increase pressure to defund or reform ICE and DHS.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b19">Reporting agrees that Alex Jeffrey Pretti died following an encounter with federal Border Patrol officers in south Minneapolis and that video, protests and legal actions followed; federal officials say Pretti approached agents with a 9 mm pistol and that medics on scene delivered aid, while family members, bystanders and independent reviewers dispute that account and say footage does not show him drawing or firing a weapon. Investigations are underway: DHS has said it will lead the probe, judges have ordered evidence preserved, Minnesota investigators say they were denied access to the scene, Senate Democrats have signaled they will not back spending that includes DHS funding, and Sen. Bill Cassidy has called for a full joint federal and state investigation.</p>
       
       <hr class="divider" /><section class="intl-section"><h2 class="intl-title">International Outlook</h2><p class="intl-sub">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</p><div class="intl-strip"><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">News18 India, Republic World - World</div><div class="intl-body"><p class="para" data-block="b20">Indian outlets reported that DHS describes the interior enforcement campaign as &quot;Operation Metro Surge&quot; (launched December 2025) and supplied specific deployment and arrest figures.</p><ul class="list unordered" data-block="b21">
 <li>Operation Metro Surge — DHS said it planned to deploy about 2,000 agents from ICE, CBP and other units; other reports said roughly 3,000 agents have been assigned to Minnesota.</li>
@@ -1024,13 +1094,13 @@ The incident occurred in south Minneapolis when a Border Patrol agent shot and k
 <li>Republic World reproduced DHS figures claiming very large percentage increases in attacks on staff: over 1,300% increase in assaults, a 3,200% increase in vehicular attacks and an 8,000% increase in death threats.</li>
 <li>Local impact: News18 reported Curry Corner temporarily closed &quot;until further notice&quot;, set up a GoFundMe, distributed free samosas to anti‑ICE protesters and said the pause caused &quot;major financial hardship&quot;.</li>
 </ul><p class="para" data-block="b22">Together these items add a named operation, precise (and contested) deployment and arrest claims, and on‑the‑ground reporting of community economic effects.</p></div></article><article class="intl-card"><div class="intl-country">Oceania</div><div class="intl-sources-title">Sources</div><div class="intl-sources">7News Australia, SBS Australia, The Guardian Australia</div><div class="intl-body"><p class="para" data-block="b23">Australian outlets flagged differing counts of federal‑involved shootings and amplified local political context: 7News called this the third federal‑related shooting that month, while SBS placed it among five January shootings involving federal agents.</p><div class="stat-card" data-block="b24"><div class="stat-value">≈$400,000</div><div class="stat-label">GoFundMe total</div><div class="stat-note">raised within about 17 hours (Australian reporting)</div></div><p class="para" data-block="b25">Australian pieces reported a GoFundMe titled &quot;Alex Pretti is an American Hero&quot; raised almost $400,000 within about 17 hours — a larger early total than some other outlets cited.</p><p class="para" data-block="b26">They also said the family were first contacted by an AP reporter and the Hennepin County Medical Examiner later confirmed a body matching Pretti&#x27;s name and description; Australian reports reiterated an administration figure that about 3,000 people have been arrested since the intensified operations began.</p><blockquote class="quote" data-block="b27"><span class="quote-line top" aria-hidden="true"></span>ICE agents have been asking where Asian people live<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Kaohly Her, Saint Paul mayor</div><p class="para" data-block="b28">Coverage expanded on local politics: Her is described as Saint Paul&#x27;s first woman, first Asian American and first Hmong mayor and has been placed under federal investigation for allegedly obstructing immigration enforcement; pieces noted the city&#x27;s &#x27;separation&#x27; ordinance barring ICE coordination, the DOJ calling the city&#x27;s lawsuit &#x27;legally frivolous&#x27;, and Her&#x27;s office training &#x27;constitutional observers&#x27; and offering programs to help residents retrieve seized vehicles.</p></div></article><article class="intl-card"><div class="intl-country">Southeast Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Straits Times Singapore</div><div class="intl-body"><p class="para" data-block="b29">Straits Times highlighted sworn court filings: a physician&#x27;s affidavit said federal agents initially denied the doctor access, patted them down before allowing aid, the doctor checked and found no pulse and began CPR, and then left as tear gas seeped into their apartment.</p><blockquote class="quote" data-block="b30"><span class="quote-line top" aria-hidden="true"></span>I was sobbing and shaking uncontrollably<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Witness physician (sworn statement)</div><p class="para" data-block="b31">A separate sworn witness, described as a children&#x27;s entertainer, said Pretti approached with a camera to help a woman, that they did not see him hold or reach for a gun, and that the witness&#x27;s video was filed with the court record.</p></div></article><article class="intl-card"><div class="intl-country">Latin America</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Clarín Argentina, Folha Brazil, El Financiero (Mexico), El Nacional Venezuela</div><div class="intl-body"><p class="para" data-block="b32">Clarín reproduced the president&#x27;s social‑media assertions and political framing, reporting that the administration linked the ICE deployment to an alleged multimillion‑dollar welfare‑fraud controversy and Democratic &#x27;open‑border&#x27; policies.</p><blockquote class="quote" data-block="b33"><span class="quote-line top" aria-hidden="true"></span>12,000 illegal immigrant criminals, many of them violent, have been arrested and removed from Minnesota.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Donald Trump, U.S. president</div><p class="para" data-block="b34">Clarín also reported the president suggested the scandal had prompted Governor Tim Walz to drop a re‑election bid and highlighted a case in which a five‑year‑old, Liam Conejo Ramos, was reportedly used as bait to arrest his father.</p><p class="para" data-block="b35">Folha (Brazil) reported the man shot was transported by ambulance to a hospital where the death was confirmed — a detail that differs from some accounts saying he was pronounced dead at the scene.</p><p class="para" data-block="b36">El Nacional (Reuters pickup) said BBC Verify confirmed two videos showing the shooting but that the BBC had not been able to verify who owned the firearm pictured or where it was found.</p><p class="para" data-block="b37">El Financiero reported video of an officer mockingly telling protesters &#x27;Boo hoo&#x27; as he walked away and said agents pushed at least one protester into a vehicle during clashes.</p></div></article><article class="intl-card"><div class="intl-country">Eastern Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Rossiyskaya Gazeta (State)</div><div class="intl-body"><p class="para" data-block="b38">Rossiyskaya Gazeta (state‑owned) reported state authorities mobilised National Guard units to protect administrative buildings and create &#x27;security perimeters&#x27;, saying armoured vehicles and other heavy equipment were visible on Minneapolis streets and quoting a governor description of the episode as &#x27;horrific&#x27; that accused federal agents of pouring &#x27;fuel on the fire&#x27;.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Euronews</div><div class="intl-body"><p class="para" data-block="b39">Euronews reported that an autopsy classified the earlier killing of Renee Good as a homicide and that the officer who fired, Jonathan Ross, has neither been suspended nor charged.</p></div></article><article class="intl-card"><div class="intl-country">East Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Liberty Times (Taiwan)</div><div class="intl-body"><blockquote class="quote" data-block="b40"><span class="quote-line top" aria-hidden="true"></span>I checked the pulse, but I did not feel a heartbeat.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Witness physician (sworn statement)</div><p class="para" data-block="b41">Liberty Times published the sworn medical statement saying the victim&#x27;s back had &#x27;at least three bullet wounds&#x27;, the left upper chest had one bullet wound and there was a possible neck wound.</p></div></article></div></section>
-
+<p class="para" style="font-size:13px;color:rgba(17,18,20,.65);margin-top:4px;">Built from coverage across multiple outlets and regions.</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
     <div class="cta-eyebrow">The Bias</div>
     
-    <div class="cta-title">Want this for every major headline? Join the iOS waitlist.</div>
-    <div class="cta-sub">Sign up for updates and early access to our iOS launch.</div>
+    <div class="cta-title">Want this kind of clarity next time a major story breaks?</div>
+    <div class="cta-sub">Join the iOS waitlist for early access to future wide-angle briefings.</div>
   </div>
   <div class="cta-right">
     <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
@@ -1109,6 +1179,19 @@ The incident occurred in south Minneapolis when a Border Patrol agent shot and k
       </div>
     </div>
   </section>
+
+  <!-- EmailOctopus fallback (blocked scripts / in-app browsers) -->
+  <div class="eo-fallback" id="eo-fallback" role="region" aria-label="Waitlist signup help">
+    <div class="eo-fallback-inner">
+      <div class="eo-fallback-copy">
+        If the signup window didn’t open, your browser may be blocking it.
+      </div>
+      <div class="eo-fallback-actions">
+        <a class="eo-fallback-btn" id="eo-fallback-open" href="/waitlist">Open signup</a>
+        <button class="eo-fallback-close" id="eo-fallback-close" aria-label="Dismiss">×</button>
+      </div>
+    </div>
+  </div>
 
 
   <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
@@ -1362,7 +1445,105 @@ The incident occurred in south Minneapolis when a Border Patrol agent shot and k
   })();
   </script>
 
-  <script async src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
-  <script async src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+  <script>
+(function(){
+  var slug = (location.pathname || '').split('/').filter(Boolean).pop() || 'unknown';
+  function beacon(path){
+    try{
+      if (navigator.sendBeacon){
+        navigator.sendBeacon(path, '');
+        return;
+      }
+    }catch(e){}
+    try{
+      fetch(path, {method:'POST', keepalive:true, headers:{'Content-Type':'text/plain'}, body:''}).catch(function(){});
+    }catch(e){}
+  }
+
+  // Reach: Economic stakes section (once per session)
+  try{
+    var target = document.getElementById('economic-stakes');
+    if (target){
+      var k = 'tb_reach_econ_' + slug;
+      if (!sessionStorage.getItem(k)){
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(ent){
+            if (ent.isIntersecting){
+              sessionStorage.setItem(k, '1');
+              beacon('/t/reach-economic-stakes/' + encodeURIComponent(slug));
+              try{ obs.disconnect(); }catch(e){}
+            }
+          });
+        }, {threshold: 0.35});
+        obs.observe(target);
+      }
+    }
+  }catch(e){}
+
+  // Click: waitlist CTAs (EmailOctopus toggles)
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('[data-eo-form-toggle-id]') : null;
+    if (!a) return;
+    beacon('/functions/t/waitlist-click/' + encodeURIComponent(slug));
+  }, true);
+
+  // Click: Instagram
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href*="instagram.com/thebias_app"]') : null;
+    if (!a) return;
+    beacon('/functions/t/ig-click/' + encodeURIComponent(slug));
+  }, true);
+})();
+</script>
+
+  <script>
+    // Prevent "#" navigation while still letting EmailOctopus handle the click.
+    document.addEventListener("click", (e) => {
+      const t = e.target.closest('a[data-eo-form-toggle-id]');
+      if (!t) return;
+      e.preventDefault();
+    }, true);
+  </script>
+
+  <script data-cfasync="false" src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
+  <script data-cfasync="false" src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+
+  <script>
+    (function(){
+      const fallback = document.getElementById("eo-fallback");
+      const closeBtn = document.getElementById("eo-fallback-close");
+      const openBtn = document.getElementById("eo-fallback-open");
+
+      function modalSeemsPresent(){
+        return !!document.querySelector(
+          'iframe[src*="eomail5.com"], iframe[src*="emailoctopus"], [class*="eo"], [id*="eo-modal"], [id*="emailoctopus"]'
+        );
+      }
+
+      function showFallback(){
+        if (!fallback) return;
+        fallback.classList.add("show");
+      }
+      function hideFallback(){
+        if (!fallback) return;
+        fallback.classList.remove("show");
+      }
+
+      if (closeBtn) closeBtn.addEventListener("click", hideFallback);
+
+      document.addEventListener("click", (e) => {
+        const t = e.target.closest('[data-eo-form-toggle-id]');
+        if (!t) return;
+
+        // Give EmailOctopus a moment to inject/open. If nothing appears, show fallback.
+        setTimeout(() => {
+          if (!modalSeemsPresent()){
+            showFallback();
+          }
+        }, 850);
+      }, true);
+    })();
+  </script>
+
 </body>
 </html>
