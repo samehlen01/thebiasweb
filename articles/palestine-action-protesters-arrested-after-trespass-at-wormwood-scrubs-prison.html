@@ -17,6 +17,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://eomail5.com" crossorigin>
+  <link rel="dns-prefetch" href="//eomail5.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
   <style>:root{
@@ -873,7 +875,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 .cta-card{
   margin: 14px 0 18px;
   padding: 14px;
-  border: 1px solid rgba(17,18,20,.10);
+  border: 1px solid var(--gold);
   background: rgba(255,250,242,.92);
   border-radius: 14px;
   display: grid;
@@ -917,8 +919,8 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   justify-content:center;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(17,18,20,.92);
-  color: rgba(255,250,242,.98);
+  background: var(--gold);
+  color: rgba(17,18,20,.92);
   text-decoration: none;
   font-weight: 650;
   font-size: 13px;
@@ -934,6 +936,74 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   .cta-card{ grid-template-columns: 1fr; }
   .cta-right{ align-items: stretch; }
   .cta-btn{ width: 100%; }
+}
+
+/* ===== EmailOctopus fallback banner ===== */
+.eo-fallback{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 66px; /* sits above follow bar */
+  z-index: 60;
+  display: none;
+  padding: 10px 14px;
+}
+.eo-fallback.show{ display:block; }
+.eo-fallback-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,250,242,.96);
+  box-shadow: 0 18px 45px rgba(0,0,0,.12);
+  padding: 10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.eo-fallback-copy{
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(17,18,20,.72);
+}
+.eo-fallback-actions{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.eo-fallback-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: var(--gold);
+  color: rgba(17,18,20,.92);
+  text-decoration:none;
+  font-weight: 650;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.eo-fallback-btn:hover{ filter: brightness(.97); }
+.eo-fallback-close{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: transparent;
+  color: rgba(17,18,20,.70);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.eo-fallback-close:hover{ color: rgba(17,18,20,.95); background: rgba(0,0,0,.03); }
+
+@media (max-width: 680px){
+  .eo-fallback-inner{ flex-direction: column; align-items: stretch; }
+  .eo-fallback-actions{ justify-content: space-between; width:100%; }
+  .eo-fallback-btn{ width:100%; }
 }
 </style>
 </head>
@@ -959,7 +1029,7 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
     <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/palestine-action-protesters-arrested-after-trespass-at-wormwood-scrubs-prison-1769362469-bba11801.png" alt="Hero image" /></div>
 
     <section class="meta-card">
-      <div class="meta-row"><span class="meta-item left">Updated 10h ago</span><span class="dot-sep"></span><span class="meta-item center">4-min read</span><span class="dot-sep"></span><span class="meta-item right">13 sources</span></div>
+      <div class="meta-row"><span class="meta-item left">Updated 1d ago</span><span class="dot-sep"></span><span class="meta-item center">4-min read</span><span class="dot-sep"></span><span class="meta-item right">13 sources</span></div>
 
       <div class="meters">
         <div class="meter">
@@ -1005,8 +1075,8 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   <div class="cta-left">
     <div class="cta-eyebrow">The Bias</div>
     <div class="cta-explainer">Modern news forces a trade-off: one lens or ten tabs. The Bias is the wide-angle view — key facts and major perspectives in one read. Instead of headlines and hot takes, we pull together what different outlets are actually saying — and where their reporting starts to differ. Most stories include an international outlook, showing what overseas coverage is emphasising.</div>
-    <div class="cta-title">Want the wide-angle view in your feed?</div>
-    <div class="cta-sub">Join the iOS waitlist for launch updates and early access.</div>
+    <div class="cta-title">Get the wide-angle view on iOS — without ten tabs</div>
+    <div class="cta-sub">We’ll email you first when it’s ready — plus new wide-angle briefings.</div>
   </div>
   <div class="cta-right">
     <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
@@ -1014,21 +1084,21 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 </div>
 
       
-      <p class="para" data-block="b1">Palestine Action protesters arrested after trespass at Wormwood Scrubs prison — Eighty-six people were arrested on suspicion of aggravated trespass, the Metropolitan Police said, after a group breached the grounds of HMP Wormwood Scrubs in west London while demonstrating in support of a Palestine Action-linked activist held inside the jail.</p><h2 class="subtitle">What happened</h2><p class="para" data-block="b3">The Metropolitan Police said protesters &#x27;refused to leave the grounds when ordered to do so&#x27; and that officers arrested people during the breach. Police said the group &#x27;blocked prison staff from entering and leaving, threatened police officers and a number managed to get inside a staff entrance area of a prison building&#x27;. Videos verified by Al Jazeera show police officers shoving protesters to the ground and handcuffing them, and two groups of police appearing to kettle demonstrators. Footage posted to social media appeared to show protesters chanting, holding Palestinian flags and entering a building inside the prison grounds. That account sits alongside the Ministry of Justice statement that &#x27;At no point was prison security compromised&#x27;, a contrast between police allegations of intrusion and the government&#x27;s assessment. The Ministry of Justice described the escalation as &#x27;completely unacceptable&#x27; and said prisoners were being managed with regular checks and medical support.</p><h2 class="subtitle">Who is at the centre</h2><p class="para" data-block="b5">Organizers said the action was tied to 22-year-old pro-Palestine activist Umer Khalid, who campaigners say has been on hunger strike inside Wormwood Scrubs; reporting varies on how long the strike has lasted. Some reports say he stopped eating 16 days ago, while others say he restarted his hunger strike 15 days ago and is on the second day of a thirst strike. Campaigners say Khalid is at particular risk because he suffers from Limb-Girdle Muscular Dystrophy. Prisoners for Palestine and a physician cited by outlets warned Khalid could die within hours or days if he stops taking fluids, and the physician said people typically die within 3 to 4 days without fluids. Khalid is one of five activists accused of breaking into RAF Brize Norton in June and spray-painting two Voyager aircraft; the group has pleaded not guilty. Prisoners for Palestine listed demands including bail, the right to a fair trial, de-proscription of Palestine Action, closure of Elbit sites in the UK and an end to what it calls censorship in prison.</p><h2 class="subtitle">Reactions and legal context</h2><blockquote class="quote" data-block="b7"><span class="quote-line top" aria-hidden="true"></span>Our prisoners’ hunger strike will be remembered as a landmark moment of pure defiance; an embarrassment for the British state.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Prisoners for Palestine Group</div><p class="para" data-block="b8">That statement was used by the Prisoners for Palestine Group to characterise the action as deliberate defiance. The Ministry of Justice said &#x27;The escalation of the protest at HMP Wormwood Scrubs is completely unacceptable&#x27; and warned that where individuals&#x27; actions cause risk or actual harm to staff &#x27;those responsible can expect to face consequences&#x27;. Umer Khalid told outlets &#x27;The only thing that seems to have any impact, whether that is positive or negative, is drastic action.&#x27; Al Jazeera’s NewsFeed reported police carried out mass arrests after a peaceful protest. The UK government has moved to ban Palestine Action under antiterrorism laws, a decision that has been challenged in court and criticised by the United Nations as &#x27;unjustified&#x27;.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b10">Reporting agrees that demonstrators breached Wormwood Scrubs and that 86 people were arrested, while the Ministry of Justice says &#x27;At no point was prison security compromised&#x27; and that those responsible can expect consequences. Campaigners and a physician warn Umer Khalid could die within hours or days if he stops taking fluids, though outlets give different timelines for his hunger and thirst strike. The government has moved to ban Palestine Action and that ban is being challenged in court and criticised by the United Nations as &#x27;unjustified&#x27;; legal hearings and continued medical monitoring are the most likely next steps.</p>
-      
-      
+      <p class="para" data-block="b1">Palestine Action protesters arrested after trespass at Wormwood Scrubs prison — Eighty-six people were arrested on suspicion of aggravated trespass, the Metropolitan Police said, after a group breached the grounds of HMP Wormwood Scrubs in west London while demonstrating in support of a Palestine Action-linked activist held inside the jail.</p><h2 class="subtitle">What happened</h2><p class="para" data-block="b3">The Metropolitan Police said protesters &#x27;refused to leave the grounds when ordered to do so&#x27; and that officers arrested people during the breach. Police said the group &#x27;blocked prison staff from entering and leaving, threatened police officers and a number managed to get inside a staff entrance area of a prison building&#x27;. Videos verified by Al Jazeera show police officers shoving protesters to the ground and handcuffing them, and two groups of police appearing to kettle demonstrators. Footage posted to social media appeared to show protesters chanting, holding Palestinian flags and entering a building inside the prison grounds. That account sits alongside the Ministry of Justice statement that &#x27;At no point was prison security compromised&#x27;, a contrast between police allegations of intrusion and the government&#x27;s assessment. The Ministry of Justice described the escalation as &#x27;completely unacceptable&#x27; and said prisoners were being managed with regular checks and medical support.</p><h2 class="subtitle">Who is at the centre</h2><p class="para" data-block="b5">Organizers said the action was tied to 22-year-old pro-Palestine activist Umer Khalid, who campaigners say has been on hunger strike inside Wormwood Scrubs; reporting varies on how long the strike has lasted. Some reports say he stopped eating 16 days ago, while others say he restarted his hunger strike 15 days ago and is on the second day of a thirst strike. Campaigners say Khalid is at particular risk because he suffers from Limb-Girdle Muscular Dystrophy. Prisoners for Palestine and a physician cited by outlets warned Khalid could die within hours or days if he stops taking fluids, and the physician said people typically die within 3 to 4 days without fluids. Khalid is one of five activists accused of breaking into RAF Brize Norton in June and spray-painting two Voyager aircraft; the group has pleaded not guilty. Prisoners for Palestine listed demands including bail, the right to a fair trial, de-proscription of Palestine Action, closure of Elbit sites in the UK and an end to what it calls censorship in prison.</p><p class="para" style="font-size:13px;color:rgba(17,18,20,.65);margin-top:4px;">Built from coverage across multiple outlets and regions.</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
     <div class="cta-eyebrow">The Bias</div>
     
-    <div class="cta-title">Want this for every major headline? Join the iOS waitlist.</div>
-    <div class="cta-sub">Sign up for updates and early access to our iOS launch.</div>
+    <div class="cta-title">Want this kind of clarity next time a major story breaks?</div>
+    <div class="cta-sub">Join the iOS waitlist for early access to future wide-angle briefings.</div>
   </div>
   <div class="cta-right">
     <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
   </div>
 </div>
-
+<h2 class="subtitle" id="economic-stakes">Reactions and legal context</h2><blockquote class="quote" data-block="b7"><span class="quote-line top" aria-hidden="true"></span>Our prisoners’ hunger strike will be remembered as a landmark moment of pure defiance; an embarrassment for the British state.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Prisoners for Palestine Group</div><p class="para" data-block="b8">That statement was used by the Prisoners for Palestine Group to characterise the action as deliberate defiance. The Ministry of Justice said &#x27;The escalation of the protest at HMP Wormwood Scrubs is completely unacceptable&#x27; and warned that where individuals&#x27; actions cause risk or actual harm to staff &#x27;those responsible can expect to face consequences&#x27;. Umer Khalid told outlets &#x27;The only thing that seems to have any impact, whether that is positive or negative, is drastic action.&#x27; Al Jazeera’s NewsFeed reported police carried out mass arrests after a peaceful protest. The UK government has moved to ban Palestine Action under antiterrorism laws, a decision that has been challenged in court and criticised by the United Nations as &#x27;unjustified&#x27;.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b10">Reporting agrees that demonstrators breached Wormwood Scrubs and that 86 people were arrested, while the Ministry of Justice says &#x27;At no point was prison security compromised&#x27; and that those responsible can expect consequences. Campaigners and a physician warn Umer Khalid could die within hours or days if he stops taking fluids, though outlets give different timelines for his hunger and thirst strike. The government has moved to ban Palestine Action and that ban is being challenged in court and criticised by the United Nations as &#x27;unjustified&#x27;; legal hearings and continued medical monitoring are the most likely next steps.</p>
+      
+      
       <section class="bias-note" id="about-bias" aria-label="About The Bias">
         <div class="bias-note-kicker">The Bias</div>
         <h3 class="bias-note-title">How this page is made</h3>
@@ -1101,6 +1171,19 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
       </div>
     </div>
   </section>
+
+  <!-- EmailOctopus fallback (blocked scripts / in-app browsers) -->
+  <div class="eo-fallback" id="eo-fallback" role="region" aria-label="Waitlist signup help">
+    <div class="eo-fallback-inner">
+      <div class="eo-fallback-copy">
+        If the signup window didn’t open, your browser may be blocking it.
+      </div>
+      <div class="eo-fallback-actions">
+        <a class="eo-fallback-btn" id="eo-fallback-open" href="/waitlist">Open signup</a>
+        <button class="eo-fallback-close" id="eo-fallback-close" aria-label="Dismiss">×</button>
+      </div>
+    </div>
+  </div>
 
 
   <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
@@ -1354,7 +1437,105 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
   })();
   </script>
 
-  <script async src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
-  <script async src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+  <script>
+(function(){
+  var slug = (location.pathname || '').split('/').filter(Boolean).pop() || 'unknown';
+  function beacon(path){
+    try{
+      if (navigator.sendBeacon){
+        navigator.sendBeacon(path, '');
+        return;
+      }
+    }catch(e){}
+    try{
+      fetch(path, {method:'POST', keepalive:true, headers:{'Content-Type':'text/plain'}, body:''}).catch(function(){});
+    }catch(e){}
+  }
+
+  // Reach: Economic stakes section (once per session)
+  try{
+    var target = document.getElementById('economic-stakes');
+    if (target){
+      var k = 'tb_reach_econ_' + slug;
+      if (!sessionStorage.getItem(k)){
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(ent){
+            if (ent.isIntersecting){
+              sessionStorage.setItem(k, '1');
+              beacon('/t/reach-economic-stakes/' + encodeURIComponent(slug));
+              try{ obs.disconnect(); }catch(e){}
+            }
+          });
+        }, {threshold: 0.35});
+        obs.observe(target);
+      }
+    }
+  }catch(e){}
+
+  // Click: waitlist CTAs (EmailOctopus toggles)
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('[data-eo-form-toggle-id]') : null;
+    if (!a) return;
+    beacon('/functions/t/waitlist-click/' + encodeURIComponent(slug));
+  }, true);
+
+  // Click: Instagram
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href*="instagram.com/thebias_app"]') : null;
+    if (!a) return;
+    beacon('/functions/t/ig-click/' + encodeURIComponent(slug));
+  }, true);
+})();
+</script>
+
+  <script>
+    // Prevent "#" navigation while still letting EmailOctopus handle the click.
+    document.addEventListener("click", (e) => {
+      const t = e.target.closest('a[data-eo-form-toggle-id]');
+      if (!t) return;
+      e.preventDefault();
+    }, true);
+  </script>
+
+  <script data-cfasync="false" src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
+  <script data-cfasync="false" src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+
+  <script>
+    (function(){
+      const fallback = document.getElementById("eo-fallback");
+      const closeBtn = document.getElementById("eo-fallback-close");
+      const openBtn = document.getElementById("eo-fallback-open");
+
+      function modalSeemsPresent(){
+        return !!document.querySelector(
+          'iframe[src*="eomail5.com"], iframe[src*="emailoctopus"], [class*="eo"], [id*="eo-modal"], [id*="emailoctopus"]'
+        );
+      }
+
+      function showFallback(){
+        if (!fallback) return;
+        fallback.classList.add("show");
+      }
+      function hideFallback(){
+        if (!fallback) return;
+        fallback.classList.remove("show");
+      }
+
+      if (closeBtn) closeBtn.addEventListener("click", hideFallback);
+
+      document.addEventListener("click", (e) => {
+        const t = e.target.closest('[data-eo-form-toggle-id]');
+        if (!t) return;
+
+        // Give EmailOctopus a moment to inject/open. If nothing appears, show fallback.
+        setTimeout(() => {
+          if (!modalSeemsPresent()){
+            showFallback();
+          }
+        }, 850);
+      }, true);
+    })();
+  </script>
+
 </body>
 </html>
