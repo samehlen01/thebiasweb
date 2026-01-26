@@ -426,6 +426,87 @@ body.claim-mode .claim-toast{ display:block; }
   mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
 }
+.intl-gate-wrap{
+  position: relative;
+  --intl-bleed: 8px;
+}
+.intl-blur-layer{ display:none; }
+.intl-gate-wrap.is-locked .intl-strip{
+  position: relative;
+  z-index: 1;
+}
+.intl-gate-wrap.is-locked .intl-blur-layer{
+  display:block;
+  position:absolute;
+  left: calc(0px - var(--intl-bleed));
+  right: calc(0px - var(--intl-bleed));
+  top: var(--intl-blur-start, 200px);
+  bottom:0;
+  pointer-events: none;
+  z-index: 3;
+  background: rgba(255,250,242,.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, transparent 0px, rgba(0,0,0,1) 18px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, rgba(0,0,0,1) 18px);
+}
+.intl-gate-overlay{
+  position:absolute;
+  left: 50%;
+  top: calc(var(--intl-blur-start, 200px) + clamp(85px, 10vw, 165px));
+  transform: translateX(-50%);
+  width: min(420px, 92%);
+  background: rgba(255,250,242,.94);
+  border: 1px solid rgba(17,18,20,.10);
+  border-radius: 14px;
+  padding: 12px 12px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.10);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+.intl-gate-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+.intl-gate-title{
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px 0;
+}
+.intl-gate-sub{
+  font-size: 13px;
+  color: rgba(17,18,20,.82);
+  margin: 0 0 10px 0;
+}
+.intl-gate-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  text-decoration: none;
+  appearance: none;
+  border: 1px solid rgba(17,18,20,.14);
+  background: rgba(244,238,227,.85);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-weight: 750;
+  font-size: 13px;
+  cursor: pointer;
+}
+.intl-gate-btn:hover{ background: rgba(244,238,227,1); }
+.intl-gate-note{
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(17,18,20,.55);
+}
+
+@media (min-width: 701px){
+  .intl-gate-wrap{ --intl-bleed: 8px; }
+}
 .intl-strip::-webkit-scrollbar{ height: 6px; }
 .intl-strip::-webkit-scrollbar-thumb{
   background: rgba(17,18,20,.2);
@@ -1139,14 +1220,14 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
 </div>
 <h2 class="subtitle" id="economic-stakes">Reactions and analysis</h2><blockquote class="quote" data-block="b7"><span class="quote-line top" aria-hidden="true"></span>seriously fuelled political and corruption issues that affect the Party&#x27;s absolute leadership over the military<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— PLA Daily (editorial)</div><p class="para" data-block="b8">The BBC suggested that, in China, an accusation of wrongdoing is often used as a euphemism for corruption. Critics accused President Xi of using corruption investigations to purge political rivals. Analysts said the purges appear intended both to reform the military and to ensure loyalty to Xi.</p><p class="para" data-block="b9">Some commentators suggested the moves signal Xi&#x27;s complete confidence and a push to consolidate absolute power. Other commentators argued the purges might indicate paranoia, a loss of control or a weakened leader. The Daily Mail&#x27;s commentary suggested President Xi has achieved total control of China&#x27;s armed forces after the removal.</p><p class="para" data-block="b10">Experts said Zhang&#x27;s removal is likely to delay any attempt to seize Taiwan by force. Lyle Morris warned the removal could leave the PLA in &#x27;disarray&#x27; and undermine its ability to execute a Taiwan contingency. Commentators warned that leadership vacuums will likely compromise the military&#x27;s effectiveness in the short term and could, in the medium term, produce a rise of more nationalistic &#x27;wolf warrior&#x27; generals. The decision has fuelled fresh uncertainty over China&#x27;s invasion plans for Taiwan. Rumour has swirled that Zhang and Liu were involved in a high-level coup plot to take down Xi. Some commentators speculated that Taiwan might be the motivation behind the purge.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b12">Reporting agrees that the defence ministry has opened an investigation into General Zhang Youxia and that General Liu Zhenli is also being probed, but the ministry has released no further details. The Wall Street Journal has publicly reported allegations that Zhang handed over sensitive information on China&#x27;s nuclear weapons to the United States, a claim that remains unproven, and analysts and commentators are divided over whether the moves amount to military reform, a consolidation of Xi&#x27;s authority, or a sign of paranoia. Experts warned the disruption could complicate or delay any Taiwan contingency in the near term, and investigations are continuing with outcomes still unclear.</p>
       
-      <hr class="divider" /><section class="intl-section" id="international-outlook"><h2 class="intl-title">International Outlook</h2><p class="intl-sub"><span class="intl-sub-mobile">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</span><span class="intl-sub-desktop">Scroll to see how overseas media are framing the story and what domestic news is not reporting.</span></p><div class="intl-strip"><article class="intl-card"><div class="intl-country">Taiwan</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Newtalk (Taiwan)</div><div class="intl-body"><p class="para" data-block="b13">Newtalk (Taiwan) carries several items not prominent in UK coverage: an unverified anecdote that Zhang allegedly confronted Xi with a dramatic threat; multiple, inconsistent online claims that the PLA&#x27;s 82nd Group Army intervened to &quot;rescue&quot; Zhang; and a US‑newspaper‑sourced assessment that rebuilding the PLA&#x27;s senior command could take more than five years — a timeline analysts say would reduce the near‑term likelihood of an invasion of Taiwan.</p><blockquote class="quote" data-block="b14"><span class="quote-line top" aria-hidden="true"></span>If I don&#x27;t let you leave here today, would that count as a coup?<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Alleged Zhang Youxia</div><p class="para" data-block="b15">The outlet flags these anecdotes and the &#x27;rescue&#x27; versions as unverified and spread across YouTube channels, X, Facebook and dissident media; none have been confirmed by Chinese official sources or independent outlets. It relays the multi‑year rebuilding projection (via a US paper) as a reason analysts cite for a lower immediate Taiwan contingency risk.</p></div></article><article class="intl-card"><div class="intl-country">East Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Kyunghyang Shinmun (KR)</div><div class="intl-body"><p class="para" data-block="b16">Kyunghyang Shinmun supplies several concrete additions to the public record that shift interpretation toward a political, Party‑led action:</p><ul class="list unordered" data-block="b17">
+      <hr class="divider" /><section class="intl-section" id="international-outlook"><h2 class="intl-title">International Outlook</h2><p class="intl-sub"><span class="intl-sub-mobile">Swipe to see how overseas media are framing the story and what domestic news is not reporting.</span><span class="intl-sub-desktop">Scroll to see how overseas media are framing the story and what domestic news is not reporting.</span></p><div class="intl-gate-wrap is-locked" id="intl-gate-wrap"><div class="intl-strip"><article class="intl-card intl-preview"><div class="intl-country">Taiwan</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Newtalk (Taiwan)</div><div class="intl-body"><p class="para" data-block="b13">Newtalk (Taiwan) carries several items not prominent in UK coverage: an unverified anecdote that Zhang allegedly confronted Xi with a dramatic threat; multiple, inconsistent online claims that the PLA&#x27;s 82nd Group Army intervened to &quot;rescue&quot; Zhang; and a US‑newspaper‑sourced assessment that rebuilding the PLA&#x27;s senior command could take more than five years — a timeline analysts say would reduce the near‑term likelihood of an invasion of Taiwan.</p><blockquote class="quote" data-block="b14"><span class="quote-line top" aria-hidden="true"></span>If I don&#x27;t let you leave here today, would that count as a coup?<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Alleged Zhang Youxia</div><p class="para" data-block="b15">The outlet flags these anecdotes and the &#x27;rescue&#x27; versions as unverified and spread across YouTube channels, X, Facebook and dissident media; none have been confirmed by Chinese official sources or independent outlets. It relays the multi‑year rebuilding projection (via a US paper) as a reason analysts cite for a lower immediate Taiwan contingency risk.</p></div></article><article class="intl-card"><div class="intl-country">East Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Kyunghyang Shinmun (KR)</div><div class="intl-body"><p class="para" data-block="b16">Kyunghyang Shinmun supplies several concrete additions to the public record that shift interpretation toward a political, Party‑led action:</p><ul class="list unordered" data-block="b17">
 <li>Five of the six senior military leaders Xi appointed after the 2022 Party Congress have now been purged.</li>
 <li>The defence ministry named no investigating body and said the probe was &quot;decided after study by the Party Central Committee,&quot; implying the Party — not military disciplinary organs — is fronting the action.</li>
 <li>Timeline and biographical detail: Zhang attended a promotion ceremony on Dec 22 and a central‑discipline plenary on Jan 12 but missed a Party study seminar on Jan 20; his purge was announced four days later. Kyunghyang also records that Zhang was born in 1950, hails from Dongxiang in Shanxi, and that his father fought alongside Xi&#x27;s father during the civil war.</li>
 </ul><p class="para" data-block="b18">Taken together, these specifics underline the scale of Xi&#x27;s post‑2022 reshuffle and suggest the investigation is being managed by central Party organs rather than by internal military discipline structures.</p></div></article><article class="intl-card"><div class="intl-country">Southeast Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Channel News Asia</div><div class="intl-body"><p class="para" data-block="b19">Channel News Asia highlights a tonal shift in the PLA&#x27;s official narrative: the PLA Daily&#x27;s front‑page editorial accused Zhang and Liu of having &quot;seriously trampled on and undermined the system of ultimate responsibility resting with the Central Military Commission (CMC) chairman&quot; — language CNA finds sharper than wording used after previous senior purges.</p><blockquote class="quote" data-block="b20"><span class="quote-line top" aria-hidden="true"></span>The wording seems severe and suggests insubordination<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Chong Ja Ian, NUS / Carnegie China</div><p class="para" data-block="b21">CNA quotes analysts who say the editorial reads less like a graft indictment and more like a list of grievances about authority and loyalty, signalling the case is political and focused on reasserting the chairman&#x27;s control over the military.</p></div></article><article class="intl-card"><div class="intl-country">South Asia</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Indian Express</div><div class="intl-body"><p class="para" data-block="b22">Indian Express foregrounds a US Department of Defense assessment that places the purge in operational terms and gives concrete procurement examples.</p><blockquote class="quote" data-block="b23"><span class="quote-line top" aria-hidden="true"></span>These investigations very likely risk short‑term disruptions in the operational effectiveness of the PLA… Alternatively, the PLA could emerge as a more proficient fighting force in the future if it uses the current campaign to eliminate systemic issues enabling corruption.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— US Department of Defense (annual report)</div><p class="para" data-block="b24">Indian reporting notes the December Pentagon report also warned removals had &quot;caused uncertainty over organisational priorities&quot; and pointed to procurement‑related capability shortfalls — for example malfunctioning missile‑silo lids — reinforcing expectations of short‑term disruption even if the campaign could yield long‑term improvements.</p></div></article><article class="intl-card"><div class="intl-country">Eastern Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">Kommersant, Nasha Niva (Belarus)</div><div class="intl-body"><p class="para" data-block="b25">Kommersant and Belarus&#x27;s Nasha Niva add two procedural and institutional details that are not emphasised in UK summaries:</p><ul class="list unordered" data-block="b26">
 <li>Kommersant relays the Financial Times&#x27; assessment that Xi has concentrated operational command of the PLA in his own hands.</li>
 <li>Nasha Niva reports a special investigative team is working in Shenyang and that investigators are deliberately staying in civilian hotels rather than on military bases to avoid Zhang&#x27;s local influence.</li>
-</ul><p class="para" data-block="b27">These items point both to claims of command centralisation and to concrete steps taken to insulate the inquiry from local military networks during the probe.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">El Mundo</div><div class="intl-body"><p class="para" data-block="b28">El Mundo emphasises a personnel anomaly: Zhang, who had been expected to retire in 2022, was retained on the Central Military Commission for a third term by Xi — a break with convention that underlined their close relationship and raises the political stakes of his removal.</p></div></article></div></section>
+</ul><p class="para" data-block="b27">These items point both to claims of command centralisation and to concrete steps taken to insulate the inquiry from local military networks during the probe.</p></div></article><article class="intl-card"><div class="intl-country">Western Europe</div><div class="intl-sources-title">Sources</div><div class="intl-sources">El Mundo</div><div class="intl-body"><p class="para" data-block="b28">El Mundo emphasises a personnel anomaly: Zhang, who had been expected to retire in 2022, was retained on the Central Military Commission for a third term by Xi — a break with convention that underlined their close relationship and raises the political stakes of his removal.</p></div></article></div><div class="intl-blur-layer" aria-hidden="true"></div><div class="intl-gate-overlay" id="intl-gate-overlay" role="region" aria-label="Email signup to view International Outlook"><div class="intl-gate-kicker">Email signup</div><div class="intl-gate-title">International Outlook</div><div class="intl-gate-sub">See what overseas outlets highlighted that domestic coverage barely mentioned — extra context, different priorities, and details that change how the story reads.</div><a class="intl-gate-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Sign up to mailing list</a><div class="intl-gate-note" id="intl-gate-note">1–2 emails/week. Unsubscribe anytime.</div></div></div></section>
 <p class="para" style="font-size:13px;color:rgba(17,18,20,.65);margin-top:4px;">Built from coverage across multiple outlets and regions.</p>
 <div class="cta-card" role="region" aria-label="Join The Bias waitlist">
   <div class="cta-left">
@@ -1639,6 +1720,146 @@ details.sources[open] summary .chev{ transform: rotate(180deg); }
         }, 850);
       }, true);
     })();
+  </script>
+
+  <script>
+(function(){
+  const KEY = "tb_intl_unlocked_v1";
+  const wrap = document.getElementById("intl-gate-wrap");
+  const overlay = document.getElementById("intl-gate-overlay");
+  const strip = wrap ? wrap.querySelector(".intl-strip") : null;
+  const FORM_ID = "4fae613c-fa04-11f0-8687-7b599f2db40d";
+
+  if(!wrap) return;
+
+  function isEmailOctopusRequest(url){
+    try{
+      if (!url) return false;
+      const s = String(url);
+      return s.indexOf("eomail5.com/form/" + FORM_ID) !== -1;
+    }catch(e){
+      return false;
+    }
+  }
+
+  function isUnlocked(){
+    try{
+      return localStorage.getItem(KEY) === "1";
+    }catch(e){
+      return false;
+    }
+  }
+
+  function setBlurStart(){
+    if(!wrap.classList.contains("is-locked")) return;
+    if(!strip) return;
+
+    const para = wrap.querySelector(".intl-card.intl-preview .intl-body > p.para");
+    if(!para) return;
+
+    const stripRect = strip.getBoundingClientRect();
+    const paraRect  = para.getBoundingClientRect();
+    const cs = getComputedStyle(para);
+
+    let lh = parseFloat(cs.lineHeight);
+    if(!lh || Number.isNaN(lh)){
+      const fs = parseFloat(cs.fontSize) || 16;
+      lh = fs * 1.35;
+    }
+
+    const start = (paraRect.top - stripRect.top) + (lh * 2);
+    const px = Math.max(0, Math.round(start - 6));
+    wrap.style.setProperty("--intl-blur-start", px + "px");
+  }
+
+  function unlock(persist){
+    wrap.classList.remove("is-locked");
+    if(overlay) overlay.style.display = "none";
+    if(persist){
+      try{ localStorage.setItem(KEY, "1"); }catch(e){}
+    }
+  }
+
+  function lock(){
+    wrap.classList.add("is-locked");
+    if(overlay) overlay.style.display = "";
+    setBlurStart();
+  }
+
+  if(isUnlocked()){
+    unlock(false);
+  }else{
+    lock();
+  }
+
+  // Detect EmailOctopus signup POSTs (fetch/XHR) and unlock on success.
+  try{
+    if (window.fetch){
+      const origFetch = window.fetch.bind(window);
+      window.fetch = function(){
+        const args = arguments;
+        let url = "";
+        try{
+          url = typeof args[0] === "string" ? args[0] : (args[0] && args[0].url) || "";
+        }catch(e){}
+        const p = origFetch.apply(this, args);
+        if (isEmailOctopusRequest(url)){
+          p.then((res) => {
+            if (res && res.ok){
+              unlock(true);
+            }
+          }).catch(() => {});
+        }
+        return p;
+      };
+    }
+  }catch(e){}
+
+  try{
+    const origOpen = XMLHttpRequest.prototype.open;
+    const origSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function(method, url){
+      try{
+        this.__tb_eo = isEmailOctopusRequest(url);
+      }catch(e){
+        this.__tb_eo = false;
+      }
+      return origOpen.apply(this, arguments);
+    };
+    XMLHttpRequest.prototype.send = function(){
+      if (this.__tb_eo){
+        this.addEventListener("load", () => {
+          if (this.status >= 200 && this.status < 300){
+            unlock(true);
+          }
+        });
+      }
+      return origSend.apply(this, arguments);
+    };
+  }catch(e){}
+
+  window.addEventListener("resize", setBlurStart);
+  window.addEventListener("orientationchange", setBlurStart);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(setBlurStart).catch(()=>{});
+  }
+
+  window.addEventListener("message", (event) => {
+    try{
+      const host = new URL(event.origin).hostname;
+      const ok = /(^|\.)eomail\d*\.com$|(^|\.)eocampaign\d*\.com$|(^|\.)emailoctopus\.com$/i.test(host);
+      if(!ok) return;
+    }catch(e){
+      return;
+    }
+
+    const data = event.data;
+    const text = (typeof data === "string") ? data : JSON.stringify(data || {});
+    if(/success|subscribed|thank/i.test(text)){
+      unlock(true);
+    }
+  }, false);
+})();
   </script>
 
 </body>
