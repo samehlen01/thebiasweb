@@ -231,7 +231,7 @@
     .split{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 12px;
       align-items: start;
     }
     @media (min-width: 900px){
@@ -598,22 +598,26 @@ hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
 /* --- Closing images (OSMA + signatures) --- */
 .quiet-close{
   text-align: center;
+  margin: 28px 0 10px; /* tighter vertical rhythm */
+  position: relative;
 }
+
 .quiet-close .osma-img{
   display:block;
   width: 100%;
   max-width: 280px;
   height: auto;
-  margin: 0 auto 10px;
+  margin: 0 auto -8px;
 }
 .quiet-close .sig-row{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin: 10px auto 0;
+  gap: 12px;
+  margin: -10px auto 0;
   width: 100%;
   max-width: 560px;
+  padding: 0 18px;
 }
 .quiet-close .sig-row img{
   width: auto;
@@ -621,7 +625,8 @@ hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
   height: auto;
 }
 @media (max-width: 520px){
-  .quiet-close .osma-img{ max-width: 240px; }
+  .quiet-close .osma-img{ max-width: 240px; margin-bottom: -10px; }
+  .quiet-close .sig-row{ padding: 0 12px; }
   .quiet-close .sig-row img{ max-width: 130px; }
 }
 
