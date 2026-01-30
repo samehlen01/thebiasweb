@@ -1,841 +1,1481 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>What we do,  The Bias</title>
-<link href="/assets/LOGO.png" rel="icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple and Google Confirm Multi-Year Gemini Deal to Power Siri</title>
+  <meta property="og:title" content="Apple and Google Confirm Multi-Year Gemini Deal to Power Siri" />
+  <meta property="og:description" content="Apple and Google struck a multi-year Gemini deal to power Siri; pricing, data access and regulatory questions remain." />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:title" content="Apple and Google Confirm Multi-Year Gemini Deal to Power Siri" />
+  <meta name="twitter:description" content="Apple and Google struck a multi-year Gemini deal to power Siri; pricing, data access and regulatory questions remain." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/apple-strikes-multiyear-deal-for-google-s-gemini-ai-to-power-siri-and-other-features-1768339393-e2cde881.png" />
+  <meta name="twitter:image" content="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/apple-strikes-multiyear-deal-for-google-s-gemini-ai-to-power-siri-and-other-features-1768339393-e2cde881.png" />
+  <link rel="icon" href="logo.png" />
 
-    :root{
-      --bg:#FFFAF2;          /* Newsprint Ivory */
-      --card:#F4EEE3;        /* Contrast Print */
-      --ink:#111111;         /* Deep Black */
-      --muted:#5C5C60;
-      --hair:rgba(17,17,17,.10);
-      --gold:#C8A25D;        /* Muted Gold */
-      --accent:#7A1F27;      /* Deep Red */
-      --radius: 4px;
-      --max: 920px;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height:1.75;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      padding-top: 62px;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px 76px;}
+  <style>:root{
+  --bg:#FFFAF2;
+  --card:#F4EEE3;
+  --ink:#111214;
+  --muted:#5C5C60;
+  --hair:rgba(17,18,20,.10);
+  --gold:#C8A25D;
+  --rating:#7A1F27;
+  --radius:18px;
+  --max: 860px;
+}
 
-    /* Top bar (matching article pages) */
-    .appbar{
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 30;
-      background: rgba(255,250,242,.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--hair);
-    }
-    .appbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position: relative;
-    }
-    .navlink{
-      position:absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: rgba(17,17,17,.55);
-      text-decoration: none;
-    }
-    .navlink:hover{ color: rgba(17,17,17,.85); }
-    .about-link{
-      position:absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: rgba(17,17,17,.55);
-      text-decoration: none;
-    }
-    .about-link:hover{ color: rgba(17,17,17,.85); }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-top: 62px;
+}
 
-    .logo{
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px 70px;}
+
+.appbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(255,250,242,.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.appbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.about-link{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  text-decoration: none;
+}
+.about-link:hover{ color: rgba(17,18,20,.8); }
+.logo{
   font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
   font-weight: 500;
   letter-spacing: -0.7px;
   font-size: 22px;
   text-decoration: none;
 }
-    .logo .dot{ color: var(--gold); }
-.logo-img{
-      height: 24px;
-      width: auto;
-      display: block;
-    }
-
-    /* Typography */
-    h1, h2, h3{margin:0}
-    h1.title{
-      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-weight: 700;
-      font-size: 52px;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin: 18px 0 10px;
-    }
-    p.lede{
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.85;
-      color: rgba(17,17,17,.82);
-      max-width: 74ch;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(17,17,17,.60);
-    }
-    .kicker .pip{
-      width:6px;height:6px;border-radius:999px;background: var(--gold);
-      display:inline-block;
-    }
-
-    /* Layout blocks */
-    .hero{
-      margin-top: 22px;
-      padding: 18px 18px 22px;
-      background: var(--card);
-      border: 1px solid rgba(17,17,17,.08);
-      border-radius: var(--radius);
-    }
-    .hero-top{
-      display:flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .tagline{
-      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-weight: 600;
-      font-size: 20px;
-      letter-spacing: -0.01em;
-      margin-top: 6px;
-      color: rgba(17,17,17,.92);
-    }
-    .actions{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      margin-top: 6px;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(17,17,17,.14);
-      background: rgba(255,250,242,.70);
-      text-decoration:none;
-      font-size: 13px;
-      color: rgba(17,17,17,.80);
-      white-space: nowrap;
-    }
-    .btn:hover{ background: rgba(255,250,242,.92); }
-    .btn.primary{
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #fff;
-    }
-    .btn.primary:hover{ filter: brightness(.98); }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 16px;
-    }
-    @media (min-width: 840px){
-      .grid{ grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid rgba(17,17,17,.08);
-      border-radius: var(--radius);
-      padding: 16px 16px 18px;
-      min-height: 150px;
-    }
-    .card-title{
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(17,17,17,.55);
-      margin-bottom: 10px;
-    }
-    .card-head{
-      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-weight: 700;
-      font-size: 26px;
-      line-height: 1.12;
-      margin-bottom: 8px;
-      letter-spacing: -0.012em;
-    }
-    .card-body{
-      margin: 0;
-      color: rgba(17,17,17,.82);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .section{ margin-top: 28px; }
-    h2.subtitle{
-      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-weight: 650;
-      font-size: 34px;
-      line-height: 1.12;
-      letter-spacing: -0.012em;
-      margin: 0 0 8px;
-    }
-    p.para{ margin: 0 0 14px; font-size: 17px; line-height: 1.85; color: rgba(17,17,17,.90); max-width: 76ch; }
-    hr.divider{ border:0; border-top: 1px solid rgba(17,17,17,.18); margin: 22px 0; }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-    @media (min-width: 900px){
-      .split{ grid-template-columns: 1.25fr .75fr; }
-    }
-
-    .aside-stack{ display:grid; gap: 10px; }
-
-    .list{
-      margin: 0;
-      padding-left: 18px;
-      font-size: 16px;
-      color: rgba(17,17,17,.88);
-    }
-    .list li{ margin: 10px 0; }
-
-    /* Feature detail blocks (full text, not "cards") */
-    .feature-blocks{
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-    @media (min-width: 900px){
-      .feature-blocks{
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-      }
-    }
-    .feature-title{
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(17,17,17,.55);
-      margin: 0 0 10px 0;
-    }
-    .feature-body{
-      margin: 0 0 12px 0;
-      font-size: 16px;
-      line-height: 1.75;
-      color: rgba(17,17,17,.90);
-    }
-    .feature-body em{ font-style: italic; }
-    .feature-list{
-      margin: 0;
-      padding-left: 18px;
-      font-size: 15px;
-      line-height: 1.7;
-      color: rgba(17,17,17,.88);
-    }
-    .feature-list li{ margin: 8px 0; }
-
-    .aside{
-      background: var(--card);
-      border: 1px solid rgba(17,17,17,.08);
-      border-left: 3px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 14px 16px;
-    }
-    .aside-title{
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(17,17,17,.55);
-      margin-bottom: 8px;
-    }
-    .aside-body{ font-size: 15px; color: rgba(17,17,17,.90); line-height: 1.7; margin: 0; }
-
-    .steps{
-      margin: 0;
-      padding-left: 0;
-      list-style: none;
-      display:grid;
-      gap: 10px;
-    }
-    .step{
-      background: rgba(255,250,242,.55);
-      border: 1px solid rgba(17,17,17,.10);
-      border-radius: var(--radius);
-      padding: 12px 12px;
-    }
-    .step-top{
-      display:flex;
-      gap: 10px;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .step-num{
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 11px;
-    }
-    .step-title{
-      font-weight: 600;
-      color: rgba(17,17,17,.92);
-      font-size: 14px;
-      flex: 1 1 auto;
-    }
-    .step-body{
-      margin-top: 6px;
-      font-size: 14px;
-      color: rgba(17,17,17,.82);
-      line-height: 1.7;
-    }
-
-    .cta{
-      margin-top: 24px;
-      padding: 18px 18px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(17,17,17,.10);
-      background: var(--card);
-      }
-    .cta-title{
-      font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-weight: 700;
-      font-size: 26px;
-      letter-spacing: -0.01em;
-      margin-bottom: 6px;
-    }
-    .cta-text{
-      margin: 0;
-      color: rgba(17,17,17,.82);
-      font-size: 15px;
-      line-height: 1.75;
-      max-width: 80ch;
-    }
-    .cta-links{
-      margin-top: 12px;
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items:center;
-    }
-    .cta a{ color: inherit; }
-
-    .footer{
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid var(--hair);
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 12px;
-      color: rgba(17,17,17,.55);
-      flex-wrap: wrap;
-    }
-    .footer-links{ display:flex; align-items:center; gap: 8px; }
-    .footer-social{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width: 22px;
-      height: 22px;
-      border-radius: 3px;
-      border: 1px solid rgba(17,17,17,.18);
-      color: rgba(17,17,17,.6);
-      text-decoration: none;
-    }
-    .footer-social:hover{ color: rgba(17,17,17,.85); }
-    .footer-social svg{ width: 14px; height: 14px; }
-
-    @media (max-width: 700px){
-      .wrap{padding: 0 18px 70px;}
-      h1.title{font-size: 42px;}
-      h2.subtitle{font-size: 30px;}
-    }
-  
-
-  .doc-wrap .subtitle{font-size:30px}
-  @media (max-width:700px){.doc-wrap .subtitle{font-size:28px}}
-
-  /* Enhancements for scannability and structure */
-  .subtitle + .subhead {
-    margin-top: -6px;
-    margin-bottom: 14px;
-    font-size: 13px;
-    color: rgba(17,17,17,.55);
-  }
-  .section { margin-top: 48px; }
-  .section + .section { margin-top: 56px; }
-
-  /* FOCS 2x2 grid */
-  .focs-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
-    margin:20px 0 22px;
-  }
-  .focs-item{
-    border:1px solid rgba(17,17,17,.12);
-    border-radius: var(--radius);
-    padding:14px;
-    background: rgba(255,250,242,.45);
-  }
-  .focs-item strong{
-    display:block;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    font-size:12px;
-    margin-bottom:6px;
-  }
-
-  /* Jump links */
-  .toc{
-    margin-top:14px;
-    font-size:13px;
-    color: rgba(17,17,17,.65);
-  }
-  .toc a{ text-decoration:none; }
-  .toc span{ margin-right:10px; }
-
-  /* Quieter close */
-  .quiet-close{
-    text-align:center;
-    color: rgba(17,17,17,.65);
-    margin:60px 0 20px;
-  }
-
-/* --- What we do: readability upgrades --- */
-.section{ margin-top: 26px; } /* more vertical rhythm */
-@media (max-width:700px){ .section{ margin-top: 22px; } }
-
-.subhead{
-  margin: 10px 0 0;
-  font-size: 13px;
-  line-height: 1.6;
-  color: rgba(17,17,17,.62);
+.logo .dot{ color: var(--gold); }
+.claim-toggle{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.6);
+  color: rgba(17,18,20,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
 }
-.jump{
-  margin-top: 14px;
+.claim-toggle.is-active{
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+.follow-bar{
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.follow-pill{
+  flex: 0 1 auto;
+  max-width: 340px;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(244,238,227,.95);
+  border: 1px solid rgba(17,18,20,.12);
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(17,18,20,.10);
 }
-.jump a{
-  color: rgba(17,17,17,.78);
+.follow-link{
+  color: var(--gold);
+  font-weight: 600;
   text-decoration: none;
+}
+.follow-link:hover{ text-decoration: underline; }
+.follow-sep{ color: rgba(17,18,20,.35); }
+.follow-dismiss{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,255,255,.85);
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.header{ padding-top: 18px; }
+h1.title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+@media (max-width: 700px){
+  .wrap{padding: 0 18px 60px;}
+  h1.title{font-size: 38px;}
+  body{ padding-bottom: 84px; }
+  .follow-bar{ display: flex; }
+}
+
+.hero{ margin-top: 14px; }
+.hero img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display:block;
+  border-radius: 0;
+}
+@media (max-width: 700px){
+  .hero img{height: 340px;}
+}
+
+.meta-card{
+  background: var(--card);
+  padding: 14px 16px 16px;
   border-bottom: 1px solid var(--hair);
 }
-.jump a:hover{ border-bottom-color: rgba(17,17,17,.45); }
-
-.hr-soft{
-  height: 1px;
-  border: 0;
-  background: rgba(17,17,17,.10);
-  margin: 26px 0 0;
+.claim-toast{
+  margin: 10px auto 0;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(17,18,20,.08);
+  color: rgba(17,18,20,.78);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-align:center;
+  max-width: 520px;
+  display: none;
 }
+body.claim-mode .claim-toast{ display:block; }
+.meta-row{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  column-gap: 12px;
+  align-items:center;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.meta-item{
+  text-align: center;
+}
+.meta-item.left{ text-align: left; }
+.meta-item.right{ text-align: right; }
+.meta-item:empty{ visibility: hidden; }
+.dot-sep.is-hidden{ visibility: hidden; }
+.dot-sep{width:4px;height:4px;border-radius:999px;background: rgba(17,18,20,.25);display:inline-block;}
 
-.focs-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.meters{ margin-top: 12px; display:grid; gap: 12px; padding: 0 4px; }
+.meter{ display:grid; gap: 6px; }
+.meter-line{ height:1px; background: rgba(17,18,20,.10); position:relative; }
+.meter-line::after{ content:""; position:absolute; left:0; top:0; height:1px; width:var(--fill, 50%); background: var(--rating); }
+.meter-label{ display:flex; gap: 8px; align-items:baseline; font-size: 14px; font-weight: 400; padding-left: 0; }
+.meter-label .k{ color: var(--rating); font-weight: 400; }
+.meter-label .v{ color: var(--ink); font-weight: 400; }
+.rating-details{
+  margin-top: 8px;
+  padding-top: 0;
+  display:flex;
+  flex-direction: column;
+}
+.rating-details summary{
+  list-style: none;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
   gap: 12px;
-  margin-top: 14px;
-}
-@media (max-width:700px){
-  .focs-grid{ grid-template-columns: 1fr; }
-}
-.focs-card{
-  border: 1px solid rgba(17,17,17,.18);
-  border-radius: var(--radius);
-  background: rgba(255,250,242,.55);
-  padding: 14px 14px;
-}
-.focs-card .label{
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(17,17,17,.55);
+  color: var(--rating);
+  order: 2;
+  margin-top: 8px;
+}
+.rating-details summary::-webkit-details-marker{ display:none; }
+.rating-details .chev{
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.rating-details[open] .chev{ transform: rotate(180deg); }
+.rating-body{
+  margin-top: 10px;
+  display:grid;
+  gap: 16px;
+  font-size: 15px;
+  color: rgba(17,18,20,.82);
+  order: 1;
+}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+.rating-title{
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.rating-divider{
+  border: 0;
+  border-top: 1px solid var(--hair);
+  margin: 2px 0 0;
+}
+.rating-how{
+  margin-top: 4px;
+}
+.rating-how-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.60);
+  margin-bottom: 6px;
+}
+
+.intl-section{
+  margin-top: 28px;
+}
+.intl-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
   margin: 0 0 8px;
 }
-.focs-card .desc{
-  margin: 0;
-  color: rgba(17,17,17,.86);
+.intl-sub{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
 }
-
-.callout{
-  border: 1px solid rgba(17,17,17,.18);
-  border-radius: var(--radius);
-  background: rgba(244,238,227,.70);
-  padding: 14px 14px;
-  margin-top: 14px;
+.intl-strip{
+  --fade-size: clamp(10px, 3.5vw, 22px);
+  --left-fade: 0px;
+  --right-fade: var(--fade-size);
+  display:flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  padding-left: 0;
+  margin-left: -8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--left-fade), #000 calc(100% - var(--right-fade)), transparent 100%);
 }
-.callout strong{ font-weight: 600; }
-.callout p{ margin: 0; }
-
-.emphasis{
-  margin-top: 14px;
-  padding-left: 14px;
-  border-left: 1px solid var(--hair);
-  color: rgba(17,17,17,.80);
+.intl-strip::-webkit-scrollbar{ height: 6px; }
+.intl-strip::-webkit-scrollbar-thumb{
+  background: rgba(17,18,20,.2);
+  border-radius: 999px;
 }
-
-/* --- Closing motif --- */
-.close-wrap{
-  margin-top: 26px;
-  text-align: center;
+.intl-card{
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 4px;
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(17,18,20,.06);
+  scroll-snap-align: start;
 }
-.close-dot{
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #C9A24D; /* warm gold */
-  margin-bottom: 8px;
+@media (min-width: 700px){
+  .intl-card{ min-width: 320px; max-width: 360px; }
 }
-.close-kicker{
+.intl-country{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intl-sources-title{
   font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(17,17,17,.55);
-  margin: 6px 0 6px;
+  color: rgba(17,18,20,.55);
+}
+.intl-sources{
+  margin: 6px 0 12px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.intl-para{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.intl-quote{
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-style: italic;
+}
+.intl-attrib{
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.quiet-close{
-    text-align: center;
-    margin: 26px 0 14px;
-  }
-  .quiet-close .qc-title{
-    font-family: var(--serif);
-    font-size: 18px;
-    line-height: 1.25;
-    color: rgba(17,17,17,.92);
-    margin-bottom: 6px;
-  }
-  .quiet-close .qc-text{
-    font-size: 13px;
-    line-height: 1.6;
-    color: rgba(17,17,17,.70);
-  }
+.content{ padding-top: 18px; }
 
-  .gold-stop{
-    color: #C8A25D;
-  }
+h2.subtitle{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 26px 0 10px;
+}
+@media (max-width: 700px){ h2.subtitle{font-size: 30px;} }
 
+p.para{ margin: 0 0 16px; font-size: 17px; line-height: 1.85; color: rgba(17,18,20,.9); }
+hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 24px 0; }
 
-/* Text opacity tweak */
-.para{ color: rgba(17,17,17,.90) !important; }
-.list li{ color: rgba(17,17,17,.90) !important; }
+.list{ margin: 0 0 18px; padding-left: 20px; font-size: 17px; }
+.list li{ margin: 8px 0; }
 
-
-
-/* --- Hard line accents (match reference) --- */
-hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
-.focs-item{
-    border:1px solid rgba(17,17,17.12);
-    border-radius: var(--radius);
-    padding:14px;
-    background: rgba(255,250,242.45);
-  }
-.focs-card{
-  border: 1px solid rgba(17,17,17.12);
-  border-radius: var(--radius);
-  background: rgba(255,250,242.55);
-  padding: 14px 14px;
+blockquote.quote{
+  margin: 18px 0 10px;
+  padding: 18px 0 18px;
+  border-top: 0;
+  border-bottom: 0;
+  background: transparent;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--ink);
+  position: relative;
+}
+blockquote.quote::before{
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote::after{
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -34px;
+  font-size: 52px;
+  color: rgba(17,18,20,.85);
+  line-height: 1;
+}
+blockquote.quote .quote-line{
+  position: absolute;
+  height: 2px;
+  background: rgba(200,162,93,.55);
+}
+blockquote.quote .quote-line.top{
+  left: 36px;
+  right: 0;
+  top: 6px;
+}
+blockquote.quote .quote-line.bottom{
+  left: 0;
+  right: 15px;
+  bottom: 4px;
+}
+.quote-attrib{
+  margin-top: 8px;
+  color: rgba(17,18,20,.6);
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
+.pullquote{
+  margin: 18px 0 6px;
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 26px;
+  line-height: 1.35;
+  text-align:left;
+  font-style: italic;
+  position: relative;
+}
+.pullquote::before,
+.pullquote::after{
+  color: var(--gold);
+  font-size: 34px;
+  line-height: 1;
+}
+.pullquote::before{
+  content: "“";
+  margin-right: 6px;
+}
+.pullquote::after{
+  content: "”";
+  margin-left: 6px;
+}
+.pullquote-attrib{
+  text-align:left;
+  color: rgba(17,18,20,.65);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 
+.claim-mark{
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background .2s ease;
+}
+body.claim-mode .claim-mark{
+  background: var(--claim-color, rgba(200,162,93,.25));
+  cursor: pointer;
+}
 
-/* --- Closing images (OSMA + signatures) --- */
-.quiet-close{
+.stat-card{
+  margin: 18px 0 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   text-align: center;
 }
-.quiet-close .osma-img{
-  display:block;
-  width: 100%;
-  max-width: 560px;
-  height: auto;
-  margin: 0 auto 10px;
+.stat-value{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.05;
+  color: var(--ink);
 }
-.quiet-close .sig-row{
+.stat-label{
+  margin-top: 6px;
+  font-size: 26px;
+  color: var(--gold);
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+.stat-note{
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(17,18,20,.6);
+}
+
+.aside{
+  margin: 14px 0 18px;
+  background: var(--card);
+  border: 1px solid rgba(17,18,20,.08);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.aside-title{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 8px;
+}
+.aside-body{ font-size: 15px; color: var(--ink); }
+
+.inline-fn sup{
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.inline-fn a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.inline-fn a:hover{ text-decoration: underline; }
+
+.spotline{
+  margin: -6px 0 16px;
+  display:flex;
+  justify-content: flex-end;
+}
+.spotlight{
+  border: 0;
+  background: transparent;
+  color: rgba(17,18,20,.62);
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor:pointer;
+}
+.spotlight:hover{
+  background: rgba(0,0,0,.03);
+  color: rgba(17,18,20,.80);
+}
+.spotlight .count{
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(17,18,20,.45);
+  display:none;
+  z-index: 50;
+}
+.modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 78vh;
+  background: var(--bg);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid rgba(255,255,255,.45);
+  display:none;
+  z-index: 60;
+  box-shadow: 0 -18px 60px rgba(0,0,0,.22);
+}
+.modal-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px 18px;
+  background: var(--bg);
+}
+.modal-handle{
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(17,18,20,.16);
+  margin: 0 auto 12px;
+}
+.modal-head{
   display:flex;
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 12px;
+  align-items:center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hair);
+}
+.modal-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 650;
+}
+.close-btn{
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.78);
+  border-radius: 4px;
+  padding: 7px 10px;
+  cursor:pointer;
+  font-size: 13px;
+}
+.close-btn:hover{ background: rgba(244,238,227,.9); }
+
+.source-list{
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style:none;
+}
+.source-item{
+  margin: 10px 0;
+  padding: 12px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.08);
+  background: var(--card);
+}
+.source-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.source-entry:last-child{ border-bottom: 0; }
+.source-kicker{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 4px;
+}
+.source-link-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.source-link-title:hover{ text-decoration: underline; }
+.source-head{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(17,18,20,.10);
+  background: rgba(255,250,242,.85);
+  color: rgba(17,18,20,.70);
+}
+.source-title{
+  font-size: 13px;
+  font-weight: 650;
+  flex: 1 1 auto;
+}
+.source-link{
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.source-link:hover{ text-decoration: underline; }
+.source-claim{ margin-top: 6px; font-size: 12px; color: rgba(17,18,20,.72); }
+.source-quote{
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17,18,20,.14);
+  background: rgba(255,250,242,.7);
+  color: rgba(17,18,20,.85);
+}
+.tiny{ font-size: 11px; color: rgba(17,18,20,.55); margin-top: 6px; }
+.claim-entry{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.claim-entry:last-child{ border-bottom: 0; }
+.claim-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.claim-source{
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  flex: 0 0 auto;
+}
+.claim-title{
+  font-size: 14px;
+  color: var(--ink);
+  text-align: right;
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+.claim-title:hover{ text-decoration: underline; }
+.claim-row{
   margin-top: 6px;
+  font-size: 13px;
+  color: rgba(17,18,20,.75);
 }
-.quiet-close .sig-row img{
-  width: calc(50% - 6px);
-  max-width: 260px;
-  height: auto;
+.claim-row a{
+  color: var(--gold);
+  text-decoration: none;
 }
-@media (max-width: 520px){
-  .quiet-close .osma-img{ max-width: 480px; }
-  .quiet-close .sig-row img{ max-width: none; }
+.claim-row a:hover{ text-decoration: underline; }
+
+details.sources{
+  margin: 18px 0 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+}
+details.sources summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 650;
+}
+details.sources summary::-webkit-details-marker{display:none;}
+details.sources summary .chev{
+  width:14px;height:14px; opacity:.6;
+  transform: rotate(0deg);
+  transition: transform .18s ease;
+}
+details.sources[open] summary .chev{ transform: rotate(180deg); }
+
+.bias-note{
+  margin-top: 26px;
+  padding: 16px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.bias-note-kicker{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 6px;
+}
+.bias-note-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+.bias-note-text{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17,18,20,.78);
+}
+.bias-note-disclosure{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(17,18,20,.6);
+}
+.bias-note a{
+  color: var(--gold);
+  text-decoration: none;
+}
+.bias-note a:hover{ text-decoration: underline; }
+
+.footer{
+  margin-top: 16px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(17,18,20,.55);
+}
+.footer-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(17,18,20,.12);
+  color: rgba(17,18,20,.6);
+  text-decoration: none;
+}
+.footer-social:hover{ color: rgba(17,18,20,.85); }
+.footer-social svg{ width: 14px; height: 14px; }
+.footer-links{ display:flex; align-items:center; gap: 8px; }
+
+/* ===== Conversion elements: email + IG ===== */
+.cta-card{
+  margin: 14px 0 18px;
+  padding: 14px;
+  border: 1px solid rgba(17,18,20,.10);
+  background: rgba(255,250,242,.92);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+.cta-eyebrow{
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(17,18,20,.55);
+  margin-bottom: 6px;
+}
+.cta-title{
+  font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  letter-spacing: -0.35px;
+  color: rgba(17,18,20,.88);
+  margin-bottom: 4px;
+}
+.cta-sub{
+  font-size: 13px;
+  color: rgba(17,18,20,.62);
+}
+.cta-right{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.cta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(17,18,20,.92);
+  color: rgba(255,250,242,.98);
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 13px;
+  min-width: 160px;
+}
+.cta-btn:hover{ background: rgba(17,18,20,.98); }
+.cta-ig{
+  font-size: 12px;
+  color: rgba(17,18,20,.70);
+  text-decoration: none;
+}
+.cta-ig:hover{ text-decoration: underline; }
+
+.follow-link.follow-primary{
+  font-weight: 650;
+  color: rgba(17,18,20,.92);
 }
 
+/* Scroll nudge */
+.nudge{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 66px; /* above follow bar */
+  z-index: 40;
+  display: none;
+  padding: 10px 14px;
+}
+.nudge.show{ display:block; }
+.nudge-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(255,250,242,.96);
+  box-shadow: 0 18px 45px rgba(0,0,0,.12);
+  padding: 10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.nudge-title{
+  font-weight: 650;
+  color: rgba(17,18,20,.88);
+  font-size: 13px;
+}
+.nudge-sub{
+  font-size: 12px;
+  color: rgba(17,18,20,.60);
+}
+.nudge-actions{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+.nudge-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: rgba(17,18,20,.92);
+  color: rgba(255,250,242,.98);
+  text-decoration:none;
+  font-weight: 650;
+  font-size: 12px;
+}
+.nudge-btn:hover{ background: rgba(17,18,20,.98); }
+.nudge-ig{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 9px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.82);
+  text-decoration:none;
+  font-weight: 650;
+  font-size: 12px;
+}
+.nudge-ig:hover{ background: rgba(244,238,227,.85); }
+.nudge-close{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: transparent;
+  color: rgba(17,18,20,.70);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.nudge-close:hover{ color: rgba(17,18,20,.95); background: rgba(0,0,0,.03); }
+
+@media (max-width: 680px){
+  .cta-card{ grid-template-columns: 1fr; }
+  .cta-right{ align-items: stretch; }
+  .cta-btn{ width: 100%; }
+  .nudge-inner{ flex-direction: column; align-items: stretch; }
+  .nudge-actions{ justify-content: space-between; width:100%; }
+}
+
+/* CTA tweaks */
+.cta-tiny{
+  font-size: 12px;
+  color: rgba(17,18,20,.55);
+}
+
+
+/* Exit-intent + inline thanks (modal style) */
+.exit-body{
+  padding-top: 10px;
+}
+.exit-copy{
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: rgba(17,18,20,.88);
+  line-height: 1.55;
+}
+.exit-sub{
+  margin: 0;
+  font-size: 13px;
+  color: rgba(17,18,20,.62);
+  line-height: 1.6;
+}
+.exit-actions{
+  display:flex;
+  gap: 10px;
+  margin-top: 14px;
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+}
+.exit-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(17,18,20,.92);
+  color: rgba(255,250,242,.98);
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 13px;
+}
+.exit-primary:hover{ background: rgba(17,18,20,.98); }
+.exit-secondary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(17,18,20,.12);
+  background: rgba(244,238,227,.55);
+  color: rgba(17,18,20,.82);
+  font-weight: 650;
+  font-size: 13px;
+  cursor: pointer;
+}
+.exit-secondary:hover{ background: rgba(244,238,227,.90); }
+#exit-backdrop.show{
+  display:block;
+}
+#exit-modal.show{
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ensure modals can be opened programmatically */
+.modal{
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform .16s ease, opacity .16s ease;
+}
+.modal.show{pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+  display:block;}
+.modal-backdrop{
+  display:none;
+}
+.modal-backdrop.show{
+  display:block;
+}
 </style>
 </head>
-<body>
-<header class="appbar">
-<div class="appbar-inner">
-<a class="about-link" href="/">Home</a>
-<a aria-label="The Bias" class="logo" href="#top">THE BIAS<span class="dot">.</span></a>
-</div>
-</header>
-<div class="wrap doc-wrap">
-
-<section class="hero">
-  <div class="hero-top">
-    <div>
-      <div class="kicker"><span class="pip"></span>Mission</div>
-      <h1 class="title">What we do</h1>
-      <p class="lede" style="margin-top:10px;">Wide-angle journalism is our response to single-lens news. We’re building a clearer way to understand what’s happening, and what people think about it.</p>
-
-<div class="toc">
-  <span><a href="#wide-angle">Wide-angle journalism</a></span>
-  <span><a href="#focs">The FOCS framework</a></span>
-  <span><a href="#how-it-works">How it works</a></span>
-  <span><a href="#why-now">Reporting from the frontier of innovation</a></span>
-</div>
-
+<body id="top">
+  <header class="appbar">
+    <div class="appbar-inner">
+      <a class="about-link" href="#about-bias">About</a>
+      <a class="logo" href="#top" aria-label="The Bias">THE BIAS<span class="dot">.</span></a>
+      <button class="claim-toggle" id="claim-toggle" aria-pressed="false" aria-label="Toggle claim mode" title="Claim mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20h6M12 4v6m0 0a4 4 0 00-4 4v1a4 4 0 004 4 4 4 0 004-4v-1a4 4 0 00-4-4z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
-</div>
-</section>
+  </header>
 
-<section class="section">
-  <h2 class="subtitle" id="wide-angle">What is wide-angle journalism?</h2>
-<p class="subhead">A different way of constructing news stories</p>
-  <p class="para">
-    The Bias is the world’s first wide-angle news outlet. Wide-angle journalism is a concept we developed in response
-    to how most news is still produced today. Traditional outlets usually tell stories through a single editorial lens, 
-    that of a writer, editor, or publication.
-  </p>
-  <p class="para">
-    A wide-angle news outlet takes a different approach. Instead of presenting one interpretation, it aims to show the
-    full picture of a real-world event by bringing together broad coverage, key facts, major perspectives, where coverage conflicts, and what remains unclear,  in one clear read.
-  </p>
-</section>
+  <div class="wrap">
+    <section class="header">
+      <h1 class="title">Apple and Google Confirm Multi-Year Gemini Deal to Power Siri</h1>
+    </section>
 
-<section class="section" id="values">
-  <h2 class="subtitle">The values behind wide-angle journalism</h2>
-  
-<p class="subhead">Principles that shape how every article is built</p>
-  <p class="para">
-    Wide-angle journalism isn’t just about using more sources. It’s underpinned by three core values that directly
-    shape how every article at The Bias is built.
-  </p>
-  <ul class="list">
-    <li><strong>Agency</strong>, we don’t try to steer readers toward a conclusion. Our role is to equip people with
-    the information they need to form their own views.</li>
-    <li><strong>Transparency</strong>, readers are given visibility into where information comes from and how claims
-    are supported.</li>
-    <li><strong>Honesty</strong>, uncertainty, disagreement, and speculation are surfaced clearly rather than hidden.</li>
-  </ul>
-</section>
+    <div class="hero"><img src="https://pub-43b649008b2346c5af718af4479e9a0d.r2.dev/apple-strikes-multiyear-deal-for-google-s-gemini-ai-to-power-siri-and-other-features-1768339393-e2cde881.png" alt="Hero image" /></div>
 
-<section class="section">
-  
-<h2 class="subtitle" id="focs">The FOCS framework</h2>
-<p class="subhead">Separating fact, interpretation, and uncertainty</p>
-<p class="para">
-  To turn wide-angle journalism from an idea into a working system, we developed the FOCS framework.
-</p>
-<div class="focs-grid">
-  <div class="focs-item"><strong>Fact</strong>Verifiable claims supported by reporting</div>
-<div class="focs-item"><strong>Opinion</strong>Interpretation, judgement, or viewpoint</div>
-  <div class="focs-item"><strong>Consequence</strong>Discussed implications or downstream effects</div>
-  <div class="focs-item"><strong>Speculation</strong>Projections, assumptions, or unresolved possibilities</div>
-</div>
-<p class="para">
-  By separating reporting into these categories, FOCS helps distinguish what is established, what is interpretation,
-  and what remains uncertain. This allows us to accurately determine what’s agreed, and what’s not.
-</p>
-</section>
+    <section class="meta-card">
+      <div class="meta-row"><span class="meta-item left">Updated 4h ago</span><span class="dot-sep"></span><span class="meta-item center">3-min read</span><span class="dot-sep"></span><span class="meta-item right">13 sources</span></div>
 
-<section class="section">
-  <h2 class="subtitle" id="how-it-works">How it works</h2>
-<p class="subhead">From breaking news to a single article</p>
-  <p class="para">
-    Behind every article is a system designed to follow stories as they emerge and evolve. Our news engine combines
-    custom-built algorithms with large language models to analyse coverage and synthesise original reporting.
-  </p>
-  <ol class="list">
-    <li><strong>Ingestion</strong>, our engine continuously monitors a broad range of sources (currently over 600),
-    tracking stories as they break.</li>
-    <li><strong>Clustering</strong>, articles are grouped using semantic similarity, allowing us to track real-world
-    events even when outlets frame them differently.</li>
-    <li><strong>Analysis</strong>, coverage is examined using the FOCS framework to separate facts, opinions,
-    consequences, and speculation.</li>
-    <li><strong>Synthesis</strong>, we publish a single article that shows what’s agreed, what’s contested, and what
-    remains uncertain. When you want to go deeper, key claims can be traced back to the reporting behind them.</li>
-  </ol>
-</section>
+      <div class="meters">
+        <div class="meter">
+          <div class="meter-label"><span class="k">Factuality</span><span>—</span><span class="v">Very strong evidence</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:85%;"></div>
+        </div>
+        <div class="meter">
+          <div class="meter-label"><span class="k">Divisiveness</span><span>—</span><span class="v">Mixed</span></div>
+          <div class="meter-line" aria-hidden="true" style="--fill:50%;"></div>
+        </div>
+      </div>
 
-<section class="section">
-  <h2 class="subtitle" id="why-now">Reporting from the frontier of innovation</h2>
-<p class="subhead">Scale, speed, and synthesis made possible by recent advances</p>
-  <p class="para">
-    Wide-angle journalism requires breadth and speed at the same time. To present the full picture of a breaking
-    story, large volumes of reporting must be analysed, grouped, and understood in near real time.
-  </p>
-  <p class="para">
-    Until recently, this wasn’t feasible. Manually tracking hundreds of sources, clustering related coverage, and
-    extracting structure from reporting would have been too slow and inconsistent to keep pace with the news cycle.
-  </p>
-  <p class="para">
-    Advances in embedding models now allow us to cluster articles by meaning rather than headlines, while faster
-    large-scale language analysis enables high-quality synthesis at scale. This makes it possible to build clear,
-    timely articles that reflect genuine agreement, disagreement, and uncertainty across sources.
-  </p>
-  <p class="para">
-    Wide-angle journalism becomes possible when you can read the world at speed,  without losing accuracy. When you can track hundreds of articles as a story breaks, and still keep the important distinctions intact.
-  </p>
-</section>
-<section class="section" id="reader">
-  <h2 class="subtitle">Built around the reader</h2>
-  <p class="subhead">Deep analysis, quiet simplicity</p>
-  
-  <p class="para">
-    We decided to put user experience at the heart of everything we do. Reading The Bias should feel effortless.
-    Calm, focused, and surprisingly powerful . It should feel like the app is doing the heavy lifting in the background so you can stay in the story.
-    You get one clear read that shows what’s agreed, what’s contested, and what remains unclear, without having to bounce between tabs
-    or stitch together a story yourself.
-  </p>
+      <details class="rating-details" id="rating-details">
+        <summary>
+          <span class="sr-only">How we rate this</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="rating-body">
+          <div>
+            <div class="rating-title">Factuality</div>
+            <div>Robust, converging evidence across primary sources and outlets.</div>
+          </div>
+          <div>
+            <div class="rating-title">Divisiveness</div>
+            <div>Outlets agree on many facts but diverge on interpretations and framing.</div>
+          </div>
+          <hr class="rating-divider" />
+          <div class="rating-how">
+            <div class="rating-how-title">How we rate this</div>
+            <div>We leverage large language models and clustering methods to assess how closely outlets agree on core facts and how much interpretations diverge. Scores reflect the dispersion of claims and the strength of sourcing across multiple outlets.</div>
+          </div>
+        </div>
+      </details>
+    </section>
 
-  
+    <div class="claim-toast" id="claim-toast">Claim mode on, tap a claim to see its source</div>
 
-</section>
+    <main class="content">
+      
+      <h2 class="subtitle">Overview</h2><p class="para" data-block="b2">Apple and Google confirmed a multi-year partnership to use Google&#x27;s Gemini models as the underpinning for Apple&#x27;s next wave of foundation models. The pair said those models will be used inside Apple Intelligence to power new features, including a substantially upgraded Siri expected later this year. Apple added that Apple Intelligence will keep running on users&#x27; devices and in the company&#x27;s Private Cloud Compute to uphold its privacy protections.</p>
 
-<section class="section" id="features">
-  <h2 class="subtitle">Other key features</h2>
-  <p class="subhead">Tools that add breadth and depth without adding clutter.</p>
-  <ul class="list">
-    <li><strong>International Outlook</strong>, see how outlets in different countries report on the same event, what they emphasise, and what domestic coverage may be missing. Compare priorities and framing across regions without having to hunt through separate publications.</li>
-    <li><strong>The Rundown</strong>, a weekly, personalised newspaper built around the topics you care about. It surfaces the key developments you actually need, some uplifting stories that flew under the radar, and the main things worth watching in the week ahead.</li>
-  </ul>
-</section>
 
-<section class="section" id="next">
-  <h2 class="subtitle">Looking ahead</h2>
-  <p class="subhead">What we’re currently building to widen the lens further.</p>
-  <ul class="list">
-    <li><strong>Language extensions</strong>, support for 10+ languages so access to perspective isn’t limited by
-    language.</li>
-    <li><strong>Audio</strong>, in-app, podcast-style listening to understand the full picture on the go.</li>
-  
-    <li><strong>Accessibility</strong>, improving access through clearer reading modes, assistive support, and inclusive design.</li>
-    <li><strong>Independent fact checking</strong>, working with external verification agencies to go deeper than reporting alone.</li>
-        <li><strong>Multi-source fact logs</strong>, recording multiple independent sources behind key facts so you can see how strongly a claim is supported.</li>
-<li><strong>Broader sources</strong>, expanding beyond traditional media to include expert analysis, primary documents, and alternative formats.</li>
-    <li><strong>Roadmaps</strong>, exploring potential consequences of current events and what they may mean for readers over time.</li>
-    <li><strong>Reduced-bias LLMs</strong>, developing language models trained specifically to reduce bias and improve synthesis quality.</li>
-</ul>
-</section>
-
-<hr class="divider"/>
-
-<div class="quiet-close" aria-label="Closing line">
-  <img class="osma-img" src="/assets/osma.png" alt="One story, many angles. A clearer way to understand the news." />
-  <div class="sig-row" aria-hidden="true">
-    <img src="/assets/sig1.png" alt="" />
-    <img src="/assets/sig2.png" alt="" />
+<div class="cta-card cta-primary" role="region" aria-label="Join The Bias waitlist">
+  <div class="cta-left">
+    <div class="cta-title">Want this for every major headline? Join the iOS waitlist.</div>
+    <div class="cta-sub">Sign up for updates and early access to our iOS launch.</div>
+  </div>
+  <div class="cta-right">
+    <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
+    <div class="cta-tiny">Unsubscribe anytime.</div>
   </div>
 </div>
 
-<footer aria-label="Footer" class="footer">
-<span>The Bias 2026</span>
-<div class="footer-links">
-<a aria-label="The Bias on Instagram" class="footer-social" href="https://instagram.com/thebias_app" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<rect height="16" rx="4" stroke="currentColor" stroke-width="2" width="16" x="4" y="4"></rect>
-<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"></circle>
-<circle cx="17" cy="7" fill="currentColor" r="1.2"></circle>
-</svg>
-</a>
-<a aria-label="The Bias on Reddit" class="footer-social" href="https://reddit.com/u/the_bias_app" rel="noopener" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<g fill="none" opacity=".8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
-<path d="M12 6.2c1.9 0 3.7.5 5.1 1.3"></path>
-<path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3"></path>
-<path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"></path>
-<circle cx="9.2" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
-<circle cx="14.8" cy="12.3" fill="currentColor" r="1.1" stroke="none"></circle>
-<path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9"></path>
-<circle cx="17.7" cy="6.8" r="1.3"></circle>
-<path d="M12.2 4.2l2.2.5"></path>
-</g>
-</svg>
-</a>
+<h2 class="subtitle">Official statement</h2><blockquote class="quote" data-block="b4"><span class="quote-line top" aria-hidden="true"></span>After careful evaluation, Apple determined that Google&#x27;s Al technology provides the most capable foundation for Apple Foundation Models and is excited about the innovative new experiences it will unlock for Apple users.<span class="quote-line bottom" aria-hidden="true"></span></blockquote><div class="quote-attrib">— Apple and Google (joint statement)</div><p class="para" data-block="b5">Neither side disclosed the financial terms of the arrangement. Several outlets, citing Bloomberg reporting, have suggested the fee could be about $1 billion per year.</p><h2 class="subtitle">Deployment and data access</h2><p class="para" data-block="b7">Some reports said Apple intends to run a custom Gemini build on its Private Cloud Compute so the heavy model work remains under Apple’s control; other outlets cautioned it is still unclear whether Google will have any access to Apple customers&#x27; data.</p><h2 class="subtitle">Third‑party tests and existing ties</h2><p class="para" data-block="b9">Reporting said Apple trialled models from OpenAI and Anthropic before selecting Gemini. Apple already routes some complex Siri queries to OpenAI&#x27;s ChatGPT, and CNBC reported Apple told the outlet it was not changing that existing ChatGPT integration.</p><h2 class="subtitle">Market reaction</h2><p class="para" data-block="b11">Traders and commentators flagged a market reaction: The Guardian reported Alphabet reached about a $4tn valuation, and Mashable noted the company&#x27;s shares rose roughly one percent after the announcement.</p><h2 class="subtitle">Analysts and regulators</h2><p class="para" data-block="b13">Analysts offered contrasting readings. IDC&#x27;s Francisco Jeronimo told the BBC that outsourcing the foundational layer to Google suggested Apple&#x27;s internal efforts could not match Gemini&#x27;s capability and scale. He added the move was &quot;likely to be a red flag&quot; for regulators.</p><p class="para" data-block="b14">Paolo Pescatore, also quoted by the BBC, said AI has not yet been the main factor driving iPhone purchases but argued that &quot;this will gradually change as AI-powered services gain adoption.&quot; The BBC also recorded that the UK&#x27;s CMA has described Apple and Google as holding an &quot;effective duopoly&quot; and has given them &quot;strategic market status.&quot;</p><p class="para" data-block="b15">Reporters placed the agreement against ongoing US antitrust litigation: TechCrunch said Judge Amit Mehta issued remedies in December 2025 that limit Google&#x27;s ability to enter certain exclusive, long-term default deals, while Axios reported a source saying the Apple–Google deal does not fall under the judge&#x27;s Search and Gemini distribution restrictions and is not exclusive.</p><h2 class="subtitle">Industry and rival responses</h2><p class="para" data-block="b17">Some coverage framed the decision as a setback for competitors: Ars Technica called the announcement &quot;a blow to OpenAI&quot; and said OpenAI&#x27;s CEO declared a &quot;code red.&quot; Mashable highlighted benchmark reporting that suggested Gemini had overtaken ChatGPT in various tests, and Lifehacker summed up the practical implication as Siri moving to Gemini for its upgrade this year.</p><h2 class="subtitle">Timing and next steps</h2><p class="para" data-block="b19">Apple first showed a generative-AI Siri at WWDC 2024 and later delayed a broader rollout; outlets now say an upgraded assistant should arrive this year, with some reports suggesting spring as a possible delivery window.</p><h2 class="subtitle">Conflicting details</h2><p class="para" data-block="b21">On substantive points reporting differs: Apple has not published deal terms, while Bloomberg reporting cited in several outlets places the cost near $1 billion a year.</p><h2 class="subtitle">State of play</h2><p class="para" data-block="b23">Apple and Google have confirmed a multi-year collaboration that ties Google’s Gemini to Apple’s next-generation foundation models and says Apple Intelligence will continue to run on Apple devices and in Private Cloud Compute. Bloomberg reporting suggests an annual fee near $1 billion, but Apple has not confirmed that amount. It remains unclear what access Google will have to user data or how the arrangement will affect Apple’s existing OpenAI ties; Apple is expected to roll the upgraded Siri into OS releases later this year and regulators will continue to watch.</p>
+      
+      
+      
+<hr class="divider" />
+
+<div class="cta-card cta-secondary" role="region" aria-label="Join The Bias iOS waitlist">
+  <div class="cta-left">
+    <div class="cta-title">Want this for every major headline? Join the iOS waitlist.</div>
+    <div class="cta-sub">Sign up for updates and early access to our iOS launch.</div>
+  </div>
+  <div class="cta-right">
+    <a class="cta-btn" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join the waitlist</a>
 </div>
-</footer>
 </div>
 
+<section class="bias-note" id="about-bias" aria-label="About The Bias">
+        <div class="bias-note-kicker">The Bias</div>
+        <h3 class="bias-note-title">How this page is made</h3>
+        <p class="bias-note-text">
+          This page is written from dozens of outlets covering the same event, mixing local and international viewpoints to show the full
+          picture and add context you might otherwise miss. It aims to show where outlets agree, where they report different details, and
+          where opinions diverge, with supporting evidence for key claims and a full source list.
+        </p>
+        <p class="bias-note-text">
+          We’re launching The Bias on iOS soon. If you’d like to help beta test the app, reach out on Instagram
+          <a href="https://instagram.com/thebias_app" target="_blank" rel="noopener">@thebias_app</a> or email
+          <a href="mailto:sam@thebias.co.uk">sam@thebias.co.uk</a>.
+        </p>
+      </section>
+      <details class="sources"><summary><span>All sources</span><svg class="chev" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="source-list"><li class="source-entry"><div class="source-kicker">Axios - All</div><a class="source-link-title" href="https://www.axios.com/2026/01/13/apple-intelligence-google-gemini-siri" target="_blank" rel="noopener">Gemini will power Apple&#x27;s Siri</a></li><li class="source-entry"><div class="source-kicker">BBC - Technology</div><a class="source-link-title" href="https://www.bbc.com/news/articles/czdqvp2zqezo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Apple turns to Google to power AI upgrade for Siri</a></li><li class="source-entry"><div class="source-kicker">Bloomberg - Top</div><a class="source-link-title" href="https://www.bloomberg.com/news/videos/2026-01-13/apple-google-confirm-multiyear-deal-for-ai-tech-siri-video" target="_blank" rel="noopener">Apple, Google Confirm Multiyear Deal for AI Technology, Siri</a></li><li class="source-entry"><div class="source-kicker">CNBC - World</div><a class="source-link-title" href="https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html" target="_blank" rel="noopener">Apple picks Google&#x27;s Gemini to run AI-powered Siri coming this year</a></li><li class="source-entry"><div class="source-kicker">Ars Technica</div><a class="source-link-title" href="https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/" target="_blank" rel="noopener">Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri</a></li><li class="source-entry"><div class="source-kicker">Engadget</div><a class="source-link-title" href="https://www.engadget.com/general/the-morning-after-engadget-newsletter-151521620.html?src=rss" target="_blank" rel="noopener">The Morning After: Apple will use Gemini to power Siri AI</a></li><li class="source-entry"><div class="source-kicker">Engadget</div><a class="source-link-title" href="https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss" target="_blank" rel="noopener">Apple&#x27;s Siri AI will be powered by Gemini</a></li><li class="source-entry"><div class="source-kicker">Lifehacker</div><a class="source-link-title" href="https://lifehacker.com/feed/01KESPRGT0QJCWCM9E9NBMDBGX" target="_blank" rel="noopener">Apple Is Asking Its Biggest Competitor for Some Help With AI</a></li><li class="source-entry"><div class="source-kicker">Mashable</div><a class="source-link-title" href="https://mashable.com/article/apple-google-gemini-openai-chatgpt-siri-ai-overhaul" target="_blank" rel="noopener">Apple picks Google Gemini over ChatGPT to power the new AI Siri</a></li><li class="source-entry"><div class="source-kicker">New York Times - Technology</div><a class="source-link-title" href="https://www.nytimes.com/2026/01/12/technology/apple-google-ai-partnership.html" target="_blank" rel="noopener">Apple Teams Up With Google for A.I. in Its Products</a></li><li class="source-entry"><div class="source-kicker">TechCrunch - AI</div><a class="source-link-title" href="https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/" target="_blank" rel="noopener">Google’s Gemini to power Apple’s AI features like Siri</a></li><li class="source-entry"><div class="source-kicker">The Guardian - Technology</div><a class="source-link-title" href="https://www.theguardian.com/technology/2026/jan/12/google-gemini-alphabet-4-trillion-value" target="_blank" rel="noopener">Google parent Alphabet hits $4tn valuation after AI deal with Apple</a></li><li class="source-entry"><div class="source-kicker">Mashable</div><a class="source-link-title" href="https://mashable.com/article/google-alphabet-4-trillion-market-valuation-apple-gemini" target="_blank" rel="noopener">Apple Siri deal drives Google past historic trillion-dollar milestone: Big tech gets even bigger</a></li></ul></details>
+    </main>
+
+    <div class="footer">
+      <span>The Bias 2026</span>
+      <div class="footer-links">
+        <a class="footer-social" href="https://instagram.com/thebias_app" target="_blank" rel="noopener" aria-label="The Bias on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+<circle cx="17" cy="7" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="footer-social" href="https://reddit.com/u/the_bias_app" target="_blank" rel="noopener" aria-label="The Bias on Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6.2c1.9 0 3.7.5 5.1 1.3" />
+              <path d="M7 7.5c1.5-.8 3.2-1.3 5-1.3" />
+              <path d="M5.2 12.4c0 3.1 3 5.6 6.8 5.6s6.8-2.5 6.8-5.6-3-5.6-6.8-5.6-6.8 2.5-6.8 5.6z"/>
+              <circle cx="9.2" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <circle cx="14.8" cy="12.3" r="1.1" fill="#9A9A9A" stroke="none"/>
+              <path d="M9.8 15.1c.8.6 1.7.9 2.6.9s1.8-.3 2.6-.9" />
+              <circle cx="17.7" cy="6.8" r="1.3"/>
+              <path d="M12.2 4.2l2.2.5"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a id="eo-hidden-trigger-a" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#" style="display:none;">Open waitlist A</a>
+  <a id="eo-hidden-trigger-b" data-eo-form-toggle-id="6a8c2966-fa05-11f0-be4c-55a1a8dee440" href="#" style="display:none;">Open waitlist B</a>
+
+  <div class="nudge" id="email-nudge" aria-hidden="true">
+    <div class="nudge-inner">
+      <div class="nudge-copy">
+        <div class="nudge-title">Get updates + early access</div>
+        <div class="nudge-sub">Join the iOS waitlist in 5 seconds.</div>
+      </div>
+      <div class="nudge-actions">
+        <a class="nudge-btn" data-eo-form-toggle-id="6a8c2966-fa05-11f0-be4c-55a1a8dee440" href="#">Join waitlist</a>
+        <button class="nudge-close" id="nudge-close" aria-label="Dismiss">×</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="follow-bar" id="follow-bar" role="region" aria-label="Follow The Bias">
+    <div class="follow-pill">
+      <a class="follow-link follow-primary" data-eo-form-toggle-id="4fae613c-fa04-11f0-8687-7b599f2db40d" href="#">Join waitlist</a>
+      <span class="follow-sep">•</span>
+      <a class="follow-link" href="https://instagram.com/thebias_app" target="_blank" rel="noopener">Follow on Instagram</a>
+</div>
+    <button class="follow-dismiss" id="follow-dismiss" aria-label="Dismiss follow bar">×</button>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Sources">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title" id="modal-title">Sources</div>
+        <button class="close-btn" data-close-modal>Close</button>
+      </div>
+      <ul class="source-list" id="modal-list"></ul>
+    </div>
+  </section>
+
+
+  <!-- Exit-intent prompt (uses the same modal style as Sources) -->
+  <div class="modal-backdrop" id="exit-backdrop" aria-hidden="true"></div>
+  <section class="modal" id="exit-modal" role="dialog" aria-modal="true" aria-label="Join the iOS waitlist">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <div class="modal-head">
+        <div class="modal-title">Before you go…</div>
+        <button class="close-btn" data-close-exit>Close</button>
+      </div>
+      <div class="exit-body">
+        <p class="exit-copy">Want this for every major headline? Join the iOS waitlist.</p>
+        <p class="exit-sub">Sign up for updates and early access to our iOS launch.</p>
+      </div>
+      <div class="exit-actions">
+        <a class="exit-primary" data-eo-form-toggle-id="6a8c2966-fa05-11f0-be4c-55a1a8dee440" href="#">Join waitlist</a>
+        <button class="exit-secondary" data-close-exit>Not now</button>
+      </div>
+    </div>
+  </section>
+
 <script>
-(function () {
-  function stripHash() {
-    if (window.location.hash && window.location.hash.length > 1) {
-      var url = window.location.pathname + window.location.search;
-      history.replaceState(null, '', url);
+    window.__CLAIMS__ = {"b2": [["Apple and Google confirmed a multi-year partnership to use Google's Gemini models as the underpinning for Apple's next wave of foundation models.", "38102", "\"Apple and Google have entered into a multi-year collaboration under which the next generation of Apple Foundation Models will be based on Google's Gemini models and cloud technology.", "Apple and Google confirmed a multi-year partnership to use Google's Gemini models as the underpinning for Apple's next wave of foundation models.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"], ["The pair said those models will be used inside Apple Intelligence to power new features, including a substantially upgraded Siri expected later this year.", "38102", "These models will help power future Apple Intelligence features, including a more personalized Siri coming this year.", "The pair said those models will be used inside Apple Intelligence to power new features, including a substantially upgraded Siri expected later this year.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"], ["Apple added that Apple Intelligence will keep running on users' devices and in the company's Private Cloud Compute to uphold its privacy protections.", "38102", "Apple Intelligence will continue to run on Apple devices and Private Cloud Compute, while maintaining Apple's industry-leading privacy standards.", "Apple added that Apple Intelligence will keep running on users' devices and in the company's Private Cloud Compute to uphold its privacy protections.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"]], "b4": [["Apple and Google said in a joint statement that after careful evaluation they determined Google's technology provides the most capable foundation for Apple Foundation Models.", "38102", "After careful evaluation, Apple determined that Google's Al technology provides the most capable foundation for Apple Foundation Models and is excited about the innovative new experiences it will unlock for Apple users.", "After careful evaluation, Apple determined that Google's Al technology provides the most capable foundation for Apple Foundation Models and is excited about the innovative new experiences it will unlock for Apple users.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"]], "b5": [["Neither side disclosed the financial terms of the arrangement.", "37749", "Apple declined to comment on the terms of the deal.", "Neither side disclosed the financial terms of the arrangement.", "CNBC - World", "Apple picks Google's Gemini to run AI-powered Siri coming this year", "https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html"], ["Several outlets, citing Bloomberg reporting, have suggested the fee could be about $1 billion per year.", "37796", "Gurman said that Apple would be paying Google “about $1 billion a year” for access to its AI models “following an extensive evaluation period.”", "Several outlets, citing Bloomberg reporting, have suggested the fee could be about $1 billion per year.", "Ars Technica", "Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri", "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/"]], "b7": [["Some reports said Apple intends to run a custom Gemini build on its Private Cloud Compute so the heavy model work remains under Apple’s control.", "37796", "Bloomberg has also reported that the Gemini model would be run on Apple’s Private Cloud Compute servers, “ensuring that user data remains walled off from Google’s infrastructure,”", "Some reports said Apple intends to run a custom Gemini build on its Private Cloud Compute so the heavy model work remains under Apple’s control.", "Ars Technica", "Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri", "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/"], ["Other outlets cautioned it is still unclear whether Google will have any access to Apple customers' data.", "37400", "It's not yet clear what — if any — access Google will have to Apple customers' data.", "Other outlets cautioned it is still unclear whether Google will have any access to Apple customers' data.", "Axios - All", "Gemini will power Apple's Siri", "https://www.axios.com/2026/01/13/apple-intelligence-google-gemini-siri"]], "b9": [["Reporting said Apple trialled models from OpenAI and Anthropic before selecting Gemini.", "38102", "In June, it was reported that Apple was considering partnerships with OpenAI and Anthropic for Siri (the voice assistant can currently tap ChatGPT for certain queries as part of Apple Intelligence).", "Reporting said Apple trialled models from OpenAI and Anthropic before selecting Gemini.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"], ["Apple already routes some complex Siri queries to OpenAI's ChatGPT.", "37749", "Apple currently partners with OpenAI to integrate ChatGPT into Siri and Apple Intelligence, specifically for complicated queries that can tap into the AI model's world knowledge.", "Apple already routes some complex Siri queries to OpenAI's ChatGPT.", "CNBC - World", "Apple picks Google's Gemini to run AI-powered Siri coming this year", "https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html"], ["CNBC reported Apple told the outlet it was not changing that existing ChatGPT integration.", "37749", "The iPhone maker told CNBC that it isn't making any changes to the agreement.", "CNBC reported Apple told the outlet it was not changing that existing ChatGPT integration.", "CNBC - World", "Apple picks Google's Gemini to run AI-powered Siri coming this year", "https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html"]], "b11": [["The Guardian reported Alphabet reached about a $4tn valuation.", "41446", "Google’s parent company hit a major financial milestone on Monday, reaching a $4tn valuation for the first time and surpassing Apple to become the second-most valuable company in the world.", "The Guardian reported Alphabet reached about a $4tn valuation.", "The Guardian - Technology", "Google parent Alphabet hits $4tn valuation after AI deal with Apple", "https://www.theguardian.com/technology/2026/jan/12/google-gemini-alphabet-4-trillion-value"], ["Mashable noted the company's shares rose roughly one percent after the announcement.", "38582", "Alphabet's shares went up by about 1 percent after the news dropped, so it seems like that was more of a \"the fly that broke the camel's back\" situation than something monumental that got Alphabet to $4 trillion by itself.", "Mashable noted the company's shares rose roughly one percent after the announcement.", "Mashable", "Apple Siri deal drives Google past historic trillion-dollar milestone: Big tech gets even bigger", "https://mashable.com/article/google-alphabet-4-trillion-market-valuation-apple-gemini"]], "b13": [["IDC's Francisco Jeronimo told the BBC that outsourcing the foundational layer to Google suggested Apple's internal efforts could not match Gemini's capability and scale.", "37496", "By outsourcing the foundational layer of its AI to Google, Apple is effectively admitting that its internal efforts couldn't compete with Google's Gemini in terms of capability and scale in the short term,", "IDC's Francisco Jeronimo told the BBC that outsourcing the foundational layer to Google suggested Apple's internal efforts could not match Gemini's capability and scale.", "BBC - Technology", "Apple turns to Google to power AI upgrade for Siri", "https://www.bbc.com/news/articles/czdqvp2zqezo?at_medium=RSS&at_campaign=rss"], ["Jeronimo added the move was \"likely to be a red flag\" for regulators.", "37496", "it was \"likely to be a red flag\" for regulators.", "He added the move was \"likely to be a red flag\" for regulators.", "BBC - Technology", "Apple turns to Google to power AI upgrade for Siri", "https://www.bbc.com/news/articles/czdqvp2zqezo?at_medium=RSS&at_campaign=rss"]], "b14": [["Paolo Pescatore said that 'this will gradually change as AI-powered services gain adoption.'", "37496", "this will gradually change as AI-powered services gain adoption", "Paolo Pescatore, also quoted by the BBC, said AI has not yet been the main factor driving iPhone purchases but argued that \"this will gradually change as AI-powered services gain adoption.\"", "BBC - Technology", "Apple turns to Google to power AI upgrade for Siri", "https://www.bbc.com/news/articles/czdqvp2zqezo?at_medium=RSS&at_campaign=rss"], ["The BBC recorded that the UK's Competition and Markets Authority described Apple and Google as holding an 'effective duopoly' and designated them with 'strategic market status.'", "37496", "The CMA said in October Apple and Google both held \"an effective duopoly\" - it designated Apple and Google as having \"strategic market status\".", "The BBC also recorded that the UK's Competition and Markets Authority described Apple and Google as holding an 'effective duopoly' and designated them with 'strategic market status.'", "BBC - Technology", "Apple turns to Google to power AI upgrade for Siri", "https://www.bbc.com/news/articles/czdqvp2zqezo?at_medium=RSS&at_campaign=rss"]], "b15": [["TechCrunch said Judge Amit Mehta issued remedies that include limits on exclusive, long-term default deals.", "41261", "In December 2025, Judge Amit Mehta issued his final remedies on the case, which include banning Google from entering into exclusive, default agreements like the one it had with Apple “unless the agreement terminates no more than one year after the date it is entered.”", "TechCrunch said Judge Amit Mehta issued remedies that include limits on exclusive, long-term default deals.", "TechCrunch - AI", "Google’s Gemini to power Apple’s AI features like Siri", "https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/"], ["Axios reported a source saying the Apple–Google deal does not relate to Search or Gemini app distribution and is not exclusive.", "37400", "The deal does not relate to Search or Gemini app distribution, which Mehta's order concerns, a source familiar with the matter told Axios. The deal is also not exclusive, the source said.", "Axios reported a source saying the Apple–Google deal does not relate to Search or Gemini app distribution and is not exclusive.", "Axios - All", "Gemini will power Apple's Siri", "https://www.axios.com/2026/01/13/apple-intelligence-google-gemini-siri"]], "b17": [["Ars Technica called the announcement 'a blow to OpenAI.'", "37796", "Apple’s announcement is a blow to OpenAI and the many versions of its ChatGPT model, which Apple has used elsewhere in iOS and macOS.", "Ars Technica called the announcement \"a blow to OpenAI.\"", "Ars Technica", "Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri", "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/"], ["Ars Technica reported that OpenAI's CEO declared a 'code red' in response.", "37796", "CEO Sam Altman declared a “code red” last month and pushed back several planned ChatGPT features so that the company could better respond to Google’s Gemini 3 release.", "Ars Technica reported that OpenAI's CEO declared a 'code red' in response.", "Ars Technica", "Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri", "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/"], ["Mashable highlighted that Gemini had overtaken ChatGPT on some benchmarks.", "38587", "over the past year or so, Gemini overtook ChatGPT as the model of choice according to various benchmarks and rankings.", "Mashable highlighted that Gemini had overtaken ChatGPT on some benchmarks.", "Mashable", "Apple picks Google Gemini over ChatGPT to power the new AI Siri", "https://mashable.com/article/apple-google-gemini-openai-chatgpt-siri-ai-overhaul"], ["Lifehacker summarised that Siri will use Gemini and the upgrade is planned this year.", "38306", "Apple’s AI Siri is planned for this year, and it'll use Google Gemini.", "Lifehacker summarised that Siri will use Gemini and the upgrade is planned this year.", "Lifehacker", "Apple Is Asking Its Biggest Competitor for Some Help With AI", "https://lifehacker.com/feed/01KESPRGT0QJCWCM9E9NBMDBGX"]], "b19": [["Apple first demonstrated a generative-AI Siri at WWDC 2024 and later delayed a broader rollout.", "38102", "Apple first demoed a genAI version of Siri back at WWDC 2024. In March 2025, the company said it was delaying a major Siri update until this year, but it appears that Apple is not quite ready to publicly release a more capable version of the voice assistant.", "Apple first demonstrated a generative-AI Siri at WWDC 2024 and later delayed a broader rollout.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"], ["Some outlets said the upgrade is coming this year and previous reports suggested spring as a possible launch window.", "41261", "a spokesperson told TechCrunch an upgrade is coming this year. Previous reports indicate the overhauled Siri is expected to launch in the spring.", "Some outlets said the upgrade is coming this year and previous reports suggested spring as a possible launch window.", "TechCrunch - AI", "Google’s Gemini to power Apple’s AI features like Siri", "https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/"]], "b21": [["Apple has not published the deal terms.", "37749", "Apple declined to comment on the terms of the deal.", "Apple has not published the deal terms.", "CNBC - World", "Apple picks Google's Gemini to run AI-powered Siri coming this year", "https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html"], ["Bloomberg reporting cited in other outlets put the cost at about $1 billion per year.", "37796", "Gurman said that Apple would be paying Google “about $1 billion a year” for access to its AI models “following an extensive evaluation period.”", "Bloomberg reporting cited in other outlets put the cost at about $1 billion per year.", "Ars Technica", "Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri", "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/"]], "b23": [["Apple and Google have confirmed a multi-year collaboration tying Gemini to Apple Foundation Models and said Apple Intelligence will continue to run on Apple devices and Private Cloud Compute.", "38102", "\"Apple and Google have entered into a multi-year collaboration under which the next generation of Apple Foundation Models will be based on Google's Gemini models and cloud technology.", "Apple and Google have confirmed a multi-year collaboration tying Gemini to Apple Foundation Models and said Apple Intelligence will continue to run on Apple devices and Private Cloud Compute.", "Engadget", "Apple's Siri AI will be powered by Gemini", "https://www.engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html?src=rss"], ["Bloomberg reporting suggests an annual fee near $1 billion.", "37796", "Gurman said that Apple would be paying Google “about $1 billion a year” for access to its AI models “following an extensive evaluation period.”", "Bloomberg reporting suggests an annual fee near $1 billion.", "Ars Technica", "Apple chooses Google’s Gemini over OpenAI’s ChatGPT to power next-gen Siri", "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/"], ["Apple has not confirmed that amount.", "37749", "Apple declined to comment on the terms of the deal.", "Apple has not confirmed that amount.", "CNBC - World", "Apple picks Google's Gemini to run AI-powered Siri coming this year", "https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html"], ["It remains unclear what access Google will have to user data.", "37400", "It's not yet clear what — if any — access Google will have to Apple customers' data.", "It remains unclear what access Google will have to user data.", "Axios - All", "Gemini will power Apple's Siri", "https://www.axios.com/2026/01/13/apple-intelligence-google-gemini-siri"], ["Apple is expected to roll the upgraded Siri into OS releases later this year and regulators will continue to watch.", "41261", "a spokesperson told TechCrunch an upgrade is coming this year. Previous reports indicate the overhauled Siri is expected to launch in the spring.", "Apple is expected to roll the upgraded Siri into OS releases later this year and regulators will continue to watch.", "TechCrunch - AI", "Google’s Gemini to power Apple’s AI features like Siri", "https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/"]]};
+    const intlStrips = document.querySelectorAll(".intl-strip");
+    const fadeSizeFor = (strip) => {
+      const width = strip.clientWidth || 0;
+      return Math.min(22, Math.max(10, width * 0.035));
+    };
+    const updateIntlFade = (strip) => {
+      const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      const fade = fadeSizeFor(strip);
+      const leftFade = Math.min(fade, Math.max(0, strip.scrollLeft));
+      const rightFade = Math.min(fade, Math.max(0, maxScroll - strip.scrollLeft));
+      strip.style.setProperty("--left-fade", `${leftFade}px`);
+      strip.style.setProperty("--right-fade", `${rightFade}px`);
+    };
+    intlStrips.forEach((strip) => {
+      const onUpdate = () => updateIntlFade(strip);
+      strip.addEventListener("scroll", () => requestAnimationFrame(onUpdate), {passive: true});
+      window.addEventListener("resize", onUpdate);
+      onUpdate();
+    });
+
+    const claimToggle = document.getElementById("claim-toggle");
+    const claimBody = document.body;
+    const claimPalette = ["#F7E6A8","#DDEEFF","#F7CCD1","#D9F1E1"];
+    let claimHighlightsApplied = false;
+
+    function highlightSnippet(root, snippet, blockId, claimIndex, color) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let node = null;
+      while ((node = walker.nextNode())) {
+        const text = node.nodeValue || "";
+        const start = text.indexOf(snippet);
+        if (start === -1) continue;
+        const end = start + snippet.length;
+        const before = document.createTextNode(text.slice(0, start));
+        const match = document.createTextNode(text.slice(start, end));
+        const after = document.createTextNode(text.slice(end));
+        const span = document.createElement("span");
+        span.className = "claim-mark";
+        span.style.setProperty("--claim-color", color);
+        span.dataset.block = blockId;
+        span.dataset.claimIndex = String(claimIndex);
+        span.appendChild(match);
+        const parent = node.parentNode;
+        parent.insertBefore(before, node);
+        parent.insertBefore(span, node);
+        parent.insertBefore(after, node);
+        parent.removeChild(node);
+        return true;
+      }
+      return false;
+    }
+
+    function applyClaimHighlights() {
+      if (claimHighlightsApplied) return;
+      document.querySelectorAll("[data-block]").forEach((el) => {
+        const blockId = el.getAttribute("data-block");
+        const claims = window.__CLAIMS__[blockId] || [];
+        claims.forEach((c, idx) => {
+          let snippet = "";
+          if (Array.isArray(c)) {
+            if (typeof c[3] === "string" && c[3]) {
+              snippet = c[3];
+            } else if (typeof c[c.length - 1] === "string") {
+              snippet = c[c.length - 1];
+            }
+          }
+          if (!snippet || typeof snippet !== "string") return;
+          highlightSnippet(el, snippet, blockId, idx, claimPalette[idx % claimPalette.length]);
+        });
+      });
+      claimHighlightsApplied = true;
+    }
+
+    function toggleClaimMode() {
+      const isActive = claimBody.classList.toggle("claim-mode");
+      if (claimToggle) {
+        claimToggle.setAttribute("aria-pressed", isActive ? "true" : "false");
+        claimToggle.classList.toggle("is-active", isActive);
+      }
+      if (isActive) applyClaimHighlights();
+    }
+
+    if (claimToggle) {
+      claimToggle.addEventListener("click", toggleClaimMode);
+    }
+
+    const followBar = document.getElementById("follow-bar");
+    const followDismiss = document.getElementById("follow-dismiss");
+    if (followBar && followDismiss) {
+      followDismiss.addEventListener("click", () => followBar.remove());
+    }
+
+    document.addEventListener("click", (event) => {
+      const mark = event.target.closest(".claim-mark");
+      if (!mark || !claimBody.classList.contains("claim-mode")) return;
+      const blockId = mark.dataset.block;
+      const claimIndex = parseInt(mark.dataset.claimIndex || "0", 10);
+      if (window.__openClaimModal) {
+        window.__openClaimModal(blockId, claimIndex);
+      }
+    });
+  </script>
+  
+
+
+<script>
+(function(){
+  const nudge = document.getElementById("email-nudge");
+  const nudgeClose = document.getElementById("nudge-close");
+
+  // Track if user intentionally interacted with any waitlist link
+  document.querySelectorAll('[data-eo-form-toggle-id]').forEach((el) => {
+    el.addEventListener('click', () => {
+      sessionStorage.setItem("tb_waitlist_clicked", "1");
+    }, {passive:true});
+  });
+
+  const joined = (() => {
+    try {
+      return new URL(window.location.href).searchParams.get("joined") === "1";
+    } catch(e){ return false; }
+  })();
+
+  const clickedWaitlist = () => sessionStorage.getItem("tb_waitlist_clicked") === "1";
+
+  const NUDGE_KEY = "tb_nudge_dismissed_v3";
+  const dismissedRecently = () => {
+    const raw = localStorage.getItem(NUDGE_KEY);
+    if(!raw) return false;
+    const ts = parseInt(raw, 10);
+    if(!Number.isFinite(ts)) return false;
+    const days7 = 7 * 24 * 60 * 60 * 1000;
+    return (Date.now() - ts) < days7;
+  };
+  const dismiss = () => localStorage.setItem(NUDGE_KEY, String(Date.now()));
+
+  function showNudge(){
+    if(!nudge) return;
+    if(window.innerWidth >= 900) return; // desktop has exit-intent prompt
+    if(nudge.classList.contains("show")) return;
+    if(joined) return;
+    if(clickedWaitlist()) return;
+    if(dismissedRecently()) return;
+    nudge.classList.add("show");
+    nudge.setAttribute("aria-hidden","false");
+  }
+  function hideNudge(){
+    if(!nudge) return;
+    nudge.classList.remove("show");
+    nudge.setAttribute("aria-hidden","true");
+  }
+
+  if(nudgeClose){
+    nudgeClose.addEventListener("click", () => {
+      dismiss();
+      hideNudge();
+    });
+  }
+
+  // Improved trigger: time-on-page + scroll intent (or deep scroll)
+  const start = Date.now();
+  function shouldTrigger(){
+    if(joined || clickedWaitlist() || dismissedRecently()) return false;
+    if(window.innerWidth >= 900) return false;
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop || 0;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    if(scrollHeight <= 0) return false;
+    const pct = scrollTop / scrollHeight;
+    const t = Date.now() - start;
+
+    // Show only when user has BOTH read for ~14s AND scrolled deep enough
+    if(t >= 14000 && pct >= 0.55) return true;
+
+    return false;
+  }
+
+  function check(){
+    if(shouldTrigger()) {
+      showNudge();
+      window.removeEventListener("scroll", check, {passive:true});
     }
   }
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href^="#"]');
-    if (!a) return;
-    setTimeout(stripHash, 0);
+
+  window.addEventListener("scroll", check, {passive:true});
+  setTimeout(check, 14000);
+
+  // Extra intent signal: claim mode toggle
+})();
+</script>
+
+
+
+<script async src="https://eomail5.com/form/4fae613c-fa04-11f0-8687-7b599f2db40d.js" data-form="4fae613c-fa04-11f0-8687-7b599f2db40d"></script>
+<script async src="https://eomail5.com/form/6a8c2966-fa05-11f0-be4c-55a1a8dee440.js" data-form="6a8c2966-fa05-11f0-be4c-55a1a8dee440"></script>
+
+<script>
+(function(){
+  const exitBackdrop = document.getElementById("exit-backdrop");
+  const exitModal = document.getElementById("exit-modal");
+
+  function showExit(){
+    if(!exitBackdrop || !exitModal) return;
+    exitBackdrop.classList.add("show");
+    exitModal.classList.add("show");
+    exitBackdrop.setAttribute("aria-hidden","false");
+  }
+  function hideExit(){
+    if(!exitBackdrop || !exitModal) return;
+    exitBackdrop.classList.remove("show");
+    exitModal.classList.remove("show");
+    exitBackdrop.setAttribute("aria-hidden","true");
+  }
+
+  // Close handlers
+  document.querySelectorAll("[data-close-exit]").forEach(btn => btn.addEventListener("click", hideExit));
+  if(exitBackdrop) exitBackdrop.addEventListener("click", hideExit);
+  if(thanksBackdrop) thanksBackdrop.addEventListener("click", hideThanks);
+
+  // Desktop exit intent: show friendly prompt (Form B opens only if user clicks)
+  const EXIT_KEY = "tb_exit_prompted_v1";
+  document.addEventListener("mouseout", function(e){
+    if(window.innerWidth < 900) return;
+    if(sessionStorage.getItem(EXIT_KEY) === "1") return;
+    if(!e.relatedTarget && e.clientY <= 0){
+      sessionStorage.setItem(EXIT_KEY, "1");
+      showExit();
+    }
   });
-  window.addEventListener('hashchange', function () {
-    setTimeout(stripHash, 0);
-  });
+
 })();
 </script>
 
