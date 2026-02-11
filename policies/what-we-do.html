@@ -15,7 +15,7 @@
       --card:#F4EEE3;        /* Contrast Print */
       --ink:#111111;         /* Deep Black */
       --muted:#5C5C60;
-      --hair:rgba(17,17,17.10);
+      --hair:rgba(17,17,17,.10);
       --gold:#C8A25D;        /* Muted Gold */
       --accent:#7A1F27;      /* Deep Red */
       --radius: 4px;
@@ -42,7 +42,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 30;
-      background: rgba(255,250,242.94);
+      background: rgba(255,250,242,.94);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--hair);
     }
@@ -63,10 +63,10 @@
       font-size: 12px;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: rgba(17,17,17.55);
+      color: rgba(17,17,17,.55);
       text-decoration: none;
     }
-    .navlink:hover{ color: rgba(17,17,17.85); }
+    .navlink:hover{ color: rgba(17,17,17,.85); }
     .about-link{
       position:absolute;
       left: 20px;
@@ -75,10 +75,10 @@
       font-size: 12px;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: rgba(17,17,17.55);
+      color: rgba(17,17,17,.55);
       text-decoration: none;
     }
-    .about-link:hover{ color: rgba(17,17,17.85); }
+    .about-link:hover{ color: rgba(17,17,17,.85); }
 
     .logo{
   font-family: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
@@ -108,7 +108,7 @@
       margin: 0;
       font-size: 18px;
       line-height: 1.85;
-      color: rgba(17,17,17.82);
+      color: rgba(17,17,17,.82);
       max-width: 74ch;
     }
     .kicker{
@@ -118,7 +118,7 @@
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(17,17,17.60);
+      color: rgba(17,17,17,.60);
     }
     .kicker .pip{
       width:6px;height:6px;border-radius:999px;background: var(--gold);
@@ -130,7 +130,7 @@
       margin-top: 22px;
       padding: 18px 18px 22px;
       background: var(--card);
-      border: 1px solid rgba(17,17,17.08);
+      border: 1px solid rgba(17,17,17,.08);
       border-radius: var(--radius);
     }
     .hero-top{
@@ -146,7 +146,7 @@
       font-size: 20px;
       letter-spacing: -0.01em;
       margin-top: 6px;
-      color: rgba(17,17,17.92);
+      color: rgba(17,17,17,.92);
     }
     .actions{
       display:flex;
@@ -162,14 +162,14 @@
       gap: 8px;
       padding: 10px 12px;
       border-radius: 8px;
-      border: 1px solid rgba(17,17,17.14);
-      background: rgba(255,250,242.70);
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(255,250,242,.70);
       text-decoration:none;
       font-size: 13px;
-      color: rgba(17,17,17.80);
+      color: rgba(17,17,17,.80);
       white-space: nowrap;
     }
-    .btn:hover{ background: rgba(255,250,242.92); }
+    .btn:hover{ background: rgba(255,250,242,.92); }
     .btn.primary{
       background: var(--gold);
       border-color: var(--gold);
@@ -189,7 +189,7 @@
 
     .card{
       background: var(--card);
-      border: 1px solid rgba(17,17,17.08);
+      border: 1px solid rgba(17,17,17,.08);
       border-radius: var(--radius);
       padding: 16px 16px 18px;
       min-height: 150px;
@@ -198,7 +198,7 @@
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(17,17,17.55);
+      color: rgba(17,17,17,.55);
       margin-bottom: 10px;
     }
     .card-head{
@@ -211,7 +211,7 @@
     }
     .card-body{
       margin: 0;
-      color: rgba(17,17,17.82);
+      color: rgba(17,17,17,.82);
       font-size: 15px;
       line-height: 1.75;
     }
@@ -225,13 +225,13 @@
       letter-spacing: -0.012em;
       margin: 0 0 8px;
     }
-    p.para{ margin: 0 0 14px; font-size: 17px; line-height: 1.85; color: rgba(17,17,17.90); max-width: 76ch; }
-    hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
+    p.para{ margin: 0 0 14px; font-size: 17px; line-height: 1.85; color: rgba(17,17,17,.90); max-width: 76ch; }
+    hr.divider{ border:0; border-top: 1px solid rgba(17,17,17,.18); margin: 22px 0; }
 
     .split{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 12px;
       align-items: start;
     }
     @media (min-width: 900px){
@@ -244,7 +244,7 @@
       margin: 0;
       padding-left: 18px;
       font-size: 16px;
-      color: rgba(17,17,17.88);
+      color: rgba(17,17,17,.88);
     }
     .list li{ margin: 10px 0; }
 
@@ -265,14 +265,14 @@
       font-size: 11px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(17,17,17.55);
+      color: rgba(17,17,17,.55);
       margin: 0 0 10px 0;
     }
     .feature-body{
       margin: 0 0 12px 0;
       font-size: 16px;
       line-height: 1.75;
-      color: rgba(17,17,17.90);
+      color: rgba(17,17,17,.90);
     }
     .feature-body em{ font-style: italic; }
     .feature-list{
@@ -280,13 +280,13 @@
       padding-left: 18px;
       font-size: 15px;
       line-height: 1.7;
-      color: rgba(17,17,17.88);
+      color: rgba(17,17,17,.88);
     }
     .feature-list li{ margin: 8px 0; }
 
     .aside{
       background: var(--card);
-      border: 1px solid rgba(17,17,17.08);
+      border: 1px solid rgba(17,17,17,.08);
       border-left: 3px solid var(--gold);
       border-radius: var(--radius);
       padding: 14px 16px;
@@ -295,10 +295,10 @@
       font-size: 11px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(17,17,17.55);
+      color: rgba(17,17,17,.55);
       margin-bottom: 8px;
     }
-    .aside-body{ font-size: 15px; color: rgba(17,17,17.90); line-height: 1.7; margin: 0; }
+    .aside-body{ font-size: 15px; color: rgba(17,17,17,.90); line-height: 1.7; margin: 0; }
 
     .steps{
       margin: 0;
@@ -308,8 +308,8 @@
       gap: 10px;
     }
     .step{
-      background: rgba(255,250,242.55);
-      border: 1px solid rgba(17,17,17.10);
+      background: rgba(255,250,242,.55);
+      border: 1px solid rgba(17,17,17,.10);
       border-radius: var(--radius);
       padding: 12px 12px;
     }
@@ -329,14 +329,14 @@
     }
     .step-title{
       font-weight: 600;
-      color: rgba(17,17,17.92);
+      color: rgba(17,17,17,.92);
       font-size: 14px;
       flex: 1 1 auto;
     }
     .step-body{
       margin-top: 6px;
       font-size: 14px;
-      color: rgba(17,17,17.82);
+      color: rgba(17,17,17,.82);
       line-height: 1.7;
     }
 
@@ -344,7 +344,7 @@
       margin-top: 24px;
       padding: 18px 18px;
       border-radius: var(--radius);
-      border: 1px solid rgba(17,17,17.10);
+      border: 1px solid rgba(17,17,17,.10);
       background: var(--card);
       }
     .cta-title{
@@ -356,7 +356,7 @@
     }
     .cta-text{
       margin: 0;
-      color: rgba(17,17,17.82);
+      color: rgba(17,17,17,.82);
       font-size: 15px;
       line-height: 1.75;
       max-width: 80ch;
@@ -379,7 +379,7 @@
       justify-content: space-between;
       gap: 12px;
       font-size: 12px;
-      color: rgba(17,17,17.55);
+      color: rgba(17,17,17,.55);
       flex-wrap: wrap;
     }
     .footer-links{ display:flex; align-items:center; gap: 8px; }
@@ -390,11 +390,11 @@
       width: 22px;
       height: 22px;
       border-radius: 3px;
-      border: 1px solid rgba(17,17,17.12);
-      color: rgba(17,17,17.6);
+      border: 1px solid rgba(17,17,17,.18);
+      color: rgba(17,17,17,.6);
       text-decoration: none;
     }
-    .footer-social:hover{ color: rgba(17,17,17.85); }
+    .footer-social:hover{ color: rgba(17,17,17,.85); }
     .footer-social svg{ width: 14px; height: 14px; }
 
     @media (max-width: 700px){
@@ -412,7 +412,7 @@
     margin-top: -6px;
     margin-bottom: 14px;
     font-size: 13px;
-    color: rgba(17,17,17.55);
+    color: rgba(17,17,17,.55);
   }
   .section { margin-top: 48px; }
   .section + .section { margin-top: 56px; }
@@ -425,10 +425,10 @@
     margin:20px 0 22px;
   }
   .focs-item{
-    border:1px solid rgba(17,17,17.12);
+    border:1px solid rgba(17,17,17,.12);
     border-radius: var(--radius);
     padding:14px;
-    background: rgba(255,250,242.45);
+    background: rgba(255,250,242,.45);
   }
   .focs-item strong{
     display:block;
@@ -442,7 +442,7 @@
   .toc{
     margin-top:14px;
     font-size:13px;
-    color: rgba(17,17,17.65);
+    color: rgba(17,17,17,.65);
   }
   .toc a{ text-decoration:none; }
   .toc span{ margin-right:10px; }
@@ -450,7 +450,7 @@
   /* Quieter close */
   .quiet-close{
     text-align:center;
-    color: rgba(17,17,17.65);
+    color: rgba(17,17,17,.65);
     margin:60px 0 20px;
   }
 
@@ -462,7 +462,7 @@
   margin: 10px 0 0;
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(17,17,17.62);
+  color: rgba(17,17,17,.62);
 }
 .jump{
   margin-top: 14px;
@@ -472,16 +472,16 @@
   font-size: 13px;
 }
 .jump a{
-  color: rgba(17,17,17.78);
+  color: rgba(17,17,17,.78);
   text-decoration: none;
-  border-bottom: 1px solid rgba(17,17,17.18);
+  border-bottom: 1px solid var(--hair);
 }
-.jump a:hover{ border-bottom-color: rgba(17,17,17.45); }
+.jump a:hover{ border-bottom-color: rgba(17,17,17,.45); }
 
 .hr-soft{
   height: 1px;
   border: 0;
-  background: rgba(17,17,17.10);
+  background: rgba(17,17,17,.10);
   margin: 26px 0 0;
 }
 
@@ -495,27 +495,27 @@
   .focs-grid{ grid-template-columns: 1fr; }
 }
 .focs-card{
-  border: 1px solid rgba(17,17,17.12);
+  border: 1px solid rgba(17,17,17,.18);
   border-radius: var(--radius);
-  background: rgba(255,250,242.55);
+  background: rgba(255,250,242,.55);
   padding: 14px 14px;
 }
 .focs-card .label{
   font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(17,17,17.55);
+  color: rgba(17,17,17,.55);
   margin: 0 0 8px;
 }
 .focs-card .desc{
   margin: 0;
-  color: rgba(17,17,17.86);
+  color: rgba(17,17,17,.86);
 }
 
 .callout{
-  border: 1px solid rgba(17,17,17.12);
+  border: 1px solid rgba(17,17,17,.18);
   border-radius: var(--radius);
-  background: rgba(244,238,227.70);
+  background: rgba(244,238,227,.70);
   padding: 14px 14px;
   margin-top: 14px;
 }
@@ -525,8 +525,8 @@
 .emphasis{
   margin-top: 14px;
   padding-left: 14px;
-  border-left: 2px solid rgba(17,17,17.18);
-  color: rgba(17,17,17.80);
+  border-left: 1px solid var(--hair);
+  color: rgba(17,17,17,.80);
 }
 
 /* --- Closing motif --- */
@@ -546,7 +546,7 @@
   font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(17,17,17.55);
+  color: rgba(17,17,17,.55);
   margin: 6px 0 6px;
 }
 
@@ -558,13 +558,13 @@
     font-family: var(--serif);
     font-size: 18px;
     line-height: 1.25;
-    color: rgba(17,17,17.92);
+    color: rgba(17,17,17,.92);
     margin-bottom: 6px;
   }
   .quiet-close .qc-text{
     font-size: 13px;
     line-height: 1.6;
-    color: rgba(17,17,17.70);
+    color: rgba(17,17,17,.70);
   }
 
   .gold-stop{
@@ -573,8 +573,62 @@
 
 
 /* Text opacity tweak */
-.para{ color: rgba(17,17,17.90) !important; }
-.list li{ color: rgba(17,17,17.90) !important; }
+.para{ color: rgba(17,17,17,.90) !important; }
+.list li{ color: rgba(17,17,17,.90) !important; }
+
+
+
+/* --- Hard line accents (match reference) --- */
+hr.divider{ border:0; border-top: 1px solid var(--hair); margin: 22px 0; }
+.focs-item{
+    border:1px solid rgba(17,17,17.12);
+    border-radius: var(--radius);
+    padding:14px;
+    background: rgba(255,250,242.45);
+  }
+.focs-card{
+  border: 1px solid rgba(17,17,17.12);
+  border-radius: var(--radius);
+  background: rgba(255,250,242.55);
+  padding: 14px 14px;
+}
+
+
+
+/* --- Closing images (OSMA + signatures) --- */
+.quiet-close{
+  text-align: center;
+  margin: 28px 0 10px; /* tighter vertical rhythm */
+  position: relative;
+}
+
+.quiet-close .osma-img{
+  display:block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto -8px;
+}
+.quiet-close .sig-row{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: -10px auto 0;
+  width: 100%;
+  max-width: 560px;
+  padding: 0 18px;
+}
+.quiet-close .sig-row img{
+  width: auto;
+  max-width: 130px;
+  height: auto;
+}
+@media (max-width: 520px){
+  .quiet-close .osma-img{ max-width: 240px; margin-bottom: -10px; }
+  .quiet-close .sig-row{ padding: 0 12px; }
+  .quiet-close .sig-row img{ max-width: 130px; }
+}
 
 </style>
 </head>
@@ -592,16 +646,13 @@
     <div>
       <div class="kicker"><span class="pip"></span>Mission</div>
       <h1 class="title">What we do</h1>
-      <p class="lede" style="margin-top:10px;">
-        Wide-angle journalism is our answer to a simple problem: the news is too important to see through one lens.
-        We’re building a clearer way to understand what’s happening,  and why people disagree about it.
-      </p>
+      <p class="lede" style="margin-top:10px;">Wide-angle journalism is our response to single-lens news. We’re building a clearer way to understand what’s happening, and what people think about it.</p>
 
 <div class="toc">
   <span><a href="#wide-angle">Wide-angle journalism</a></span>
   <span><a href="#focs">The FOCS framework</a></span>
   <span><a href="#how-it-works">How it works</a></span>
-  <span><a href="#why-now">Why this couldn’t exist before</a></span>
+  <span><a href="#why-now">Reporting from the frontier of innovation</a></span>
 </div>
 
     </div>
@@ -618,7 +669,7 @@
   </p>
   <p class="para">
     A wide-angle news outlet takes a different approach. Instead of presenting one interpretation, it aims to show the
-    full picture of a real-world event by bringing together broad coverage, key facts, major perspectives, where coverage conflicts, and what remains unclear,  in one coherent read.
+    full picture of a real-world event by bringing together broad coverage, key facts, major perspectives, where coverage conflicts, and what remains unclear,  in one clear read.
   </p>
 </section>
 
@@ -642,7 +693,7 @@
 <section class="section">
   
 <h2 class="subtitle" id="focs">The FOCS framework</h2>
-<p class="subhead">Separating certainty, interpretation, and uncertainty</p>
+<p class="subhead">Separating fact, interpretation, and uncertainty</p>
 <p class="para">
   To turn wide-angle journalism from an idea into a working system, we developed the FOCS framework.
 </p>
@@ -653,20 +704,20 @@
   <div class="focs-item"><strong>Speculation</strong>Projections, assumptions, or unresolved possibilities</div>
 </div>
 <p class="para">
-  By separating reporting into these categories, FOCS helps distinguish what is established, what is interpretive,
-  and what remains uncertain. This makes disagreement and consensus easier to see at a glance.
+  By separating reporting into these categories, FOCS helps distinguish what is established, what is interpretation,
+  and what remains uncertain. This allows us to accurately determine what’s agreed, and what’s not.
 </p>
 </section>
 
 <section class="section">
   <h2 class="subtitle" id="how-it-works">How it works</h2>
-<p class="subhead">From breaking news to a single coherent article</p>
+<p class="subhead">From breaking news to a single article</p>
   <p class="para">
     Behind every article is a system designed to follow stories as they emerge and evolve. Our news engine combines
     custom-built algorithms with large language models to analyse coverage and synthesise original reporting.
   </p>
   <ol class="list">
-    <li><strong>Ingestion</strong>, our engine continuously monitors a broad range of sources (currently over 300),
+    <li><strong>Ingestion</strong>, our engine continuously monitors a broad range of sources (currently over 600),
     tracking stories as they break.</li>
     <li><strong>Clustering</strong>, articles are grouped using semantic similarity, allowing us to track real-world
     events even when outlets frame them differently.</li>
@@ -678,7 +729,7 @@
 </section>
 
 <section class="section">
-  <h2 class="subtitle" id="why-now">Why this couldn’t exist before</h2>
+  <h2 class="subtitle" id="why-now">Reporting from the frontier of innovation</h2>
 <p class="subhead">Scale, speed, and synthesis made possible by recent advances</p>
   <p class="para">
     Wide-angle journalism requires breadth and speed at the same time. To present the full picture of a breaking
@@ -697,16 +748,14 @@
     Wide-angle journalism becomes possible when you can read the world at speed,  without losing accuracy. When you can track hundreds of articles as a story breaks, and still keep the important distinctions intact.
   </p>
 </section>
-
-<hr class="hr-soft" aria-hidden="true"/>
 <section class="section" id="reader">
   <h2 class="subtitle">Built around the reader</h2>
-  <p class="subhead">A premium, calm reading experience . Designed for one coherent read.</p>
+  <p class="subhead">Deep analysis, quiet simplicity</p>
   
   <p class="para">
-    We decided to put user experience at the centre of everything we do. Reading The Bias should feel effortless.
+    We decided to put user experience at the heart of everything we do. Reading The Bias should feel effortless.
     Calm, focused, and surprisingly powerful . It should feel like the app is doing the heavy lifting in the background so you can stay in the story.
-    You get one coherent read that shows what’s agreed, what’s contested, and what remains unclear, without having to bounce between tabs
+    You get one clear read that shows what’s agreed, what’s contested, and what remains unclear, without having to bounce between tabs
     or stitch together a story yourself.
   </p>
 
@@ -718,28 +767,36 @@
   <h2 class="subtitle">Other key features</h2>
   <p class="subhead">Tools that add breadth and depth without adding clutter.</p>
   <ul class="list">
-    <li><strong>International Outlook</strong>, see how outlets in different countries report on the same event and
-    what domestic coverage may be missing.</li>
-    <li><strong>The Rundown</strong>, a weekly, personalised newspaper built around the topics you care about,
-    including under-reported stories and key developments to watch.</li>
+    <li><strong>International Outlook</strong>, see how outlets in different countries report on the same event, what they emphasise, and what domestic coverage may be missing. Compare priorities and framing across regions without having to hunt through separate publications.</li>
+    <li><strong>The Rundown</strong>, a weekly, personalised newspaper built around the topics you care about. It surfaces the key developments you actually need, some uplifting stories that flew under the radar, and the main things worth watching in the week ahead.</li>
   </ul>
 </section>
 
 <section class="section" id="next">
   <h2 class="subtitle">Looking ahead</h2>
-  <p class="subhead">What we’re building next to widen the lens further.</p>
+  <p class="subhead">What we’re currently building to widen the lens further.</p>
   <ul class="list">
     <li><strong>Language extensions</strong>, support for 10+ languages so access to perspective isn’t limited by
     language.</li>
     <li><strong>Audio</strong>, in-app, podcast-style listening to understand the full picture on the go.</li>
-  </ul>
+  
+    <li><strong>Accessibility</strong>, improving access through clearer reading modes, assistive support, and inclusive design.</li>
+    <li><strong>Independent fact checking</strong>, working with external verification agencies to go deeper than reporting alone.</li>
+        <li><strong>Multi-source fact logs</strong>, recording multiple independent sources behind key facts so you can see how strongly a claim is supported.</li>
+<li><strong>Broader sources</strong>, expanding beyond traditional media to include expert analysis, primary documents, and alternative formats.</li>
+    <li><strong>Roadmaps</strong>, exploring potential consequences of current events and what they may mean for readers over time.</li>
+    <li><strong>Reduced-bias LLMs</strong>, developing language models trained specifically to reduce bias and improve synthesis quality.</li>
+</ul>
 </section>
 
 <hr class="divider"/>
 
 <div class="quiet-close" aria-label="Closing line">
-  <div class="qc-title">One story, many angles<span class="gold-stop">.</span></div>
-  <div class="qc-text">A clearer way to understand the news.</div>
+  <img class="osma-img" src="/assets/osma.PNG" alt="One story, many angles." />
+  <div class="sig-row" aria-hidden="true">
+    <img src="/assets/sig1.PNG" alt="" />
+    <img src="/assets/sig2.PNG" alt="" />
+  </div>
 </div>
 
 <footer aria-label="Footer" class="footer">
@@ -769,5 +826,25 @@
 </div>
 </footer>
 </div>
+
+<script>
+(function () {
+  function stripHash() {
+    if (window.location.hash && window.location.hash.length > 1) {
+      var url = window.location.pathname + window.location.search;
+      history.replaceState(null, '', url);
+    }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    setTimeout(stripHash, 0);
+  });
+  window.addEventListener('hashchange', function () {
+    setTimeout(stripHash, 0);
+  });
+})();
+</script>
+
 </body>
 </html>
