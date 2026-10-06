@@ -163,6 +163,13 @@ html{scroll-padding-top:calc(var(--header-height) + 10px)}
  .claim-dialog{inset:max(12px,env(safe-area-inset-top,0px)) 12px auto;margin:0 auto;width:calc(100% - 24px);max-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 24px)}
  .claim-dialog[open],.peek-dialog[open]{animation:sheet-fade .25s ease both;transform:none}
 }
+/* Anchor the phone masthead to the viewport and paint above its safe area. */
+@media(max-width:800px){
+ html{background:var(--paper)}
+ body{padding-top:var(--header-height)}
+ .header{position:fixed;inset:0 0 auto;z-index:100;isolation:isolate;overflow:visible;background:var(--paper);backdrop-filter:none;-webkit-backdrop-filter:none}
+ .header:before{content:'';position:absolute;left:0;right:0;bottom:100%;height:max(80px,var(--safe-top));background:var(--paper);pointer-events:none}
+}
 </style></head><body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="header"><a class="brand" href="#top" aria-label="The Bias home">THE BIAS<span>.</span></a><nav aria-label="Main navigation"><a href="#perspective">The wider view</a><a href="#inside">Inside the app</a><a href="#rundown">Your weekend</a><a class="header-download" href="https://apps.apple.com/gb/app/the-bias-wide-angle-news/id6755318038">Get the app <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></nav><button class="motion-control" id="motion-control" aria-label="Pause animations" aria-pressed="false"><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">Motion on</span></button></header>
