@@ -1,2 +1,13 @@
 User-agent: *
 Disallow:
+
+# BEGIN thebias-publisher (managed by the stories publisher; edit outside this block)
+User-agent: *
+Disallow: /t/
+Allow: /
+
+Sitemap: https://thebias.co.uk/stories/sitemap.xml
+Sitemap: https://thebias.co.uk/policies/sitemap.xml
+Sitemap: https://thebias.co.uk/articles/sitemap.xml
+Sitemap: https://thebias.co.uk/articles/news-sitemap.xml
+# END thebias-publisher
