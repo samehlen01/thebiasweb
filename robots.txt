@@ -1,6 +1,3 @@
-User-agent: *
-Disallow:
-
 # BEGIN thebias-publisher (managed by the stories publisher; edit outside this block)
 User-agent: *
 Disallow: /t/
